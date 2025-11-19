@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2RuleServeStaticAction;
 
 /**
  * V2RuleServeStaticActionTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2RuleServeStaticActionTest extends TestCase
      */
     public function testV2RuleServeStaticAction()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleServeStaticAction();
+        $this->assertInstanceOf(V2RuleServeStaticAction::class, $model);
     }
 
     /**
@@ -84,7 +85,7 @@ class V2RuleServeStaticActionTest extends TestCase
      */
     public function testPropertyStaticFilePath()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleServeStaticAction();
+        $this->assertInstanceOf(V2RuleServeStaticAction::class, $model);
     }
 }

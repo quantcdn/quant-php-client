@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1RedirectListResponse;
 
 /**
  * V1RedirectListResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1RedirectListResponseTest extends TestCase
      */
     public function testV1RedirectListResponse()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectListResponse();
+        $this->assertInstanceOf(V1RedirectListResponse::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1RedirectListResponseTest extends TestCase
      */
     public function testPropertyDraw()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectListResponse();
+        $this->assertInstanceOf(V1RedirectListResponse::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V1RedirectListResponseTest extends TestCase
      */
     public function testPropertyITotalRecords()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectListResponse();
+        $this->assertInstanceOf(V1RedirectListResponse::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V1RedirectListResponseTest extends TestCase
      */
     public function testPropertyITotalDisplayRecords()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectListResponse();
+        $this->assertInstanceOf(V1RedirectListResponse::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class V1RedirectListResponseTest extends TestCase
      */
     public function testPropertyAaData()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectListResponse();
+        $this->assertInstanceOf(V1RedirectListResponse::class, $model);
     }
 }

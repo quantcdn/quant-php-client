@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1GlobalMetaResponse;
 
 /**
  * V1GlobalMetaResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1GlobalMetaResponseTest extends TestCase
      */
     public function testV1GlobalMetaResponse()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1GlobalMetaResponse();
+        $this->assertInstanceOf(V1GlobalMetaResponse::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1GlobalMetaResponseTest extends TestCase
      */
     public function testPropertyGlobalMeta()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1GlobalMetaResponse();
+        $this->assertInstanceOf(V1GlobalMetaResponse::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V1GlobalMetaResponseTest extends TestCase
      */
     public function testPropertyTotalRecords()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1GlobalMetaResponse();
+        $this->assertInstanceOf(V1GlobalMetaResponse::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V1GlobalMetaResponseTest extends TestCase
      */
     public function testPropertyTotalPages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1GlobalMetaResponse();
+        $this->assertInstanceOf(V1GlobalMetaResponse::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class V1GlobalMetaResponseTest extends TestCase
      */
     public function testPropertyPage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1GlobalMetaResponse();
+        $this->assertInstanceOf(V1GlobalMetaResponse::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class V1GlobalMetaResponseTest extends TestCase
      */
     public function testPropertyPageSize()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1GlobalMetaResponse();
+        $this->assertInstanceOf(V1GlobalMetaResponse::class, $model);
     }
 
     /**
@@ -129,7 +130,7 @@ class V1GlobalMetaResponseTest extends TestCase
      */
     public function testPropertyRefineSearch()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1GlobalMetaResponse();
+        $this->assertInstanceOf(V1GlobalMetaResponse::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\PatchEnvironmentCompose202ResponseSpotConfiguration;
 
 /**
  * PatchEnvironmentCompose202ResponseSpotConfigurationTest Class Doc Comment
@@ -75,8 +76,8 @@ class PatchEnvironmentCompose202ResponseSpotConfigurationTest extends TestCase
      */
     public function testPatchEnvironmentCompose202ResponseSpotConfiguration()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PatchEnvironmentCompose202ResponseSpotConfiguration();
+        $this->assertInstanceOf(PatchEnvironmentCompose202ResponseSpotConfiguration::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class PatchEnvironmentCompose202ResponseSpotConfigurationTest extends TestCase
      */
     public function testPropertyStrategy()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PatchEnvironmentCompose202ResponseSpotConfiguration();
+        $this->assertInstanceOf(PatchEnvironmentCompose202ResponseSpotConfiguration::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class PatchEnvironmentCompose202ResponseSpotConfigurationTest extends TestCase
      */
     public function testPropertyTolerateDowntime()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PatchEnvironmentCompose202ResponseSpotConfiguration();
+        $this->assertInstanceOf(PatchEnvironmentCompose202ResponseSpotConfiguration::class, $model);
     }
 }

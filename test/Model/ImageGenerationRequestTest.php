@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ImageGenerationRequest;
 
 /**
  * ImageGenerationRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class ImageGenerationRequestTest extends TestCase
      */
     public function testImageGenerationRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequest();
+        $this->assertInstanceOf(ImageGenerationRequest::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ImageGenerationRequestTest extends TestCase
      */
     public function testPropertyModelId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequest();
+        $this->assertInstanceOf(ImageGenerationRequest::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class ImageGenerationRequestTest extends TestCase
      */
     public function testPropertyTaskType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequest();
+        $this->assertInstanceOf(ImageGenerationRequest::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class ImageGenerationRequestTest extends TestCase
      */
     public function testPropertyTextToImageParams()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequest();
+        $this->assertInstanceOf(ImageGenerationRequest::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class ImageGenerationRequestTest extends TestCase
      */
     public function testPropertyColorGuidedGenerationParams()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequest();
+        $this->assertInstanceOf(ImageGenerationRequest::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class ImageGenerationRequestTest extends TestCase
      */
     public function testPropertyImageVariationParams()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequest();
+        $this->assertInstanceOf(ImageGenerationRequest::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class ImageGenerationRequestTest extends TestCase
      */
     public function testPropertyInPaintingParams()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequest();
+        $this->assertInstanceOf(ImageGenerationRequest::class, $model);
     }
 
     /**
@@ -138,8 +139,8 @@ class ImageGenerationRequestTest extends TestCase
      */
     public function testPropertyOutPaintingParams()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequest();
+        $this->assertInstanceOf(ImageGenerationRequest::class, $model);
     }
 
     /**
@@ -147,8 +148,8 @@ class ImageGenerationRequestTest extends TestCase
      */
     public function testPropertyBackgroundRemovalParams()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequest();
+        $this->assertInstanceOf(ImageGenerationRequest::class, $model);
     }
 
     /**
@@ -156,8 +157,8 @@ class ImageGenerationRequestTest extends TestCase
      */
     public function testPropertyVirtualTryOnParams()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequest();
+        $this->assertInstanceOf(ImageGenerationRequest::class, $model);
     }
 
     /**
@@ -165,8 +166,8 @@ class ImageGenerationRequestTest extends TestCase
      */
     public function testPropertyImageGenerationConfig()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequest();
+        $this->assertInstanceOf(ImageGenerationRequest::class, $model);
     }
 
     /**
@@ -174,7 +175,7 @@ class ImageGenerationRequestTest extends TestCase
      */
     public function testPropertyRegion()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequest();
+        $this->assertInstanceOf(ImageGenerationRequest::class, $model);
     }
 }

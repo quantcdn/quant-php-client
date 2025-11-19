@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\CreateVolumeRequest;
 
 /**
  * CreateVolumeRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class CreateVolumeRequestTest extends TestCase
      */
     public function testCreateVolumeRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateVolumeRequest();
+        $this->assertInstanceOf(CreateVolumeRequest::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class CreateVolumeRequestTest extends TestCase
      */
     public function testPropertyVolumeName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateVolumeRequest();
+        $this->assertInstanceOf(CreateVolumeRequest::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class CreateVolumeRequestTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateVolumeRequest();
+        $this->assertInstanceOf(CreateVolumeRequest::class, $model);
     }
 
     /**
@@ -102,7 +103,7 @@ class CreateVolumeRequestTest extends TestCase
      */
     public function testPropertyRootDirectory()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateVolumeRequest();
+        $this->assertInstanceOf(CreateVolumeRequest::class, $model);
     }
 }

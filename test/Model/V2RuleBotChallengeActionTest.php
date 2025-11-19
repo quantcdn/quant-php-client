@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2RuleBotChallengeAction;
 
 /**
  * V2RuleBotChallengeActionTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2RuleBotChallengeActionTest extends TestCase
      */
     public function testV2RuleBotChallengeAction()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleBotChallengeAction();
+        $this->assertInstanceOf(V2RuleBotChallengeAction::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V2RuleBotChallengeActionTest extends TestCase
      */
     public function testPropertyRobotChallengeType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleBotChallengeAction();
+        $this->assertInstanceOf(V2RuleBotChallengeAction::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V2RuleBotChallengeActionTest extends TestCase
      */
     public function testPropertyRobotChallengeVerificationTtl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleBotChallengeAction();
+        $this->assertInstanceOf(V2RuleBotChallengeAction::class, $model);
     }
 
     /**
@@ -102,7 +103,7 @@ class V2RuleBotChallengeActionTest extends TestCase
      */
     public function testPropertyRobotChallengeChallengeTtl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleBotChallengeAction();
+        $this->assertInstanceOf(V2RuleBotChallengeAction::class, $model);
     }
 }

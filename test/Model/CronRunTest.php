@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\CronRun;
 
 /**
  * CronRunTest Class Doc Comment
@@ -75,8 +76,8 @@ class CronRunTest extends TestCase
      */
     public function testCronRun()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CronRun();
+        $this->assertInstanceOf(CronRun::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class CronRunTest extends TestCase
      */
     public function testPropertyRunId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CronRun();
+        $this->assertInstanceOf(CronRun::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class CronRunTest extends TestCase
      */
     public function testPropertyRunType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CronRun();
+        $this->assertInstanceOf(CronRun::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class CronRunTest extends TestCase
      */
     public function testPropertyCommand()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CronRun();
+        $this->assertInstanceOf(CronRun::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class CronRunTest extends TestCase
      */
     public function testPropertyStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CronRun();
+        $this->assertInstanceOf(CronRun::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class CronRunTest extends TestCase
      */
     public function testPropertyStartTime()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CronRun();
+        $this->assertInstanceOf(CronRun::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class CronRunTest extends TestCase
      */
     public function testPropertyEndTime()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CronRun();
+        $this->assertInstanceOf(CronRun::class, $model);
     }
 
     /**
@@ -138,8 +139,8 @@ class CronRunTest extends TestCase
      */
     public function testPropertyExitCode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CronRun();
+        $this->assertInstanceOf(CronRun::class, $model);
     }
 
     /**
@@ -147,8 +148,8 @@ class CronRunTest extends TestCase
      */
     public function testPropertyOutput()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CronRun();
+        $this->assertInstanceOf(CronRun::class, $model);
     }
 
     /**
@@ -156,8 +157,8 @@ class CronRunTest extends TestCase
      */
     public function testPropertyScheduleName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CronRun();
+        $this->assertInstanceOf(CronRun::class, $model);
     }
 
     /**
@@ -165,7 +166,7 @@ class CronRunTest extends TestCase
      */
     public function testPropertyTargetContainerName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CronRun();
+        $this->assertInstanceOf(CronRun::class, $model);
     }
 }

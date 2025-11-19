@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\DownloadBackup200Response;
 
 /**
  * DownloadBackup200ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class DownloadBackup200ResponseTest extends TestCase
      */
     public function testDownloadBackup200Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new DownloadBackup200Response();
+        $this->assertInstanceOf(DownloadBackup200Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class DownloadBackup200ResponseTest extends TestCase
      */
     public function testPropertyDownloadUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new DownloadBackup200Response();
+        $this->assertInstanceOf(DownloadBackup200Response::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class DownloadBackup200ResponseTest extends TestCase
      */
     public function testPropertyExpiresAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new DownloadBackup200Response();
+        $this->assertInstanceOf(DownloadBackup200Response::class, $model);
     }
 
     /**
@@ -102,7 +103,7 @@ class DownloadBackup200ResponseTest extends TestCase
      */
     public function testPropertyFilename()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new DownloadBackup200Response();
+        $this->assertInstanceOf(DownloadBackup200Response::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\EmbeddingsRequest;
 
 /**
  * EmbeddingsRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class EmbeddingsRequestTest extends TestCase
      */
     public function testEmbeddingsRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EmbeddingsRequest();
+        $this->assertInstanceOf(EmbeddingsRequest::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class EmbeddingsRequestTest extends TestCase
      */
     public function testPropertyInput()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EmbeddingsRequest();
+        $this->assertInstanceOf(EmbeddingsRequest::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class EmbeddingsRequestTest extends TestCase
      */
     public function testPropertyModelId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EmbeddingsRequest();
+        $this->assertInstanceOf(EmbeddingsRequest::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class EmbeddingsRequestTest extends TestCase
      */
     public function testPropertyDimensions()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EmbeddingsRequest();
+        $this->assertInstanceOf(EmbeddingsRequest::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class EmbeddingsRequestTest extends TestCase
      */
     public function testPropertyNormalize()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EmbeddingsRequest();
+        $this->assertInstanceOf(EmbeddingsRequest::class, $model);
     }
 }

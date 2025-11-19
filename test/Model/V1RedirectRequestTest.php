@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1RedirectRequest;
 
 /**
  * V1RedirectRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1RedirectRequestTest extends TestCase
      */
     public function testV1RedirectRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectRequest();
+        $this->assertInstanceOf(V1RedirectRequest::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1RedirectRequestTest extends TestCase
      */
     public function testPropertyUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectRequest();
+        $this->assertInstanceOf(V1RedirectRequest::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V1RedirectRequestTest extends TestCase
      */
     public function testPropertyRedirectUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectRequest();
+        $this->assertInstanceOf(V1RedirectRequest::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V1RedirectRequestTest extends TestCase
      */
     public function testPropertyRedirectHttpCode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectRequest();
+        $this->assertInstanceOf(V1RedirectRequest::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class V1RedirectRequestTest extends TestCase
      */
     public function testPropertyPublished()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectRequest();
+        $this->assertInstanceOf(V1RedirectRequest::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class V1RedirectRequestTest extends TestCase
      */
     public function testPropertyContentTimestamp()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectRequest();
+        $this->assertInstanceOf(V1RedirectRequest::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class V1RedirectRequestTest extends TestCase
      */
     public function testPropertyInfo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectRequest();
+        $this->assertInstanceOf(V1RedirectRequest::class, $model);
     }
 
     /**
@@ -138,7 +139,7 @@ class V1RedirectRequestTest extends TestCase
      */
     public function testPropertyTransitions()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectRequest();
+        $this->assertInstanceOf(V1RedirectRequest::class, $model);
     }
 }

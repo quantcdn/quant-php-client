@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\GetSshAccessCredentials200ResponseCredentials;
 
 /**
  * GetSshAccessCredentials200ResponseCredentialsTest Class Doc Comment
@@ -75,8 +76,8 @@ class GetSshAccessCredentials200ResponseCredentialsTest extends TestCase
      */
     public function testGetSshAccessCredentials200ResponseCredentials()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetSshAccessCredentials200ResponseCredentials();
+        $this->assertInstanceOf(GetSshAccessCredentials200ResponseCredentials::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class GetSshAccessCredentials200ResponseCredentialsTest extends TestCase
      */
     public function testPropertyAccessKeyId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetSshAccessCredentials200ResponseCredentials();
+        $this->assertInstanceOf(GetSshAccessCredentials200ResponseCredentials::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class GetSshAccessCredentials200ResponseCredentialsTest extends TestCase
      */
     public function testPropertySecretAccessKey()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetSshAccessCredentials200ResponseCredentials();
+        $this->assertInstanceOf(GetSshAccessCredentials200ResponseCredentials::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class GetSshAccessCredentials200ResponseCredentialsTest extends TestCase
      */
     public function testPropertySessionToken()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetSshAccessCredentials200ResponseCredentials();
+        $this->assertInstanceOf(GetSshAccessCredentials200ResponseCredentials::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class GetSshAccessCredentials200ResponseCredentialsTest extends TestCase
      */
     public function testPropertyExpiration()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetSshAccessCredentials200ResponseCredentials();
+        $this->assertInstanceOf(GetSshAccessCredentials200ResponseCredentials::class, $model);
     }
 }

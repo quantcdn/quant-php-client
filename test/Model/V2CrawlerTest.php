@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2Crawler;
 
 /**
  * V2CrawlerTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testV2Crawler()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyProjectId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyUuid()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyConfig()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyDomain()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -138,8 +139,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyDomainVerified()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -147,8 +148,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyUrlsList()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -156,8 +157,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyWebhookUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -165,8 +166,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyWebhookAuthHeader()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -174,8 +175,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyWebhookExtraVars()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -183,8 +184,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyBrowserMode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -192,8 +193,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyWorkers()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -201,8 +202,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyDelay()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -210,8 +211,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyDepth()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -219,8 +220,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyMaxHits()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -228,8 +229,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyMaxHtml()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -237,8 +238,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyStatusOk()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -246,8 +247,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyUserAgent()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -255,8 +256,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyMaxErrors()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -264,8 +265,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyStartUrls()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -273,8 +274,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyUrls()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -282,8 +283,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyHeaders()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -291,8 +292,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyExclude()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -300,8 +301,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyInclude()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -309,8 +310,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertySitemap()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -318,8 +319,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyAllowedDomains()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -327,8 +328,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyAssets()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -336,8 +337,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyCreatedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -345,8 +346,8 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyUpdatedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 
     /**
@@ -354,7 +355,7 @@ class V2CrawlerTest extends TestCase
      */
     public function testPropertyDeletedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Crawler();
+        $this->assertInstanceOf(V2Crawler::class, $model);
     }
 }

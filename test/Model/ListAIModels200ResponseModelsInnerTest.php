@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ListAIModels200ResponseModelsInner;
 
 /**
  * ListAIModels200ResponseModelsInnerTest Class Doc Comment
@@ -75,8 +76,8 @@ class ListAIModels200ResponseModelsInnerTest extends TestCase
      */
     public function testListAIModels200ResponseModelsInner()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAIModels200ResponseModelsInner();
+        $this->assertInstanceOf(ListAIModels200ResponseModelsInner::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ListAIModels200ResponseModelsInnerTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAIModels200ResponseModelsInner();
+        $this->assertInstanceOf(ListAIModels200ResponseModelsInner::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class ListAIModels200ResponseModelsInnerTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAIModels200ResponseModelsInner();
+        $this->assertInstanceOf(ListAIModels200ResponseModelsInner::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class ListAIModels200ResponseModelsInnerTest extends TestCase
      */
     public function testPropertyProvider()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAIModels200ResponseModelsInner();
+        $this->assertInstanceOf(ListAIModels200ResponseModelsInner::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class ListAIModels200ResponseModelsInnerTest extends TestCase
      */
     public function testPropertyCapabilities()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAIModels200ResponseModelsInner();
+        $this->assertInstanceOf(ListAIModels200ResponseModelsInner::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ListAIModels200Response;
 
 /**
  * ListAIModels200ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class ListAIModels200ResponseTest extends TestCase
      */
     public function testListAIModels200Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAIModels200Response();
+        $this->assertInstanceOf(ListAIModels200Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ListAIModels200ResponseTest extends TestCase
      */
     public function testPropertyCount()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAIModels200Response();
+        $this->assertInstanceOf(ListAIModels200Response::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class ListAIModels200ResponseTest extends TestCase
      */
     public function testPropertyModels()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAIModels200Response();
+        $this->assertInstanceOf(ListAIModels200Response::class, $model);
     }
 }

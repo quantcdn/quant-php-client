@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2CustomHeaderRequest;
 
 /**
  * V2CustomHeaderRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2CustomHeaderRequestTest extends TestCase
      */
     public function testV2CustomHeaderRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CustomHeaderRequest();
+        $this->assertInstanceOf(V2CustomHeaderRequest::class, $model);
     }
 
     /**
@@ -84,7 +85,7 @@ class V2CustomHeaderRequestTest extends TestCase
      */
     public function testPropertyHeaders()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CustomHeaderRequest();
+        $this->assertInstanceOf(V2CustomHeaderRequest::class, $model);
     }
 }

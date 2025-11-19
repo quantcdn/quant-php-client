@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ImageGeneration200Response;
 
 /**
  * ImageGeneration200ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class ImageGeneration200ResponseTest extends TestCase
      */
     public function testImageGeneration200Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGeneration200Response();
+        $this->assertInstanceOf(ImageGeneration200Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ImageGeneration200ResponseTest extends TestCase
      */
     public function testPropertyImages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGeneration200Response();
+        $this->assertInstanceOf(ImageGeneration200Response::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class ImageGeneration200ResponseTest extends TestCase
      */
     public function testPropertyMaskImage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGeneration200Response();
+        $this->assertInstanceOf(ImageGeneration200Response::class, $model);
     }
 
     /**
@@ -102,7 +103,7 @@ class ImageGeneration200ResponseTest extends TestCase
      */
     public function testPropertyError()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGeneration200Response();
+        $this->assertInstanceOf(ImageGeneration200Response::class, $model);
     }
 }

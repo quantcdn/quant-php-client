@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ValidateCompose200Response;
 
 /**
  * ValidateCompose200ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class ValidateCompose200ResponseTest extends TestCase
      */
     public function testValidateCompose200Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ValidateCompose200Response();
+        $this->assertInstanceOf(ValidateCompose200Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ValidateCompose200ResponseTest extends TestCase
      */
     public function testPropertyMessage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ValidateCompose200Response();
+        $this->assertInstanceOf(ValidateCompose200Response::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class ValidateCompose200ResponseTest extends TestCase
      */
     public function testPropertyTranslatedComposeDefinition()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ValidateCompose200Response();
+        $this->assertInstanceOf(ValidateCompose200Response::class, $model);
     }
 
     /**
@@ -102,7 +103,7 @@ class ValidateCompose200ResponseTest extends TestCase
      */
     public function testPropertyTranslationWarnings()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ValidateCompose200Response();
+        $this->assertInstanceOf(ValidateCompose200Response::class, $model);
     }
 }

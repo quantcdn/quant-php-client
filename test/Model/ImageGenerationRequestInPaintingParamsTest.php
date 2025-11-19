@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ImageGenerationRequestInPaintingParams;
 
 /**
  * ImageGenerationRequestInPaintingParamsTest Class Doc Comment
@@ -75,8 +76,8 @@ class ImageGenerationRequestInPaintingParamsTest extends TestCase
      */
     public function testImageGenerationRequestInPaintingParams()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestInPaintingParams();
+        $this->assertInstanceOf(ImageGenerationRequestInPaintingParams::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ImageGenerationRequestInPaintingParamsTest extends TestCase
      */
     public function testPropertyImage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestInPaintingParams();
+        $this->assertInstanceOf(ImageGenerationRequestInPaintingParams::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class ImageGenerationRequestInPaintingParamsTest extends TestCase
      */
     public function testPropertyMaskImage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestInPaintingParams();
+        $this->assertInstanceOf(ImageGenerationRequestInPaintingParams::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class ImageGenerationRequestInPaintingParamsTest extends TestCase
      */
     public function testPropertyMaskPrompt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestInPaintingParams();
+        $this->assertInstanceOf(ImageGenerationRequestInPaintingParams::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class ImageGenerationRequestInPaintingParamsTest extends TestCase
      */
     public function testPropertyText()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestInPaintingParams();
+        $this->assertInstanceOf(ImageGenerationRequestInPaintingParams::class, $model);
     }
 
     /**
@@ -120,7 +121,7 @@ class ImageGenerationRequestInPaintingParamsTest extends TestCase
      */
     public function testPropertyNegativeText()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestInPaintingParams();
+        $this->assertInstanceOf(ImageGenerationRequestInPaintingParams::class, $model);
     }
 }

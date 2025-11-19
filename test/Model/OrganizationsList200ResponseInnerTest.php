@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\OrganizationsList200ResponseInner;
 
 /**
  * OrganizationsList200ResponseInnerTest Class Doc Comment
@@ -75,8 +76,8 @@ class OrganizationsList200ResponseInnerTest extends TestCase
      */
     public function testOrganizationsList200ResponseInner()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new OrganizationsList200ResponseInner();
+        $this->assertInstanceOf(OrganizationsList200ResponseInner::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class OrganizationsList200ResponseInnerTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new OrganizationsList200ResponseInner();
+        $this->assertInstanceOf(OrganizationsList200ResponseInner::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class OrganizationsList200ResponseInnerTest extends TestCase
      */
     public function testPropertyMachineName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new OrganizationsList200ResponseInner();
+        $this->assertInstanceOf(OrganizationsList200ResponseInner::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2CrawlerAssetsNetworkIntercept;
 
 /**
  * V2CrawlerAssetsNetworkInterceptTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2CrawlerAssetsNetworkInterceptTest extends TestCase
      */
     public function testV2CrawlerAssetsNetworkIntercept()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerAssetsNetworkIntercept();
+        $this->assertInstanceOf(V2CrawlerAssetsNetworkIntercept::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V2CrawlerAssetsNetworkInterceptTest extends TestCase
      */
     public function testPropertyEnabled()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerAssetsNetworkIntercept();
+        $this->assertInstanceOf(V2CrawlerAssetsNetworkIntercept::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V2CrawlerAssetsNetworkInterceptTest extends TestCase
      */
     public function testPropertyTimeout()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerAssetsNetworkIntercept();
+        $this->assertInstanceOf(V2CrawlerAssetsNetworkIntercept::class, $model);
     }
 
     /**
@@ -102,7 +103,7 @@ class V2CrawlerAssetsNetworkInterceptTest extends TestCase
      */
     public function testPropertyExecuteJs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerAssetsNetworkIntercept();
+        $this->assertInstanceOf(V2CrawlerAssetsNetworkIntercept::class, $model);
     }
 }

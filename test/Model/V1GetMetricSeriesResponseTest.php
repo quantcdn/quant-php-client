@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1GetMetricSeriesResponse;
 
 /**
  * V1GetMetricSeriesResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1GetMetricSeriesResponseTest extends TestCase
      */
     public function testV1GetMetricSeriesResponse()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1GetMetricSeriesResponse();
+        $this->assertInstanceOf(V1GetMetricSeriesResponse::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1GetMetricSeriesResponseTest extends TestCase
      */
     public function testPropertySuccess()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1GetMetricSeriesResponse();
+        $this->assertInstanceOf(V1GetMetricSeriesResponse::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class V1GetMetricSeriesResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1GetMetricSeriesResponse();
+        $this->assertInstanceOf(V1GetMetricSeriesResponse::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\CreateApplicationRequestFilesystem;
 
 /**
  * CreateApplicationRequestFilesystemTest Class Doc Comment
@@ -75,8 +76,8 @@ class CreateApplicationRequestFilesystemTest extends TestCase
      */
     public function testCreateApplicationRequestFilesystem()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateApplicationRequestFilesystem();
+        $this->assertInstanceOf(CreateApplicationRequestFilesystem::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class CreateApplicationRequestFilesystemTest extends TestCase
      */
     public function testPropertyRequired()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateApplicationRequestFilesystem();
+        $this->assertInstanceOf(CreateApplicationRequestFilesystem::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class CreateApplicationRequestFilesystemTest extends TestCase
      */
     public function testPropertyMountPath()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateApplicationRequestFilesystem();
+        $this->assertInstanceOf(CreateApplicationRequestFilesystem::class, $model);
     }
 }

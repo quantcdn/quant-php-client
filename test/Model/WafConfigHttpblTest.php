@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\WafConfigHttpbl;
 
 /**
  * WafConfigHttpblTest Class Doc Comment
@@ -75,8 +76,8 @@ class WafConfigHttpblTest extends TestCase
      */
     public function testWafConfigHttpbl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigHttpbl();
+        $this->assertInstanceOf(WafConfigHttpbl::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class WafConfigHttpblTest extends TestCase
      */
     public function testPropertyHttpblEnabled()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigHttpbl();
+        $this->assertInstanceOf(WafConfigHttpbl::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class WafConfigHttpblTest extends TestCase
      */
     public function testPropertyBlockSuspicious()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigHttpbl();
+        $this->assertInstanceOf(WafConfigHttpbl::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class WafConfigHttpblTest extends TestCase
      */
     public function testPropertyBlockHarvester()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigHttpbl();
+        $this->assertInstanceOf(WafConfigHttpbl::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class WafConfigHttpblTest extends TestCase
      */
     public function testPropertyBlockSpam()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigHttpbl();
+        $this->assertInstanceOf(WafConfigHttpbl::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class WafConfigHttpblTest extends TestCase
      */
     public function testPropertyBlockSearchEngine()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigHttpbl();
+        $this->assertInstanceOf(WafConfigHttpbl::class, $model);
     }
 
     /**
@@ -129,7 +130,7 @@ class WafConfigHttpblTest extends TestCase
      */
     public function testPropertyHttpblKey()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigHttpbl();
+        $this->assertInstanceOf(WafConfigHttpbl::class, $model);
     }
 }

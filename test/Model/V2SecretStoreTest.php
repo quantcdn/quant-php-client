@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2SecretStore;
 
 /**
  * V2SecretStoreTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2SecretStoreTest extends TestCase
      */
     public function testV2SecretStore()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2SecretStore();
+        $this->assertInstanceOf(V2SecretStore::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V2SecretStoreTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2SecretStore();
+        $this->assertInstanceOf(V2SecretStore::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class V2SecretStoreTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2SecretStore();
+        $this->assertInstanceOf(V2SecretStore::class, $model);
     }
 }

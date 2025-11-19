@@ -1,0 +1,75 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    
+    services:
+      quant-mock-api:
+        image: ghcr.io/quantcdn/quant-mock-api:latest
+        ports:
+          - 8080:8080
+        env:
+          API_PORT: 8080
+        options: >-
+          --health-cmd "curl -f http://localhost:8080/health || exit 1"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+          --health-start-period 10s
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version: ['8.1', '8.2', '8.3']
+        
+    name: PHP ${{ matrix.php-version }}
+    
+    env:
+      QUANT_MOCK_API_HOST: http://localhost:8080
+      QUANT_API_TOKEN: test-token
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: curl, json, mbstring
+          coverage: xdebug
+          tools: composer:v2
+          
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
+        
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ matrix.php-version }}-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-${{ matrix.php-version }}-
+            
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+        
+      - name: Wait for mock API
+        run: |
+          timeout 30 sh -c 'until curl -f http://localhost:8080/health; do sleep 1; done'
+        
+      - name: Run test suite
+        run: vendor/bin/phpunit
+        
+      - name: Run PHP CS Fixer (dry-run)
+        run: vendor/bin/php-cs-fixer fix --dry-run --diff
+        if: matrix.php-version == '8.1'
+

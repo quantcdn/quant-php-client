@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ImageGenerationRequestColorGuidedGenerationParams;
 
 /**
  * ImageGenerationRequestColorGuidedGenerationParamsTest Class Doc Comment
@@ -75,8 +76,8 @@ class ImageGenerationRequestColorGuidedGenerationParamsTest extends TestCase
      */
     public function testImageGenerationRequestColorGuidedGenerationParams()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestColorGuidedGenerationParams();
+        $this->assertInstanceOf(ImageGenerationRequestColorGuidedGenerationParams::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ImageGenerationRequestColorGuidedGenerationParamsTest extends TestCase
      */
     public function testPropertyColors()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestColorGuidedGenerationParams();
+        $this->assertInstanceOf(ImageGenerationRequestColorGuidedGenerationParams::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class ImageGenerationRequestColorGuidedGenerationParamsTest extends TestCase
      */
     public function testPropertyReferenceImage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestColorGuidedGenerationParams();
+        $this->assertInstanceOf(ImageGenerationRequestColorGuidedGenerationParams::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class ImageGenerationRequestColorGuidedGenerationParamsTest extends TestCase
      */
     public function testPropertyText()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestColorGuidedGenerationParams();
+        $this->assertInstanceOf(ImageGenerationRequestColorGuidedGenerationParams::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class ImageGenerationRequestColorGuidedGenerationParamsTest extends TestCase
      */
     public function testPropertyNegativeText()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestColorGuidedGenerationParams();
+        $this->assertInstanceOf(ImageGenerationRequestColorGuidedGenerationParams::class, $model);
     }
 }

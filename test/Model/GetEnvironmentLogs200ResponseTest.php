@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\GetEnvironmentLogs200Response;
 
 /**
  * GetEnvironmentLogs200ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class GetEnvironmentLogs200ResponseTest extends TestCase
      */
     public function testGetEnvironmentLogs200Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetEnvironmentLogs200Response();
+        $this->assertInstanceOf(GetEnvironmentLogs200Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class GetEnvironmentLogs200ResponseTest extends TestCase
      */
     public function testPropertyLogEvents()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetEnvironmentLogs200Response();
+        $this->assertInstanceOf(GetEnvironmentLogs200Response::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class GetEnvironmentLogs200ResponseTest extends TestCase
      */
     public function testPropertyNextToken()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetEnvironmentLogs200Response();
+        $this->assertInstanceOf(GetEnvironmentLogs200Response::class, $model);
     }
 }

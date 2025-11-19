@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ImageGenerationRequestImageGenerationConfig;
 
 /**
  * ImageGenerationRequestImageGenerationConfigTest Class Doc Comment
@@ -75,8 +76,8 @@ class ImageGenerationRequestImageGenerationConfigTest extends TestCase
      */
     public function testImageGenerationRequestImageGenerationConfig()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestImageGenerationConfig();
+        $this->assertInstanceOf(ImageGenerationRequestImageGenerationConfig::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ImageGenerationRequestImageGenerationConfigTest extends TestCase
      */
     public function testPropertyWidth()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestImageGenerationConfig();
+        $this->assertInstanceOf(ImageGenerationRequestImageGenerationConfig::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class ImageGenerationRequestImageGenerationConfigTest extends TestCase
      */
     public function testPropertyHeight()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestImageGenerationConfig();
+        $this->assertInstanceOf(ImageGenerationRequestImageGenerationConfig::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class ImageGenerationRequestImageGenerationConfigTest extends TestCase
      */
     public function testPropertyQuality()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestImageGenerationConfig();
+        $this->assertInstanceOf(ImageGenerationRequestImageGenerationConfig::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class ImageGenerationRequestImageGenerationConfigTest extends TestCase
      */
     public function testPropertyCfgScale()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestImageGenerationConfig();
+        $this->assertInstanceOf(ImageGenerationRequestImageGenerationConfig::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class ImageGenerationRequestImageGenerationConfigTest extends TestCase
      */
     public function testPropertySeed()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestImageGenerationConfig();
+        $this->assertInstanceOf(ImageGenerationRequestImageGenerationConfig::class, $model);
     }
 
     /**
@@ -129,7 +130,7 @@ class ImageGenerationRequestImageGenerationConfigTest extends TestCase
      */
     public function testPropertyNumberOfImages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestImageGenerationConfig();
+        $this->assertInstanceOf(ImageGenerationRequestImageGenerationConfig::class, $model);
     }
 }

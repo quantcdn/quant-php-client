@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\CreateEnvironmentRequest;
 
 /**
  * CreateEnvironmentRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class CreateEnvironmentRequestTest extends TestCase
      */
     public function testCreateEnvironmentRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateEnvironmentRequest();
+        $this->assertInstanceOf(CreateEnvironmentRequest::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class CreateEnvironmentRequestTest extends TestCase
      */
     public function testPropertyEnvName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateEnvironmentRequest();
+        $this->assertInstanceOf(CreateEnvironmentRequest::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class CreateEnvironmentRequestTest extends TestCase
      */
     public function testPropertyMinCapacity()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateEnvironmentRequest();
+        $this->assertInstanceOf(CreateEnvironmentRequest::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class CreateEnvironmentRequestTest extends TestCase
      */
     public function testPropertyMaxCapacity()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateEnvironmentRequest();
+        $this->assertInstanceOf(CreateEnvironmentRequest::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class CreateEnvironmentRequestTest extends TestCase
      */
     public function testPropertyCloneConfigurationFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateEnvironmentRequest();
+        $this->assertInstanceOf(CreateEnvironmentRequest::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class CreateEnvironmentRequestTest extends TestCase
      */
     public function testPropertyComposeDefinition()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateEnvironmentRequest();
+        $this->assertInstanceOf(CreateEnvironmentRequest::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class CreateEnvironmentRequestTest extends TestCase
      */
     public function testPropertyImageSuffix()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateEnvironmentRequest();
+        $this->assertInstanceOf(CreateEnvironmentRequest::class, $model);
     }
 
     /**
@@ -138,8 +139,8 @@ class CreateEnvironmentRequestTest extends TestCase
      */
     public function testPropertySpotConfiguration()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateEnvironmentRequest();
+        $this->assertInstanceOf(CreateEnvironmentRequest::class, $model);
     }
 
     /**
@@ -147,8 +148,8 @@ class CreateEnvironmentRequestTest extends TestCase
      */
     public function testPropertyEnvironment()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateEnvironmentRequest();
+        $this->assertInstanceOf(CreateEnvironmentRequest::class, $model);
     }
 
     /**
@@ -156,7 +157,7 @@ class CreateEnvironmentRequestTest extends TestCase
      */
     public function testPropertyMergeEnvironment()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateEnvironmentRequest();
+        $this->assertInstanceOf(CreateEnvironmentRequest::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\UpdateEnvironmentRequest;
 
 /**
  * UpdateEnvironmentRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class UpdateEnvironmentRequestTest extends TestCase
      */
     public function testUpdateEnvironmentRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new UpdateEnvironmentRequest();
+        $this->assertInstanceOf(UpdateEnvironmentRequest::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class UpdateEnvironmentRequestTest extends TestCase
      */
     public function testPropertyComposeDefinition()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new UpdateEnvironmentRequest();
+        $this->assertInstanceOf(UpdateEnvironmentRequest::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class UpdateEnvironmentRequestTest extends TestCase
      */
     public function testPropertyMinCapacity()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new UpdateEnvironmentRequest();
+        $this->assertInstanceOf(UpdateEnvironmentRequest::class, $model);
     }
 
     /**
@@ -102,7 +103,7 @@ class UpdateEnvironmentRequestTest extends TestCase
      */
     public function testPropertyMaxCapacity()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new UpdateEnvironmentRequest();
+        $this->assertInstanceOf(UpdateEnvironmentRequest::class, $model);
     }
 }

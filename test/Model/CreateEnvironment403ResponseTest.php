@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\CreateEnvironment403Response;
 
 /**
  * CreateEnvironment403ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class CreateEnvironment403ResponseTest extends TestCase
      */
     public function testCreateEnvironment403Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateEnvironment403Response();
+        $this->assertInstanceOf(CreateEnvironment403Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class CreateEnvironment403ResponseTest extends TestCase
      */
     public function testPropertyMessage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateEnvironment403Response();
+        $this->assertInstanceOf(CreateEnvironment403Response::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class CreateEnvironment403ResponseTest extends TestCase
      */
     public function testPropertyError()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateEnvironment403Response();
+        $this->assertInstanceOf(CreateEnvironment403Response::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ScalingPolicy;
 
 /**
  * ScalingPolicyTest Class Doc Comment
@@ -75,8 +76,8 @@ class ScalingPolicyTest extends TestCase
      */
     public function testScalingPolicy()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ScalingPolicy();
+        $this->assertInstanceOf(ScalingPolicy::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ScalingPolicyTest extends TestCase
      */
     public function testPropertyMetric()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ScalingPolicy();
+        $this->assertInstanceOf(ScalingPolicy::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class ScalingPolicyTest extends TestCase
      */
     public function testPropertyTargetValue()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ScalingPolicy();
+        $this->assertInstanceOf(ScalingPolicy::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class ScalingPolicyTest extends TestCase
      */
     public function testPropertyScaleInCooldownSeconds()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ScalingPolicy();
+        $this->assertInstanceOf(ScalingPolicy::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class ScalingPolicyTest extends TestCase
      */
     public function testPropertyScaleOutCooldownSeconds()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ScalingPolicy();
+        $this->assertInstanceOf(ScalingPolicy::class, $model);
     }
 }

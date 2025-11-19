@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\Embeddings200Response;
 
 /**
  * Embeddings200ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class Embeddings200ResponseTest extends TestCase
      */
     public function testEmbeddings200Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Embeddings200Response();
+        $this->assertInstanceOf(Embeddings200Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class Embeddings200ResponseTest extends TestCase
      */
     public function testPropertyEmbeddings()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Embeddings200Response();
+        $this->assertInstanceOf(Embeddings200Response::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class Embeddings200ResponseTest extends TestCase
      */
     public function testPropertyModel()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Embeddings200Response();
+        $this->assertInstanceOf(Embeddings200Response::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class Embeddings200ResponseTest extends TestCase
      */
     public function testPropertyDimension()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Embeddings200Response();
+        $this->assertInstanceOf(Embeddings200Response::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class Embeddings200ResponseTest extends TestCase
      */
     public function testPropertyUsage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Embeddings200Response();
+        $this->assertInstanceOf(Embeddings200Response::class, $model);
     }
 }

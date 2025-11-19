@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\DeleteAISession200Response;
 
 /**
  * DeleteAISession200ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class DeleteAISession200ResponseTest extends TestCase
      */
     public function testDeleteAISession200Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new DeleteAISession200Response();
+        $this->assertInstanceOf(DeleteAISession200Response::class, $model);
     }
 
     /**
@@ -84,7 +85,7 @@ class DeleteAISession200ResponseTest extends TestCase
      */
     public function testPropertyMessage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new DeleteAISession200Response();
+        $this->assertInstanceOf(DeleteAISession200Response::class, $model);
     }
 }

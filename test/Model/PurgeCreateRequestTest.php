@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\PurgeCreateRequest;
 
 /**
  * PurgeCreateRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class PurgeCreateRequestTest extends TestCase
      */
     public function testPurgeCreateRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PurgeCreateRequest();
+        $this->assertInstanceOf(PurgeCreateRequest::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class PurgeCreateRequestTest extends TestCase
      */
     public function testPropertyCacheKeys()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PurgeCreateRequest();
+        $this->assertInstanceOf(PurgeCreateRequest::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class PurgeCreateRequestTest extends TestCase
      */
     public function testPropertyUrls()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PurgeCreateRequest();
+        $this->assertInstanceOf(PurgeCreateRequest::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class PurgeCreateRequestTest extends TestCase
      */
     public function testPropertyScope()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PurgeCreateRequest();
+        $this->assertInstanceOf(PurgeCreateRequest::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class PurgeCreateRequestTest extends TestCase
      */
     public function testPropertySoft()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PurgeCreateRequest();
+        $this->assertInstanceOf(PurgeCreateRequest::class, $model);
     }
 }

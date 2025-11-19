@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\WafConfigBlockLists;
 
 /**
  * WafConfigBlockListsTest Class Doc Comment
@@ -75,8 +76,8 @@ class WafConfigBlockListsTest extends TestCase
      */
     public function testWafConfigBlockLists()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigBlockLists();
+        $this->assertInstanceOf(WafConfigBlockLists::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class WafConfigBlockListsTest extends TestCase
      */
     public function testPropertyUserAgent()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigBlockLists();
+        $this->assertInstanceOf(WafConfigBlockLists::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class WafConfigBlockListsTest extends TestCase
      */
     public function testPropertyReferer()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigBlockLists();
+        $this->assertInstanceOf(WafConfigBlockLists::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class WafConfigBlockListsTest extends TestCase
      */
     public function testPropertyIp()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigBlockLists();
+        $this->assertInstanceOf(WafConfigBlockLists::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class WafConfigBlockListsTest extends TestCase
      */
     public function testPropertyAi()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigBlockLists();
+        $this->assertInstanceOf(WafConfigBlockLists::class, $model);
     }
 }

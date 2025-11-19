@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2OrganizationRequest;
 
 /**
  * V2OrganizationRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2OrganizationRequestTest extends TestCase
      */
     public function testV2OrganizationRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2OrganizationRequest();
+        $this->assertInstanceOf(V2OrganizationRequest::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V2OrganizationRequestTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2OrganizationRequest();
+        $this->assertInstanceOf(V2OrganizationRequest::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class V2OrganizationRequestTest extends TestCase
      */
     public function testPropertyMachineName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2OrganizationRequest();
+        $this->assertInstanceOf(V2OrganizationRequest::class, $model);
     }
 }

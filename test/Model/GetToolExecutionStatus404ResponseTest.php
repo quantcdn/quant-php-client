@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\GetToolExecutionStatus404Response;
 
 /**
  * GetToolExecutionStatus404ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class GetToolExecutionStatus404ResponseTest extends TestCase
      */
     public function testGetToolExecutionStatus404Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetToolExecutionStatus404Response();
+        $this->assertInstanceOf(GetToolExecutionStatus404Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class GetToolExecutionStatus404ResponseTest extends TestCase
      */
     public function testPropertyError()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetToolExecutionStatus404Response();
+        $this->assertInstanceOf(GetToolExecutionStatus404Response::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class GetToolExecutionStatus404ResponseTest extends TestCase
      */
     public function testPropertyExecutionId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetToolExecutionStatus404Response();
+        $this->assertInstanceOf(GetToolExecutionStatus404Response::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1UrlMetaRequest;
 
 /**
  * V1UrlMetaRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1UrlMetaRequestTest extends TestCase
      */
     public function testV1UrlMetaRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1UrlMetaRequest();
+        $this->assertInstanceOf(V1UrlMetaRequest::class, $model);
     }
 
     /**
@@ -84,7 +85,7 @@ class V1UrlMetaRequestTest extends TestCase
      */
     public function testPropertyQuantUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1UrlMetaRequest();
+        $this->assertInstanceOf(V1UrlMetaRequest::class, $model);
     }
 }

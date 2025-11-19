@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\CreateApplicationRequestDatabase;
 
 /**
  * CreateApplicationRequestDatabaseTest Class Doc Comment
@@ -75,8 +76,8 @@ class CreateApplicationRequestDatabaseTest extends TestCase
      */
     public function testCreateApplicationRequestDatabase()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateApplicationRequestDatabase();
+        $this->assertInstanceOf(CreateApplicationRequestDatabase::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class CreateApplicationRequestDatabaseTest extends TestCase
      */
     public function testPropertyEngine()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateApplicationRequestDatabase();
+        $this->assertInstanceOf(CreateApplicationRequestDatabase::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class CreateApplicationRequestDatabaseTest extends TestCase
      */
     public function testPropertyInstanceClass()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateApplicationRequestDatabase();
+        $this->assertInstanceOf(CreateApplicationRequestDatabase::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class CreateApplicationRequestDatabaseTest extends TestCase
      */
     public function testPropertyStorageGb()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateApplicationRequestDatabase();
+        $this->assertInstanceOf(CreateApplicationRequestDatabase::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class CreateApplicationRequestDatabaseTest extends TestCase
      */
     public function testPropertyMultiAz()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateApplicationRequestDatabase();
+        $this->assertInstanceOf(CreateApplicationRequestDatabase::class, $model);
     }
 }

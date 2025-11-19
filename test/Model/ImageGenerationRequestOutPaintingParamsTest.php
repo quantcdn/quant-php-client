@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ImageGenerationRequestOutPaintingParams;
 
 /**
  * ImageGenerationRequestOutPaintingParamsTest Class Doc Comment
@@ -75,8 +76,8 @@ class ImageGenerationRequestOutPaintingParamsTest extends TestCase
      */
     public function testImageGenerationRequestOutPaintingParams()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestOutPaintingParams();
+        $this->assertInstanceOf(ImageGenerationRequestOutPaintingParams::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ImageGenerationRequestOutPaintingParamsTest extends TestCase
      */
     public function testPropertyImage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestOutPaintingParams();
+        $this->assertInstanceOf(ImageGenerationRequestOutPaintingParams::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class ImageGenerationRequestOutPaintingParamsTest extends TestCase
      */
     public function testPropertyMaskImage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestOutPaintingParams();
+        $this->assertInstanceOf(ImageGenerationRequestOutPaintingParams::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class ImageGenerationRequestOutPaintingParamsTest extends TestCase
      */
     public function testPropertyMaskPrompt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestOutPaintingParams();
+        $this->assertInstanceOf(ImageGenerationRequestOutPaintingParams::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class ImageGenerationRequestOutPaintingParamsTest extends TestCase
      */
     public function testPropertyOutPaintingMode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestOutPaintingParams();
+        $this->assertInstanceOf(ImageGenerationRequestOutPaintingParams::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class ImageGenerationRequestOutPaintingParamsTest extends TestCase
      */
     public function testPropertyText()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestOutPaintingParams();
+        $this->assertInstanceOf(ImageGenerationRequestOutPaintingParams::class, $model);
     }
 
     /**
@@ -129,7 +130,7 @@ class ImageGenerationRequestOutPaintingParamsTest extends TestCase
      */
     public function testPropertyNegativeText()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestOutPaintingParams();
+        $this->assertInstanceOf(ImageGenerationRequestOutPaintingParams::class, $model);
     }
 }

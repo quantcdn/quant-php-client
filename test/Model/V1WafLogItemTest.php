@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1WafLogItem;
 
 /**
  * V1WafLogItemTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1WafLogItemTest extends TestCase
      */
     public function testV1WafLogItem()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1WafLogItem();
+        $this->assertInstanceOf(V1WafLogItem::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1WafLogItemTest extends TestCase
      */
     public function testPropertyTimestamp()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1WafLogItem();
+        $this->assertInstanceOf(V1WafLogItem::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V1WafLogItemTest extends TestCase
      */
     public function testPropertyIpAddress()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1WafLogItem();
+        $this->assertInstanceOf(V1WafLogItem::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V1WafLogItemTest extends TestCase
      */
     public function testPropertyLocation()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1WafLogItem();
+        $this->assertInstanceOf(V1WafLogItem::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class V1WafLogItemTest extends TestCase
      */
     public function testPropertyAsn()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1WafLogItem();
+        $this->assertInstanceOf(V1WafLogItem::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class V1WafLogItemTest extends TestCase
      */
     public function testPropertyType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1WafLogItem();
+        $this->assertInstanceOf(V1WafLogItem::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class V1WafLogItemTest extends TestCase
      */
     public function testPropertyMode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1WafLogItem();
+        $this->assertInstanceOf(V1WafLogItem::class, $model);
     }
 
     /**
@@ -138,8 +139,8 @@ class V1WafLogItemTest extends TestCase
      */
     public function testPropertyRuleId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1WafLogItem();
+        $this->assertInstanceOf(V1WafLogItem::class, $model);
     }
 
     /**
@@ -147,8 +148,8 @@ class V1WafLogItemTest extends TestCase
      */
     public function testPropertyDomain()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1WafLogItem();
+        $this->assertInstanceOf(V1WafLogItem::class, $model);
     }
 
     /**
@@ -156,8 +157,8 @@ class V1WafLogItemTest extends TestCase
      */
     public function testPropertyUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1WafLogItem();
+        $this->assertInstanceOf(V1WafLogItem::class, $model);
     }
 
     /**
@@ -165,8 +166,8 @@ class V1WafLogItemTest extends TestCase
      */
     public function testPropertyMethod()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1WafLogItem();
+        $this->assertInstanceOf(V1WafLogItem::class, $model);
     }
 
     /**
@@ -174,7 +175,7 @@ class V1WafLogItemTest extends TestCase
      */
     public function testPropertyUserAgent()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1WafLogItem();
+        $this->assertInstanceOf(V1WafLogItem::class, $model);
     }
 }

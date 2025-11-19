@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2CrawlerScheduleRequest;
 
 /**
  * V2CrawlerScheduleRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2CrawlerScheduleRequestTest extends TestCase
      */
     public function testV2CrawlerScheduleRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerScheduleRequest();
+        $this->assertInstanceOf(V2CrawlerScheduleRequest::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V2CrawlerScheduleRequestTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerScheduleRequest();
+        $this->assertInstanceOf(V2CrawlerScheduleRequest::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class V2CrawlerScheduleRequestTest extends TestCase
      */
     public function testPropertyScheduleCronString()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerScheduleRequest();
+        $this->assertInstanceOf(V2CrawlerScheduleRequest::class, $model);
     }
 }

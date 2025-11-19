@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  quant-mock-api:
+    image: ghcr.io/quantcdn/quant-mock-api:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - API_PORT=8080
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  php-tests:
+    image: php:8.1-cli
+    depends_on:
+      quant-mock-api:
+        condition: service_healthy
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - QUANT_MOCK_API_HOST=http://quant-mock-api:8080
+      - QUANT_API_TOKEN=test-token
+    command: >
+      sh -c "
+        apt-get update && 
+        apt-get install -y git unzip curl &&
+        curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer &&
+        composer install --no-interaction --prefer-dist &&
+        vendor/bin/phpunit
+      "
+

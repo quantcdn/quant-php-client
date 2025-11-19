@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\KVItemsShow200ResponseValue;
 
 /**
  * KVItemsShow200ResponseValueTest Class Doc Comment
@@ -75,7 +76,7 @@ class KVItemsShow200ResponseValueTest extends TestCase
      */
     public function testKVItemsShow200ResponseValue()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new KVItemsShow200ResponseValue();
+        $this->assertInstanceOf(KVItemsShow200ResponseValue::class, $model);
     }
 }

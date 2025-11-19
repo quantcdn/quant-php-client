@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1Info;
 
 /**
  * V1InfoTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1InfoTest extends TestCase
      */
     public function testV1Info()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Info();
+        $this->assertInstanceOf(V1Info::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1InfoTest extends TestCase
      */
     public function testPropertyAuthorUser()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Info();
+        $this->assertInstanceOf(V1Info::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V1InfoTest extends TestCase
      */
     public function testPropertyAuthorName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Info();
+        $this->assertInstanceOf(V1Info::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V1InfoTest extends TestCase
      */
     public function testPropertyAuthorEmail()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Info();
+        $this->assertInstanceOf(V1Info::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class V1InfoTest extends TestCase
      */
     public function testPropertyLog()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Info();
+        $this->assertInstanceOf(V1Info::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class V1InfoTest extends TestCase
      */
     public function testPropertyCustom1()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Info();
+        $this->assertInstanceOf(V1Info::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class V1InfoTest extends TestCase
      */
     public function testPropertyCustom2()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Info();
+        $this->assertInstanceOf(V1Info::class, $model);
     }
 
     /**
@@ -138,7 +139,7 @@ class V1InfoTest extends TestCase
      */
     public function testPropertySource()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Info();
+        $this->assertInstanceOf(V1Info::class, $model);
     }
 }

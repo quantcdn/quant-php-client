@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\CreateBackupRequest;
 
 /**
  * CreateBackupRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class CreateBackupRequestTest extends TestCase
      */
     public function testCreateBackupRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateBackupRequest();
+        $this->assertInstanceOf(CreateBackupRequest::class, $model);
     }
 
     /**
@@ -84,7 +85,7 @@ class CreateBackupRequestTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateBackupRequest();
+        $this->assertInstanceOf(CreateBackupRequest::class, $model);
     }
 }

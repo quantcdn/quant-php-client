@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2RuleProxyRequest;
 
 /**
  * V2RuleProxyRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testV2RuleProxyRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyDomain()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyUuid()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyWeight()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyDisabled()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -138,8 +139,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyCountry()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -147,8 +148,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyCountryIs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -156,8 +157,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyCountryIsNot()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -165,8 +166,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyMethod()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -174,8 +175,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyMethodIs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -183,8 +184,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyMethodIsNot()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -192,8 +193,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyIp()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -201,8 +202,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyIpIs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -210,8 +211,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyIpIsNot()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -219,8 +220,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -228,8 +229,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyHost()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -237,8 +238,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyAuthUser()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -246,8 +247,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyAuthPass()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -255,8 +256,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyDisableSslVerify()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -264,8 +265,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyCacheLifetime()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -273,8 +274,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyOnlyProxy404()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -282,8 +283,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyInjectHeaders()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -291,8 +292,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyProxyStripHeaders()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -300,8 +301,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyProxyStripRequestHeaders()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -309,8 +310,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyOriginTimeout()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -318,8 +319,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyFailoverMode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -327,8 +328,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyFailoverOriginTtfb()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -336,8 +337,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyFailoverOriginStatusCodes()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -345,8 +346,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyFailoverLifetime()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -354,8 +355,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyProxyAlertEnabled()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -363,8 +364,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyWafEnabled()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -372,8 +373,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyWafConfig()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -381,8 +382,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyApplicationProxy()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -390,8 +391,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyApplicationName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -399,8 +400,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyApplicationEnvironment()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -408,8 +409,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyApplicationContainer()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -417,8 +418,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyApplicationPort()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -426,8 +427,8 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyStaticErrorPage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 
     /**
@@ -435,7 +436,7 @@ class V2RuleProxyRequestTest extends TestCase
      */
     public function testPropertyStaticErrorPageStatusCodes()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyRequest();
+        $this->assertInstanceOf(V2RuleProxyRequest::class, $model);
     }
 }

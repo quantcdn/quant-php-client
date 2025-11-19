@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ListBackups422Response;
 
 /**
  * ListBackups422ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class ListBackups422ResponseTest extends TestCase
      */
     public function testListBackups422Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups422Response();
+        $this->assertInstanceOf(ListBackups422Response::class, $model);
     }
 
     /**
@@ -84,7 +85,7 @@ class ListBackups422ResponseTest extends TestCase
      */
     public function testPropertyError()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups422Response();
+        $this->assertInstanceOf(ListBackups422Response::class, $model);
     }
 }

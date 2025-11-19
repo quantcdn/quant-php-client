@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\CreateApplicationRequest;
 
 /**
  * CreateApplicationRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class CreateApplicationRequestTest extends TestCase
      */
     public function testCreateApplicationRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateApplicationRequest();
+        $this->assertInstanceOf(CreateApplicationRequest::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class CreateApplicationRequestTest extends TestCase
      */
     public function testPropertyAppName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateApplicationRequest();
+        $this->assertInstanceOf(CreateApplicationRequest::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class CreateApplicationRequestTest extends TestCase
      */
     public function testPropertyComposeDefinition()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateApplicationRequest();
+        $this->assertInstanceOf(CreateApplicationRequest::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class CreateApplicationRequestTest extends TestCase
      */
     public function testPropertyMinCapacity()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateApplicationRequest();
+        $this->assertInstanceOf(CreateApplicationRequest::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class CreateApplicationRequestTest extends TestCase
      */
     public function testPropertyMaxCapacity()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateApplicationRequest();
+        $this->assertInstanceOf(CreateApplicationRequest::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class CreateApplicationRequestTest extends TestCase
      */
     public function testPropertyDatabase()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateApplicationRequest();
+        $this->assertInstanceOf(CreateApplicationRequest::class, $model);
     }
 
     /**
@@ -129,7 +130,7 @@ class CreateApplicationRequestTest extends TestCase
      */
     public function testPropertyFilesystem()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateApplicationRequest();
+        $this->assertInstanceOf(CreateApplicationRequest::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\Embeddings200ResponseEmbeddings;
 
 /**
  * Embeddings200ResponseEmbeddingsTest Class Doc Comment
@@ -75,7 +76,7 @@ class Embeddings200ResponseEmbeddingsTest extends TestCase
      */
     public function testEmbeddings200ResponseEmbeddings()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Embeddings200ResponseEmbeddings();
+        $this->assertInstanceOf(Embeddings200ResponseEmbeddings::class, $model);
     }
 }

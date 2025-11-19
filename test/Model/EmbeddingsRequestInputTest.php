@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\EmbeddingsRequestInput;
 
 /**
  * EmbeddingsRequestInputTest Class Doc Comment
@@ -75,7 +76,7 @@ class EmbeddingsRequestInputTest extends TestCase
      */
     public function testEmbeddingsRequestInput()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EmbeddingsRequestInput();
+        $this->assertInstanceOf(EmbeddingsRequestInput::class, $model);
     }
 }

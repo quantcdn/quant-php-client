@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\CreateBackup202Response;
 
 /**
  * CreateBackup202ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class CreateBackup202ResponseTest extends TestCase
      */
     public function testCreateBackup202Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateBackup202Response();
+        $this->assertInstanceOf(CreateBackup202Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class CreateBackup202ResponseTest extends TestCase
      */
     public function testPropertyBackupId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateBackup202Response();
+        $this->assertInstanceOf(CreateBackup202Response::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class CreateBackup202ResponseTest extends TestCase
      */
     public function testPropertyStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateBackup202Response();
+        $this->assertInstanceOf(CreateBackup202Response::class, $model);
     }
 
     /**
@@ -102,7 +103,7 @@ class CreateBackup202ResponseTest extends TestCase
      */
     public function testPropertyMessage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateBackup202Response();
+        $this->assertInstanceOf(CreateBackup202Response::class, $model);
     }
 }

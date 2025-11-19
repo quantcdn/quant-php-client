@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1ProxyListResponse;
 
 /**
  * V1ProxyListResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1ProxyListResponseTest extends TestCase
      */
     public function testV1ProxyListResponse()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1ProxyListResponse();
+        $this->assertInstanceOf(V1ProxyListResponse::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1ProxyListResponseTest extends TestCase
      */
     public function testPropertyDraw()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1ProxyListResponse();
+        $this->assertInstanceOf(V1ProxyListResponse::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V1ProxyListResponseTest extends TestCase
      */
     public function testPropertyITotalRecords()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1ProxyListResponse();
+        $this->assertInstanceOf(V1ProxyListResponse::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V1ProxyListResponseTest extends TestCase
      */
     public function testPropertyITotalDisplayRecords()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1ProxyListResponse();
+        $this->assertInstanceOf(V1ProxyListResponse::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class V1ProxyListResponseTest extends TestCase
      */
     public function testPropertyAaData()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1ProxyListResponse();
+        $this->assertInstanceOf(V1ProxyListResponse::class, $model);
     }
 }

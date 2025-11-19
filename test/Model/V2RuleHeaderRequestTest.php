@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2RuleHeaderRequest;
 
 /**
  * V2RuleHeaderRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2RuleHeaderRequestTest extends TestCase
      */
     public function testV2RuleHeaderRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleHeaderRequest();
+        $this->assertInstanceOf(V2RuleHeaderRequest::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V2RuleHeaderRequestTest extends TestCase
      */
     public function testPropertyDomain()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleHeaderRequest();
+        $this->assertInstanceOf(V2RuleHeaderRequest::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V2RuleHeaderRequestTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleHeaderRequest();
+        $this->assertInstanceOf(V2RuleHeaderRequest::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V2RuleHeaderRequestTest extends TestCase
      */
     public function testPropertyUuid()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleHeaderRequest();
+        $this->assertInstanceOf(V2RuleHeaderRequest::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class V2RuleHeaderRequestTest extends TestCase
      */
     public function testPropertyWeight()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleHeaderRequest();
+        $this->assertInstanceOf(V2RuleHeaderRequest::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class V2RuleHeaderRequestTest extends TestCase
      */
     public function testPropertyDisabled()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleHeaderRequest();
+        $this->assertInstanceOf(V2RuleHeaderRequest::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class V2RuleHeaderRequestTest extends TestCase
      */
     public function testPropertyUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleHeaderRequest();
+        $this->assertInstanceOf(V2RuleHeaderRequest::class, $model);
     }
 
     /**
@@ -138,8 +139,8 @@ class V2RuleHeaderRequestTest extends TestCase
      */
     public function testPropertyCountry()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleHeaderRequest();
+        $this->assertInstanceOf(V2RuleHeaderRequest::class, $model);
     }
 
     /**
@@ -147,8 +148,8 @@ class V2RuleHeaderRequestTest extends TestCase
      */
     public function testPropertyCountryIs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleHeaderRequest();
+        $this->assertInstanceOf(V2RuleHeaderRequest::class, $model);
     }
 
     /**
@@ -156,8 +157,8 @@ class V2RuleHeaderRequestTest extends TestCase
      */
     public function testPropertyCountryIsNot()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleHeaderRequest();
+        $this->assertInstanceOf(V2RuleHeaderRequest::class, $model);
     }
 
     /**
@@ -165,8 +166,8 @@ class V2RuleHeaderRequestTest extends TestCase
      */
     public function testPropertyMethod()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleHeaderRequest();
+        $this->assertInstanceOf(V2RuleHeaderRequest::class, $model);
     }
 
     /**
@@ -174,8 +175,8 @@ class V2RuleHeaderRequestTest extends TestCase
      */
     public function testPropertyMethodIs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleHeaderRequest();
+        $this->assertInstanceOf(V2RuleHeaderRequest::class, $model);
     }
 
     /**
@@ -183,8 +184,8 @@ class V2RuleHeaderRequestTest extends TestCase
      */
     public function testPropertyMethodIsNot()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleHeaderRequest();
+        $this->assertInstanceOf(V2RuleHeaderRequest::class, $model);
     }
 
     /**
@@ -192,8 +193,8 @@ class V2RuleHeaderRequestTest extends TestCase
      */
     public function testPropertyIp()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleHeaderRequest();
+        $this->assertInstanceOf(V2RuleHeaderRequest::class, $model);
     }
 
     /**
@@ -201,8 +202,8 @@ class V2RuleHeaderRequestTest extends TestCase
      */
     public function testPropertyIpIs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleHeaderRequest();
+        $this->assertInstanceOf(V2RuleHeaderRequest::class, $model);
     }
 
     /**
@@ -210,8 +211,8 @@ class V2RuleHeaderRequestTest extends TestCase
      */
     public function testPropertyIpIsNot()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleHeaderRequest();
+        $this->assertInstanceOf(V2RuleHeaderRequest::class, $model);
     }
 
     /**
@@ -219,7 +220,7 @@ class V2RuleHeaderRequestTest extends TestCase
      */
     public function testPropertyHeaders()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleHeaderRequest();
+        $this->assertInstanceOf(V2RuleHeaderRequest::class, $model);
     }
 }

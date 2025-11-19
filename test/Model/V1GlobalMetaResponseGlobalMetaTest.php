@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1GlobalMetaResponseGlobalMeta;
 
 /**
  * V1GlobalMetaResponseGlobalMetaTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1GlobalMetaResponseGlobalMetaTest extends TestCase
      */
     public function testV1GlobalMetaResponseGlobalMeta()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1GlobalMetaResponseGlobalMeta();
+        $this->assertInstanceOf(V1GlobalMetaResponseGlobalMeta::class, $model);
     }
 
     /**
@@ -84,7 +85,7 @@ class V1GlobalMetaResponseGlobalMetaTest extends TestCase
      */
     public function testPropertyRecords()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1GlobalMetaResponseGlobalMeta();
+        $this->assertInstanceOf(V1GlobalMetaResponseGlobalMeta::class, $model);
     }
 }

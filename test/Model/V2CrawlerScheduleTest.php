@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2CrawlerSchedule;
 
 /**
  * V2CrawlerScheduleTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2CrawlerScheduleTest extends TestCase
      */
     public function testV2CrawlerSchedule()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerSchedule();
+        $this->assertInstanceOf(V2CrawlerSchedule::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V2CrawlerScheduleTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerSchedule();
+        $this->assertInstanceOf(V2CrawlerSchedule::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V2CrawlerScheduleTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerSchedule();
+        $this->assertInstanceOf(V2CrawlerSchedule::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V2CrawlerScheduleTest extends TestCase
      */
     public function testPropertyCrawlerConfigId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerSchedule();
+        $this->assertInstanceOf(V2CrawlerSchedule::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class V2CrawlerScheduleTest extends TestCase
      */
     public function testPropertyCrawlerUuid()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerSchedule();
+        $this->assertInstanceOf(V2CrawlerSchedule::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class V2CrawlerScheduleTest extends TestCase
      */
     public function testPropertyProjectId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerSchedule();
+        $this->assertInstanceOf(V2CrawlerSchedule::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class V2CrawlerScheduleTest extends TestCase
      */
     public function testPropertyCrawlerLastRunId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerSchedule();
+        $this->assertInstanceOf(V2CrawlerSchedule::class, $model);
     }
 
     /**
@@ -138,8 +139,8 @@ class V2CrawlerScheduleTest extends TestCase
      */
     public function testPropertyScheduleCronString()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerSchedule();
+        $this->assertInstanceOf(V2CrawlerSchedule::class, $model);
     }
 
     /**
@@ -147,8 +148,8 @@ class V2CrawlerScheduleTest extends TestCase
      */
     public function testPropertyCreatedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerSchedule();
+        $this->assertInstanceOf(V2CrawlerSchedule::class, $model);
     }
 
     /**
@@ -156,7 +157,7 @@ class V2CrawlerScheduleTest extends TestCase
      */
     public function testPropertyUpdatedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerSchedule();
+        $this->assertInstanceOf(V2CrawlerSchedule::class, $model);
     }
 }

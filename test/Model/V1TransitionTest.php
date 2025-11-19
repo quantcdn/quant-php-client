@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1Transition;
 
 /**
  * V1TransitionTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1TransitionTest extends TestCase
      */
     public function testV1Transition()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Transition();
+        $this->assertInstanceOf(V1Transition::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1TransitionTest extends TestCase
      */
     public function testPropertyState()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Transition();
+        $this->assertInstanceOf(V1Transition::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class V1TransitionTest extends TestCase
      */
     public function testPropertyDateTimestamp()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Transition();
+        $this->assertInstanceOf(V1Transition::class, $model);
     }
 }

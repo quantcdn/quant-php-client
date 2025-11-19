@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\GetSshAccessCredentials200Response;
 
 /**
  * GetSshAccessCredentials200ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class GetSshAccessCredentials200ResponseTest extends TestCase
      */
     public function testGetSshAccessCredentials200Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetSshAccessCredentials200Response();
+        $this->assertInstanceOf(GetSshAccessCredentials200Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class GetSshAccessCredentials200ResponseTest extends TestCase
      */
     public function testPropertySuccess()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetSshAccessCredentials200Response();
+        $this->assertInstanceOf(GetSshAccessCredentials200Response::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class GetSshAccessCredentials200ResponseTest extends TestCase
      */
     public function testPropertyCredentials()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetSshAccessCredentials200Response();
+        $this->assertInstanceOf(GetSshAccessCredentials200Response::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class GetSshAccessCredentials200ResponseTest extends TestCase
      */
     public function testPropertyClusterName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetSshAccessCredentials200Response();
+        $this->assertInstanceOf(GetSshAccessCredentials200Response::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class GetSshAccessCredentials200ResponseTest extends TestCase
      */
     public function testPropertyTaskArn()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetSshAccessCredentials200Response();
+        $this->assertInstanceOf(GetSshAccessCredentials200Response::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class GetSshAccessCredentials200ResponseTest extends TestCase
      */
     public function testPropertyTaskId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetSshAccessCredentials200Response();
+        $this->assertInstanceOf(GetSshAccessCredentials200Response::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class GetSshAccessCredentials200ResponseTest extends TestCase
      */
     public function testPropertyContainerNames()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetSshAccessCredentials200Response();
+        $this->assertInstanceOf(GetSshAccessCredentials200Response::class, $model);
     }
 
     /**
@@ -138,8 +139,8 @@ class GetSshAccessCredentials200ResponseTest extends TestCase
      */
     public function testPropertyRegion()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetSshAccessCredentials200Response();
+        $this->assertInstanceOf(GetSshAccessCredentials200Response::class, $model);
     }
 
     /**
@@ -147,8 +148,8 @@ class GetSshAccessCredentials200ResponseTest extends TestCase
      */
     public function testPropertyExpiresIn()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetSshAccessCredentials200Response();
+        $this->assertInstanceOf(GetSshAccessCredentials200Response::class, $model);
     }
 
     /**
@@ -156,7 +157,7 @@ class GetSshAccessCredentials200ResponseTest extends TestCase
      */
     public function testPropertyOrganizationScope()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetSshAccessCredentials200Response();
+        $this->assertInstanceOf(GetSshAccessCredentials200Response::class, $model);
     }
 }

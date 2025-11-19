@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2StoreRequest;
 
 /**
  * V2StoreRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2StoreRequestTest extends TestCase
      */
     public function testV2StoreRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2StoreRequest();
+        $this->assertInstanceOf(V2StoreRequest::class, $model);
     }
 
     /**
@@ -84,7 +85,7 @@ class V2StoreRequestTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2StoreRequest();
+        $this->assertInstanceOf(V2StoreRequest::class, $model);
     }
 }

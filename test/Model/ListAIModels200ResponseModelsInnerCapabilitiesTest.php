@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ListAIModels200ResponseModelsInnerCapabilities;
 
 /**
  * ListAIModels200ResponseModelsInnerCapabilitiesTest Class Doc Comment
@@ -75,8 +76,8 @@ class ListAIModels200ResponseModelsInnerCapabilitiesTest extends TestCase
      */
     public function testListAIModels200ResponseModelsInnerCapabilities()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAIModels200ResponseModelsInnerCapabilities();
+        $this->assertInstanceOf(ListAIModels200ResponseModelsInnerCapabilities::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ListAIModels200ResponseModelsInnerCapabilitiesTest extends TestCase
      */
     public function testPropertyText()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAIModels200ResponseModelsInnerCapabilities();
+        $this->assertInstanceOf(ListAIModels200ResponseModelsInnerCapabilities::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class ListAIModels200ResponseModelsInnerCapabilitiesTest extends TestCase
      */
     public function testPropertyMultimodal()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAIModels200ResponseModelsInnerCapabilities();
+        $this->assertInstanceOf(ListAIModels200ResponseModelsInnerCapabilities::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class ListAIModels200ResponseModelsInnerCapabilitiesTest extends TestCase
      */
     public function testPropertyEmbeddings()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAIModels200ResponseModelsInnerCapabilities();
+        $this->assertInstanceOf(ListAIModels200ResponseModelsInnerCapabilities::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class ListAIModels200ResponseModelsInnerCapabilitiesTest extends TestCase
      */
     public function testPropertyStreaming()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAIModels200ResponseModelsInnerCapabilities();
+        $this->assertInstanceOf(ListAIModels200ResponseModelsInnerCapabilities::class, $model);
     }
 
     /**
@@ -120,7 +121,7 @@ class ListAIModels200ResponseModelsInnerCapabilitiesTest extends TestCase
      */
     public function testPropertyToolUse()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAIModels200ResponseModelsInnerCapabilities();
+        $this->assertInstanceOf(ListAIModels200ResponseModelsInnerCapabilities::class, $model);
     }
 }

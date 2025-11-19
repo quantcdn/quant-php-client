@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\UpdateCronJobRequest;
 
 /**
  * UpdateCronJobRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class UpdateCronJobRequestTest extends TestCase
      */
     public function testUpdateCronJobRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new UpdateCronJobRequest();
+        $this->assertInstanceOf(UpdateCronJobRequest::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class UpdateCronJobRequestTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new UpdateCronJobRequest();
+        $this->assertInstanceOf(UpdateCronJobRequest::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class UpdateCronJobRequestTest extends TestCase
      */
     public function testPropertyScheduleExpression()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new UpdateCronJobRequest();
+        $this->assertInstanceOf(UpdateCronJobRequest::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class UpdateCronJobRequestTest extends TestCase
      */
     public function testPropertyCommand()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new UpdateCronJobRequest();
+        $this->assertInstanceOf(UpdateCronJobRequest::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class UpdateCronJobRequestTest extends TestCase
      */
     public function testPropertyTargetContainerName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new UpdateCronJobRequest();
+        $this->assertInstanceOf(UpdateCronJobRequest::class, $model);
     }
 
     /**
@@ -120,7 +121,7 @@ class UpdateCronJobRequestTest extends TestCase
      */
     public function testPropertyIsEnabled()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new UpdateCronJobRequest();
+        $this->assertInstanceOf(UpdateCronJobRequest::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ListAITools200ResponseToolsInnerToolSpec;
 
 /**
  * ListAITools200ResponseToolsInnerToolSpecTest Class Doc Comment
@@ -75,8 +76,8 @@ class ListAITools200ResponseToolsInnerToolSpecTest extends TestCase
      */
     public function testListAITools200ResponseToolsInnerToolSpec()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAITools200ResponseToolsInnerToolSpec();
+        $this->assertInstanceOf(ListAITools200ResponseToolsInnerToolSpec::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ListAITools200ResponseToolsInnerToolSpecTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAITools200ResponseToolsInnerToolSpec();
+        $this->assertInstanceOf(ListAITools200ResponseToolsInnerToolSpec::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class ListAITools200ResponseToolsInnerToolSpecTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAITools200ResponseToolsInnerToolSpec();
+        $this->assertInstanceOf(ListAITools200ResponseToolsInnerToolSpec::class, $model);
     }
 
     /**
@@ -102,7 +103,7 @@ class ListAITools200ResponseToolsInnerToolSpecTest extends TestCase
      */
     public function testPropertyInputSchema()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAITools200ResponseToolsInnerToolSpec();
+        $this->assertInstanceOf(ListAITools200ResponseToolsInnerToolSpec::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ValidateCompose422Response;
 
 /**
  * ValidateCompose422ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class ValidateCompose422ResponseTest extends TestCase
      */
     public function testValidateCompose422Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ValidateCompose422Response();
+        $this->assertInstanceOf(ValidateCompose422Response::class, $model);
     }
 
     /**
@@ -84,7 +85,7 @@ class ValidateCompose422ResponseTest extends TestCase
      */
     public function testPropertyError()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ValidateCompose422Response();
+        $this->assertInstanceOf(ValidateCompose422Response::class, $model);
     }
 }

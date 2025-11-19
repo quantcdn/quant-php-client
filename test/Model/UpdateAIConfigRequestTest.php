@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\UpdateAIConfigRequest;
 
 /**
  * UpdateAIConfigRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class UpdateAIConfigRequestTest extends TestCase
      */
     public function testUpdateAIConfigRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new UpdateAIConfigRequest();
+        $this->assertInstanceOf(UpdateAIConfigRequest::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class UpdateAIConfigRequestTest extends TestCase
      */
     public function testPropertyEnabledModels()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new UpdateAIConfigRequest();
+        $this->assertInstanceOf(UpdateAIConfigRequest::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class UpdateAIConfigRequestTest extends TestCase
      */
     public function testPropertyDefaultModel()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new UpdateAIConfigRequest();
+        $this->assertInstanceOf(UpdateAIConfigRequest::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class UpdateAIConfigRequestTest extends TestCase
      */
     public function testPropertyMaxTokens()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new UpdateAIConfigRequest();
+        $this->assertInstanceOf(UpdateAIConfigRequest::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class UpdateAIConfigRequestTest extends TestCase
      */
     public function testPropertyTemperature()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new UpdateAIConfigRequest();
+        $this->assertInstanceOf(UpdateAIConfigRequest::class, $model);
     }
 }

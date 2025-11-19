@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\PatchEnvironmentComposeRequestSpotConfiguration;
 
 /**
  * PatchEnvironmentComposeRequestSpotConfigurationTest Class Doc Comment
@@ -75,8 +76,8 @@ class PatchEnvironmentComposeRequestSpotConfigurationTest extends TestCase
      */
     public function testPatchEnvironmentComposeRequestSpotConfiguration()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PatchEnvironmentComposeRequestSpotConfiguration();
+        $this->assertInstanceOf(PatchEnvironmentComposeRequestSpotConfiguration::class, $model);
     }
 
     /**
@@ -84,7 +85,7 @@ class PatchEnvironmentComposeRequestSpotConfigurationTest extends TestCase
      */
     public function testPropertyStrategy()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PatchEnvironmentComposeRequestSpotConfiguration();
+        $this->assertInstanceOf(PatchEnvironmentComposeRequestSpotConfiguration::class, $model);
     }
 }

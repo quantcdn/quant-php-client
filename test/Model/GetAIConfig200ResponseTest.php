@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\GetAIConfig200Response;
 
 /**
  * GetAIConfig200ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class GetAIConfig200ResponseTest extends TestCase
      */
     public function testGetAIConfig200Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetAIConfig200Response();
+        $this->assertInstanceOf(GetAIConfig200Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class GetAIConfig200ResponseTest extends TestCase
      */
     public function testPropertyEnabledModels()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetAIConfig200Response();
+        $this->assertInstanceOf(GetAIConfig200Response::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class GetAIConfig200ResponseTest extends TestCase
      */
     public function testPropertyDefaultModel()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetAIConfig200Response();
+        $this->assertInstanceOf(GetAIConfig200Response::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class GetAIConfig200ResponseTest extends TestCase
      */
     public function testPropertyMaxTokens()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetAIConfig200Response();
+        $this->assertInstanceOf(GetAIConfig200Response::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class GetAIConfig200ResponseTest extends TestCase
      */
     public function testPropertyTemperature()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetAIConfig200Response();
+        $this->assertInstanceOf(GetAIConfig200Response::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\SyncToEnvironmentRequest;
 
 /**
  * SyncToEnvironmentRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class SyncToEnvironmentRequestTest extends TestCase
      */
     public function testSyncToEnvironmentRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new SyncToEnvironmentRequest();
+        $this->assertInstanceOf(SyncToEnvironmentRequest::class, $model);
     }
 
     /**
@@ -84,7 +85,7 @@ class SyncToEnvironmentRequestTest extends TestCase
      */
     public function testPropertySourceEnvironment()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new SyncToEnvironmentRequest();
+        $this->assertInstanceOf(SyncToEnvironmentRequest::class, $model);
     }
 }

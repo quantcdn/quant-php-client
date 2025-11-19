@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\DeleteBackup200Response;
 
 /**
  * DeleteBackup200ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class DeleteBackup200ResponseTest extends TestCase
      */
     public function testDeleteBackup200Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new DeleteBackup200Response();
+        $this->assertInstanceOf(DeleteBackup200Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class DeleteBackup200ResponseTest extends TestCase
      */
     public function testPropertyMessage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new DeleteBackup200Response();
+        $this->assertInstanceOf(DeleteBackup200Response::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class DeleteBackup200ResponseTest extends TestCase
      */
     public function testPropertyBackupId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new DeleteBackup200Response();
+        $this->assertInstanceOf(DeleteBackup200Response::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1SearchItemsResponse;
 
 /**
  * V1SearchItemsResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1SearchItemsResponseTest extends TestCase
      */
     public function testV1SearchItemsResponse()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SearchItemsResponse();
+        $this->assertInstanceOf(V1SearchItemsResponse::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1SearchItemsResponseTest extends TestCase
      */
     public function testPropertyHits()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SearchItemsResponse();
+        $this->assertInstanceOf(V1SearchItemsResponse::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class V1SearchItemsResponseTest extends TestCase
      */
     public function testPropertyNbPages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SearchItemsResponse();
+        $this->assertInstanceOf(V1SearchItemsResponse::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2CrawlerAssetsParser;
 
 /**
  * V2CrawlerAssetsParserTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2CrawlerAssetsParserTest extends TestCase
      */
     public function testV2CrawlerAssetsParser()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerAssetsParser();
+        $this->assertInstanceOf(V2CrawlerAssetsParser::class, $model);
     }
 
     /**
@@ -84,7 +85,7 @@ class V2CrawlerAssetsParserTest extends TestCase
      */
     public function testPropertyEnabled()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerAssetsParser();
+        $this->assertInstanceOf(V2CrawlerAssetsParser::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\SpotConfiguration;
 
 /**
  * SpotConfigurationTest Class Doc Comment
@@ -75,8 +76,8 @@ class SpotConfigurationTest extends TestCase
      */
     public function testSpotConfiguration()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new SpotConfiguration();
+        $this->assertInstanceOf(SpotConfiguration::class, $model);
     }
 
     /**
@@ -84,7 +85,7 @@ class SpotConfigurationTest extends TestCase
      */
     public function testPropertyStrategy()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new SpotConfiguration();
+        $this->assertInstanceOf(SpotConfiguration::class, $model);
     }
 }

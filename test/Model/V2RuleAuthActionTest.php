@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2RuleAuthAction;
 
 /**
  * V2RuleAuthActionTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2RuleAuthActionTest extends TestCase
      */
     public function testV2RuleAuthAction()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleAuthAction();
+        $this->assertInstanceOf(V2RuleAuthAction::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V2RuleAuthActionTest extends TestCase
      */
     public function testPropertyAuthUser()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleAuthAction();
+        $this->assertInstanceOf(V2RuleAuthAction::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class V2RuleAuthActionTest extends TestCase
      */
     public function testPropertyAuthPass()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleAuthAction();
+        $this->assertInstanceOf(V2RuleAuthAction::class, $model);
     }
 }

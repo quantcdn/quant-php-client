@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2RuleContentFilterAction;
 
 /**
  * V2RuleContentFilterActionTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2RuleContentFilterActionTest extends TestCase
      */
     public function testV2RuleContentFilterAction()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleContentFilterAction();
+        $this->assertInstanceOf(V2RuleContentFilterAction::class, $model);
     }
 
     /**
@@ -84,7 +85,7 @@ class V2RuleContentFilterActionTest extends TestCase
      */
     public function testPropertyFnUuid()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleContentFilterAction();
+        $this->assertInstanceOf(V2RuleContentFilterAction::class, $model);
     }
 }

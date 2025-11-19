@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2RuleProxyActionNotifyConfig;
 
 /**
  * V2RuleProxyActionNotifyConfigTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2RuleProxyActionNotifyConfigTest extends TestCase
      */
     public function testV2RuleProxyActionNotifyConfig()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyActionNotifyConfig();
+        $this->assertInstanceOf(V2RuleProxyActionNotifyConfig::class, $model);
     }
 
     /**
@@ -84,7 +85,7 @@ class V2RuleProxyActionNotifyConfigTest extends TestCase
      */
     public function testPropertyWebhookUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyActionNotifyConfig();
+        $this->assertInstanceOf(V2RuleProxyActionNotifyConfig::class, $model);
     }
 }

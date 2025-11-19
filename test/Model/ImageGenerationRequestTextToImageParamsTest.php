@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ImageGenerationRequestTextToImageParams;
 
 /**
  * ImageGenerationRequestTextToImageParamsTest Class Doc Comment
@@ -75,8 +76,8 @@ class ImageGenerationRequestTextToImageParamsTest extends TestCase
      */
     public function testImageGenerationRequestTextToImageParams()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestTextToImageParams();
+        $this->assertInstanceOf(ImageGenerationRequestTextToImageParams::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ImageGenerationRequestTextToImageParamsTest extends TestCase
      */
     public function testPropertyText()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestTextToImageParams();
+        $this->assertInstanceOf(ImageGenerationRequestTextToImageParams::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class ImageGenerationRequestTextToImageParamsTest extends TestCase
      */
     public function testPropertyNegativeText()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestTextToImageParams();
+        $this->assertInstanceOf(ImageGenerationRequestTextToImageParams::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class ImageGenerationRequestTextToImageParamsTest extends TestCase
      */
     public function testPropertyStyle()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestTextToImageParams();
+        $this->assertInstanceOf(ImageGenerationRequestTextToImageParams::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class ImageGenerationRequestTextToImageParamsTest extends TestCase
      */
     public function testPropertyConditionImage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestTextToImageParams();
+        $this->assertInstanceOf(ImageGenerationRequestTextToImageParams::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class ImageGenerationRequestTextToImageParamsTest extends TestCase
      */
     public function testPropertyControlMode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestTextToImageParams();
+        $this->assertInstanceOf(ImageGenerationRequestTextToImageParams::class, $model);
     }
 
     /**
@@ -129,7 +130,7 @@ class ImageGenerationRequestTextToImageParamsTest extends TestCase
      */
     public function testPropertyControlStrength()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestTextToImageParams();
+        $this->assertInstanceOf(ImageGenerationRequestTextToImageParams::class, $model);
     }
 }

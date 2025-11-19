@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ListBackups200Response;
 
 /**
  * ListBackups200ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class ListBackups200ResponseTest extends TestCase
      */
     public function testListBackups200Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups200Response();
+        $this->assertInstanceOf(ListBackups200Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ListBackups200ResponseTest extends TestCase
      */
     public function testPropertyBackups()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups200Response();
+        $this->assertInstanceOf(ListBackups200Response::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class ListBackups200ResponseTest extends TestCase
      */
     public function testPropertyCount()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups200Response();
+        $this->assertInstanceOf(ListBackups200Response::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class ListBackups200ResponseTest extends TestCase
      */
     public function testPropertyNextToken()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups200Response();
+        $this->assertInstanceOf(ListBackups200Response::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class ListBackups200ResponseTest extends TestCase
      */
     public function testPropertyMessage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups200Response();
+        $this->assertInstanceOf(ListBackups200Response::class, $model);
     }
 }

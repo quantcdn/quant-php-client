@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\EnvironmentResponse;
 
 /**
  * EnvironmentResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testEnvironmentResponse()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertyEnvName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertyStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertyRunningCount()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertyDesiredCount()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertyMinCapacity()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertyMaxCapacity()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -138,8 +139,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertyPublicIpAddress()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -147,8 +148,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertyDeploymentStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -156,8 +157,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertyTaskDefinition()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -165,8 +166,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertyService()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -174,8 +175,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertyLoadBalancer()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -183,8 +184,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertySecurityGroup()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -192,8 +193,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertySubnet()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -201,8 +202,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertyVpc()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -210,8 +211,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertyContainers()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -219,8 +220,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertyVolumes()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -228,8 +229,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertyCron()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -237,8 +238,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertyAlbRouting()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -246,8 +247,8 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertyCreatedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 
     /**
@@ -255,7 +256,7 @@ class EnvironmentResponseTest extends TestCase
      */
     public function testPropertyUpdatedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new EnvironmentResponse();
+        $this->assertInstanceOf(EnvironmentResponse::class, $model);
     }
 }

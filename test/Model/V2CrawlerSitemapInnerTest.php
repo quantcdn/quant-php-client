@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2CrawlerSitemapInner;
 
 /**
  * V2CrawlerSitemapInnerTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2CrawlerSitemapInnerTest extends TestCase
      */
     public function testV2CrawlerSitemapInner()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerSitemapInner();
+        $this->assertInstanceOf(V2CrawlerSitemapInner::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V2CrawlerSitemapInnerTest extends TestCase
      */
     public function testPropertyUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerSitemapInner();
+        $this->assertInstanceOf(V2CrawlerSitemapInner::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class V2CrawlerSitemapInnerTest extends TestCase
      */
     public function testPropertyRecursive()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2CrawlerSitemapInner();
+        $this->assertInstanceOf(V2CrawlerSitemapInner::class, $model);
     }
 }

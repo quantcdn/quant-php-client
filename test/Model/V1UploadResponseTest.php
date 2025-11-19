@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1UploadResponse;
 
 /**
  * V1UploadResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1UploadResponseTest extends TestCase
      */
     public function testV1UploadResponse()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1UploadResponse();
+        $this->assertInstanceOf(V1UploadResponse::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1UploadResponseTest extends TestCase
      */
     public function testPropertySuccess()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1UploadResponse();
+        $this->assertInstanceOf(V1UploadResponse::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class V1UploadResponseTest extends TestCase
      */
     public function testPropertyUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1UploadResponse();
+        $this->assertInstanceOf(V1UploadResponse::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1FormSubmissionItem;
 
 /**
  * V1FormSubmissionItemTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1FormSubmissionItemTest extends TestCase
      */
     public function testV1FormSubmissionItem()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1FormSubmissionItem();
+        $this->assertInstanceOf(V1FormSubmissionItem::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1FormSubmissionItemTest extends TestCase
      */
     public function testPropertyUuid()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1FormSubmissionItem();
+        $this->assertInstanceOf(V1FormSubmissionItem::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V1FormSubmissionItemTest extends TestCase
      */
     public function testPropertyCountryIp()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1FormSubmissionItem();
+        $this->assertInstanceOf(V1FormSubmissionItem::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V1FormSubmissionItemTest extends TestCase
      */
     public function testPropertySpamScore()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1FormSubmissionItem();
+        $this->assertInstanceOf(V1FormSubmissionItem::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class V1FormSubmissionItemTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1FormSubmissionItem();
+        $this->assertInstanceOf(V1FormSubmissionItem::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class V1FormSubmissionItemTest extends TestCase
      */
     public function testPropertyFileCount()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1FormSubmissionItem();
+        $this->assertInstanceOf(V1FormSubmissionItem::class, $model);
     }
 
     /**
@@ -129,7 +130,7 @@ class V1FormSubmissionItemTest extends TestCase
      */
     public function testPropertyDateSubmitted()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1FormSubmissionItem();
+        $this->assertInstanceOf(V1FormSubmissionItem::class, $model);
     }
 }

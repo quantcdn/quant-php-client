@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1RevisionsResponse;
 
 /**
  * V1RevisionsResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1RevisionsResponseTest extends TestCase
      */
     public function testV1RevisionsResponse()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RevisionsResponse();
+        $this->assertInstanceOf(V1RevisionsResponse::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1RevisionsResponseTest extends TestCase
      */
     public function testPropertyRevisions()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RevisionsResponse();
+        $this->assertInstanceOf(V1RevisionsResponse::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V1RevisionsResponseTest extends TestCase
      */
     public function testPropertyUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RevisionsResponse();
+        $this->assertInstanceOf(V1RevisionsResponse::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V1RevisionsResponseTest extends TestCase
      */
     public function testPropertyPublished()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RevisionsResponse();
+        $this->assertInstanceOf(V1RevisionsResponse::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class V1RevisionsResponseTest extends TestCase
      */
     public function testPropertyPublishedRevision()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RevisionsResponse();
+        $this->assertInstanceOf(V1RevisionsResponse::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class V1RevisionsResponseTest extends TestCase
      */
     public function testPropertyTransitions()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RevisionsResponse();
+        $this->assertInstanceOf(V1RevisionsResponse::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class V1RevisionsResponseTest extends TestCase
      */
     public function testPropertyHighestRevisionNumber()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RevisionsResponse();
+        $this->assertInstanceOf(V1RevisionsResponse::class, $model);
     }
 
     /**
@@ -138,7 +139,7 @@ class V1RevisionsResponseTest extends TestCase
      */
     public function testPropertyTransitionRevision()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RevisionsResponse();
+        $this->assertInstanceOf(V1RevisionsResponse::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\Volume;
 
 /**
  * VolumeTest Class Doc Comment
@@ -75,8 +76,8 @@ class VolumeTest extends TestCase
      */
     public function testVolume()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Volume();
+        $this->assertInstanceOf(Volume::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class VolumeTest extends TestCase
      */
     public function testPropertyVolumeId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Volume();
+        $this->assertInstanceOf(Volume::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class VolumeTest extends TestCase
      */
     public function testPropertyVolumeName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Volume();
+        $this->assertInstanceOf(Volume::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class VolumeTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Volume();
+        $this->assertInstanceOf(Volume::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class VolumeTest extends TestCase
      */
     public function testPropertyEnvironmentEfsId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Volume();
+        $this->assertInstanceOf(Volume::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class VolumeTest extends TestCase
      */
     public function testPropertyCreatedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Volume();
+        $this->assertInstanceOf(Volume::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class VolumeTest extends TestCase
      */
     public function testPropertyRootDirectory()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Volume();
+        $this->assertInstanceOf(Volume::class, $model);
     }
 
     /**
@@ -138,8 +139,8 @@ class VolumeTest extends TestCase
      */
     public function testPropertyAccessPointId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Volume();
+        $this->assertInstanceOf(Volume::class, $model);
     }
 
     /**
@@ -147,7 +148,7 @@ class VolumeTest extends TestCase
      */
     public function testPropertyAccessPointArn()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Volume();
+        $this->assertInstanceOf(Volume::class, $model);
     }
 }

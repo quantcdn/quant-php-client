@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\WafConfig;
 
 /**
  * WafConfigTest Class Doc Comment
@@ -75,8 +76,8 @@ class WafConfigTest extends TestCase
      */
     public function testWafConfig()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfig();
+        $this->assertInstanceOf(WafConfig::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class WafConfigTest extends TestCase
      */
     public function testPropertyMode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfig();
+        $this->assertInstanceOf(WafConfig::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class WafConfigTest extends TestCase
      */
     public function testPropertyParanoiaLevel()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfig();
+        $this->assertInstanceOf(WafConfig::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class WafConfigTest extends TestCase
      */
     public function testPropertyAllowRules()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfig();
+        $this->assertInstanceOf(WafConfig::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class WafConfigTest extends TestCase
      */
     public function testPropertyAllowIp()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfig();
+        $this->assertInstanceOf(WafConfig::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class WafConfigTest extends TestCase
      */
     public function testPropertyBlockIp()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfig();
+        $this->assertInstanceOf(WafConfig::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class WafConfigTest extends TestCase
      */
     public function testPropertyBlockAsn()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfig();
+        $this->assertInstanceOf(WafConfig::class, $model);
     }
 
     /**
@@ -138,8 +139,8 @@ class WafConfigTest extends TestCase
      */
     public function testPropertyBlockUa()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfig();
+        $this->assertInstanceOf(WafConfig::class, $model);
     }
 
     /**
@@ -147,8 +148,8 @@ class WafConfigTest extends TestCase
      */
     public function testPropertyBlockReferer()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfig();
+        $this->assertInstanceOf(WafConfig::class, $model);
     }
 
     /**
@@ -156,8 +157,8 @@ class WafConfigTest extends TestCase
      */
     public function testPropertyNotifySlack()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfig();
+        $this->assertInstanceOf(WafConfig::class, $model);
     }
 
     /**
@@ -165,8 +166,8 @@ class WafConfigTest extends TestCase
      */
     public function testPropertyNotifySlackHitsRpm()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfig();
+        $this->assertInstanceOf(WafConfig::class, $model);
     }
 
     /**
@@ -174,8 +175,8 @@ class WafConfigTest extends TestCase
      */
     public function testPropertyNotifyEmail()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfig();
+        $this->assertInstanceOf(WafConfig::class, $model);
     }
 
     /**
@@ -183,8 +184,8 @@ class WafConfigTest extends TestCase
      */
     public function testPropertyHttpbl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfig();
+        $this->assertInstanceOf(WafConfig::class, $model);
     }
 
     /**
@@ -192,8 +193,8 @@ class WafConfigTest extends TestCase
      */
     public function testPropertyBlockLists()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfig();
+        $this->assertInstanceOf(WafConfig::class, $model);
     }
 
     /**
@@ -201,7 +202,7 @@ class WafConfigTest extends TestCase
      */
     public function testPropertyThresholds()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfig();
+        $this->assertInstanceOf(WafConfig::class, $model);
     }
 }

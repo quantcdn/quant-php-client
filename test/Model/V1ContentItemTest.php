@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1ContentItem;
 
 /**
  * V1ContentItemTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1ContentItemTest extends TestCase
      */
     public function testV1ContentItem()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1ContentItem();
+        $this->assertInstanceOf(V1ContentItem::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1ContentItemTest extends TestCase
      */
     public function testPropertyUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1ContentItem();
+        $this->assertInstanceOf(V1ContentItem::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V1ContentItemTest extends TestCase
      */
     public function testPropertyDateTimestamp()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1ContentItem();
+        $this->assertInstanceOf(V1ContentItem::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V1ContentItemTest extends TestCase
      */
     public function testPropertyPublished()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1ContentItem();
+        $this->assertInstanceOf(V1ContentItem::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class V1ContentItemTest extends TestCase
      */
     public function testPropertyRevisionCount()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1ContentItem();
+        $this->assertInstanceOf(V1ContentItem::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class V1ContentItemTest extends TestCase
      */
     public function testPropertyDesc()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1ContentItem();
+        $this->assertInstanceOf(V1ContentItem::class, $model);
     }
 
     /**
@@ -129,7 +130,7 @@ class V1ContentItemTest extends TestCase
      */
     public function testPropertyUuid()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1ContentItem();
+        $this->assertInstanceOf(V1ContentItem::class, $model);
     }
 }

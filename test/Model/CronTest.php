@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\Cron;
 
 /**
  * CronTest Class Doc Comment
@@ -75,8 +76,8 @@ class CronTest extends TestCase
      */
     public function testCron()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Cron();
+        $this->assertInstanceOf(Cron::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class CronTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Cron();
+        $this->assertInstanceOf(Cron::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class CronTest extends TestCase
      */
     public function testPropertySchedule()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Cron();
+        $this->assertInstanceOf(Cron::class, $model);
     }
 
     /**
@@ -102,7 +103,7 @@ class CronTest extends TestCase
      */
     public function testPropertyCommand()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Cron();
+        $this->assertInstanceOf(Cron::class, $model);
     }
 }

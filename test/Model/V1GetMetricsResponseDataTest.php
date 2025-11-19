@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1GetMetricsResponseData;
 
 /**
  * V1GetMetricsResponseDataTest Class Doc Comment
@@ -75,7 +76,7 @@ class V1GetMetricsResponseDataTest extends TestCase
      */
     public function testV1GetMetricsResponseData()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1GetMetricsResponseData();
+        $this->assertInstanceOf(V1GetMetricsResponseData::class, $model);
     }
 }

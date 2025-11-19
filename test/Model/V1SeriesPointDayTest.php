@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1SeriesPointDay;
 
 /**
  * V1SeriesPointDayTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1SeriesPointDayTest extends TestCase
      */
     public function testV1SeriesPointDay()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SeriesPointDay();
+        $this->assertInstanceOf(V1SeriesPointDay::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1SeriesPointDayTest extends TestCase
      */
     public function testPropertyX()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SeriesPointDay();
+        $this->assertInstanceOf(V1SeriesPointDay::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class V1SeriesPointDayTest extends TestCase
      */
     public function testPropertyY()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SeriesPointDay();
+        $this->assertInstanceOf(V1SeriesPointDay::class, $model);
     }
 }

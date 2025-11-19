@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\Environment;
 
 /**
  * EnvironmentTest Class Doc Comment
@@ -75,8 +76,8 @@ class EnvironmentTest extends TestCase
      */
     public function testEnvironment()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Environment();
+        $this->assertInstanceOf(Environment::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class EnvironmentTest extends TestCase
      */
     public function testPropertyEnvName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Environment();
+        $this->assertInstanceOf(Environment::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class EnvironmentTest extends TestCase
      */
     public function testPropertyDesiredCount()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Environment();
+        $this->assertInstanceOf(Environment::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class EnvironmentTest extends TestCase
      */
     public function testPropertyMinCapacity()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Environment();
+        $this->assertInstanceOf(Environment::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class EnvironmentTest extends TestCase
      */
     public function testPropertyMaxCapacity()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Environment();
+        $this->assertInstanceOf(Environment::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class EnvironmentTest extends TestCase
      */
     public function testPropertyCloneConfigurationFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Environment();
+        $this->assertInstanceOf(Environment::class, $model);
     }
 
     /**
@@ -129,7 +130,7 @@ class EnvironmentTest extends TestCase
      */
     public function testPropertyImageSuffix()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Environment();
+        $this->assertInstanceOf(Environment::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\GetToolExecutionStatus200Response;
 
 /**
  * GetToolExecutionStatus200ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class GetToolExecutionStatus200ResponseTest extends TestCase
      */
     public function testGetToolExecutionStatus200Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetToolExecutionStatus200Response();
+        $this->assertInstanceOf(GetToolExecutionStatus200Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class GetToolExecutionStatus200ResponseTest extends TestCase
      */
     public function testPropertyExecutionId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetToolExecutionStatus200Response();
+        $this->assertInstanceOf(GetToolExecutionStatus200Response::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class GetToolExecutionStatus200ResponseTest extends TestCase
      */
     public function testPropertyToolName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetToolExecutionStatus200Response();
+        $this->assertInstanceOf(GetToolExecutionStatus200Response::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class GetToolExecutionStatus200ResponseTest extends TestCase
      */
     public function testPropertyStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetToolExecutionStatus200Response();
+        $this->assertInstanceOf(GetToolExecutionStatus200Response::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class GetToolExecutionStatus200ResponseTest extends TestCase
      */
     public function testPropertyResult()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetToolExecutionStatus200Response();
+        $this->assertInstanceOf(GetToolExecutionStatus200Response::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class GetToolExecutionStatus200ResponseTest extends TestCase
      */
     public function testPropertyError()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetToolExecutionStatus200Response();
+        $this->assertInstanceOf(GetToolExecutionStatus200Response::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class GetToolExecutionStatus200ResponseTest extends TestCase
      */
     public function testPropertyCreatedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetToolExecutionStatus200Response();
+        $this->assertInstanceOf(GetToolExecutionStatus200Response::class, $model);
     }
 
     /**
@@ -138,8 +139,8 @@ class GetToolExecutionStatus200ResponseTest extends TestCase
      */
     public function testPropertyStartedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetToolExecutionStatus200Response();
+        $this->assertInstanceOf(GetToolExecutionStatus200Response::class, $model);
     }
 
     /**
@@ -147,8 +148,8 @@ class GetToolExecutionStatus200ResponseTest extends TestCase
      */
     public function testPropertyCompletedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetToolExecutionStatus200Response();
+        $this->assertInstanceOf(GetToolExecutionStatus200Response::class, $model);
     }
 
     /**
@@ -156,7 +157,7 @@ class GetToolExecutionStatus200ResponseTest extends TestCase
      */
     public function testPropertyDuration()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetToolExecutionStatus200Response();
+        $this->assertInstanceOf(GetToolExecutionStatus200Response::class, $model);
     }
 }

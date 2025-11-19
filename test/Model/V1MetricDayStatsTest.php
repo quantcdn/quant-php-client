@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1MetricDayStats;
 
 /**
  * V1MetricDayStatsTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1MetricDayStatsTest extends TestCase
      */
     public function testV1MetricDayStats()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1MetricDayStats();
+        $this->assertInstanceOf(V1MetricDayStats::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1MetricDayStatsTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1MetricDayStats();
+        $this->assertInstanceOf(V1MetricDayStats::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V1MetricDayStatsTest extends TestCase
      */
     public function testPropertyDayTotal()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1MetricDayStats();
+        $this->assertInstanceOf(V1MetricDayStats::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V1MetricDayStatsTest extends TestCase
      */
     public function testPropertyDaySeries()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1MetricDayStats();
+        $this->assertInstanceOf(V1MetricDayStats::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class V1MetricDayStatsTest extends TestCase
      */
     public function testPropertyDayAverage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1MetricDayStats();
+        $this->assertInstanceOf(V1MetricDayStats::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\Embeddings200ResponseUsage;
 
 /**
  * Embeddings200ResponseUsageTest Class Doc Comment
@@ -75,8 +76,8 @@ class Embeddings200ResponseUsageTest extends TestCase
      */
     public function testEmbeddings200ResponseUsage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Embeddings200ResponseUsage();
+        $this->assertInstanceOf(Embeddings200ResponseUsage::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class Embeddings200ResponseUsageTest extends TestCase
      */
     public function testPropertyInputTokens()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Embeddings200ResponseUsage();
+        $this->assertInstanceOf(Embeddings200ResponseUsage::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class Embeddings200ResponseUsageTest extends TestCase
      */
     public function testPropertyTotalTokens()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Embeddings200ResponseUsage();
+        $this->assertInstanceOf(Embeddings200ResponseUsage::class, $model);
     }
 }

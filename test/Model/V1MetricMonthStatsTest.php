@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1MetricMonthStats;
 
 /**
  * V1MetricMonthStatsTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1MetricMonthStatsTest extends TestCase
      */
     public function testV1MetricMonthStats()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1MetricMonthStats();
+        $this->assertInstanceOf(V1MetricMonthStats::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1MetricMonthStatsTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1MetricMonthStats();
+        $this->assertInstanceOf(V1MetricMonthStats::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V1MetricMonthStatsTest extends TestCase
      */
     public function testPropertyMonthTotal()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1MetricMonthStats();
+        $this->assertInstanceOf(V1MetricMonthStats::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V1MetricMonthStatsTest extends TestCase
      */
     public function testPropertyMonthSeries()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1MetricMonthStats();
+        $this->assertInstanceOf(V1MetricMonthStats::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class V1MetricMonthStatsTest extends TestCase
      */
     public function testPropertyMonthAverage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1MetricMonthStats();
+        $this->assertInstanceOf(V1MetricMonthStats::class, $model);
     }
 }

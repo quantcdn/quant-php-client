@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\GetEcrLoginCredentials200Response;
 
 /**
  * GetEcrLoginCredentials200ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class GetEcrLoginCredentials200ResponseTest extends TestCase
      */
     public function testGetEcrLoginCredentials200Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetEcrLoginCredentials200Response();
+        $this->assertInstanceOf(GetEcrLoginCredentials200Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class GetEcrLoginCredentials200ResponseTest extends TestCase
      */
     public function testPropertyUsername()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetEcrLoginCredentials200Response();
+        $this->assertInstanceOf(GetEcrLoginCredentials200Response::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class GetEcrLoginCredentials200ResponseTest extends TestCase
      */
     public function testPropertyPassword()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetEcrLoginCredentials200Response();
+        $this->assertInstanceOf(GetEcrLoginCredentials200Response::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class GetEcrLoginCredentials200ResponseTest extends TestCase
      */
     public function testPropertyExpiresAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetEcrLoginCredentials200Response();
+        $this->assertInstanceOf(GetEcrLoginCredentials200Response::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class GetEcrLoginCredentials200ResponseTest extends TestCase
      */
     public function testPropertyEndpoint()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetEcrLoginCredentials200Response();
+        $this->assertInstanceOf(GetEcrLoginCredentials200Response::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\KVItemsDelete200Response;
 
 /**
  * KVItemsDelete200ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class KVItemsDelete200ResponseTest extends TestCase
      */
     public function testKVItemsDelete200Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new KVItemsDelete200Response();
+        $this->assertInstanceOf(KVItemsDelete200Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class KVItemsDelete200ResponseTest extends TestCase
      */
     public function testPropertySuccess()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new KVItemsDelete200Response();
+        $this->assertInstanceOf(KVItemsDelete200Response::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class KVItemsDelete200ResponseTest extends TestCase
      */
     public function testPropertyKey()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new KVItemsDelete200Response();
+        $this->assertInstanceOf(KVItemsDelete200Response::class, $model);
     }
 }

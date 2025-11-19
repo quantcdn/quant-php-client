@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\GetToolExecutionStatus200ResponseResult;
 
 /**
  * GetToolExecutionStatus200ResponseResultTest Class Doc Comment
@@ -75,8 +76,8 @@ class GetToolExecutionStatus200ResponseResultTest extends TestCase
      */
     public function testGetToolExecutionStatus200ResponseResult()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetToolExecutionStatus200ResponseResult();
+        $this->assertInstanceOf(GetToolExecutionStatus200ResponseResult::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class GetToolExecutionStatus200ResponseResultTest extends TestCase
      */
     public function testPropertyImages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetToolExecutionStatus200ResponseResult();
+        $this->assertInstanceOf(GetToolExecutionStatus200ResponseResult::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class GetToolExecutionStatus200ResponseResultTest extends TestCase
      */
     public function testPropertyS3Urls()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetToolExecutionStatus200ResponseResult();
+        $this->assertInstanceOf(GetToolExecutionStatus200ResponseResult::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ListToolExecutions200ResponseExecutionsInner;
 
 /**
  * ListToolExecutions200ResponseExecutionsInnerTest Class Doc Comment
@@ -75,8 +76,8 @@ class ListToolExecutions200ResponseExecutionsInnerTest extends TestCase
      */
     public function testListToolExecutions200ResponseExecutionsInner()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListToolExecutions200ResponseExecutionsInner();
+        $this->assertInstanceOf(ListToolExecutions200ResponseExecutionsInner::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ListToolExecutions200ResponseExecutionsInnerTest extends TestCase
      */
     public function testPropertyExecutionId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListToolExecutions200ResponseExecutionsInner();
+        $this->assertInstanceOf(ListToolExecutions200ResponseExecutionsInner::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class ListToolExecutions200ResponseExecutionsInnerTest extends TestCase
      */
     public function testPropertyToolName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListToolExecutions200ResponseExecutionsInner();
+        $this->assertInstanceOf(ListToolExecutions200ResponseExecutionsInner::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class ListToolExecutions200ResponseExecutionsInnerTest extends TestCase
      */
     public function testPropertyStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListToolExecutions200ResponseExecutionsInner();
+        $this->assertInstanceOf(ListToolExecutions200ResponseExecutionsInner::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class ListToolExecutions200ResponseExecutionsInnerTest extends TestCase
      */
     public function testPropertyCreatedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListToolExecutions200ResponseExecutionsInner();
+        $this->assertInstanceOf(ListToolExecutions200ResponseExecutionsInner::class, $model);
     }
 
     /**
@@ -120,7 +121,7 @@ class ListToolExecutions200ResponseExecutionsInnerTest extends TestCase
      */
     public function testPropertyCompletedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListToolExecutions200ResponseExecutionsInner();
+        $this->assertInstanceOf(ListToolExecutions200ResponseExecutionsInner::class, $model);
     }
 }

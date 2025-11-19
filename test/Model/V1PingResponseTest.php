@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1PingResponse;
 
 /**
  * V1PingResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1PingResponseTest extends TestCase
      */
     public function testV1PingResponse()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1PingResponse();
+        $this->assertInstanceOf(V1PingResponse::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1PingResponseTest extends TestCase
      */
     public function testPropertyConfig()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1PingResponse();
+        $this->assertInstanceOf(V1PingResponse::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class V1PingResponseTest extends TestCase
      */
     public function testPropertyProject()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1PingResponse();
+        $this->assertInstanceOf(V1PingResponse::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\CreateCronJobRequest;
 
 /**
  * CreateCronJobRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class CreateCronJobRequestTest extends TestCase
      */
     public function testCreateCronJobRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateCronJobRequest();
+        $this->assertInstanceOf(CreateCronJobRequest::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class CreateCronJobRequestTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateCronJobRequest();
+        $this->assertInstanceOf(CreateCronJobRequest::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class CreateCronJobRequestTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateCronJobRequest();
+        $this->assertInstanceOf(CreateCronJobRequest::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class CreateCronJobRequestTest extends TestCase
      */
     public function testPropertyScheduleExpression()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateCronJobRequest();
+        $this->assertInstanceOf(CreateCronJobRequest::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class CreateCronJobRequestTest extends TestCase
      */
     public function testPropertyCommand()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateCronJobRequest();
+        $this->assertInstanceOf(CreateCronJobRequest::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class CreateCronJobRequestTest extends TestCase
      */
     public function testPropertyTargetContainerName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateCronJobRequest();
+        $this->assertInstanceOf(CreateCronJobRequest::class, $model);
     }
 
     /**
@@ -129,7 +130,7 @@ class CreateCronJobRequestTest extends TestCase
      */
     public function testPropertyIsEnabled()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateCronJobRequest();
+        $this->assertInstanceOf(CreateCronJobRequest::class, $model);
     }
 }

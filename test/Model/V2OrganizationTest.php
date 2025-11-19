@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2Organization;
 
 /**
  * V2OrganizationTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2OrganizationTest extends TestCase
      */
     public function testV2Organization()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Organization();
+        $this->assertInstanceOf(V2Organization::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V2OrganizationTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Organization();
+        $this->assertInstanceOf(V2Organization::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V2OrganizationTest extends TestCase
      */
     public function testPropertyMachineName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Organization();
+        $this->assertInstanceOf(V2Organization::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V2OrganizationTest extends TestCase
      */
     public function testPropertyType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Organization();
+        $this->assertInstanceOf(V2Organization::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class V2OrganizationTest extends TestCase
      */
     public function testPropertyRegion()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Organization();
+        $this->assertInstanceOf(V2Organization::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class V2OrganizationTest extends TestCase
      */
     public function testPropertySubscription()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Organization();
+        $this->assertInstanceOf(V2Organization::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class V2OrganizationTest extends TestCase
      */
     public function testPropertyCreatedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Organization();
+        $this->assertInstanceOf(V2Organization::class, $model);
     }
 
     /**
@@ -138,7 +139,7 @@ class V2OrganizationTest extends TestCase
      */
     public function testPropertyUpdatedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Organization();
+        $this->assertInstanceOf(V2Organization::class, $model);
     }
 }

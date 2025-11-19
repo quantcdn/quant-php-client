@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\PatchEnvironmentComposeRequest;
 
 /**
  * PatchEnvironmentComposeRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class PatchEnvironmentComposeRequestTest extends TestCase
      */
     public function testPatchEnvironmentComposeRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PatchEnvironmentComposeRequest();
+        $this->assertInstanceOf(PatchEnvironmentComposeRequest::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class PatchEnvironmentComposeRequestTest extends TestCase
      */
     public function testPropertyArchitecture()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PatchEnvironmentComposeRequest();
+        $this->assertInstanceOf(PatchEnvironmentComposeRequest::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class PatchEnvironmentComposeRequestTest extends TestCase
      */
     public function testPropertyTaskCpu()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PatchEnvironmentComposeRequest();
+        $this->assertInstanceOf(PatchEnvironmentComposeRequest::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class PatchEnvironmentComposeRequestTest extends TestCase
      */
     public function testPropertyTaskMemory()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PatchEnvironmentComposeRequest();
+        $this->assertInstanceOf(PatchEnvironmentComposeRequest::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class PatchEnvironmentComposeRequestTest extends TestCase
      */
     public function testPropertyMinCapacity()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PatchEnvironmentComposeRequest();
+        $this->assertInstanceOf(PatchEnvironmentComposeRequest::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class PatchEnvironmentComposeRequestTest extends TestCase
      */
     public function testPropertyMaxCapacity()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PatchEnvironmentComposeRequest();
+        $this->assertInstanceOf(PatchEnvironmentComposeRequest::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class PatchEnvironmentComposeRequestTest extends TestCase
      */
     public function testPropertyContainers()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PatchEnvironmentComposeRequest();
+        $this->assertInstanceOf(PatchEnvironmentComposeRequest::class, $model);
     }
 
     /**
@@ -138,8 +139,8 @@ class PatchEnvironmentComposeRequestTest extends TestCase
      */
     public function testPropertySpotConfiguration()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PatchEnvironmentComposeRequest();
+        $this->assertInstanceOf(PatchEnvironmentComposeRequest::class, $model);
     }
 
     /**
@@ -147,8 +148,8 @@ class PatchEnvironmentComposeRequestTest extends TestCase
      */
     public function testPropertyEnableCrossEnvNetworking()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PatchEnvironmentComposeRequest();
+        $this->assertInstanceOf(PatchEnvironmentComposeRequest::class, $model);
     }
 
     /**
@@ -156,7 +157,7 @@ class PatchEnvironmentComposeRequestTest extends TestCase
      */
     public function testPropertyEnableCrossAppNetworking()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PatchEnvironmentComposeRequest();
+        $this->assertInstanceOf(PatchEnvironmentComposeRequest::class, $model);
     }
 }

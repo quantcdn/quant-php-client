@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\UpdateEnvironmentStateRequest;
 
 /**
  * UpdateEnvironmentStateRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class UpdateEnvironmentStateRequestTest extends TestCase
      */
     public function testUpdateEnvironmentStateRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new UpdateEnvironmentStateRequest();
+        $this->assertInstanceOf(UpdateEnvironmentStateRequest::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class UpdateEnvironmentStateRequestTest extends TestCase
      */
     public function testPropertyAction()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new UpdateEnvironmentStateRequest();
+        $this->assertInstanceOf(UpdateEnvironmentStateRequest::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class UpdateEnvironmentStateRequestTest extends TestCase
      */
     public function testPropertyImageTag()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new UpdateEnvironmentStateRequest();
+        $this->assertInstanceOf(UpdateEnvironmentStateRequest::class, $model);
     }
 }

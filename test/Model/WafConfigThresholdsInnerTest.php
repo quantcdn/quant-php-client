@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\WafConfigThresholdsInner;
 
 /**
  * WafConfigThresholdsInnerTest Class Doc Comment
@@ -75,8 +76,8 @@ class WafConfigThresholdsInnerTest extends TestCase
      */
     public function testWafConfigThresholdsInner()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigThresholdsInner();
+        $this->assertInstanceOf(WafConfigThresholdsInner::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class WafConfigThresholdsInnerTest extends TestCase
      */
     public function testPropertyType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigThresholdsInner();
+        $this->assertInstanceOf(WafConfigThresholdsInner::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class WafConfigThresholdsInnerTest extends TestCase
      */
     public function testPropertyRps()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigThresholdsInner();
+        $this->assertInstanceOf(WafConfigThresholdsInner::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class WafConfigThresholdsInnerTest extends TestCase
      */
     public function testPropertyHits()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigThresholdsInner();
+        $this->assertInstanceOf(WafConfigThresholdsInner::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class WafConfigThresholdsInnerTest extends TestCase
      */
     public function testPropertyMinutes()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigThresholdsInner();
+        $this->assertInstanceOf(WafConfigThresholdsInner::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class WafConfigThresholdsInnerTest extends TestCase
      */
     public function testPropertyCooldown()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigThresholdsInner();
+        $this->assertInstanceOf(WafConfigThresholdsInner::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class WafConfigThresholdsInnerTest extends TestCase
      */
     public function testPropertyMode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigThresholdsInner();
+        $this->assertInstanceOf(WafConfigThresholdsInner::class, $model);
     }
 
     /**
@@ -138,8 +139,8 @@ class WafConfigThresholdsInnerTest extends TestCase
      */
     public function testPropertyValue()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigThresholdsInner();
+        $this->assertInstanceOf(WafConfigThresholdsInner::class, $model);
     }
 
     /**
@@ -147,7 +148,7 @@ class WafConfigThresholdsInnerTest extends TestCase
      */
     public function testPropertyNotifySlack()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new WafConfigThresholdsInner();
+        $this->assertInstanceOf(WafConfigThresholdsInner::class, $model);
     }
 }

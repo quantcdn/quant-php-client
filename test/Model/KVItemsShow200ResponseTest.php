@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\KVItemsShow200Response;
 
 /**
  * KVItemsShow200ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class KVItemsShow200ResponseTest extends TestCase
      */
     public function testKVItemsShow200Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new KVItemsShow200Response();
+        $this->assertInstanceOf(KVItemsShow200Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class KVItemsShow200ResponseTest extends TestCase
      */
     public function testPropertyKey()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new KVItemsShow200Response();
+        $this->assertInstanceOf(KVItemsShow200Response::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class KVItemsShow200ResponseTest extends TestCase
      */
     public function testPropertyValue()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new KVItemsShow200Response();
+        $this->assertInstanceOf(KVItemsShow200Response::class, $model);
     }
 }

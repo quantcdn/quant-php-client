@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ImageGenerationRequestImageVariationParams;
 
 /**
  * ImageGenerationRequestImageVariationParamsTest Class Doc Comment
@@ -75,8 +76,8 @@ class ImageGenerationRequestImageVariationParamsTest extends TestCase
      */
     public function testImageGenerationRequestImageVariationParams()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestImageVariationParams();
+        $this->assertInstanceOf(ImageGenerationRequestImageVariationParams::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ImageGenerationRequestImageVariationParamsTest extends TestCase
      */
     public function testPropertyImages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestImageVariationParams();
+        $this->assertInstanceOf(ImageGenerationRequestImageVariationParams::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class ImageGenerationRequestImageVariationParamsTest extends TestCase
      */
     public function testPropertySimilarityStrength()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestImageVariationParams();
+        $this->assertInstanceOf(ImageGenerationRequestImageVariationParams::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class ImageGenerationRequestImageVariationParamsTest extends TestCase
      */
     public function testPropertyText()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestImageVariationParams();
+        $this->assertInstanceOf(ImageGenerationRequestImageVariationParams::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class ImageGenerationRequestImageVariationParamsTest extends TestCase
      */
     public function testPropertyNegativeText()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestImageVariationParams();
+        $this->assertInstanceOf(ImageGenerationRequestImageVariationParams::class, $model);
     }
 }

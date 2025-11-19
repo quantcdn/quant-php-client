@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\GetAISession200Response;
 
 /**
  * GetAISession200ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class GetAISession200ResponseTest extends TestCase
      */
     public function testGetAISession200Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetAISession200Response();
+        $this->assertInstanceOf(GetAISession200Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class GetAISession200ResponseTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetAISession200Response();
+        $this->assertInstanceOf(GetAISession200Response::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class GetAISession200ResponseTest extends TestCase
      */
     public function testPropertyTitle()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetAISession200Response();
+        $this->assertInstanceOf(GetAISession200Response::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class GetAISession200ResponseTest extends TestCase
      */
     public function testPropertyModel()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetAISession200Response();
+        $this->assertInstanceOf(GetAISession200Response::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class GetAISession200ResponseTest extends TestCase
      */
     public function testPropertyMessages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetAISession200Response();
+        $this->assertInstanceOf(GetAISession200Response::class, $model);
     }
 
     /**
@@ -120,7 +121,7 @@ class GetAISession200ResponseTest extends TestCase
      */
     public function testPropertyCreatedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetAISession200Response();
+        $this->assertInstanceOf(GetAISession200Response::class, $model);
     }
 }

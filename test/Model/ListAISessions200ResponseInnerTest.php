@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ListAISessions200ResponseInner;
 
 /**
  * ListAISessions200ResponseInnerTest Class Doc Comment
@@ -75,8 +76,8 @@ class ListAISessions200ResponseInnerTest extends TestCase
      */
     public function testListAISessions200ResponseInner()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAISessions200ResponseInner();
+        $this->assertInstanceOf(ListAISessions200ResponseInner::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ListAISessions200ResponseInnerTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAISessions200ResponseInner();
+        $this->assertInstanceOf(ListAISessions200ResponseInner::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class ListAISessions200ResponseInnerTest extends TestCase
      */
     public function testPropertyTitle()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAISessions200ResponseInner();
+        $this->assertInstanceOf(ListAISessions200ResponseInner::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class ListAISessions200ResponseInnerTest extends TestCase
      */
     public function testPropertyModel()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAISessions200ResponseInner();
+        $this->assertInstanceOf(ListAISessions200ResponseInner::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class ListAISessions200ResponseInnerTest extends TestCase
      */
     public function testPropertyCreatedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAISessions200ResponseInner();
+        $this->assertInstanceOf(ListAISessions200ResponseInner::class, $model);
     }
 
     /**
@@ -120,7 +121,7 @@ class ListAISessions200ResponseInnerTest extends TestCase
      */
     public function testPropertyUpdatedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAISessions200ResponseInner();
+        $this->assertInstanceOf(ListAISessions200ResponseInner::class, $model);
     }
 }

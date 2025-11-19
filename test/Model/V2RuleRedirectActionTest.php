@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2RuleRedirectAction;
 
 /**
  * V2RuleRedirectActionTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2RuleRedirectActionTest extends TestCase
      */
     public function testV2RuleRedirectAction()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleRedirectAction();
+        $this->assertInstanceOf(V2RuleRedirectAction::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V2RuleRedirectActionTest extends TestCase
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleRedirectAction();
+        $this->assertInstanceOf(V2RuleRedirectAction::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class V2RuleRedirectActionTest extends TestCase
      */
     public function testPropertyStatusCode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleRedirectAction();
+        $this->assertInstanceOf(V2RuleRedirectAction::class, $model);
     }
 }

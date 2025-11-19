@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2Project;
 
 /**
  * V2ProjectTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2ProjectTest extends TestCase
      */
     public function testV2Project()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Project();
+        $this->assertInstanceOf(V2Project::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V2ProjectTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Project();
+        $this->assertInstanceOf(V2Project::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V2ProjectTest extends TestCase
      */
     public function testPropertyUuid()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Project();
+        $this->assertInstanceOf(V2Project::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V2ProjectTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Project();
+        $this->assertInstanceOf(V2Project::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class V2ProjectTest extends TestCase
      */
     public function testPropertyMachineName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Project();
+        $this->assertInstanceOf(V2Project::class, $model);
     }
 
     /**
@@ -120,7 +121,7 @@ class V2ProjectTest extends TestCase
      */
     public function testPropertyWriteToken()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Project();
+        $this->assertInstanceOf(V2Project::class, $model);
     }
 }

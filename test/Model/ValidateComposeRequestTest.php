@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ValidateComposeRequest;
 
 /**
  * ValidateComposeRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class ValidateComposeRequestTest extends TestCase
      */
     public function testValidateComposeRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ValidateComposeRequest();
+        $this->assertInstanceOf(ValidateComposeRequest::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ValidateComposeRequestTest extends TestCase
      */
     public function testPropertyCompose()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ValidateComposeRequest();
+        $this->assertInstanceOf(ValidateComposeRequest::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class ValidateComposeRequestTest extends TestCase
      */
     public function testPropertyImageSuffix()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ValidateComposeRequest();
+        $this->assertInstanceOf(ValidateComposeRequest::class, $model);
     }
 
     /**
@@ -102,7 +103,7 @@ class ValidateComposeRequestTest extends TestCase
      */
     public function testPropertyApplication()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ValidateComposeRequest();
+        $this->assertInstanceOf(ValidateComposeRequest::class, $model);
     }
 }

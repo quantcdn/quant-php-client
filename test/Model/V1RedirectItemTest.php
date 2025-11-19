@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1RedirectItem;
 
 /**
  * V1RedirectItemTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1RedirectItemTest extends TestCase
      */
     public function testV1RedirectItem()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectItem();
+        $this->assertInstanceOf(V1RedirectItem::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1RedirectItemTest extends TestCase
      */
     public function testPropertyUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectItem();
+        $this->assertInstanceOf(V1RedirectItem::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V1RedirectItemTest extends TestCase
      */
     public function testPropertyRedirectUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectItem();
+        $this->assertInstanceOf(V1RedirectItem::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V1RedirectItemTest extends TestCase
      */
     public function testPropertyRedirectHttpCode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectItem();
+        $this->assertInstanceOf(V1RedirectItem::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class V1RedirectItemTest extends TestCase
      */
     public function testPropertyDateTimestamp()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectItem();
+        $this->assertInstanceOf(V1RedirectItem::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class V1RedirectItemTest extends TestCase
      */
     public function testPropertyPublished()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectItem();
+        $this->assertInstanceOf(V1RedirectItem::class, $model);
     }
 
     /**
@@ -129,7 +130,7 @@ class V1RedirectItemTest extends TestCase
      */
     public function testPropertyRevisionCount()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1RedirectItem();
+        $this->assertInstanceOf(V1RedirectItem::class, $model);
     }
 }

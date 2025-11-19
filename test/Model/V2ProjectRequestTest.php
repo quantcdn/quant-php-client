@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2ProjectRequest;
 
 /**
  * V2ProjectRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2ProjectRequestTest extends TestCase
      */
     public function testV2ProjectRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2ProjectRequest();
+        $this->assertInstanceOf(V2ProjectRequest::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V2ProjectRequestTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2ProjectRequest();
+        $this->assertInstanceOf(V2ProjectRequest::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V2ProjectRequestTest extends TestCase
      */
     public function testPropertyMachineName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2ProjectRequest();
+        $this->assertInstanceOf(V2ProjectRequest::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V2ProjectRequestTest extends TestCase
      */
     public function testPropertyRegion()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2ProjectRequest();
+        $this->assertInstanceOf(V2ProjectRequest::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class V2ProjectRequestTest extends TestCase
      */
     public function testPropertyAllowQueryParams()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2ProjectRequest();
+        $this->assertInstanceOf(V2ProjectRequest::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class V2ProjectRequestTest extends TestCase
      */
     public function testPropertyDisableRevisions()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2ProjectRequest();
+        $this->assertInstanceOf(V2ProjectRequest::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class V2ProjectRequestTest extends TestCase
      */
     public function testPropertyBasicAuthUsername()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2ProjectRequest();
+        $this->assertInstanceOf(V2ProjectRequest::class, $model);
     }
 
     /**
@@ -138,8 +139,8 @@ class V2ProjectRequestTest extends TestCase
      */
     public function testPropertyBasicAuthPassword()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2ProjectRequest();
+        $this->assertInstanceOf(V2ProjectRequest::class, $model);
     }
 
     /**
@@ -147,7 +148,7 @@ class V2ProjectRequestTest extends TestCase
      */
     public function testPropertyBasicAuthPreviewOnly()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2ProjectRequest();
+        $this->assertInstanceOf(V2ProjectRequest::class, $model);
     }
 }

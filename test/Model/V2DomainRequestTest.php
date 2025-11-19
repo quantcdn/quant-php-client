@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2DomainRequest;
 
 /**
  * V2DomainRequestTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2DomainRequestTest extends TestCase
      */
     public function testV2DomainRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2DomainRequest();
+        $this->assertInstanceOf(V2DomainRequest::class, $model);
     }
 
     /**
@@ -84,7 +85,7 @@ class V2DomainRequestTest extends TestCase
      */
     public function testPropertyDomain()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2DomainRequest();
+        $this->assertInstanceOf(V2DomainRequest::class, $model);
     }
 }

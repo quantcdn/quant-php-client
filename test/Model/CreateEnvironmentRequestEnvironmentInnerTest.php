@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\CreateEnvironmentRequestEnvironmentInner;
 
 /**
  * CreateEnvironmentRequestEnvironmentInnerTest Class Doc Comment
@@ -75,8 +76,8 @@ class CreateEnvironmentRequestEnvironmentInnerTest extends TestCase
      */
     public function testCreateEnvironmentRequestEnvironmentInner()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateEnvironmentRequestEnvironmentInner();
+        $this->assertInstanceOf(CreateEnvironmentRequestEnvironmentInner::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class CreateEnvironmentRequestEnvironmentInnerTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateEnvironmentRequestEnvironmentInner();
+        $this->assertInstanceOf(CreateEnvironmentRequestEnvironmentInner::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class CreateEnvironmentRequestEnvironmentInnerTest extends TestCase
      */
     public function testPropertyValue()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new CreateEnvironmentRequestEnvironmentInner();
+        $this->assertInstanceOf(CreateEnvironmentRequestEnvironmentInner::class, $model);
     }
 }

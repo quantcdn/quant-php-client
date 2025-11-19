@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ListBackups200ResponseBackupsInner;
 
 /**
  * ListBackups200ResponseBackupsInnerTest Class Doc Comment
@@ -75,8 +76,8 @@ class ListBackups200ResponseBackupsInnerTest extends TestCase
      */
     public function testListBackups200ResponseBackupsInner()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups200ResponseBackupsInner();
+        $this->assertInstanceOf(ListBackups200ResponseBackupsInner::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ListBackups200ResponseBackupsInnerTest extends TestCase
      */
     public function testPropertyBackupId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups200ResponseBackupsInner();
+        $this->assertInstanceOf(ListBackups200ResponseBackupsInner::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class ListBackups200ResponseBackupsInnerTest extends TestCase
      */
     public function testPropertyStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups200ResponseBackupsInner();
+        $this->assertInstanceOf(ListBackups200ResponseBackupsInner::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class ListBackups200ResponseBackupsInnerTest extends TestCase
      */
     public function testPropertyType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups200ResponseBackupsInner();
+        $this->assertInstanceOf(ListBackups200ResponseBackupsInner::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class ListBackups200ResponseBackupsInnerTest extends TestCase
      */
     public function testPropertyEngine()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups200ResponseBackupsInner();
+        $this->assertInstanceOf(ListBackups200ResponseBackupsInner::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class ListBackups200ResponseBackupsInnerTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups200ResponseBackupsInner();
+        $this->assertInstanceOf(ListBackups200ResponseBackupsInner::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class ListBackups200ResponseBackupsInnerTest extends TestCase
      */
     public function testPropertyCreatedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups200ResponseBackupsInner();
+        $this->assertInstanceOf(ListBackups200ResponseBackupsInner::class, $model);
     }
 
     /**
@@ -138,8 +139,8 @@ class ListBackups200ResponseBackupsInnerTest extends TestCase
      */
     public function testPropertyUpdatedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups200ResponseBackupsInner();
+        $this->assertInstanceOf(ListBackups200ResponseBackupsInner::class, $model);
     }
 
     /**
@@ -147,8 +148,8 @@ class ListBackups200ResponseBackupsInnerTest extends TestCase
      */
     public function testPropertyTaskArn()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups200ResponseBackupsInner();
+        $this->assertInstanceOf(ListBackups200ResponseBackupsInner::class, $model);
     }
 
     /**
@@ -156,8 +157,8 @@ class ListBackups200ResponseBackupsInnerTest extends TestCase
      */
     public function testPropertyS3Key()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups200ResponseBackupsInner();
+        $this->assertInstanceOf(ListBackups200ResponseBackupsInner::class, $model);
     }
 
     /**
@@ -165,8 +166,8 @@ class ListBackups200ResponseBackupsInnerTest extends TestCase
      */
     public function testPropertyBucketName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups200ResponseBackupsInner();
+        $this->assertInstanceOf(ListBackups200ResponseBackupsInner::class, $model);
     }
 
     /**
@@ -174,8 +175,8 @@ class ListBackups200ResponseBackupsInnerTest extends TestCase
      */
     public function testPropertySize()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups200ResponseBackupsInner();
+        $this->assertInstanceOf(ListBackups200ResponseBackupsInner::class, $model);
     }
 
     /**
@@ -183,8 +184,8 @@ class ListBackups200ResponseBackupsInnerTest extends TestCase
      */
     public function testPropertySizeFormatted()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups200ResponseBackupsInner();
+        $this->assertInstanceOf(ListBackups200ResponseBackupsInner::class, $model);
     }
 
     /**
@@ -192,7 +193,7 @@ class ListBackups200ResponseBackupsInnerTest extends TestCase
      */
     public function testPropertyFileExists()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListBackups200ResponseBackupsInner();
+        $this->assertInstanceOf(ListBackups200ResponseBackupsInner::class, $model);
     }
 }

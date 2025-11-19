@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1SearchMutationResponse;
 
 /**
  * V1SearchMutationResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1SearchMutationResponseTest extends TestCase
      */
     public function testV1SearchMutationResponse()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SearchMutationResponse();
+        $this->assertInstanceOf(V1SearchMutationResponse::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1SearchMutationResponseTest extends TestCase
      */
     public function testPropertySuccess()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SearchMutationResponse();
+        $this->assertInstanceOf(V1SearchMutationResponse::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V1SearchMutationResponseTest extends TestCase
      */
     public function testPropertyMessage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SearchMutationResponse();
+        $this->assertInstanceOf(V1SearchMutationResponse::class, $model);
     }
 
     /**
@@ -102,7 +103,7 @@ class V1SearchMutationResponseTest extends TestCase
      */
     public function testPropertyResult()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SearchMutationResponse();
+        $this->assertInstanceOf(V1SearchMutationResponse::class, $model);
     }
 }

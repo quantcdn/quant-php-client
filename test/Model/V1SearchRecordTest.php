@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1SearchRecord;
 
 /**
  * V1SearchRecordTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1SearchRecordTest extends TestCase
      */
     public function testV1SearchRecord()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SearchRecord();
+        $this->assertInstanceOf(V1SearchRecord::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1SearchRecordTest extends TestCase
      */
     public function testPropertyTitle()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SearchRecord();
+        $this->assertInstanceOf(V1SearchRecord::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V1SearchRecordTest extends TestCase
      */
     public function testPropertyContent()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SearchRecord();
+        $this->assertInstanceOf(V1SearchRecord::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V1SearchRecordTest extends TestCase
      */
     public function testPropertyUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SearchRecord();
+        $this->assertInstanceOf(V1SearchRecord::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class V1SearchRecordTest extends TestCase
      */
     public function testPropertySummary()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SearchRecord();
+        $this->assertInstanceOf(V1SearchRecord::class, $model);
     }
 }

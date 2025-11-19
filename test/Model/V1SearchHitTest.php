@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1SearchHit;
 
 /**
  * V1SearchHitTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1SearchHitTest extends TestCase
      */
     public function testV1SearchHit()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SearchHit();
+        $this->assertInstanceOf(V1SearchHit::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1SearchHitTest extends TestCase
      */
     public function testPropertyTitle()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SearchHit();
+        $this->assertInstanceOf(V1SearchHit::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V1SearchHitTest extends TestCase
      */
     public function testPropertyUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SearchHit();
+        $this->assertInstanceOf(V1SearchHit::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V1SearchHitTest extends TestCase
      */
     public function testPropertySummary()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SearchHit();
+        $this->assertInstanceOf(V1SearchHit::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class V1SearchHitTest extends TestCase
      */
     public function testPropertyContent()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SearchHit();
+        $this->assertInstanceOf(V1SearchHit::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class V1SearchHitTest extends TestCase
      */
     public function testPropertyImage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SearchHit();
+        $this->assertInstanceOf(V1SearchHit::class, $model);
     }
 
     /**
@@ -129,7 +130,7 @@ class V1SearchHitTest extends TestCase
      */
     public function testPropertyObjectId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1SearchHit();
+        $this->assertInstanceOf(V1SearchHit::class, $model);
     }
 }

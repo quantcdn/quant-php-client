@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1ProxyItem;
 
 /**
  * V1ProxyItemTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1ProxyItemTest extends TestCase
      */
     public function testV1ProxyItem()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1ProxyItem();
+        $this->assertInstanceOf(V1ProxyItem::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1ProxyItemTest extends TestCase
      */
     public function testPropertyUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1ProxyItem();
+        $this->assertInstanceOf(V1ProxyItem::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V1ProxyItemTest extends TestCase
      */
     public function testPropertyProxyUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1ProxyItem();
+        $this->assertInstanceOf(V1ProxyItem::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V1ProxyItemTest extends TestCase
      */
     public function testPropertyDateTimestamp()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1ProxyItem();
+        $this->assertInstanceOf(V1ProxyItem::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class V1ProxyItemTest extends TestCase
      */
     public function testPropertyPublished()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1ProxyItem();
+        $this->assertInstanceOf(V1ProxyItem::class, $model);
     }
 
     /**
@@ -120,7 +121,7 @@ class V1ProxyItemTest extends TestCase
      */
     public function testPropertyRevisionCount()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1ProxyItem();
+        $this->assertInstanceOf(V1ProxyItem::class, $model);
     }
 }

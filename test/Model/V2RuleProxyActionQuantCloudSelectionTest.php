@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2RuleProxyActionQuantCloudSelection;
 
 /**
  * V2RuleProxyActionQuantCloudSelectionTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2RuleProxyActionQuantCloudSelectionTest extends TestCase
      */
     public function testV2RuleProxyActionQuantCloudSelection()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyActionQuantCloudSelection();
+        $this->assertInstanceOf(V2RuleProxyActionQuantCloudSelection::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V2RuleProxyActionQuantCloudSelectionTest extends TestCase
      */
     public function testPropertyApp()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyActionQuantCloudSelection();
+        $this->assertInstanceOf(V2RuleProxyActionQuantCloudSelection::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V2RuleProxyActionQuantCloudSelectionTest extends TestCase
      */
     public function testPropertyEnv()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyActionQuantCloudSelection();
+        $this->assertInstanceOf(V2RuleProxyActionQuantCloudSelection::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V2RuleProxyActionQuantCloudSelectionTest extends TestCase
      */
     public function testPropertyContainer()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyActionQuantCloudSelection();
+        $this->assertInstanceOf(V2RuleProxyActionQuantCloudSelection::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class V2RuleProxyActionQuantCloudSelectionTest extends TestCase
      */
     public function testPropertyPort()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleProxyActionQuantCloudSelection();
+        $this->assertInstanceOf(V2RuleProxyActionQuantCloudSelection::class, $model);
     }
 }

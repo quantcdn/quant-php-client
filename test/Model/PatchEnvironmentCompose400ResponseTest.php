@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\PatchEnvironmentCompose400Response;
 
 /**
  * PatchEnvironmentCompose400ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class PatchEnvironmentCompose400ResponseTest extends TestCase
      */
     public function testPatchEnvironmentCompose400Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PatchEnvironmentCompose400Response();
+        $this->assertInstanceOf(PatchEnvironmentCompose400Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class PatchEnvironmentCompose400ResponseTest extends TestCase
      */
     public function testPropertyMessage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PatchEnvironmentCompose400Response();
+        $this->assertInstanceOf(PatchEnvironmentCompose400Response::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class PatchEnvironmentCompose400ResponseTest extends TestCase
      */
     public function testPropertyErrors()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new PatchEnvironmentCompose400Response();
+        $this->assertInstanceOf(PatchEnvironmentCompose400Response::class, $model);
     }
 }

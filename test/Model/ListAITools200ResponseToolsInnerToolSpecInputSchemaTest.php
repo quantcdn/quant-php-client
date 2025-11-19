@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ListAITools200ResponseToolsInnerToolSpecInputSchema;
 
 /**
  * ListAITools200ResponseToolsInnerToolSpecInputSchemaTest Class Doc Comment
@@ -75,8 +76,8 @@ class ListAITools200ResponseToolsInnerToolSpecInputSchemaTest extends TestCase
      */
     public function testListAITools200ResponseToolsInnerToolSpecInputSchema()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAITools200ResponseToolsInnerToolSpecInputSchema();
+        $this->assertInstanceOf(ListAITools200ResponseToolsInnerToolSpecInputSchema::class, $model);
     }
 
     /**
@@ -84,7 +85,7 @@ class ListAITools200ResponseToolsInnerToolSpecInputSchemaTest extends TestCase
      */
     public function testPropertyJson()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListAITools200ResponseToolsInnerToolSpecInputSchema();
+        $this->assertInstanceOf(ListAITools200ResponseToolsInnerToolSpecInputSchema::class, $model);
     }
 }

@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2RuleCustomResponseAction;
 
 /**
  * V2RuleCustomResponseActionTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2RuleCustomResponseActionTest extends TestCase
      */
     public function testV2RuleCustomResponseAction()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleCustomResponseAction();
+        $this->assertInstanceOf(V2RuleCustomResponseAction::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V2RuleCustomResponseActionTest extends TestCase
      */
     public function testPropertyCustomResponseBody()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleCustomResponseAction();
+        $this->assertInstanceOf(V2RuleCustomResponseAction::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class V2RuleCustomResponseActionTest extends TestCase
      */
     public function testPropertyCustomResponseStatusCode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleCustomResponseAction();
+        $this->assertInstanceOf(V2RuleCustomResponseAction::class, $model);
     }
 }

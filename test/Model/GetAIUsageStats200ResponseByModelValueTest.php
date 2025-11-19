@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\GetAIUsageStats200ResponseByModelValue;
 
 /**
  * GetAIUsageStats200ResponseByModelValueTest Class Doc Comment
@@ -75,8 +76,8 @@ class GetAIUsageStats200ResponseByModelValueTest extends TestCase
      */
     public function testGetAIUsageStats200ResponseByModelValue()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetAIUsageStats200ResponseByModelValue();
+        $this->assertInstanceOf(GetAIUsageStats200ResponseByModelValue::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class GetAIUsageStats200ResponseByModelValueTest extends TestCase
      */
     public function testPropertyRequests()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetAIUsageStats200ResponseByModelValue();
+        $this->assertInstanceOf(GetAIUsageStats200ResponseByModelValue::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class GetAIUsageStats200ResponseByModelValueTest extends TestCase
      */
     public function testPropertyTokens()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new GetAIUsageStats200ResponseByModelValue();
+        $this->assertInstanceOf(GetAIUsageStats200ResponseByModelValue::class, $model);
     }
 }

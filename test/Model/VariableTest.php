@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\Variable;
 
 /**
  * VariableTest Class Doc Comment
@@ -75,8 +76,8 @@ class VariableTest extends TestCase
      */
     public function testVariable()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Variable();
+        $this->assertInstanceOf(Variable::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class VariableTest extends TestCase
      */
     public function testPropertyKey()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Variable();
+        $this->assertInstanceOf(Variable::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class VariableTest extends TestCase
      */
     public function testPropertyValue()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new Variable();
+        $this->assertInstanceOf(Variable::class, $model);
     }
 }

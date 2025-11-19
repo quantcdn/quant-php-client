@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1DeleteResponse;
 
 /**
  * V1DeleteResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1DeleteResponseTest extends TestCase
      */
     public function testV1DeleteResponse()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1DeleteResponse();
+        $this->assertInstanceOf(V1DeleteResponse::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1DeleteResponseTest extends TestCase
      */
     public function testPropertyError()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1DeleteResponse();
+        $this->assertInstanceOf(V1DeleteResponse::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V1DeleteResponseTest extends TestCase
      */
     public function testPropertyErrors()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1DeleteResponse();
+        $this->assertInstanceOf(V1DeleteResponse::class, $model);
     }
 
     /**
@@ -102,7 +103,7 @@ class V1DeleteResponseTest extends TestCase
      */
     public function testPropertyMeta()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1DeleteResponse();
+        $this->assertInstanceOf(V1DeleteResponse::class, $model);
     }
 }

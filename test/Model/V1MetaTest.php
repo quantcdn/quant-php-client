@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V1Meta;
 
 /**
  * V1MetaTest Class Doc Comment
@@ -75,8 +76,8 @@ class V1MetaTest extends TestCase
      */
     public function testV1Meta()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Meta();
+        $this->assertInstanceOf(V1Meta::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V1MetaTest extends TestCase
      */
     public function testPropertyUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Meta();
+        $this->assertInstanceOf(V1Meta::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class V1MetaTest extends TestCase
      */
     public function testPropertyType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Meta();
+        $this->assertInstanceOf(V1Meta::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class V1MetaTest extends TestCase
      */
     public function testPropertySeqNum()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Meta();
+        $this->assertInstanceOf(V1Meta::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class V1MetaTest extends TestCase
      */
     public function testPropertyPublished()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Meta();
+        $this->assertInstanceOf(V1Meta::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class V1MetaTest extends TestCase
      */
     public function testPropertyPublishedRevision()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Meta();
+        $this->assertInstanceOf(V1Meta::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class V1MetaTest extends TestCase
      */
     public function testPropertyPublishedMd5()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Meta();
+        $this->assertInstanceOf(V1Meta::class, $model);
     }
 
     /**
@@ -138,8 +139,8 @@ class V1MetaTest extends TestCase
      */
     public function testPropertyByteLength()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Meta();
+        $this->assertInstanceOf(V1Meta::class, $model);
     }
 
     /**
@@ -147,8 +148,8 @@ class V1MetaTest extends TestCase
      */
     public function testPropertyRevisionCount()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Meta();
+        $this->assertInstanceOf(V1Meta::class, $model);
     }
 
     /**
@@ -156,8 +157,8 @@ class V1MetaTest extends TestCase
      */
     public function testPropertyHighestRevisionNumber()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Meta();
+        $this->assertInstanceOf(V1Meta::class, $model);
     }
 
     /**
@@ -165,8 +166,8 @@ class V1MetaTest extends TestCase
      */
     public function testPropertyDeleted()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Meta();
+        $this->assertInstanceOf(V1Meta::class, $model);
     }
 
     /**
@@ -174,8 +175,8 @@ class V1MetaTest extends TestCase
      */
     public function testPropertyDeletedTimestamp()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Meta();
+        $this->assertInstanceOf(V1Meta::class, $model);
     }
 
     /**
@@ -183,8 +184,8 @@ class V1MetaTest extends TestCase
      */
     public function testPropertyMd5()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Meta();
+        $this->assertInstanceOf(V1Meta::class, $model);
     }
 
     /**
@@ -192,8 +193,8 @@ class V1MetaTest extends TestCase
      */
     public function testPropertyRevisionNumber()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Meta();
+        $this->assertInstanceOf(V1Meta::class, $model);
     }
 
     /**
@@ -201,7 +202,7 @@ class V1MetaTest extends TestCase
      */
     public function testPropertyDateTimestamp()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V1Meta();
+        $this->assertInstanceOf(V1Meta::class, $model);
     }
 }

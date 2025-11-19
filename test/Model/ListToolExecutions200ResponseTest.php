@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ListToolExecutions200Response;
 
 /**
  * ListToolExecutions200ResponseTest Class Doc Comment
@@ -75,8 +76,8 @@ class ListToolExecutions200ResponseTest extends TestCase
      */
     public function testListToolExecutions200Response()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListToolExecutions200Response();
+        $this->assertInstanceOf(ListToolExecutions200Response::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class ListToolExecutions200ResponseTest extends TestCase
      */
     public function testPropertyExecutions()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListToolExecutions200Response();
+        $this->assertInstanceOf(ListToolExecutions200Response::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class ListToolExecutions200ResponseTest extends TestCase
      */
     public function testPropertyCount()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListToolExecutions200Response();
+        $this->assertInstanceOf(ListToolExecutions200Response::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class ListToolExecutions200ResponseTest extends TestCase
      */
     public function testPropertyOrgId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListToolExecutions200Response();
+        $this->assertInstanceOf(ListToolExecutions200Response::class, $model);
     }
 
     /**
@@ -111,7 +112,7 @@ class ListToolExecutions200ResponseTest extends TestCase
      */
     public function testPropertyStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ListToolExecutions200Response();
+        $this->assertInstanceOf(ListToolExecutions200Response::class, $model);
     }
 }

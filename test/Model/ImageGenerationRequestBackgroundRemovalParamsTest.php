@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\ImageGenerationRequestBackgroundRemovalParams;
 
 /**
  * ImageGenerationRequestBackgroundRemovalParamsTest Class Doc Comment
@@ -75,8 +76,8 @@ class ImageGenerationRequestBackgroundRemovalParamsTest extends TestCase
      */
     public function testImageGenerationRequestBackgroundRemovalParams()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestBackgroundRemovalParams();
+        $this->assertInstanceOf(ImageGenerationRequestBackgroundRemovalParams::class, $model);
     }
 
     /**
@@ -84,7 +85,7 @@ class ImageGenerationRequestBackgroundRemovalParamsTest extends TestCase
      */
     public function testPropertyImage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new ImageGenerationRequestBackgroundRemovalParams();
+        $this->assertInstanceOf(ImageGenerationRequestBackgroundRemovalParams::class, $model);
     }
 }

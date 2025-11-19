@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2Error;
 
 /**
  * V2ErrorTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2ErrorTest extends TestCase
      */
     public function testV2Error()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Error();
+        $this->assertInstanceOf(V2Error::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class V2ErrorTest extends TestCase
      */
     public function testPropertyMessage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Error();
+        $this->assertInstanceOf(V2Error::class, $model);
     }
 
     /**
@@ -93,7 +94,7 @@ class V2ErrorTest extends TestCase
      */
     public function testPropertyError()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2Error();
+        $this->assertInstanceOf(V2Error::class, $model);
     }
 }

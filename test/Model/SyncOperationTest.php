@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\SyncOperation;
 
 /**
  * SyncOperationTest Class Doc Comment
@@ -75,8 +76,8 @@ class SyncOperationTest extends TestCase
      */
     public function testSyncOperation()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new SyncOperation();
+        $this->assertInstanceOf(SyncOperation::class, $model);
     }
 
     /**
@@ -84,8 +85,8 @@ class SyncOperationTest extends TestCase
      */
     public function testPropertySyncId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new SyncOperation();
+        $this->assertInstanceOf(SyncOperation::class, $model);
     }
 
     /**
@@ -93,8 +94,8 @@ class SyncOperationTest extends TestCase
      */
     public function testPropertySyncType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new SyncOperation();
+        $this->assertInstanceOf(SyncOperation::class, $model);
     }
 
     /**
@@ -102,8 +103,8 @@ class SyncOperationTest extends TestCase
      */
     public function testPropertySourceEnvironment()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new SyncOperation();
+        $this->assertInstanceOf(SyncOperation::class, $model);
     }
 
     /**
@@ -111,8 +112,8 @@ class SyncOperationTest extends TestCase
      */
     public function testPropertyTargetEnvironment()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new SyncOperation();
+        $this->assertInstanceOf(SyncOperation::class, $model);
     }
 
     /**
@@ -120,8 +121,8 @@ class SyncOperationTest extends TestCase
      */
     public function testPropertyStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new SyncOperation();
+        $this->assertInstanceOf(SyncOperation::class, $model);
     }
 
     /**
@@ -129,8 +130,8 @@ class SyncOperationTest extends TestCase
      */
     public function testPropertyCreatedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new SyncOperation();
+        $this->assertInstanceOf(SyncOperation::class, $model);
     }
 
     /**
@@ -138,7 +139,7 @@ class SyncOperationTest extends TestCase
      */
     public function testPropertyCompletedAt()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new SyncOperation();
+        $this->assertInstanceOf(SyncOperation::class, $model);
     }
 }

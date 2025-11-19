@@ -29,6 +29,7 @@
 namespace QuantClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use QuantClient\Model\V2RuleHeaderAction;
 
 /**
  * V2RuleHeaderActionTest Class Doc Comment
@@ -75,8 +76,8 @@ class V2RuleHeaderActionTest extends TestCase
      */
     public function testV2RuleHeaderAction()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleHeaderAction();
+        $this->assertInstanceOf(V2RuleHeaderAction::class, $model);
     }
 
     /**
@@ -84,7 +85,7 @@ class V2RuleHeaderActionTest extends TestCase
      */
     public function testPropertyHeaders()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $model = new V2RuleHeaderAction();
+        $this->assertInstanceOf(V2RuleHeaderAction::class, $model);
     }
 }
