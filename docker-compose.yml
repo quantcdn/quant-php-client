@@ -2,9 +2,9 @@ services:
   quant-mock-api:
     image: ghcr.io/quantcdn/quant-mock-api:4.4.0
     ports:
-      - "8080:4010"
+      - "4010:4010"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:4010/"]
+      test: ["CMD", "nc", "-z", "127.0.0.1", "4010"]
       interval: 10s
       timeout: 5s
       retries: 5

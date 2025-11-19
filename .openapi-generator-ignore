@@ -27,3 +27,4 @@ test/**/*Test.php
 test/BaseTestCase.php
 docker-compose.yml
 .github/workflows/tests.yml
+composer.json

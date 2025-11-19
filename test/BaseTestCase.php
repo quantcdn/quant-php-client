@@ -41,7 +41,7 @@ abstract class BaseTestCase extends TestCase
         parent::setUp();
         
         // Get mock API host from environment or use default
-        $this->mockApiHost = getenv('QUANT_MOCK_API_HOST') ?: 'http://localhost:8080';
+        $this->mockApiHost = getenv('QUANT_MOCK_API_HOST') ?: 'http://localhost:4010';
         
         // Create configuration instance
         $this->config = new Configuration();

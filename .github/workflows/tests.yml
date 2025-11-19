@@ -14,7 +14,7 @@ jobs:
       quant-mock-api:
         image: ghcr.io/quantcdn/quant-mock-api:4.4.0
         ports:
-          - 8080:4010
+          - 4010:4010
         options: >-
             --health-cmd "nc -z 127.0.0.1 4010"
             --health-interval 10s
@@ -29,7 +29,7 @@ jobs:
     name: PHP ${{ matrix.php-version }}
     
     env:
-      QUANT_MOCK_API_HOST: http://localhost:8080
+      QUANT_MOCK_API_HOST: http://localhost:4010
       QUANT_API_TOKEN: test-token
     
     steps:
@@ -58,10 +58,6 @@ jobs:
             
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
-        
-      - name: Wait for mock API
-        run: |
-          timeout 30 sh -c 'until curl -f http://localhost:8080/health; do sleep 1; done'
         
       - name: Run test suite
         run: vendor/bin/phpunit
