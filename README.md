@@ -1,3 +1,490 @@
-# quant-php-client
+# quant-client
 
-This is the PHP client for Quant.
+Unified API for QuantCDN Admin and QuantCloud Platform services
+
+
+## Installation & Usage
+
+### Requirements
+
+PHP 8.1 and later.
+
+### Composer
+
+To install the bindings via [Composer](https://getcomposer.org/), add the following to `composer.json`:
+
+```json
+{
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/quantcdn/quant-php-client.git"
+    }
+  ],
+  "require": {
+    "quantcdn/quant-php-client": "*@dev"
+  }
+}
+```
+
+Then run `composer install`
+
+### Manual Installation
+
+Download the files and include `autoload.php`:
+
+```php
+<?php
+require_once('/path/to/quant-client/vendor/autoload.php');
+```
+
+## Getting Started
+
+Please follow the [installation procedure](#installation--usage) and then run the following:
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\AIServicesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organisation = 'organisation_example'; // string | The organisation ID
+$chat_inference_request = new \QuantClient\Model\ChatInferenceRequest(); // \QuantClient\Model\ChatInferenceRequest | Chat request with optional multimodal content blocks
+
+try {
+    $result = $apiInstance->chatInference($organisation, $chat_inference_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AIServicesApi->chatInference: ', $e->getMessage(), PHP_EOL;
+}
+
+```
+
+## API Endpoints
+
+All URIs are relative to *https://dashboard.quantcdn.io*
+
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
+*AIServicesApi* | [**chatInference**](docs/Api/AIServicesApi.md#chatinference) | **POST** /api/v3/organizations/{organisation}/ai/chat | Chat inference via API Gateway (buffered responses) with multimodal support
+*AIServicesApi* | [**chatInferenceStream**](docs/Api/AIServicesApi.md#chatinferencestream) | **POST** /api/v3/organizations/{organisation}/ai/chat/stream | Chat inference via streaming endpoint (true HTTP streaming) with multimodal support
+*AIServicesApi* | [**createAISession**](docs/Api/AIServicesApi.md#createaisession) | **POST** /api/v3/organizations/{organisation}/ai/sessions | Create a new chat session with multi-tenant isolation
+*AIServicesApi* | [**deleteAISession**](docs/Api/AIServicesApi.md#deleteaisession) | **DELETE** /api/v3/organizations/{organisation}/ai/sessions/{sessionId} | Delete a chat session
+*AIServicesApi* | [**embeddings**](docs/Api/AIServicesApi.md#embeddings) | **POST** /api/v3/organizations/{organisation}/ai/embeddings | Generate text embeddings for semantic search and RAG applications
+*AIServicesApi* | [**getAIConfig**](docs/Api/AIServicesApi.md#getaiconfig) | **GET** /api/v3/organizations/{organisation}/ai/config | Get AI configuration for an organization
+*AIServicesApi* | [**getAISession**](docs/Api/AIServicesApi.md#getaisession) | **GET** /api/v3/organizations/{organisation}/ai/sessions/{sessionId} | Get a specific chat session
+*AIServicesApi* | [**getAIUsageStats**](docs/Api/AIServicesApi.md#getaiusagestats) | **GET** /api/v3/organizations/{organisation}/ai/usage | Get AI usage statistics
+*AIServicesApi* | [**getToolExecutionStatus**](docs/Api/AIServicesApi.md#gettoolexecutionstatus) | **GET** /api/v3/organizations/{organisation}/ai/tools/executions/{executionId} | Get async tool execution status and result
+*AIServicesApi* | [**imageGeneration**](docs/Api/AIServicesApi.md#imagegeneration) | **POST** /api/v3/organizations/{organisation}/ai/image-generation | Generate images with Amazon Nova Canvas
+*AIServicesApi* | [**listAIModels**](docs/Api/AIServicesApi.md#listaimodels) | **GET** /api/v3/organizations/{organisation}/ai/models | List available AI models for an organization
+*AIServicesApi* | [**listAISessions**](docs/Api/AIServicesApi.md#listaisessions) | **GET** /api/v3/organizations/{organisation}/ai/sessions | List chat sessions with multi-tenant filtering
+*AIServicesApi* | [**listAIToolNames**](docs/Api/AIServicesApi.md#listaitoolnames) | **GET** /api/v3/organizations/{organisation}/ai/tools/names | List tool names only (lightweight response)
+*AIServicesApi* | [**listAITools**](docs/Api/AIServicesApi.md#listaitools) | **GET** /api/v3/organizations/{organisation}/ai/tools | List available built-in tools for function calling
+*AIServicesApi* | [**listToolExecutions**](docs/Api/AIServicesApi.md#listtoolexecutions) | **GET** /api/v3/organizations/{organisation}/ai/tools/executions | List tool executions for monitoring and debugging
+*AIServicesApi* | [**updateAIConfig**](docs/Api/AIServicesApi.md#updateaiconfig) | **PUT** /api/v3/organizations/{organisation}/ai/config | Update AI configuration for an organization
+*ApplicationsApi* | [**createApplication**](docs/Api/ApplicationsApi.md#createapplication) | **POST** /api/v3/organizations/{organisation}/applications | Create a new application
+*ApplicationsApi* | [**deleteApplication**](docs/Api/ApplicationsApi.md#deleteapplication) | **DELETE** /api/v3/organizations/{organisation}/applications/{application} | Delete an application
+*ApplicationsApi* | [**getApplication**](docs/Api/ApplicationsApi.md#getapplication) | **GET** /api/v3/organizations/{organisation}/applications/{application} | Get a single application
+*ApplicationsApi* | [**getEcrLoginCredentials**](docs/Api/ApplicationsApi.md#getecrlogincredentials) | **GET** /api/v3/organizations/{organisation}/applications/ecr-login | Get ECR login credentials
+*ApplicationsApi* | [**listApplications**](docs/Api/ApplicationsApi.md#listapplications) | **GET** /api/v3/organizations/{organisation}/applications | Get all applications for an organisation
+*BackupManagementApi* | [**createBackup**](docs/Api/BackupManagementApi.md#createbackup) | **POST** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/backups/{type} | Create a backup for an environment
+*BackupManagementApi* | [**deleteBackup**](docs/Api/BackupManagementApi.md#deletebackup) | **DELETE** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/backups/{type}/{backupId} | Delete a backup
+*BackupManagementApi* | [**downloadBackup**](docs/Api/BackupManagementApi.md#downloadbackup) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/backups/{type}/{backupId}/download | Generate a download URL for a backup
+*BackupManagementApi* | [**listBackups**](docs/Api/BackupManagementApi.md#listbackups) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/backups/{type} | List backups for an environment
+*CommandsApi* | [**createCommand**](docs/Api/CommandsApi.md#createcommand) | **POST** /api/v3/organizations/{organisation}/environments/{environment}/commands | Create a command for an environment
+*CommandsApi* | [**getCommand**](docs/Api/CommandsApi.md#getcommand) | **GET** /api/v3/organizations/{organisation}/environments/{environment}/commands/{command} | Get a command
+*CommandsApi* | [**listCommands**](docs/Api/CommandsApi.md#listcommands) | **GET** /api/v3/organizations/{organisation}/environments/{environment}/commands | Get all commands for an environment
+*ComposeApi* | [**getEnvironmentCompose**](docs/Api/ComposeApi.md#getenvironmentcompose) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/compose | Get the compose file for an environment
+*ComposeApi* | [**patchEnvironmentCompose**](docs/Api/ComposeApi.md#patchenvironmentcompose) | **PATCH** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/compose | Partially Update Environment Compose Definition
+*ComposeApi* | [**validateCompose**](docs/Api/ComposeApi.md#validatecompose) | **POST** /api/v3/organizations/{organisation}/compose/validate | Validate a compose file
+*ContainersApi* | [**listContainers**](docs/Api/ContainersApi.md#listcontainers) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/containers | Get the containers in an environment
+*ContainersApi* | [**updateContainer**](docs/Api/ContainersApi.md#updatecontainer) | **PUT** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/containers/{container} | Update a container in an environment
+*CrawlerSchedulesApi* | [**crawlerSchedulesAdd**](docs/Api/CrawlerSchedulesApi.md#crawlerschedulesadd) | **POST** /api/v2/organizations/{organization}/projects/{project}/crawlers/{crawler}/schedules | Add a new schedule
+*CrawlerSchedulesApi* | [**crawlerSchedulesDelete**](docs/Api/CrawlerSchedulesApi.md#crawlerschedulesdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/crawlers/{crawler}/schedules/{crawler_schedule} | Delete a schedule
+*CrawlerSchedulesApi* | [**crawlerSchedulesEdit**](docs/Api/CrawlerSchedulesApi.md#crawlerschedulesedit) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/crawlers/{crawler}/schedules/{crawler_schedule} | Edit a schedule
+*CrawlerSchedulesApi* | [**crawlerSchedulesList**](docs/Api/CrawlerSchedulesApi.md#crawlerscheduleslist) | **GET** /api/v2/organizations/{organization}/projects/{project}/crawlers/{crawler}/schedules | List schedules for a crawler
+*CrawlerSchedulesApi* | [**crawlerSchedulesShow**](docs/Api/CrawlerSchedulesApi.md#crawlerschedulesshow) | **GET** /api/v2/organizations/{organization}/projects/{project}/crawlers/{crawler}/schedules/{crawler_schedule} | Show a specific schedule
+*CrawlersApi* | [**crawlersCreate**](docs/Api/CrawlersApi.md#crawlerscreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/crawlers | Create a new crawler
+*CrawlersApi* | [**crawlersDelete**](docs/Api/CrawlersApi.md#crawlersdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/crawlers/{crawler} | Delete a crawler
+*CrawlersApi* | [**crawlersGetRunById**](docs/Api/CrawlersApi.md#crawlersgetrunbyid) | **GET** /api/v2/organizations/{organization}/projects/{project}/crawlers/{crawler}/runs/{run_id} | Get a run by ID
+*CrawlersApi* | [**crawlersGetRuns**](docs/Api/CrawlersApi.md#crawlersgetruns) | **GET** /api/v2/organizations/{organization}/projects/{project}/crawlers/{crawler}/runs | Get all runs for a crawler
+*CrawlersApi* | [**crawlersList**](docs/Api/CrawlersApi.md#crawlerslist) | **GET** /api/v2/organizations/{organization}/projects/{project}/crawlers | List crawlers for the project
+*CrawlersApi* | [**crawlersRead**](docs/Api/CrawlersApi.md#crawlersread) | **GET** /api/v2/organizations/{organization}/projects/{project}/crawlers/{crawler} | Get details of a single crawler
+*CrawlersApi* | [**crawlersRun**](docs/Api/CrawlersApi.md#crawlersrun) | **POST** /api/v2/organizations/{organization}/projects/{project}/crawlers/{crawler}/run | Run a crawler
+*CrawlersApi* | [**crawlersUpdate**](docs/Api/CrawlersApi.md#crawlersupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/crawlers/{crawler} | Update a crawler
+*CronApi* | [**createCronJob**](docs/Api/CronApi.md#createcronjob) | **POST** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/cron | Create a new cron job
+*CronApi* | [**deleteCronJob**](docs/Api/CronApi.md#deletecronjob) | **DELETE** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/cron/{cron} | Delete a cron job
+*CronApi* | [**getCronJob**](docs/Api/CronApi.md#getcronjob) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/cron/{cron} | Get a cron job
+*CronApi* | [**getCronRun**](docs/Api/CronApi.md#getcronrun) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/cron/{cron}/runs/{run} | Get a cron run
+*CronApi* | [**listCronJobRuns**](docs/Api/CronApi.md#listcronjobruns) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/cron/{cron}/runs | Get all runs for a cron job
+*CronApi* | [**listCronJobs**](docs/Api/CronApi.md#listcronjobs) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/cron | Get all cron jobs for an environment
+*CronApi* | [**updateCronJob**](docs/Api/CronApi.md#updatecronjob) | **PATCH** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/cron/{cron} | Update a cron job
+*DomainsApi* | [**domainsCreate**](docs/Api/DomainsApi.md#domainscreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/domains | Add a new domain
+*DomainsApi* | [**domainsDelete**](docs/Api/DomainsApi.md#domainsdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/domains/{domain} | Delete a domain
+*DomainsApi* | [**domainsList**](docs/Api/DomainsApi.md#domainslist) | **GET** /api/v2/organizations/{organization}/projects/{project}/domains | List all domains for a project
+*DomainsApi* | [**domainsRead**](docs/Api/DomainsApi.md#domainsread) | **GET** /api/v2/organizations/{organization}/projects/{project}/domains/{domain} | Get details of a single domain
+*DomainsApi* | [**domainsRenew**](docs/Api/DomainsApi.md#domainsrenew) | **POST** /api/v2/organizations/{organization}/projects/{project}/domains/{domain}/renew | Renew the SSL certificate for a domain
+*EnvironmentsApi* | [**createEnvironment**](docs/Api/EnvironmentsApi.md#createenvironment) | **POST** /api/v3/organizations/{organisation}/applications/{application}/environments | Create a new environment
+*EnvironmentsApi* | [**deleteEnvironment**](docs/Api/EnvironmentsApi.md#deleteenvironment) | **DELETE** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment} | Delete an environment
+*EnvironmentsApi* | [**getEnvironment**](docs/Api/EnvironmentsApi.md#getenvironment) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment} | Get a single environment
+*EnvironmentsApi* | [**getEnvironmentLogs**](docs/Api/EnvironmentsApi.md#getenvironmentlogs) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/logs | Get the logs for an environment
+*EnvironmentsApi* | [**getEnvironmentMetrics**](docs/Api/EnvironmentsApi.md#getenvironmentmetrics) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/metrics | Get the metrics for an environment
+*EnvironmentsApi* | [**listEnvironments**](docs/Api/EnvironmentsApi.md#listenvironments) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments | Get all environments for an application
+*EnvironmentsApi* | [**listSyncOperations**](docs/Api/EnvironmentsApi.md#listsyncoperations) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/sync/{type} | List the sync operations for an environment
+*EnvironmentsApi* | [**syncToEnvironment**](docs/Api/EnvironmentsApi.md#synctoenvironment) | **POST** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/sync/{type} | Perform a sync operation from a source environment to the current environment
+*EnvironmentsApi* | [**updateEnvironment**](docs/Api/EnvironmentsApi.md#updateenvironment) | **PUT** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment} | Update Environment Compose Definition
+*EnvironmentsApi* | [**updateEnvironmentState**](docs/Api/EnvironmentsApi.md#updateenvironmentstate) | **PUT** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/state | Update the state of an environment
+*HeadersApi* | [**headersCreate**](docs/Api/HeadersApi.md#headerscreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/custom-headers | Create or update custom headers
+*HeadersApi* | [**headersDelete**](docs/Api/HeadersApi.md#headersdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/custom-headers | Delete custom headers
+*HeadersApi* | [**headersList**](docs/Api/HeadersApi.md#headerslist) | **GET** /api/v2/organizations/{organization}/projects/{project}/custom-headers | List custom headers for a project
+*KVApi* | [**kVCreate**](docs/Api/KVApi.md#kvcreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv | Add a kv store
+*KVApi* | [**kVDelete**](docs/Api/KVApi.md#kvdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id} | Delete a kv store
+*KVApi* | [**kVItemsCreate**](docs/Api/KVApi.md#kvitemscreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items | Add an item to a kv store
+*KVApi* | [**kVItemsDelete**](docs/Api/KVApi.md#kvitemsdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key} | Delete an item from a kv store
+*KVApi* | [**kVItemsList**](docs/Api/KVApi.md#kvitemslist) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items | List items in a kv store
+*KVApi* | [**kVItemsShow**](docs/Api/KVApi.md#kvitemsshow) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key} | Get an item from a kv store
+*KVApi* | [**kVItemsUpdate**](docs/Api/KVApi.md#kvitemsupdate) | **PUT** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key} | Update an item in a kv store
+*KVApi* | [**kVList**](docs/Api/KVApi.md#kvlist) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv | List key-value stores
+*KVApi* | [**kVShow**](docs/Api/KVApi.md#kvshow) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id} | Get a kv store
+*OrganizationsApi* | [**organizationsList**](docs/Api/OrganizationsApi.md#organizationslist) | **GET** /api/v2/organizations | Retrieve all organizations
+*OrganizationsApi* | [**organizationsRead**](docs/Api/OrganizationsApi.md#organizationsread) | **GET** /api/v2/organizations/{organization} | Get details of a single organization
+*ProjectsApi* | [**projectsCreate**](docs/Api/ProjectsApi.md#projectscreate) | **POST** /api/v2/organizations/{organization}/projects | Create a new project
+*ProjectsApi* | [**projectsDelete**](docs/Api/ProjectsApi.md#projectsdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project} | Delete a project
+*ProjectsApi* | [**projectsList**](docs/Api/ProjectsApi.md#projectslist) | **GET** /api/v2/organizations/{organization}/projects | Retrieve all projects for an organization
+*ProjectsApi* | [**projectsRead**](docs/Api/ProjectsApi.md#projectsread) | **GET** /api/v2/organizations/{organization}/projects/{project} | Get details of a single project
+*ProjectsApi* | [**projectsUpdate**](docs/Api/ProjectsApi.md#projectsupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project} | Update a project
+*PurgeApi* | [**purgeCreate**](docs/Api/PurgeApi.md#purgecreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/purge | Purge cache via URL or cache keys
+*RulesApi* | [**rulesAuthCreate**](docs/Api/RulesApi.md#rulesauthcreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/rules/auth | Create an authentication rule
+*RulesApi* | [**rulesAuthDelete**](docs/Api/RulesApi.md#rulesauthdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/rules/auth/{rule} | Delete an authentication rule
+*RulesApi* | [**rulesAuthList**](docs/Api/RulesApi.md#rulesauthlist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/auth | List authentication rules
+*RulesApi* | [**rulesAuthRead**](docs/Api/RulesApi.md#rulesauthread) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/auth/{rule} | Get details of an authentication rule
+*RulesApi* | [**rulesAuthUpdate**](docs/Api/RulesApi.md#rulesauthupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/rules/auth/{rule} | Update an authentication rule
+*RulesApi* | [**rulesBotChallengeCreate**](docs/Api/RulesApi.md#rulesbotchallengecreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/rules/bot-challenge | Create a bot challenge rule
+*RulesApi* | [**rulesBotChallengeDelete**](docs/Api/RulesApi.md#rulesbotchallengedelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/rules/bot-challenge/{rule} | Delete a bot challenge rule
+*RulesApi* | [**rulesBotChallengeList**](docs/Api/RulesApi.md#rulesbotchallengelist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/bot-challenge | List bot challenge rules
+*RulesApi* | [**rulesBotChallengeRead**](docs/Api/RulesApi.md#rulesbotchallengeread) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/bot-challenge/{rule} | Get details of a bot challenge rule
+*RulesApi* | [**rulesBotChallengeUpdate**](docs/Api/RulesApi.md#rulesbotchallengeupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/rules/bot-challenge/{rule} | Update a bot challenge rule
+*RulesApi* | [**rulesContentFilterCreate**](docs/Api/RulesApi.md#rulescontentfiltercreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/rules/content-filter | Create a content filter rule
+*RulesApi* | [**rulesContentFilterDelete**](docs/Api/RulesApi.md#rulescontentfilterdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/rules/content-filter/{rule} | Delete a content filter rule
+*RulesApi* | [**rulesContentFilterList**](docs/Api/RulesApi.md#rulescontentfilterlist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/content-filter | List content filter rules
+*RulesApi* | [**rulesContentFilterRead**](docs/Api/RulesApi.md#rulescontentfilterread) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/content-filter/{rule} | Get details of a content filter rule
+*RulesApi* | [**rulesContentFilterUpdate**](docs/Api/RulesApi.md#rulescontentfilterupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/rules/content-filter/{rule} | Update a content filter rule
+*RulesApi* | [**rulesCustomResponseCreate**](docs/Api/RulesApi.md#rulescustomresponsecreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/rules/custom-response | Create a custom response rule
+*RulesApi* | [**rulesCustomResponseDelete**](docs/Api/RulesApi.md#rulescustomresponsedelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/rules/custom-response/{rule} | Delete a custom response rule
+*RulesApi* | [**rulesCustomResponseList**](docs/Api/RulesApi.md#rulescustomresponselist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/custom-response | List custom response rules
+*RulesApi* | [**rulesCustomResponseRead**](docs/Api/RulesApi.md#rulescustomresponseread) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/custom-response/{rule} | Get details of a custom response rule
+*RulesApi* | [**rulesCustomResponseUpdate**](docs/Api/RulesApi.md#rulescustomresponseupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/rules/custom-response/{rule} | Update a custom response rule
+*RulesApi* | [**rulesFunctionCreate**](docs/Api/RulesApi.md#rulesfunctioncreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/rules/function | Create an edge function rule
+*RulesApi* | [**rulesFunctionDelete**](docs/Api/RulesApi.md#rulesfunctiondelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/rules/function/{rule} | Delete an edge function rule
+*RulesApi* | [**rulesFunctionList**](docs/Api/RulesApi.md#rulesfunctionlist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/function | List edge function rules
+*RulesApi* | [**rulesFunctionRead**](docs/Api/RulesApi.md#rulesfunctionread) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/function/{rule} | Get details of an edge function rule
+*RulesApi* | [**rulesFunctionUpdate**](docs/Api/RulesApi.md#rulesfunctionupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/rules/function/{rule} | Update an edge function rule
+*RulesApi* | [**rulesHeadersCreate**](docs/Api/RulesApi.md#rulesheaderscreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/rules/headers | Create a header rule
+*RulesApi* | [**rulesHeadersDelete**](docs/Api/RulesApi.md#rulesheadersdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/rules/headers/{rule} | Delete a header rule
+*RulesApi* | [**rulesHeadersList**](docs/Api/RulesApi.md#rulesheaderslist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/headers | List header rules
+*RulesApi* | [**rulesHeadersRead**](docs/Api/RulesApi.md#rulesheadersread) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/headers/{rule} | Get details of a header rule
+*RulesApi* | [**rulesHeadersUpdate**](docs/Api/RulesApi.md#rulesheadersupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/rules/headers/{rule} | Update a header rule
+*RulesApi* | [**rulesProxyCreate**](docs/Api/RulesApi.md#rulesproxycreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/rules/proxy | Create a proxy rule
+*RulesApi* | [**rulesProxyDelete**](docs/Api/RulesApi.md#rulesproxydelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/rules/proxy/{rule} | Delete a proxy rule
+*RulesApi* | [**rulesProxyList**](docs/Api/RulesApi.md#rulesproxylist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/proxy | List proxy rules
+*RulesApi* | [**rulesProxyRead**](docs/Api/RulesApi.md#rulesproxyread) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/proxy/{rule} | Get details of a proxy rule
+*RulesApi* | [**rulesProxyUpdate**](docs/Api/RulesApi.md#rulesproxyupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/rules/proxy/{rule} | Update a proxy rule
+*RulesApi* | [**rulesRedirectCreate**](docs/Api/RulesApi.md#rulesredirectcreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/rules/redirect | Create a redirect rule
+*RulesApi* | [**rulesRedirectDelete**](docs/Api/RulesApi.md#rulesredirectdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/rules/redirect/{rule} | Delete a redirect rule
+*RulesApi* | [**rulesRedirectList**](docs/Api/RulesApi.md#rulesredirectlist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/redirect | List redirect rules
+*RulesApi* | [**rulesRedirectRead**](docs/Api/RulesApi.md#rulesredirectread) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/redirect/{rule} | Get details of a redirect rule
+*RulesApi* | [**rulesRedirectUpdate**](docs/Api/RulesApi.md#rulesredirectupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/rules/redirect/{rule} | Update a redirect rule
+*RulesApi* | [**rulesServeStaticCreate**](docs/Api/RulesApi.md#rulesservestaticcreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/rules/serve-static | Create a serve static rule
+*RulesApi* | [**rulesServeStaticDelete**](docs/Api/RulesApi.md#rulesservestaticdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/rules/serve-static/{rule} | Delete a serve static rule
+*RulesApi* | [**rulesServeStaticList**](docs/Api/RulesApi.md#rulesservestaticlist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/serve-static | List serve static rules
+*RulesApi* | [**rulesServeStaticRead**](docs/Api/RulesApi.md#rulesservestaticread) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/serve-static/{rule} | Get details of a serve static rule
+*RulesApi* | [**rulesServeStaticUpdate**](docs/Api/RulesApi.md#rulesservestaticupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/rules/serve-static/{rule} | Update a serve static rule
+*SSHAccessApi* | [**getSshAccessCredentials**](docs/Api/SSHAccessApi.md#getsshaccesscredentials) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/ssh-access | Get SSH access credentials for an environment
+*ScalingPolicyApi* | [**deleteScalingPolicy**](docs/Api/ScalingPolicyApi.md#deletescalingpolicy) | **DELETE** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/scaling-policies/{policyName} | Delete the scaling policy for an environment
+*ScalingPolicyApi* | [**getScalingPolicies**](docs/Api/ScalingPolicyApi.md#getscalingpolicies) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/scaling-policies | Get the scaling policies for an environment
+*ScalingPolicyApi* | [**updateScalingPolicy**](docs/Api/ScalingPolicyApi.md#updatescalingpolicy) | **PUT** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/scaling-policies | Update the scaling policy for an environment
+*VariablesApi* | [**bulkSetEnvironmentVariables**](docs/Api/VariablesApi.md#bulksetenvironmentvariables) | **PUT** /api/v3/organizations/{api_organisation}/applications/{api_application}/environments/{api_environment}/variables | Bulk set/replace environment variables
+*VariablesApi* | [**deleteEnvironmentVariable**](docs/Api/VariablesApi.md#deleteenvironmentvariable) | **DELETE** /api/v3/organizations/{api_organisation}/applications/{api_application}/environments/{api_environment}/variables/{api_variable} | Delete a variable
+*VariablesApi* | [**listEnvironmentVariables**](docs/Api/VariablesApi.md#listenvironmentvariables) | **GET** /api/v3/organizations/{api_organisation}/applications/{api_application}/environments/{api_environment}/variables | Get all variables for an environment
+*VariablesApi* | [**updateEnvironmentVariable**](docs/Api/VariablesApi.md#updateenvironmentvariable) | **PUT** /api/v3/organizations/{api_organisation}/applications/{api_application}/environments/{api_environment}/variables/{api_variable} | Update a variable
+*VolumesApi* | [**createVolume**](docs/Api/VolumesApi.md#createvolume) | **POST** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/volumes | Create a new volume
+*VolumesApi* | [**deleteVolume**](docs/Api/VolumesApi.md#deletevolume) | **DELETE** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/volumes/{volume} | Delete a volume
+*VolumesApi* | [**getVolume**](docs/Api/VolumesApi.md#getvolume) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/volumes/{volume} | Get a volume
+*VolumesApi* | [**listVolumes**](docs/Api/VolumesApi.md#listvolumes) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/volumes | Get all volumes for an environment
+
+## Models
+
+- [Application](docs/Model/Application.md)
+- [ApplicationDatabase](docs/Model/ApplicationDatabase.md)
+- [ApplicationDeploymentInformationInner](docs/Model/ApplicationDeploymentInformationInner.md)
+- [ApplicationEnvironmentsInner](docs/Model/ApplicationEnvironmentsInner.md)
+- [ApplicationFilesystem](docs/Model/ApplicationFilesystem.md)
+- [ApplicationImageReference](docs/Model/ApplicationImageReference.md)
+- [BulkSetEnvironmentVariablesRequest](docs/Model/BulkSetEnvironmentVariablesRequest.md)
+- [BulkSetEnvironmentVariablesRequestEnvironmentInner](docs/Model/BulkSetEnvironmentVariablesRequestEnvironmentInner.md)
+- [ChatInference200Response](docs/Model/ChatInference200Response.md)
+- [ChatInference200ResponseResponse](docs/Model/ChatInference200ResponseResponse.md)
+- [ChatInference200ResponseResponseToolUse](docs/Model/ChatInference200ResponseResponseToolUse.md)
+- [ChatInference200ResponseResponseToolUseOneOf](docs/Model/ChatInference200ResponseResponseToolUseOneOf.md)
+- [ChatInference200ResponseResponseToolUseOneOf1Inner](docs/Model/ChatInference200ResponseResponseToolUseOneOf1Inner.md)
+- [ChatInference200ResponseResponseToolUseOneOfResult](docs/Model/ChatInference200ResponseResponseToolUseOneOfResult.md)
+- [ChatInference200ResponseUsage](docs/Model/ChatInference200ResponseUsage.md)
+- [ChatInferenceRequest](docs/Model/ChatInferenceRequest.md)
+- [ChatInferenceRequestMessagesInner](docs/Model/ChatInferenceRequestMessagesInner.md)
+- [ChatInferenceRequestMessagesInnerContent](docs/Model/ChatInferenceRequestMessagesInnerContent.md)
+- [ChatInferenceRequestMessagesInnerContentOneOfInner](docs/Model/ChatInferenceRequestMessagesInnerContentOneOfInner.md)
+- [ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf](docs/Model/ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf.md)
+- [ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf1](docs/Model/ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf1.md)
+- [ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf1Image](docs/Model/ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf1Image.md)
+- [ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf1ImageSource](docs/Model/ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf1ImageSource.md)
+- [ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf2](docs/Model/ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf2.md)
+- [ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf2Video](docs/Model/ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf2Video.md)
+- [ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf2VideoSource](docs/Model/ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf2VideoSource.md)
+- [ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf3](docs/Model/ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf3.md)
+- [ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf3Document](docs/Model/ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf3Document.md)
+- [ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf3DocumentSource](docs/Model/ChatInferenceRequestMessagesInnerContentOneOfInnerOneOf3DocumentSource.md)
+- [ChatInferenceRequestResponseFormat](docs/Model/ChatInferenceRequestResponseFormat.md)
+- [ChatInferenceRequestToolConfig](docs/Model/ChatInferenceRequestToolConfig.md)
+- [ChatInferenceRequestToolConfigToolsInner](docs/Model/ChatInferenceRequestToolConfigToolsInner.md)
+- [ChatInferenceRequestToolConfigToolsInnerToolSpec](docs/Model/ChatInferenceRequestToolConfigToolsInnerToolSpec.md)
+- [ChatInferenceRequestToolConfigToolsInnerToolSpecInputSchema](docs/Model/ChatInferenceRequestToolConfigToolsInnerToolSpecInputSchema.md)
+- [ChatInferenceStreamRequest](docs/Model/ChatInferenceStreamRequest.md)
+- [ChatInferenceStreamRequestMessagesInner](docs/Model/ChatInferenceStreamRequestMessagesInner.md)
+- [ChatInferenceStreamRequestMessagesInnerContent](docs/Model/ChatInferenceStreamRequestMessagesInnerContent.md)
+- [Command](docs/Model/Command.md)
+- [Compose](docs/Model/Compose.md)
+- [Container](docs/Model/Container.md)
+- [ContainerDependsOnInner](docs/Model/ContainerDependsOnInner.md)
+- [ContainerEnvironmentInner](docs/Model/ContainerEnvironmentInner.md)
+- [ContainerHealthCheck](docs/Model/ContainerHealthCheck.md)
+- [ContainerImageReference](docs/Model/ContainerImageReference.md)
+- [ContainerMountPointsInner](docs/Model/ContainerMountPointsInner.md)
+- [ContainerSecretsInner](docs/Model/ContainerSecretsInner.md)
+- [CrawlersRun200Response](docs/Model/CrawlersRun200Response.md)
+- [CrawlersRunRequest](docs/Model/CrawlersRunRequest.md)
+- [CreateAISession201Response](docs/Model/CreateAISession201Response.md)
+- [CreateAISessionRequest](docs/Model/CreateAISessionRequest.md)
+- [CreateAISessionRequestInitialMessagesInner](docs/Model/CreateAISessionRequestInitialMessagesInner.md)
+- [CreateApplication403Response](docs/Model/CreateApplication403Response.md)
+- [CreateApplicationRequest](docs/Model/CreateApplicationRequest.md)
+- [CreateApplicationRequestDatabase](docs/Model/CreateApplicationRequestDatabase.md)
+- [CreateApplicationRequestFilesystem](docs/Model/CreateApplicationRequestFilesystem.md)
+- [CreateBackup202Response](docs/Model/CreateBackup202Response.md)
+- [CreateBackupRequest](docs/Model/CreateBackupRequest.md)
+- [CreateCommandRequest](docs/Model/CreateCommandRequest.md)
+- [CreateCronJobRequest](docs/Model/CreateCronJobRequest.md)
+- [CreateEnvironment403Response](docs/Model/CreateEnvironment403Response.md)
+- [CreateEnvironmentRequest](docs/Model/CreateEnvironmentRequest.md)
+- [CreateEnvironmentRequestEnvironmentInner](docs/Model/CreateEnvironmentRequestEnvironmentInner.md)
+- [CreateVolumeRequest](docs/Model/CreateVolumeRequest.md)
+- [Cron](docs/Model/Cron.md)
+- [CronRun](docs/Model/CronRun.md)
+- [DeleteAISession200Response](docs/Model/DeleteAISession200Response.md)
+- [DeleteBackup200Response](docs/Model/DeleteBackup200Response.md)
+- [DownloadBackup200Response](docs/Model/DownloadBackup200Response.md)
+- [Embeddings200Response](docs/Model/Embeddings200Response.md)
+- [Embeddings200ResponseEmbeddings](docs/Model/Embeddings200ResponseEmbeddings.md)
+- [Embeddings200ResponseUsage](docs/Model/Embeddings200ResponseUsage.md)
+- [EmbeddingsRequest](docs/Model/EmbeddingsRequest.md)
+- [EmbeddingsRequestInput](docs/Model/EmbeddingsRequestInput.md)
+- [Environment](docs/Model/Environment.md)
+- [EnvironmentResponse](docs/Model/EnvironmentResponse.md)
+- [GetAIConfig200Response](docs/Model/GetAIConfig200Response.md)
+- [GetAISession200Response](docs/Model/GetAISession200Response.md)
+- [GetAIUsageStats200Response](docs/Model/GetAIUsageStats200Response.md)
+- [GetAIUsageStats200ResponseByModelValue](docs/Model/GetAIUsageStats200ResponseByModelValue.md)
+- [GetEcrLoginCredentials200Response](docs/Model/GetEcrLoginCredentials200Response.md)
+- [GetEnvironmentLogs200Response](docs/Model/GetEnvironmentLogs200Response.md)
+- [GetEnvironmentLogs200ResponseLogEventsInner](docs/Model/GetEnvironmentLogs200ResponseLogEventsInner.md)
+- [GetSshAccessCredentials200Response](docs/Model/GetSshAccessCredentials200Response.md)
+- [GetSshAccessCredentials200ResponseCredentials](docs/Model/GetSshAccessCredentials200ResponseCredentials.md)
+- [GetToolExecutionStatus200Response](docs/Model/GetToolExecutionStatus200Response.md)
+- [GetToolExecutionStatus200ResponseResult](docs/Model/GetToolExecutionStatus200ResponseResult.md)
+- [GetToolExecutionStatus404Response](docs/Model/GetToolExecutionStatus404Response.md)
+- [ImageGeneration200Response](docs/Model/ImageGeneration200Response.md)
+- [ImageGenerationRequest](docs/Model/ImageGenerationRequest.md)
+- [ImageGenerationRequestBackgroundRemovalParams](docs/Model/ImageGenerationRequestBackgroundRemovalParams.md)
+- [ImageGenerationRequestColorGuidedGenerationParams](docs/Model/ImageGenerationRequestColorGuidedGenerationParams.md)
+- [ImageGenerationRequestImageGenerationConfig](docs/Model/ImageGenerationRequestImageGenerationConfig.md)
+- [ImageGenerationRequestImageVariationParams](docs/Model/ImageGenerationRequestImageVariationParams.md)
+- [ImageGenerationRequestInPaintingParams](docs/Model/ImageGenerationRequestInPaintingParams.md)
+- [ImageGenerationRequestOutPaintingParams](docs/Model/ImageGenerationRequestOutPaintingParams.md)
+- [ImageGenerationRequestTextToImageParams](docs/Model/ImageGenerationRequestTextToImageParams.md)
+- [KVItemsCreate200Response](docs/Model/KVItemsCreate200Response.md)
+- [KVItemsDelete200Response](docs/Model/KVItemsDelete200Response.md)
+- [KVItemsShow200Response](docs/Model/KVItemsShow200Response.md)
+- [KVItemsShow200ResponseValue](docs/Model/KVItemsShow200ResponseValue.md)
+- [ListAIModels200Response](docs/Model/ListAIModels200Response.md)
+- [ListAIModels200ResponseModelsInner](docs/Model/ListAIModels200ResponseModelsInner.md)
+- [ListAIModels200ResponseModelsInnerCapabilities](docs/Model/ListAIModels200ResponseModelsInnerCapabilities.md)
+- [ListAISessions200ResponseInner](docs/Model/ListAISessions200ResponseInner.md)
+- [ListAIToolNames200Response](docs/Model/ListAIToolNames200Response.md)
+- [ListAITools200Response](docs/Model/ListAITools200Response.md)
+- [ListAITools200ResponseToolsInner](docs/Model/ListAITools200ResponseToolsInner.md)
+- [ListAITools200ResponseToolsInnerToolSpec](docs/Model/ListAITools200ResponseToolsInnerToolSpec.md)
+- [ListAITools200ResponseToolsInnerToolSpecInputSchema](docs/Model/ListAITools200ResponseToolsInnerToolSpecInputSchema.md)
+- [ListBackups200Response](docs/Model/ListBackups200Response.md)
+- [ListBackups200ResponseBackupsInner](docs/Model/ListBackups200ResponseBackupsInner.md)
+- [ListBackups422Response](docs/Model/ListBackups422Response.md)
+- [ListToolExecutions200Response](docs/Model/ListToolExecutions200Response.md)
+- [ListToolExecutions200ResponseExecutionsInner](docs/Model/ListToolExecutions200ResponseExecutionsInner.md)
+- [OrganizationsList200ResponseInner](docs/Model/OrganizationsList200ResponseInner.md)
+- [PatchEnvironmentCompose202Response](docs/Model/PatchEnvironmentCompose202Response.md)
+- [PatchEnvironmentCompose202ResponseSpotConfiguration](docs/Model/PatchEnvironmentCompose202ResponseSpotConfiguration.md)
+- [PatchEnvironmentCompose400Response](docs/Model/PatchEnvironmentCompose400Response.md)
+- [PatchEnvironmentComposeRequest](docs/Model/PatchEnvironmentComposeRequest.md)
+- [PatchEnvironmentComposeRequestSpotConfiguration](docs/Model/PatchEnvironmentComposeRequestSpotConfiguration.md)
+- [PurgeCreateRequest](docs/Model/PurgeCreateRequest.md)
+- [ScalingPolicy](docs/Model/ScalingPolicy.md)
+- [SpotConfiguration](docs/Model/SpotConfiguration.md)
+- [SyncOperation](docs/Model/SyncOperation.md)
+- [SyncToEnvironmentRequest](docs/Model/SyncToEnvironmentRequest.md)
+- [UpdateAIConfigRequest](docs/Model/UpdateAIConfigRequest.md)
+- [UpdateCronJobRequest](docs/Model/UpdateCronJobRequest.md)
+- [UpdateEnvironmentRequest](docs/Model/UpdateEnvironmentRequest.md)
+- [UpdateEnvironmentStateRequest](docs/Model/UpdateEnvironmentStateRequest.md)
+- [UpdateEnvironmentVariableRequest](docs/Model/UpdateEnvironmentVariableRequest.md)
+- [V1ContentItem](docs/Model/V1ContentItem.md)
+- [V1ContentListResponse](docs/Model/V1ContentListResponse.md)
+- [V1ContentRequest](docs/Model/V1ContentRequest.md)
+- [V1DeleteResponse](docs/Model/V1DeleteResponse.md)
+- [V1Error](docs/Model/V1Error.md)
+- [V1FormSubmissionItem](docs/Model/V1FormSubmissionItem.md)
+- [V1FormSubmissionListResponse](docs/Model/V1FormSubmissionListResponse.md)
+- [V1GetMetricSeriesResponse](docs/Model/V1GetMetricSeriesResponse.md)
+- [V1GetMetricSeriesResponseData](docs/Model/V1GetMetricSeriesResponseData.md)
+- [V1GetMetricsResponse](docs/Model/V1GetMetricsResponse.md)
+- [V1GetMetricsResponseData](docs/Model/V1GetMetricsResponseData.md)
+- [V1GlobalMetaResponse](docs/Model/V1GlobalMetaResponse.md)
+- [V1GlobalMetaResponseGlobalMeta](docs/Model/V1GlobalMetaResponseGlobalMeta.md)
+- [V1Info](docs/Model/V1Info.md)
+- [V1Meta](docs/Model/V1Meta.md)
+- [V1MetricDayStats](docs/Model/V1MetricDayStats.md)
+- [V1MetricMinuteStats](docs/Model/V1MetricMinuteStats.md)
+- [V1MetricMonthStats](docs/Model/V1MetricMonthStats.md)
+- [V1PingResponse](docs/Model/V1PingResponse.md)
+- [V1ProxyItem](docs/Model/V1ProxyItem.md)
+- [V1ProxyListResponse](docs/Model/V1ProxyListResponse.md)
+- [V1RedirectItem](docs/Model/V1RedirectItem.md)
+- [V1RedirectListResponse](docs/Model/V1RedirectListResponse.md)
+- [V1RedirectRequest](docs/Model/V1RedirectRequest.md)
+- [V1RedirectResponse](docs/Model/V1RedirectResponse.md)
+- [V1Revision](docs/Model/V1Revision.md)
+- [V1RevisionsResponse](docs/Model/V1RevisionsResponse.md)
+- [V1SearchHit](docs/Model/V1SearchHit.md)
+- [V1SearchItemsResponse](docs/Model/V1SearchItemsResponse.md)
+- [V1SearchMutationResponse](docs/Model/V1SearchMutationResponse.md)
+- [V1SearchRecord](docs/Model/V1SearchRecord.md)
+- [V1SearchResponse](docs/Model/V1SearchResponse.md)
+- [V1SeriesPointDay](docs/Model/V1SeriesPointDay.md)
+- [V1SeriesPointMonth](docs/Model/V1SeriesPointMonth.md)
+- [V1Transition](docs/Model/V1Transition.md)
+- [V1UploadResponse](docs/Model/V1UploadResponse.md)
+- [V1UrlMetaRequest](docs/Model/V1UrlMetaRequest.md)
+- [V1UrlMetaResponse](docs/Model/V1UrlMetaResponse.md)
+- [V1WafLogItem](docs/Model/V1WafLogItem.md)
+- [V1WafLogListResponse](docs/Model/V1WafLogListResponse.md)
+- [V2Crawler](docs/Model/V2Crawler.md)
+- [V2CrawlerAssets](docs/Model/V2CrawlerAssets.md)
+- [V2CrawlerAssetsNetworkIntercept](docs/Model/V2CrawlerAssetsNetworkIntercept.md)
+- [V2CrawlerAssetsParser](docs/Model/V2CrawlerAssetsParser.md)
+- [V2CrawlerRequest](docs/Model/V2CrawlerRequest.md)
+- [V2CrawlerRun](docs/Model/V2CrawlerRun.md)
+- [V2CrawlerSchedule](docs/Model/V2CrawlerSchedule.md)
+- [V2CrawlerScheduleRequest](docs/Model/V2CrawlerScheduleRequest.md)
+- [V2CrawlerSitemapInner](docs/Model/V2CrawlerSitemapInner.md)
+- [V2CustomHeaderRequest](docs/Model/V2CustomHeaderRequest.md)
+- [V2Domain](docs/Model/V2Domain.md)
+- [V2DomainRequest](docs/Model/V2DomainRequest.md)
+- [V2Error](docs/Model/V2Error.md)
+- [V2Organization](docs/Model/V2Organization.md)
+- [V2OrganizationRequest](docs/Model/V2OrganizationRequest.md)
+- [V2Project](docs/Model/V2Project.md)
+- [V2ProjectRequest](docs/Model/V2ProjectRequest.md)
+- [V2Rule](docs/Model/V2Rule.md)
+- [V2RuleAuth](docs/Model/V2RuleAuth.md)
+- [V2RuleAuthAction](docs/Model/V2RuleAuthAction.md)
+- [V2RuleAuthRequest](docs/Model/V2RuleAuthRequest.md)
+- [V2RuleBotChallenge](docs/Model/V2RuleBotChallenge.md)
+- [V2RuleBotChallengeAction](docs/Model/V2RuleBotChallengeAction.md)
+- [V2RuleBotChallengeRequest](docs/Model/V2RuleBotChallengeRequest.md)
+- [V2RuleContentFilter](docs/Model/V2RuleContentFilter.md)
+- [V2RuleContentFilterAction](docs/Model/V2RuleContentFilterAction.md)
+- [V2RuleContentFilterRequest](docs/Model/V2RuleContentFilterRequest.md)
+- [V2RuleCustomResponse](docs/Model/V2RuleCustomResponse.md)
+- [V2RuleCustomResponseAction](docs/Model/V2RuleCustomResponseAction.md)
+- [V2RuleCustomResponseRequest](docs/Model/V2RuleCustomResponseRequest.md)
+- [V2RuleFunction](docs/Model/V2RuleFunction.md)
+- [V2RuleFunctionAction](docs/Model/V2RuleFunctionAction.md)
+- [V2RuleFunctionRequest](docs/Model/V2RuleFunctionRequest.md)
+- [V2RuleHeader](docs/Model/V2RuleHeader.md)
+- [V2RuleHeaderAction](docs/Model/V2RuleHeaderAction.md)
+- [V2RuleHeaderRequest](docs/Model/V2RuleHeaderRequest.md)
+- [V2RuleProxy](docs/Model/V2RuleProxy.md)
+- [V2RuleProxyAction](docs/Model/V2RuleProxyAction.md)
+- [V2RuleProxyActionNotifyConfig](docs/Model/V2RuleProxyActionNotifyConfig.md)
+- [V2RuleProxyActionQuantCloudSelection](docs/Model/V2RuleProxyActionQuantCloudSelection.md)
+- [V2RuleProxyRequest](docs/Model/V2RuleProxyRequest.md)
+- [V2RuleRedirect](docs/Model/V2RuleRedirect.md)
+- [V2RuleRedirectAction](docs/Model/V2RuleRedirectAction.md)
+- [V2RuleRedirectRequest](docs/Model/V2RuleRedirectRequest.md)
+- [V2RuleRequest](docs/Model/V2RuleRequest.md)
+- [V2RuleServeStatic](docs/Model/V2RuleServeStatic.md)
+- [V2RuleServeStaticAction](docs/Model/V2RuleServeStaticAction.md)
+- [V2RuleServeStaticRequest](docs/Model/V2RuleServeStaticRequest.md)
+- [V2SecretStore](docs/Model/V2SecretStore.md)
+- [V2SecretStoreRequest](docs/Model/V2SecretStoreRequest.md)
+- [V2Store](docs/Model/V2Store.md)
+- [V2StoreItem](docs/Model/V2StoreItem.md)
+- [V2StoreItemRequest](docs/Model/V2StoreItemRequest.md)
+- [V2StoreItemUpdateRequest](docs/Model/V2StoreItemUpdateRequest.md)
+- [V2StoreItemsListResponse](docs/Model/V2StoreItemsListResponse.md)
+- [V2StoreRequest](docs/Model/V2StoreRequest.md)
+- [ValidateCompose200Response](docs/Model/ValidateCompose200Response.md)
+- [ValidateCompose422Response](docs/Model/ValidateCompose422Response.md)
+- [ValidateComposeRequest](docs/Model/ValidateComposeRequest.md)
+- [Variable](docs/Model/Variable.md)
+- [Volume](docs/Model/Volume.md)
+- [WafConfig](docs/Model/WafConfig.md)
+- [WafConfigBlockLists](docs/Model/WafConfigBlockLists.md)
+- [WafConfigHttpbl](docs/Model/WafConfigHttpbl.md)
+- [WafConfigThresholdsInner](docs/Model/WafConfigThresholdsInner.md)
+
+## Authorization
+
+Authentication schemes defined for the API:
+### BearerAuth
+
+- **Type**: Bearer authentication (JWT)
+
+## Tests
+
+To run the tests, use:
+
+```bash
+composer install
+vendor/bin/phpunit
+```
+
+## Author
+
+
+
+## About this package
+
+This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
+
+- API version: `4.4.0`
+    - Package version: `4.4.0`
+    - Generator version: `7.13.0`
+- Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
