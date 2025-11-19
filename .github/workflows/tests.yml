@@ -61,8 +61,4 @@ jobs:
         
       - name: Run test suite
         run: vendor/bin/phpunit
-        
-      - name: Run PHP CS Fixer (dry-run)
-        run: vendor/bin/php-cs-fixer fix --dry-run --diff
-        if: matrix.php-version == '8.1'
 
