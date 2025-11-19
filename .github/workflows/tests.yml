@@ -14,15 +14,12 @@ jobs:
       quant-mock-api:
         image: ghcr.io/quantcdn/quant-mock-api:4.4.0
         ports:
-          - 8080:8080
-        env:
-          API_PORT: 8080
+          - 8080:4010
         options: >-
-          --health-cmd "curl -f http://localhost:8080/health || exit 1"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-          --health-start-period 10s
+            --health-cmd "nc -z 127.0.0.1 4010"
+            --health-interval 10s
+            --health-timeout 5s
+            --health-retries 5
     
     strategy:
       fail-fast: false

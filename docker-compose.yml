@@ -2,11 +2,9 @@ services:
   quant-mock-api:
     image: ghcr.io/quantcdn/quant-mock-api:4.4.0
     ports:
-      - "8080:8080"
-    environment:
-      - API_PORT=8080
+      - "8080:4010"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:4010/"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -21,7 +19,7 @@ services:
       - .:/app
     working_dir: /app
     environment:
-      - QUANT_MOCK_API_HOST=http://quant-mock-api:8080
+      - QUANT_MOCK_API_HOST=http://quant-mock-api:4010
       - QUANT_API_TOKEN=test-token
     command: >
       sh -c "
