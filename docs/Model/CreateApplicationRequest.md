@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **max_capacity** | **int** | Maximum task count for auto-scaling | [optional] [default to 1]
 **database** | [**\QuantClient\Model\CreateApplicationRequestDatabase**](CreateApplicationRequestDatabase.md) |  | [optional]
 **filesystem** | [**\QuantClient\Model\CreateApplicationRequestFilesystem**](CreateApplicationRequestFilesystem.md) |  | [optional]
+**environment** | [**\QuantClient\Model\CreateApplicationRequestEnvironmentInner[]**](CreateApplicationRequestEnvironmentInner.md) | Optional. Initial environment variables for the production environment. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

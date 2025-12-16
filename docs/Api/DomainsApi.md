@@ -100,7 +100,7 @@ $apiInstance = new QuantClient\Api\DomainsApi(
 );
 $organization = 'organization_example'; // string | Organization identifier
 $project = 'project_example'; // string | Project identifier
-$domain = 'domain_example'; // string
+$domain = 'domain_example'; // string | Domain identifier
 
 try {
     $apiInstance->domainsDelete($organization, $project, $domain);
@@ -115,7 +115,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **organization** | **string**| Organization identifier | |
 | **project** | **string**| Project identifier | |
-| **domain** | **string**|  | |
+| **domain** | **string**| Domain identifier | |
 
 ### Return type
 
@@ -221,7 +221,7 @@ $apiInstance = new QuantClient\Api\DomainsApi(
 );
 $organization = 'organization_example'; // string | Organization identifier
 $project = 'project_example'; // string | Project identifier
-$domain = 'domain_example'; // string
+$domain = 'domain_example'; // string | Domain identifier
 
 try {
     $result = $apiInstance->domainsRead($organization, $project, $domain);
@@ -237,7 +237,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **organization** | **string**| Organization identifier | |
 | **project** | **string**| Project identifier | |
-| **domain** | **string**|  | |
+| **domain** | **string**| Domain identifier | |
 
 ### Return type
 

@@ -354,7 +354,7 @@ try {
 ## `listEnvironments()`
 
 ```php
-listEnvironments($organisation, $application): \QuantClient\Model\Environment[]
+listEnvironments($organisation, $application): \QuantClient\Model\EnvironmentSummary[]
 ```
 
 Get all environments for an application
@@ -396,7 +396,7 @@ try {
 
 ### Return type
 
-[**\QuantClient\Model\Environment[]**](../Model/Environment.md)
+[**\QuantClient\Model\EnvironmentSummary[]**](../Model/EnvironmentSummary.md)
 
 ### Authorization
 
