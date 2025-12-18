@@ -130,8 +130,8 @@ class PurgeApi
      *
      * Purge cache via URL or cache keys
      *
-     * @param  string $organization organization (required)
-     * @param  string $project project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\PurgeCreateRequest $purge_create_request purge_create_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['purgeCreate'] to see the possible values for this operation
      *
@@ -150,8 +150,8 @@ class PurgeApi
      *
      * Purge cache via URL or cache keys
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\PurgeCreateRequest $purge_create_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['purgeCreate'] to see the possible values for this operation
      *
@@ -265,8 +265,8 @@ class PurgeApi
      *
      * Purge cache via URL or cache keys
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\PurgeCreateRequest $purge_create_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['purgeCreate'] to see the possible values for this operation
      *
@@ -288,8 +288,8 @@ class PurgeApi
      *
      * Purge cache via URL or cache keys
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\PurgeCreateRequest $purge_create_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['purgeCreate'] to see the possible values for this operation
      *
@@ -340,8 +340,8 @@ class PurgeApi
     /**
      * Create request for operation 'purgeCreate'
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\PurgeCreateRequest $purge_create_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['purgeCreate'] to see the possible values for this operation
      *

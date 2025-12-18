@@ -36,8 +36,8 @@ $apiInstance = new QuantClient\Api\DomainsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
 $v2_domain_request = new \QuantClient\Model\V2DomainRequest(); // \QuantClient\Model\V2DomainRequest
 
 try {
@@ -98,9 +98,9 @@ $apiInstance = new QuantClient\Api\DomainsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$domain = 'domain_example'; // string | Domain identifier
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
+$domain = 0000; // string | Domain id
 
 try {
     $apiInstance->domainsDelete($organization, $project, $domain);
@@ -115,7 +115,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **organization** | **string**| Organization identifier | |
 | **project** | **string**| Project identifier | |
-| **domain** | **string**| Domain identifier | |
+| **domain** | **string**| Domain id | |
 
 ### Return type
 
@@ -159,8 +159,8 @@ $apiInstance = new QuantClient\Api\DomainsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
 
 try {
     $result = $apiInstance->domainsList($organization, $project);
@@ -219,9 +219,9 @@ $apiInstance = new QuantClient\Api\DomainsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$domain = 'domain_example'; // string | Domain identifier
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
+$domain = 0000; // string | Domain id
 
 try {
     $result = $apiInstance->domainsRead($organization, $project, $domain);
@@ -237,7 +237,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **organization** | **string**| Organization identifier | |
 | **project** | **string**| Project identifier | |
-| **domain** | **string**| Domain identifier | |
+| **domain** | **string**| Domain id | |
 
 ### Return type
 
@@ -281,9 +281,9 @@ $apiInstance = new QuantClient\Api\DomainsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$domain = 'domain_example'; // string | Domain identifier
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
+$domain = 0000; // string | Domain id
 
 try {
     $apiInstance->domainsRenew($organization, $project, $domain);
@@ -298,7 +298,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **organization** | **string**| Organization identifier | |
 | **project** | **string**| Project identifier | |
-| **domain** | **string**| Domain identifier | |
+| **domain** | **string**| Domain id | |
 
 ### Return type
 

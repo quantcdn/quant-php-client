@@ -492,7 +492,7 @@ class CrawlersApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $crawler crawler (required)
+     * @param  string $crawler The UUID of the crawler (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersDelete'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -511,7 +511,7 @@ class CrawlersApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $crawler (required)
+     * @param  string $crawler The UUID of the crawler (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersDelete'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -578,7 +578,7 @@ class CrawlersApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $crawler (required)
+     * @param  string $crawler The UUID of the crawler (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -601,7 +601,7 @@ class CrawlersApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $crawler (required)
+     * @param  string $crawler The UUID of the crawler (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -640,7 +640,7 @@ class CrawlersApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $crawler (required)
+     * @param  string $crawler The UUID of the crawler (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1530,12 +1530,11 @@ class CrawlersApi
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \QuantClient\Model\V2Crawler[]|\QuantClient\Model\V2Error|\QuantClient\Model\V2Error
+     * @return void
      */
     public function crawlersList($organization, $project, string $contentType = self::contentTypes['crawlersList'][0])
     {
-        list($response) = $this->crawlersListWithHttpInfo($organization, $project, $contentType);
-        return $response;
+        $this->crawlersListWithHttpInfo($organization, $project, $contentType);
     }
 
     /**
@@ -1549,7 +1548,7 @@ class CrawlersApi
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \QuantClient\Model\V2Crawler[]|\QuantClient\Model\V2Error|\QuantClient\Model\V2Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function crawlersListWithHttpInfo($organization, $project, string $contentType = self::contentTypes['crawlersList'][0])
     {
@@ -1578,57 +1577,9 @@ class CrawlersApi
             $statusCode = $response->getStatusCode();
 
 
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\QuantClient\Model\V2Crawler[]',
-                        $request,
-                        $response,
-                    );
-                case 400:
-                    return $this->handleResponseWithDataType(
-                        '\QuantClient\Model\V2Error',
-                        $request,
-                        $response,
-                    );
-                case 403:
-                    return $this->handleResponseWithDataType(
-                        '\QuantClient\Model\V2Error',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\QuantClient\Model\V2Crawler[]',
-                $request,
-                $response,
-            );
+            return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\QuantClient\Model\V2Crawler[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -1688,27 +1639,14 @@ class CrawlersApi
      */
     public function crawlersListAsyncWithHttpInfo($organization, $project, string $contentType = self::contentTypes['crawlersList'][0])
     {
-        $returnType = '\QuantClient\Model\V2Crawler[]';
+        $returnType = '';
         $request = $this->crawlersListRequest($organization, $project, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1846,7 +1784,7 @@ class CrawlersApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $crawler crawler (required)
+     * @param  string $crawler The UUID of the crawler (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersRead'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1866,7 +1804,7 @@ class CrawlersApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $crawler (required)
+     * @param  string $crawler The UUID of the crawler (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersRead'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1981,7 +1919,7 @@ class CrawlersApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $crawler (required)
+     * @param  string $crawler The UUID of the crawler (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersRead'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2004,7 +1942,7 @@ class CrawlersApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $crawler (required)
+     * @param  string $crawler The UUID of the crawler (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersRead'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2056,7 +1994,7 @@ class CrawlersApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $crawler (required)
+     * @param  string $crawler The UUID of the crawler (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersRead'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2573,7 +2511,7 @@ class CrawlersApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $crawler crawler (required)
+     * @param  string $crawler The UUID of the crawler (required)
      * @param  \QuantClient\Model\V2CrawlerRequest $v2_crawler_request v2_crawler_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersUpdate'] to see the possible values for this operation
      *
@@ -2594,7 +2532,7 @@ class CrawlersApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $crawler (required)
+     * @param  string $crawler The UUID of the crawler (required)
      * @param  \QuantClient\Model\V2CrawlerRequest $v2_crawler_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersUpdate'] to see the possible values for this operation
      *
@@ -2710,7 +2648,7 @@ class CrawlersApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $crawler (required)
+     * @param  string $crawler The UUID of the crawler (required)
      * @param  \QuantClient\Model\V2CrawlerRequest $v2_crawler_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersUpdate'] to see the possible values for this operation
      *
@@ -2734,7 +2672,7 @@ class CrawlersApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $crawler (required)
+     * @param  string $crawler The UUID of the crawler (required)
      * @param  \QuantClient\Model\V2CrawlerRequest $v2_crawler_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersUpdate'] to see the possible values for this operation
      *
@@ -2787,7 +2725,7 @@ class CrawlersApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $crawler (required)
+     * @param  string $crawler The UUID of the crawler (required)
      * @param  \QuantClient\Model\V2CrawlerRequest $v2_crawler_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersUpdate'] to see the possible values for this operation
      *
