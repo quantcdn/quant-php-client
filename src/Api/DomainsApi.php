@@ -483,7 +483,7 @@ class DomainsApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $domain Domain identifier (required)
+     * @param  string $domain Domain id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['domainsDelete'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -502,7 +502,7 @@ class DomainsApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $domain Domain identifier (required)
+     * @param  string $domain Domain id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['domainsDelete'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -569,7 +569,7 @@ class DomainsApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $domain Domain identifier (required)
+     * @param  string $domain Domain id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['domainsDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -592,7 +592,7 @@ class DomainsApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $domain Domain identifier (required)
+     * @param  string $domain Domain id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['domainsDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -631,7 +631,7 @@ class DomainsApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $domain Domain identifier (required)
+     * @param  string $domain Domain id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['domainsDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1081,7 +1081,7 @@ class DomainsApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $domain Domain identifier (required)
+     * @param  string $domain Domain id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['domainsRead'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1101,7 +1101,7 @@ class DomainsApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $domain Domain identifier (required)
+     * @param  string $domain Domain id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['domainsRead'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1216,7 +1216,7 @@ class DomainsApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $domain Domain identifier (required)
+     * @param  string $domain Domain id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['domainsRead'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1239,7 +1239,7 @@ class DomainsApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $domain Domain identifier (required)
+     * @param  string $domain Domain id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['domainsRead'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1291,7 +1291,7 @@ class DomainsApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $domain Domain identifier (required)
+     * @param  string $domain Domain id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['domainsRead'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1421,7 +1421,7 @@ class DomainsApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $domain Domain identifier (required)
+     * @param  string $domain Domain id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['domainsRenew'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1440,7 +1440,7 @@ class DomainsApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $domain Domain identifier (required)
+     * @param  string $domain Domain id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['domainsRenew'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1507,7 +1507,7 @@ class DomainsApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $domain Domain identifier (required)
+     * @param  string $domain Domain id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['domainsRenew'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1530,7 +1530,7 @@ class DomainsApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $domain Domain identifier (required)
+     * @param  string $domain Domain id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['domainsRenew'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1569,7 +1569,7 @@ class DomainsApi
      *
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
-     * @param  string $domain Domain identifier (required)
+     * @param  string $domain Domain id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['domainsRenew'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

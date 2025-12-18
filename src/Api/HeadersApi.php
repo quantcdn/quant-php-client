@@ -136,8 +136,8 @@ class HeadersApi
      *
      * Create or update custom headers
      *
-     * @param  string $organization organization (required)
-     * @param  string $project project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2CustomHeaderRequest $v2_custom_header_request v2_custom_header_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headersCreate'] to see the possible values for this operation
      *
@@ -156,8 +156,8 @@ class HeadersApi
      *
      * Create or update custom headers
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2CustomHeaderRequest $v2_custom_header_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headersCreate'] to see the possible values for this operation
      *
@@ -271,8 +271,8 @@ class HeadersApi
      *
      * Create or update custom headers
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2CustomHeaderRequest $v2_custom_header_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headersCreate'] to see the possible values for this operation
      *
@@ -294,8 +294,8 @@ class HeadersApi
      *
      * Create or update custom headers
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2CustomHeaderRequest $v2_custom_header_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headersCreate'] to see the possible values for this operation
      *
@@ -346,8 +346,8 @@ class HeadersApi
     /**
      * Create request for operation 'headersCreate'
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2CustomHeaderRequest $v2_custom_header_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headersCreate'] to see the possible values for this operation
      *
@@ -475,8 +475,8 @@ class HeadersApi
      *
      * Delete custom headers
      *
-     * @param  string $organization organization (required)
-     * @param  string $project project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2CustomHeaderRequest $v2_custom_header_request v2_custom_header_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headersDelete'] to see the possible values for this operation
      *
@@ -494,8 +494,8 @@ class HeadersApi
      *
      * Delete custom headers
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2CustomHeaderRequest $v2_custom_header_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headersDelete'] to see the possible values for this operation
      *
@@ -561,8 +561,8 @@ class HeadersApi
      *
      * Delete custom headers
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2CustomHeaderRequest $v2_custom_header_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headersDelete'] to see the possible values for this operation
      *
@@ -584,8 +584,8 @@ class HeadersApi
      *
      * Delete custom headers
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2CustomHeaderRequest $v2_custom_header_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headersDelete'] to see the possible values for this operation
      *
@@ -623,8 +623,8 @@ class HeadersApi
     /**
      * Create request for operation 'headersDelete'
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2CustomHeaderRequest $v2_custom_header_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headersDelete'] to see the possible values for this operation
      *
@@ -752,8 +752,8 @@ class HeadersApi
      *
      * List custom headers for a project
      *
-     * @param  string $organization organization (required)
-     * @param  string $project project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headersList'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -771,8 +771,8 @@ class HeadersApi
      *
      * List custom headers for a project
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headersList'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -885,8 +885,8 @@ class HeadersApi
      *
      * List custom headers for a project
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headersList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -907,8 +907,8 @@ class HeadersApi
      *
      * List custom headers for a project
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headersList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -958,8 +958,8 @@ class HeadersApi
     /**
      * Create request for operation 'headersList'
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['headersList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

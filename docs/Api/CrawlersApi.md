@@ -39,8 +39,8 @@ $apiInstance = new QuantClient\Api\CrawlersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
 $v2_crawler_request = new \QuantClient\Model\V2CrawlerRequest(); // \QuantClient\Model\V2CrawlerRequest
 
 try {
@@ -101,9 +101,9 @@ $apiInstance = new QuantClient\Api\CrawlersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$crawler = 'crawler_example'; // string
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
+$crawler = 00000000-0000-0000-0000-000000000000; // string | The UUID of the crawler
 
 try {
     $apiInstance->crawlersDelete($organization, $project, $crawler);
@@ -118,7 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **organization** | **string**| Organization identifier | |
 | **project** | **string**| Project identifier | |
-| **crawler** | **string**|  | |
+| **crawler** | **string**| The UUID of the crawler | |
 
 ### Return type
 
@@ -162,10 +162,10 @@ $apiInstance = new QuantClient\Api\CrawlersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$crawler = 'crawler_example'; // string | Crawler identifier
-$run_id = 56; // int | Run identifier
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
+$crawler = 00000000-0000-0000-0000-000000000000; // string | Crawler identifier
+$run_id = 1; // int | Run identifier
 
 try {
     $result = $apiInstance->crawlersGetRunById($organization, $project, $crawler, $run_id);
@@ -226,9 +226,9 @@ $apiInstance = new QuantClient\Api\CrawlersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$crawler = 'crawler_example'; // string | Crawler identifier
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
+$crawler = 00000000-0000-0000-0000-000000000000; // string | Crawler identifier
 
 try {
     $result = $apiInstance->crawlersGetRuns($organization, $project, $crawler);
@@ -266,7 +266,7 @@ try {
 ## `crawlersList()`
 
 ```php
-crawlersList($organization, $project): \QuantClient\Model\V2Crawler[]
+crawlersList($organization, $project)
 ```
 
 List crawlers for the project
@@ -288,12 +288,11 @@ $apiInstance = new QuantClient\Api\CrawlersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
 
 try {
-    $result = $apiInstance->crawlersList($organization, $project);
-    print_r($result);
+    $apiInstance->crawlersList($organization, $project);
 } catch (Exception $e) {
     echo 'Exception when calling CrawlersApi->crawlersList: ', $e->getMessage(), PHP_EOL;
 }
@@ -308,7 +307,7 @@ try {
 
 ### Return type
 
-[**\QuantClient\Model\V2Crawler[]**](../Model/V2Crawler.md)
+void (empty response body)
 
 ### Authorization
 
@@ -348,9 +347,9 @@ $apiInstance = new QuantClient\Api\CrawlersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$crawler = 'crawler_example'; // string
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
+$crawler = 00000000-0000-0000-0000-000000000000; // string | The UUID of the crawler
 
 try {
     $result = $apiInstance->crawlersRead($organization, $project, $crawler);
@@ -366,7 +365,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **organization** | **string**| Organization identifier | |
 | **project** | **string**| Project identifier | |
-| **crawler** | **string**|  | |
+| **crawler** | **string**| The UUID of the crawler | |
 
 ### Return type
 
@@ -410,9 +409,9 @@ $apiInstance = new QuantClient\Api\CrawlersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$crawler = 'crawler_example'; // string | Crawler identifier
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
+$crawler = 00000000-0000-0000-0000-000000000000; // string | Crawler identifier
 $crawlers_run_request = new \QuantClient\Model\CrawlersRunRequest(); // \QuantClient\Model\CrawlersRunRequest
 
 try {
@@ -474,9 +473,9 @@ $apiInstance = new QuantClient\Api\CrawlersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$crawler = 'crawler_example'; // string
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
+$crawler = 00000000-0000-0000-0000-000000000000; // string | The UUID of the crawler
 $v2_crawler_request = new \QuantClient\Model\V2CrawlerRequest(); // \QuantClient\Model\V2CrawlerRequest
 
 try {
@@ -493,7 +492,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **organization** | **string**| Organization identifier | |
 | **project** | **string**| Project identifier | |
-| **crawler** | **string**|  | |
+| **crawler** | **string**| The UUID of the crawler | |
 | **v2_crawler_request** | [**\QuantClient\Model\V2CrawlerRequest**](../Model/V2CrawlerRequest.md)|  | |
 
 ### Return type

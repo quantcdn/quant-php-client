@@ -142,7 +142,7 @@ class ProjectsApi
      *
      * Create a new project
      *
-     * @param  string $organization organization (required)
+     * @param  string $organization Organization identifier (required)
      * @param  \QuantClient\Model\V2ProjectRequest $v2_project_request v2_project_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsCreate'] to see the possible values for this operation
      *
@@ -161,7 +161,7 @@ class ProjectsApi
      *
      * Create a new project
      *
-     * @param  string $organization (required)
+     * @param  string $organization Organization identifier (required)
      * @param  \QuantClient\Model\V2ProjectRequest $v2_project_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsCreate'] to see the possible values for this operation
      *
@@ -275,7 +275,7 @@ class ProjectsApi
      *
      * Create a new project
      *
-     * @param  string $organization (required)
+     * @param  string $organization Organization identifier (required)
      * @param  \QuantClient\Model\V2ProjectRequest $v2_project_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsCreate'] to see the possible values for this operation
      *
@@ -297,7 +297,7 @@ class ProjectsApi
      *
      * Create a new project
      *
-     * @param  string $organization (required)
+     * @param  string $organization Organization identifier (required)
      * @param  \QuantClient\Model\V2ProjectRequest $v2_project_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsCreate'] to see the possible values for this operation
      *
@@ -348,7 +348,7 @@ class ProjectsApi
     /**
      * Create request for operation 'projectsCreate'
      *
-     * @param  string $organization (required)
+     * @param  string $organization Organization identifier (required)
      * @param  \QuantClient\Model\V2ProjectRequest $v2_project_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsCreate'] to see the possible values for this operation
      *
@@ -461,8 +461,8 @@ class ProjectsApi
      *
      * Delete a project
      *
-     * @param  string $organization organization (required)
-     * @param  string $project project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsDelete'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -479,8 +479,8 @@ class ProjectsApi
      *
      * Delete a project
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsDelete'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -545,8 +545,8 @@ class ProjectsApi
      *
      * Delete a project
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -567,8 +567,8 @@ class ProjectsApi
      *
      * Delete a project
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -605,8 +605,8 @@ class ProjectsApi
     /**
      * Create request for operation 'projectsDelete'
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -719,7 +719,7 @@ class ProjectsApi
      *
      * Retrieve all projects for an organization
      *
-     * @param  string $organization organization (required)
+     * @param  string $organization Organization identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsList'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -737,7 +737,7 @@ class ProjectsApi
      *
      * Retrieve all projects for an organization
      *
-     * @param  string $organization (required)
+     * @param  string $organization Organization identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsList'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -850,7 +850,7 @@ class ProjectsApi
      *
      * Retrieve all projects for an organization
      *
-     * @param  string $organization (required)
+     * @param  string $organization Organization identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -871,7 +871,7 @@ class ProjectsApi
      *
      * Retrieve all projects for an organization
      *
-     * @param  string $organization (required)
+     * @param  string $organization Organization identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -921,7 +921,7 @@ class ProjectsApi
     /**
      * Create request for operation 'projectsList'
      *
-     * @param  string $organization (required)
+     * @param  string $organization Organization identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1019,8 +1019,8 @@ class ProjectsApi
      *
      * Get details of a single project
      *
-     * @param  string $organization organization (required)
-     * @param  string $project project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  bool $with_token with_token (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsRead'] to see the possible values for this operation
      *
@@ -1039,8 +1039,8 @@ class ProjectsApi
      *
      * Get details of a single project
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  bool $with_token (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsRead'] to see the possible values for this operation
      *
@@ -1154,8 +1154,8 @@ class ProjectsApi
      *
      * Get details of a single project
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  bool $with_token (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsRead'] to see the possible values for this operation
      *
@@ -1177,8 +1177,8 @@ class ProjectsApi
      *
      * Get details of a single project
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  bool $with_token (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsRead'] to see the possible values for this operation
      *
@@ -1229,8 +1229,8 @@ class ProjectsApi
     /**
      * Create request for operation 'projectsRead'
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  bool $with_token (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsRead'] to see the possible values for this operation
      *
@@ -1360,8 +1360,8 @@ class ProjectsApi
      *
      * Update a project
      *
-     * @param  string $organization organization (required)
-     * @param  string $project project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2ProjectRequest $v2_project_request v2_project_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsUpdate'] to see the possible values for this operation
      *
@@ -1380,8 +1380,8 @@ class ProjectsApi
      *
      * Update a project
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2ProjectRequest $v2_project_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsUpdate'] to see the possible values for this operation
      *
@@ -1495,8 +1495,8 @@ class ProjectsApi
      *
      * Update a project
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2ProjectRequest $v2_project_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsUpdate'] to see the possible values for this operation
      *
@@ -1518,8 +1518,8 @@ class ProjectsApi
      *
      * Update a project
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2ProjectRequest $v2_project_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsUpdate'] to see the possible values for this operation
      *
@@ -1570,8 +1570,8 @@ class ProjectsApi
     /**
      * Create request for operation 'projectsUpdate'
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2ProjectRequest $v2_project_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['projectsUpdate'] to see the possible values for this operation
      *

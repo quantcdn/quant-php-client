@@ -34,8 +34,8 @@ $apiInstance = new QuantClient\Api\CommandsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$environment = test-env; // string | The environment ID
 $create_command_request = new \QuantClient\Model\CreateCommandRequest(); // \QuantClient\Model\CreateCommandRequest
 
 try {
@@ -96,9 +96,9 @@ $apiInstance = new QuantClient\Api\CommandsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$environment = 'environment_example'; // string | The environment ID
-$command = 'command_example'; // string | The command ID
+$organisation = test-org; // string | The organisation ID
+$environment = test-env; // string | The environment ID
+$command = test-cmd; // string | The command ID
 
 try {
     $result = $apiInstance->getCommand($organisation, $environment, $command);
@@ -158,8 +158,8 @@ $apiInstance = new QuantClient\Api\CommandsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$environment = test-env; // string | The environment ID
 
 try {
     $result = $apiInstance->listCommands($organisation, $environment);

@@ -41,8 +41,8 @@ $apiInstance = new QuantClient\Api\EnvironmentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
 $create_environment_request = new \QuantClient\Model\CreateEnvironmentRequest(); // \QuantClient\Model\CreateEnvironmentRequest
 
 try {
@@ -103,9 +103,9 @@ $apiInstance = new QuantClient\Api\EnvironmentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 
 try {
     $apiInstance->deleteEnvironment($organisation, $application, $environment);
@@ -164,9 +164,9 @@ $apiInstance = new QuantClient\Api\EnvironmentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 
 try {
     $result = $apiInstance->getEnvironment($organisation, $application, $environment);
@@ -228,9 +228,9 @@ $apiInstance = new QuantClient\Api\EnvironmentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $start_time = 'start_time_example'; // string | Start time for log retrieval (ISO 8601 format or Unix timestamp)
 $end_time = 'end_time_example'; // string | End time for log retrieval (ISO 8601 format or Unix timestamp)
 $container_name = 'container_name_example'; // string | Filter logs by specific container name
@@ -304,9 +304,9 @@ $apiInstance = new QuantClient\Api\EnvironmentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $start_time = 56; // int | Start time for metrics retrieval (Unix timestamp in milliseconds)
 $end_time = 56; // int | End time for metrics retrieval (Unix timestamp in milliseconds)
 $period = 56; // int | Period in seconds for metric aggregation (e.g., 60 for 1 minute, 300 for 5 minutes)
@@ -376,8 +376,8 @@ $apiInstance = new QuantClient\Api\EnvironmentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
 
 try {
     $result = $apiInstance->listEnvironments($organisation, $application);
@@ -436,9 +436,9 @@ $apiInstance = new QuantClient\Api\EnvironmentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $type = 'type_example'; // string | The sync type
 
 try {
@@ -500,9 +500,9 @@ $apiInstance = new QuantClient\Api\EnvironmentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $type = 'type_example'; // string | The sync type
 $sync_to_environment_request = new \QuantClient\Model\SyncToEnvironmentRequest(); // \QuantClient\Model\SyncToEnvironmentRequest
 
@@ -631,9 +631,9 @@ $apiInstance = new QuantClient\Api\EnvironmentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $update_environment_state_request = new \QuantClient\Model\UpdateEnvironmentStateRequest(); // \QuantClient\Model\UpdateEnvironmentStateRequest
 
 try {

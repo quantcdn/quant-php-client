@@ -88,7 +88,7 @@ $apiInstance = new QuantClient\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
+$organization = test-org; // string | Organization identifier
 
 try {
     $result = $apiInstance->organizationsRead($organization);
@@ -102,7 +102,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organization** | **string**|  | |
+| **organization** | **string**| Organization identifier | |
 
 ### Return type
 
