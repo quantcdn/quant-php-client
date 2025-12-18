@@ -286,6 +286,7 @@ docs/Model/V2RuleProxy.md
 docs/Model/V2RuleProxyAction.md
 docs/Model/V2RuleProxyActionNotifyConfig.md
 docs/Model/V2RuleProxyActionQuantCloudSelection.md
+docs/Model/V2RuleProxyActionWafConfig.md
 docs/Model/V2RuleProxyRequest.md
 docs/Model/V2RuleRedirect.md
 docs/Model/V2RuleRedirectAction.md
@@ -305,6 +306,7 @@ docs/Model/V2StoreRequest.md
 docs/Model/ValidateCompose200Response.md
 docs/Model/ValidateCompose422Response.md
 docs/Model/ValidateComposeRequest.md
+docs/Model/ValidateComposeRequestOneOf.md
 docs/Model/Variable.md
 docs/Model/Volume.md
 docs/Model/WafConfig.md
@@ -343,7 +345,6 @@ src/Api/VariablesApi.php
 src/Api/VolumesApi.php
 src/ApiException.php
 src/Configuration.php
-src/FormDataProcessor.php
 src/HeaderSelector.php
 src/Model/Application.php
 src/Model/ApplicationDatabase.php
@@ -602,6 +603,7 @@ src/Model/V2RuleProxy.php
 src/Model/V2RuleProxyAction.php
 src/Model/V2RuleProxyActionNotifyConfig.php
 src/Model/V2RuleProxyActionQuantCloudSelection.php
+src/Model/V2RuleProxyActionWafConfig.php
 src/Model/V2RuleProxyRequest.php
 src/Model/V2RuleRedirect.php
 src/Model/V2RuleRedirectAction.php
@@ -621,6 +623,7 @@ src/Model/V2StoreRequest.php
 src/Model/ValidateCompose200Response.php
 src/Model/ValidateCompose422Response.php
 src/Model/ValidateComposeRequest.php
+src/Model/ValidateComposeRequestOneOf.php
 src/Model/Variable.php
 src/Model/Volume.php
 src/Model/WafConfig.php

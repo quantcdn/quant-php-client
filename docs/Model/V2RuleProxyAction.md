@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **notify** | **string** | Notification type (none, slack) | [optional] [default to 'none']
 **notify_config** | [**\QuantClient\Model\V2RuleProxyActionNotifyConfig**](V2RuleProxyActionNotifyConfig.md) |  | [optional]
 **waf_enabled** | **bool** | WAF enabled | [optional] [default to false]
-**waf_config** | [**\QuantClient\Model\WafConfig**](WafConfig.md) |  | [optional]
+**waf_config** | [**\QuantClient\Model\V2RuleProxyActionWafConfig**](V2RuleProxyActionWafConfig.md) |  | [optional]
 **proxy_alert_enabled** | **bool** | Proxy alert enabled | [optional]
 **proxy_inline_fn_enabled** | **bool** | Proxy inline function enabled | [optional] [default to false]
 **application_proxy** | **bool** | Enable Quant Cloud application proxy mode | [optional] [default to false]

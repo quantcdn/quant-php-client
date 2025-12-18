@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 **failover_lifetime** | **string** | Failover cache lifetime in seconds | [optional] [default to '300']
 **proxy_alert_enabled** | **bool** | Proxy alert enabled | [optional] [default to false]
 **waf_enabled** | **bool** | WAF enabled | [optional] [default to false]
-**waf_config** | [**\QuantClient\Model\WafConfig**](WafConfig.md) |  | [optional]
+**waf_config** | [**\QuantClient\Model\V2RuleProxyActionWafConfig**](V2RuleProxyActionWafConfig.md) |  | [optional]
 **application_proxy** | **bool** | Enable Quant Cloud application proxy mode | [optional] [default to false]
 **application_name** | **string** | Quant Cloud application name (required when application_proxy is true) | [optional]
 **application_environment** | **string** | Quant Cloud application environment (required when application_proxy is true) | [optional]

@@ -34,9 +34,9 @@ $apiInstance = new QuantClient\Api\ComposeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 
 try {
     $result = $apiInstance->getEnvironmentCompose($organisation, $application, $environment);
@@ -98,9 +98,9 @@ $apiInstance = new QuantClient\Api\ComposeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $patch_environment_compose_request = new \QuantClient\Model\PatchEnvironmentComposeRequest(); // \QuantClient\Model\PatchEnvironmentComposeRequest | Partial compose definition updates. All fields are optional.
 
 try {
@@ -164,7 +164,7 @@ $apiInstance = new QuantClient\Api\ComposeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
+$organisation = test-org; // string | The organisation ID
 $validate_compose_request = new \QuantClient\Model\ValidateComposeRequest(); // \QuantClient\Model\ValidateComposeRequest | The docker-compose.yml file content. Can be sent as raw YAML string or as a JSON wrapper containing both yamlContent (string) and imageSuffix (string) fields. Query parameter imageSuffix takes precedence if both are provided.
 $image_suffix = pr-456; // string | Optional. Image tag suffix to apply during translation. Transforms internal image tags to consistent '{containerName}-{suffix}' format (e.g., 'nginx-pr-456'). External images are left unchanged. Useful for feature branch deployments.
 

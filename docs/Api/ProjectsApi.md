@@ -36,7 +36,7 @@ $apiInstance = new QuantClient\Api\ProjectsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
+$organization = test-org; // string | Organization identifier
 $v2_project_request = new \QuantClient\Model\V2ProjectRequest(); // \QuantClient\Model\V2ProjectRequest
 
 try {
@@ -51,7 +51,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organization** | **string**|  | |
+| **organization** | **string**| Organization identifier | |
 | **v2_project_request** | [**\QuantClient\Model\V2ProjectRequest**](../Model/V2ProjectRequest.md)|  | |
 
 ### Return type
@@ -96,8 +96,8 @@ $apiInstance = new QuantClient\Api\ProjectsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
 
 try {
     $apiInstance->projectsDelete($organization, $project);
@@ -110,8 +110,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organization** | **string**|  | |
-| **project** | **string**|  | |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
 
 ### Return type
 
@@ -155,7 +155,7 @@ $apiInstance = new QuantClient\Api\ProjectsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
+$organization = test-org; // string | Organization identifier
 
 try {
     $result = $apiInstance->projectsList($organization);
@@ -169,7 +169,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organization** | **string**|  | |
+| **organization** | **string**| Organization identifier | |
 
 ### Return type
 
@@ -213,8 +213,8 @@ $apiInstance = new QuantClient\Api\ProjectsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
 $with_token = false; // bool
 
 try {
@@ -229,8 +229,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organization** | **string**|  | |
-| **project** | **string**|  | |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
 | **with_token** | **bool**|  | [default to false] |
 
 ### Return type
@@ -275,8 +275,8 @@ $apiInstance = new QuantClient\Api\ProjectsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
 $v2_project_request = new \QuantClient\Model\V2ProjectRequest(); // \QuantClient\Model\V2ProjectRequest
 
 try {
@@ -291,8 +291,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organization** | **string**|  | |
-| **project** | **string**|  | |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
 | **v2_project_request** | [**\QuantClient\Model\V2ProjectRequest**](../Model/V2ProjectRequest.md)|  | |
 
 ### Return type
