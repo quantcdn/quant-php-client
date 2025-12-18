@@ -35,9 +35,9 @@ $apiInstance = new QuantClient\Api\BackupManagementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $type = 'type_example'; // string | The backup type
 $create_backup_request = new \QuantClient\Model\CreateBackupRequest(); // \QuantClient\Model\CreateBackupRequest
 
@@ -101,9 +101,9 @@ $apiInstance = new QuantClient\Api\BackupManagementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $type = 'type_example'; // string | The backup type
 $backup_id = 'backup_id_example'; // string | The backup ID
 
@@ -167,9 +167,9 @@ $apiInstance = new QuantClient\Api\BackupManagementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $type = 'type_example'; // string | The backup type
 $backup_id = 'backup_id_example'; // string | The backup ID
 
@@ -235,9 +235,9 @@ $apiInstance = new QuantClient\Api\BackupManagementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $type = 'type_example'; // string | The backup type
 $order = 'desc'; // string | Sort order for backups by creation date (asc = oldest first, desc = newest first)
 $limit = 50; // int | Maximum number of backups to return (max 100)
