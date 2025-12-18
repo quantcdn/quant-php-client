@@ -154,8 +154,8 @@ class KVApi
      *
      * Add a kv store
      *
-     * @param  string $organization organization (required)
-     * @param  string $project project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2StoreRequest $v2_store_request v2_store_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVCreate'] to see the possible values for this operation
      *
@@ -174,8 +174,8 @@ class KVApi
      *
      * Add a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2StoreRequest $v2_store_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVCreate'] to see the possible values for this operation
      *
@@ -289,8 +289,8 @@ class KVApi
      *
      * Add a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2StoreRequest $v2_store_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVCreate'] to see the possible values for this operation
      *
@@ -312,8 +312,8 @@ class KVApi
      *
      * Add a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2StoreRequest $v2_store_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVCreate'] to see the possible values for this operation
      *
@@ -364,8 +364,8 @@ class KVApi
     /**
      * Create request for operation 'kVCreate'
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  \QuantClient\Model\V2StoreRequest $v2_store_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVCreate'] to see the possible values for this operation
      *
@@ -493,8 +493,8 @@ class KVApi
      *
      * Delete a kv store
      *
-     * @param  string $organization organization (required)
-     * @param  string $project project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id store_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVDelete'] to see the possible values for this operation
      *
@@ -512,8 +512,8 @@ class KVApi
      *
      * Delete a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVDelete'] to see the possible values for this operation
      *
@@ -579,8 +579,8 @@ class KVApi
      *
      * Delete a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVDelete'] to see the possible values for this operation
      *
@@ -602,8 +602,8 @@ class KVApi
      *
      * Delete a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVDelete'] to see the possible values for this operation
      *
@@ -641,8 +641,8 @@ class KVApi
     /**
      * Create request for operation 'kVDelete'
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVDelete'] to see the possible values for this operation
      *
@@ -771,8 +771,8 @@ class KVApi
      *
      * Add an item to a kv store
      *
-     * @param  string $organization organization (required)
-     * @param  string $project project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id store_id (required)
      * @param  \QuantClient\Model\V2StoreItemRequest $v2_store_item_request v2_store_item_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVItemsCreate'] to see the possible values for this operation
@@ -792,8 +792,8 @@ class KVApi
      *
      * Add an item to a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  \QuantClient\Model\V2StoreItemRequest $v2_store_item_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVItemsCreate'] to see the possible values for this operation
@@ -922,8 +922,8 @@ class KVApi
      *
      * Add an item to a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  \QuantClient\Model\V2StoreItemRequest $v2_store_item_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVItemsCreate'] to see the possible values for this operation
@@ -946,8 +946,8 @@ class KVApi
      *
      * Add an item to a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  \QuantClient\Model\V2StoreItemRequest $v2_store_item_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVItemsCreate'] to see the possible values for this operation
@@ -999,8 +999,8 @@ class KVApi
     /**
      * Create request for operation 'kVItemsCreate'
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  \QuantClient\Model\V2StoreItemRequest $v2_store_item_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVItemsCreate'] to see the possible values for this operation
@@ -1144,8 +1144,8 @@ class KVApi
      *
      * Delete an item from a kv store
      *
-     * @param  string $organization organization (required)
-     * @param  string $project project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id store_id (required)
      * @param  string $key key (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVItemsDelete'] to see the possible values for this operation
@@ -1165,8 +1165,8 @@ class KVApi
      *
      * Delete an item from a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $key (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVItemsDelete'] to see the possible values for this operation
@@ -1281,8 +1281,8 @@ class KVApi
      *
      * Delete an item from a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $key (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVItemsDelete'] to see the possible values for this operation
@@ -1305,8 +1305,8 @@ class KVApi
      *
      * Delete an item from a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $key (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVItemsDelete'] to see the possible values for this operation
@@ -1358,8 +1358,8 @@ class KVApi
     /**
      * Create request for operation 'kVItemsDelete'
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $key (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVItemsDelete'] to see the possible values for this operation
@@ -1504,8 +1504,8 @@ class KVApi
      *
      * List items in a kv store
      *
-     * @param  string $organization organization (required)
-     * @param  string $project project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id store_id (required)
      * @param  string|null $cursor Cursor for pagination (optional)
      * @param  int|null $limit Number of items to return (optional, default to 10)
@@ -1528,8 +1528,8 @@ class KVApi
      *
      * List items in a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string|null $cursor Cursor for pagination (optional)
      * @param  int|null $limit Number of items to return (optional, default to 10)
@@ -1647,8 +1647,8 @@ class KVApi
      *
      * List items in a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string|null $cursor Cursor for pagination (optional)
      * @param  int|null $limit Number of items to return (optional, default to 10)
@@ -1674,8 +1674,8 @@ class KVApi
      *
      * List items in a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string|null $cursor Cursor for pagination (optional)
      * @param  int|null $limit Number of items to return (optional, default to 10)
@@ -1730,8 +1730,8 @@ class KVApi
     /**
      * Create request for operation 'kVItemsList'
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string|null $cursor Cursor for pagination (optional)
      * @param  int|null $limit Number of items to return (optional, default to 10)
@@ -1904,8 +1904,8 @@ class KVApi
      *
      * Get an item from a kv store
      *
-     * @param  string $organization organization (required)
-     * @param  string $project project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id store_id (required)
      * @param  string $key key (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVItemsShow'] to see the possible values for this operation
@@ -1925,8 +1925,8 @@ class KVApi
      *
      * Get an item from a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $key (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVItemsShow'] to see the possible values for this operation
@@ -2041,8 +2041,8 @@ class KVApi
      *
      * Get an item from a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $key (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVItemsShow'] to see the possible values for this operation
@@ -2065,8 +2065,8 @@ class KVApi
      *
      * Get an item from a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $key (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVItemsShow'] to see the possible values for this operation
@@ -2118,8 +2118,8 @@ class KVApi
     /**
      * Create request for operation 'kVItemsShow'
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $key (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVItemsShow'] to see the possible values for this operation
@@ -2264,8 +2264,8 @@ class KVApi
      *
      * Update an item in a kv store
      *
-     * @param  string $organization organization (required)
-     * @param  string $project project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id store_id (required)
      * @param  string $key key (required)
      * @param  \QuantClient\Model\V2StoreItemUpdateRequest $v2_store_item_update_request v2_store_item_update_request (required)
@@ -2286,8 +2286,8 @@ class KVApi
      *
      * Update an item in a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $key (required)
      * @param  \QuantClient\Model\V2StoreItemUpdateRequest $v2_store_item_update_request (required)
@@ -2417,8 +2417,8 @@ class KVApi
      *
      * Update an item in a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $key (required)
      * @param  \QuantClient\Model\V2StoreItemUpdateRequest $v2_store_item_update_request (required)
@@ -2442,8 +2442,8 @@ class KVApi
      *
      * Update an item in a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $key (required)
      * @param  \QuantClient\Model\V2StoreItemUpdateRequest $v2_store_item_update_request (required)
@@ -2496,8 +2496,8 @@ class KVApi
     /**
      * Create request for operation 'kVItemsUpdate'
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $key (required)
      * @param  \QuantClient\Model\V2StoreItemUpdateRequest $v2_store_item_update_request (required)
@@ -2657,8 +2657,8 @@ class KVApi
      *
      * List key-value stores
      *
-     * @param  string $organization organization (required)
-     * @param  string $project project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVList'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2676,8 +2676,8 @@ class KVApi
      *
      * List key-value stores
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVList'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2790,8 +2790,8 @@ class KVApi
      *
      * List key-value stores
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2812,8 +2812,8 @@ class KVApi
      *
      * List key-value stores
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2863,8 +2863,8 @@ class KVApi
     /**
      * Create request for operation 'kVList'
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2977,8 +2977,8 @@ class KVApi
      *
      * Get a kv store
      *
-     * @param  string $organization organization (required)
-     * @param  string $project project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id store_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVShow'] to see the possible values for this operation
      *
@@ -2997,8 +2997,8 @@ class KVApi
      *
      * Get a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVShow'] to see the possible values for this operation
      *
@@ -3112,8 +3112,8 @@ class KVApi
      *
      * Get a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVShow'] to see the possible values for this operation
      *
@@ -3135,8 +3135,8 @@ class KVApi
      *
      * Get a kv store
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVShow'] to see the possible values for this operation
      *
@@ -3187,8 +3187,8 @@ class KVApi
     /**
      * Create request for operation 'kVShow'
      *
-     * @param  string $organization (required)
-     * @param  string $project (required)
+     * @param  string $organization Organization identifier (required)
+     * @param  string $project Project identifier (required)
      * @param  string $store_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kVShow'] to see the possible values for this operation
      *

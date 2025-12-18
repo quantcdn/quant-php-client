@@ -38,9 +38,9 @@ $apiInstance = new QuantClient\Api\CronApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $create_cron_job_request = new \QuantClient\Model\CreateCronJobRequest(); // \QuantClient\Model\CreateCronJobRequest
 
 try {
@@ -102,9 +102,9 @@ $apiInstance = new QuantClient\Api\CronApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $cron = 'cron_example'; // string | The cron job ID
 
 try {
@@ -165,9 +165,9 @@ $apiInstance = new QuantClient\Api\CronApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $cron = 'cron_example'; // string | The cron job ID
 
 try {
@@ -229,10 +229,10 @@ $apiInstance = new QuantClient\Api\CronApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
-$cron = 'cron_example'; // string | The cron job ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
+$cron = test-cron; // string | The cron job ID
 $run = 'run_example'; // string | The cron run ID
 
 try {
@@ -295,10 +295,10 @@ $apiInstance = new QuantClient\Api\CronApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
-$cron = 'cron_example'; // string | The cron job ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
+$cron = test-cron; // string | The cron job ID
 
 try {
     $result = $apiInstance->listCronJobRuns($organisation, $application, $environment, $cron);
@@ -359,9 +359,9 @@ $apiInstance = new QuantClient\Api\CronApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 
 try {
     $result = $apiInstance->listCronJobs($organisation, $application, $environment);
@@ -421,9 +421,9 @@ $apiInstance = new QuantClient\Api\CronApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $cron = 'cron_example'; // string | The cron job ID
 $update_cron_job_request = new \QuantClient\Model\UpdateCronJobRequest(); // \QuantClient\Model\UpdateCronJobRequest
 
