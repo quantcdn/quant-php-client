@@ -1,5 +1,7 @@
 # QuantClient\AIAgentsApi
 
+
+
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -33,14 +35,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIAgentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$agent_id = 'agent_id_example'; // string | The agent ID
+$organisation = ''organisation_example''; // string | The organisation ID
+$agent_id = ''agent_id_example''; // string | The agent ID
 $chat_with_ai_agent_request = new \QuantClient\Model\ChatWithAIAgentRequest(); // \QuantClient\Model\ChatWithAIAgentRequest
 
 try {
@@ -97,13 +100,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIAgentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
+$organisation = ''organisation_example''; // string | The organisation ID
 $create_ai_agent_request = new \QuantClient\Model\CreateAIAgentRequest(); // \QuantClient\Model\CreateAIAgentRequest
 
 try {
@@ -159,14 +163,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIAgentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$agent_id = 'agent_id_example'; // string | The agent ID
+$organisation = ''organisation_example''; // string | The organisation ID
+$agent_id = ''agent_id_example''; // string | The agent ID
 
 try {
     $result = $apiInstance->deleteAIAgent($organisation, $agent_id);
@@ -221,14 +226,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIAgentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$agent_id = 'agent_id_example'; // string | The agent ID
+$organisation = ''organisation_example''; // string | The organisation ID
+$agent_id = ''agent_id_example''; // string | The agent ID
 
 try {
     $result = $apiInstance->getAIAgent($organisation, $agent_id);
@@ -283,14 +289,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIAgentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$group = 'group_example'; // string | Optional group filter (e.g., 'development', 'compliance')
+$organisation = ''organisation_example''; // string | The organisation ID
+$group = ''group_example''; // string | Optional group filter (e.g., 'development', 'compliance')
 
 try {
     $result = $apiInstance->listAIAgents($organisation, $group);
@@ -345,14 +352,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIAgentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$agent_id = 'agent_id_example'; // string | The agent ID
+$organisation = ''organisation_example''; // string | The organisation ID
+$agent_id = ''agent_id_example''; // string | The agent ID
 $update_ai_agent_request = new \QuantClient\Model\UpdateAIAgentRequest(); // \QuantClient\Model\UpdateAIAgentRequest
 
 try {

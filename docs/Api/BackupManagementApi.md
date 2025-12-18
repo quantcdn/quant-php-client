@@ -1,5 +1,7 @@
 # QuantClient\BackupManagementApi
 
+
+
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -29,16 +31,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\BackupManagementApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
-$environment = test-env; // string | The environment ID
-$type = 'type_example'; // string | The backup type
+$organisation = 'test-org'; // string | The organisation ID
+$application = 'test-app'; // string | The application ID
+$environment = 'test-env'; // string | The environment ID
+$type = ''type_example''; // string | The backup type
 $create_backup_request = new \QuantClient\Model\CreateBackupRequest(); // \QuantClient\Model\CreateBackupRequest
 
 try {
@@ -95,17 +98,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\BackupManagementApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
-$environment = test-env; // string | The environment ID
-$type = 'type_example'; // string | The backup type
-$backup_id = 'backup_id_example'; // string | The backup ID
+$organisation = 'test-org'; // string | The organisation ID
+$application = 'test-app'; // string | The application ID
+$environment = 'test-env'; // string | The environment ID
+$type = ''type_example''; // string | The backup type
+$backup_id = ''backup_id_example''; // string | The backup ID
 
 try {
     $result = $apiInstance->deleteBackup($organisation, $application, $environment, $type, $backup_id);
@@ -161,17 +165,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\BackupManagementApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
-$environment = test-env; // string | The environment ID
-$type = 'type_example'; // string | The backup type
-$backup_id = 'backup_id_example'; // string | The backup ID
+$organisation = 'test-org'; // string | The organisation ID
+$application = 'test-app'; // string | The application ID
+$environment = 'test-env'; // string | The environment ID
+$type = ''type_example''; // string | The backup type
+$backup_id = ''backup_id_example''; // string | The backup ID
 
 try {
     $result = $apiInstance->downloadBackup($organisation, $application, $environment, $type, $backup_id);
@@ -229,22 +234,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\BackupManagementApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
-$environment = test-env; // string | The environment ID
-$type = 'type_example'; // string | The backup type
-$order = 'desc'; // string | Sort order for backups by creation date (asc = oldest first, desc = newest first)
+$organisation = 'test-org'; // string | The organisation ID
+$application = 'test-app'; // string | The application ID
+$environment = 'test-env'; // string | The environment ID
+$type = ''type_example''; // string | The backup type
+$order = ''desc''; // string | Sort order for backups by creation date (asc = oldest first, desc = newest first)
 $limit = 50; // int | Maximum number of backups to return (max 100)
 $created_before = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Only return backups created before this ISO 8601 timestamp (e.g., 2025-01-01T00:00:00Z)
 $created_after = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Only return backups created after this ISO 8601 timestamp (e.g., 2024-12-01T00:00:00Z)
-$status = 'status_example'; // string | Filter backups by status
-$next_token = 'next_token_example'; // string | Token for retrieving the next page of results
+$status = ''status_example''; // string | Filter backups by status
+$next_token = ''next_token_example''; // string | Token for retrieving the next page of results
 
 try {
     $result = $apiInstance->listBackups($organisation, $application, $environment, $type, $order, $limit, $created_before, $created_after, $status, $next_token);

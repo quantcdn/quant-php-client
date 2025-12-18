@@ -1,5 +1,7 @@
 # QuantClient\AIToolsApi
 
+
+
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -31,14 +33,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIToolsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$execution_id = exec_0123456789abcdef0123456789abcdef; // string | Tool execution identifier
+$organisation = ''organisation_example''; // string | The organisation ID
+$execution_id = 'exec_0123456789abcdef0123456789abcdef'; // string | Tool execution identifier
 
 try {
     $result = $apiInstance->getAIToolExecutionStatus($organisation, $execution_id);
@@ -93,14 +96,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIToolsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$status = 'status_example'; // string | Filter by execution status
+$organisation = ''organisation_example''; // string | The organisation ID
+$status = ''status_example''; // string | Filter by execution status
 $limit = 50; // int | Maximum number of executions to return
 
 try {
@@ -157,13 +161,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIToolsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
+$organisation = ''organisation_example''; // string | The organisation ID
 
 try {
     $result = $apiInstance->listAIToolNames($organisation);
@@ -217,13 +222,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIToolsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
+$organisation = ''organisation_example''; // string | The organisation ID
 
 try {
     $result = $apiInstance->listAITools($organisation);

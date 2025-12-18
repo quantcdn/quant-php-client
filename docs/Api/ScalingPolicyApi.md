@@ -1,5 +1,7 @@
 # QuantClient\ScalingPolicyApi
 
+Auto-scaling policies and configuration
+
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -28,16 +30,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\ScalingPolicyApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
-$environment = test-env; // string | The environment ID
-$policy_name = 'policy_name_example'; // string | The policy name
+$organisation = 'test-org'; // string | The organisation ID
+$application = 'test-app'; // string | The application ID
+$environment = 'test-env'; // string | The environment ID
+$policy_name = ''policy_name_example''; // string | The policy name
 
 try {
     $apiInstance->deleteScalingPolicy($organisation, $application, $environment, $policy_name);
@@ -91,15 +94,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\ScalingPolicyApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
-$environment = test-env; // string | The environment ID
+$organisation = 'test-org'; // string | The organisation ID
+$application = 'test-app'; // string | The application ID
+$environment = 'test-env'; // string | The environment ID
 
 try {
     $apiInstance->getScalingPolicies($organisation, $application, $environment);
@@ -152,15 +156,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\ScalingPolicyApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
-$environment = test-env; // string | The environment ID
+$organisation = 'test-org'; // string | The organisation ID
+$application = 'test-app'; // string | The application ID
+$environment = 'test-env'; // string | The environment ID
 $scaling_policy = new \QuantClient\Model\ScalingPolicy(); // \QuantClient\Model\ScalingPolicy
 
 try {

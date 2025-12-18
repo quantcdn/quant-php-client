@@ -1,5 +1,7 @@
 # QuantClient\EnvironmentsApi
 
+Application environment management and configuration
+
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -35,14 +37,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\EnvironmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
+$organisation = 'test-org'; // string | The organisation ID
+$application = 'test-app'; // string | The application ID
 $create_environment_request = new \QuantClient\Model\CreateEnvironmentRequest(); // \QuantClient\Model\CreateEnvironmentRequest
 
 try {
@@ -97,15 +100,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\EnvironmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
-$environment = test-env; // string | The environment ID
+$organisation = 'test-org'; // string | The organisation ID
+$application = 'test-app'; // string | The application ID
+$environment = 'test-env'; // string | The environment ID
 
 try {
     $apiInstance->deleteEnvironment($organisation, $application, $environment);
@@ -158,15 +162,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\EnvironmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
-$environment = test-env; // string | The environment ID
+$organisation = 'test-org'; // string | The organisation ID
+$application = 'test-app'; // string | The application ID
+$environment = 'test-env'; // string | The environment ID
 
 try {
     $result = $apiInstance->getEnvironment($organisation, $application, $environment);
@@ -222,21 +227,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\EnvironmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
-$environment = test-env; // string | The environment ID
-$start_time = 'start_time_example'; // string | Start time for log retrieval (ISO 8601 format or Unix timestamp)
-$end_time = 'end_time_example'; // string | End time for log retrieval (ISO 8601 format or Unix timestamp)
-$container_name = 'container_name_example'; // string | Filter logs by specific container name
-$filter_pattern = 'filter_pattern_example'; // string | CloudWatch Logs filter pattern for searching log content
+$organisation = 'test-org'; // string | The organisation ID
+$application = 'test-app'; // string | The application ID
+$environment = 'test-env'; // string | The environment ID
+$start_time = ''start_time_example''; // string | Start time for log retrieval (ISO 8601 format or Unix timestamp)
+$end_time = ''end_time_example''; // string | End time for log retrieval (ISO 8601 format or Unix timestamp)
+$container_name = ''container_name_example''; // string | Filter logs by specific container name
+$filter_pattern = ''filter_pattern_example''; // string | CloudWatch Logs filter pattern for searching log content
 $limit = 56; // int | Maximum number of log entries to return per page
-$next_token = 'next_token_example'; // string | Pagination token from previous response for retrieving next page of results
+$next_token = ''next_token_example''; // string | Pagination token from previous response for retrieving next page of results
 
 try {
     $result = $apiInstance->getEnvironmentLogs($organisation, $application, $environment, $start_time, $end_time, $container_name, $filter_pattern, $limit, $next_token);
@@ -298,20 +304,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\EnvironmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
-$environment = test-env; // string | The environment ID
+$organisation = 'test-org'; // string | The organisation ID
+$application = 'test-app'; // string | The application ID
+$environment = 'test-env'; // string | The environment ID
 $start_time = 56; // int | Start time for metrics retrieval (Unix timestamp in milliseconds)
 $end_time = 56; // int | End time for metrics retrieval (Unix timestamp in milliseconds)
 $period = 56; // int | Period in seconds for metric aggregation (e.g., 60 for 1 minute, 300 for 5 minutes)
-$statistics = 'statistics_example'; // string | Comma-separated list of CloudWatch statistics (e.g., Average, Maximum, Minimum, Sum, SampleCount)
-$container_name = 'container_name_example'; // string | Filter metrics by specific container name
+$statistics = ''statistics_example''; // string | Comma-separated list of CloudWatch statistics (e.g., Average, Maximum, Minimum, Sum, SampleCount)
+$container_name = ''container_name_example''; // string | Filter metrics by specific container name
 
 try {
     $result = $apiInstance->getEnvironmentMetrics($organisation, $application, $environment, $start_time, $end_time, $period, $statistics, $container_name);
@@ -370,14 +377,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\EnvironmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
+$organisation = 'test-org'; // string | The organisation ID
+$application = 'test-app'; // string | The application ID
 
 try {
     $result = $apiInstance->listEnvironments($organisation, $application);
@@ -430,16 +438,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\EnvironmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
-$environment = test-env; // string | The environment ID
-$type = 'type_example'; // string | The sync type
+$organisation = 'test-org'; // string | The organisation ID
+$application = 'test-app'; // string | The application ID
+$environment = 'test-env'; // string | The environment ID
+$type = ''type_example''; // string | The sync type
 
 try {
     $result = $apiInstance->listSyncOperations($organisation, $application, $environment, $type);
@@ -494,16 +503,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\EnvironmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
-$environment = test-env; // string | The environment ID
-$type = 'type_example'; // string | The sync type
+$organisation = 'test-org'; // string | The organisation ID
+$application = 'test-app'; // string | The application ID
+$environment = 'test-env'; // string | The environment ID
+$type = ''type_example''; // string | The sync type
 $sync_to_environment_request = new \QuantClient\Model\SyncToEnvironmentRequest(); // \QuantClient\Model\SyncToEnvironmentRequest
 
 try {
@@ -562,15 +572,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\EnvironmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = ''organisation_example''; // string | The organisation ID
+$application = ''application_example''; // string | The application ID
+$environment = ''environment_example''; // string | The environment ID
 $update_environment_request = new \QuantClient\Model\UpdateEnvironmentRequest(); // \QuantClient\Model\UpdateEnvironmentRequest
 
 try {
@@ -625,15 +636,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\EnvironmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
-$environment = test-env; // string | The environment ID
+$organisation = 'test-org'; // string | The organisation ID
+$application = 'test-app'; // string | The application ID
+$environment = 'test-env'; // string | The environment ID
 $update_environment_state_request = new \QuantClient\Model\UpdateEnvironmentStateRequest(); // \QuantClient\Model\UpdateEnvironmentStateRequest
 
 try {

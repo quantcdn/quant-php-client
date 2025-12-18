@@ -1,5 +1,7 @@
 # QuantClient\KVApi
 
+Key-value store operations
+
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -34,14 +36,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\KVApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = test-org; // string | Organization identifier
-$project = test-project; // string | Project identifier
+$organization = 'test-org'; // string | Organization identifier
+$project = 'test-project'; // string | Project identifier
 $v2_store_request = new \QuantClient\Model\V2StoreRequest(); // \QuantClient\Model\V2StoreRequest
 
 try {
@@ -96,15 +99,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\KVApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = test-org; // string | Organization identifier
-$project = test-project; // string | Project identifier
-$store_id = 0000; // string
+$organization = 'test-org'; // string | Organization identifier
+$project = 'test-project'; // string | Project identifier
+$store_id = '0000'; // string
 
 try {
     $apiInstance->kVDelete($organization, $project, $store_id);
@@ -157,15 +161,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\KVApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = test-org; // string | Organization identifier
-$project = test-project; // string | Project identifier
-$store_id = 0000; // string
+$organization = 'test-org'; // string | Organization identifier
+$project = 'test-project'; // string | Project identifier
+$store_id = '0000'; // string
 $v2_store_item_request = new \QuantClient\Model\V2StoreItemRequest(); // \QuantClient\Model\V2StoreItemRequest
 
 try {
@@ -221,16 +226,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\KVApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = test-org; // string | Organization identifier
-$project = test-project; // string | Project identifier
-$store_id = 0000; // string
-$key = 'key_example'; // string
+$organization = 'test-org'; // string | Organization identifier
+$project = 'test-project'; // string | Project identifier
+$store_id = '0000'; // string
+$key = ''key_example''; // string
 
 try {
     $result = $apiInstance->kVItemsDelete($organization, $project, $store_id, $key);
@@ -285,18 +291,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\KVApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = test-org; // string | Organization identifier
-$project = test-project; // string | Project identifier
-$store_id = 0000; // string
-$cursor = 'cursor_example'; // string | Cursor for pagination
+$organization = 'test-org'; // string | Organization identifier
+$project = 'test-project'; // string | Project identifier
+$store_id = '0000'; // string
+$cursor = ''cursor_example''; // string | Cursor for pagination
 $limit = 10; // int | Number of items to return
-$search = 'search_example'; // string | Search filter for keys
+$search = ''search_example''; // string | Search filter for keys
 $include_values = false; // bool | Include values in the response. Secret values will be redacted as '[ENCRYPTED]' for security.
 
 try {
@@ -357,16 +364,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\KVApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = test-org; // string | Organization identifier
-$project = test-project; // string | Project identifier
-$store_id = 0000; // string
-$key = 'key_example'; // string
+$organization = 'test-org'; // string | Organization identifier
+$project = 'test-project'; // string | Project identifier
+$store_id = '0000'; // string
+$key = ''key_example''; // string
 
 try {
     $result = $apiInstance->kVItemsShow($organization, $project, $store_id, $key);
@@ -421,16 +429,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\KVApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = test-org; // string | Organization identifier
-$project = test-project; // string | Project identifier
-$store_id = 0000; // string
-$key = 'key_example'; // string
+$organization = 'test-org'; // string | Organization identifier
+$project = 'test-project'; // string | Project identifier
+$store_id = '0000'; // string
+$key = ''key_example''; // string
 $v2_store_item_update_request = new \QuantClient\Model\V2StoreItemUpdateRequest(); // \QuantClient\Model\V2StoreItemUpdateRequest
 
 try {
@@ -487,14 +496,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\KVApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = test-org; // string | Organization identifier
-$project = test-project; // string | Project identifier
+$organization = 'test-org'; // string | Organization identifier
+$project = 'test-project'; // string | Project identifier
 
 try {
     $result = $apiInstance->kVList($organization, $project);
@@ -547,15 +557,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\KVApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = test-org; // string | Organization identifier
-$project = test-project; // string | Project identifier
-$store_id = 0000; // string
+$organization = 'test-org'; // string | Organization identifier
+$project = 'test-project'; // string | Project identifier
+$store_id = '0000'; // string
 
 try {
     $result = $apiInstance->kVShow($organization, $project, $store_id);

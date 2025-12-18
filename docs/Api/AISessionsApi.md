@@ -1,5 +1,7 @@
 # QuantClient\AISessionsApi
 
+
+
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -33,13 +35,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AISessionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
+$organisation = ''organisation_example''; // string | The organisation ID
 $create_ai_session_request = new \QuantClient\Model\CreateAISessionRequest(); // \QuantClient\Model\CreateAISessionRequest
 
 try {
@@ -93,14 +96,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AISessionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$session_id = 'session_id_example'; // string | The session ID
+$organisation = ''organisation_example''; // string | The organisation ID
+$session_id = ''session_id_example''; // string | The session ID
 
 try {
     $result = $apiInstance->deleteAISession($organisation, $session_id);
@@ -155,14 +159,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AISessionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$session_id = 'session_id_example'; // string | The session ID
+$organisation = ''organisation_example''; // string | The organisation ID
+$session_id = ''session_id_example''; // string | The session ID
 $extend_ai_session_request = new \QuantClient\Model\ExtendAISessionRequest(); // \QuantClient\Model\ExtendAISessionRequest
 
 try {
@@ -217,14 +222,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AISessionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$session_id = 'session_id_example'; // string | The session ID
+$organisation = ''organisation_example''; // string | The organisation ID
+$session_id = ''session_id_example''; // string | The session ID
 
 try {
     $result = $apiInstance->getAISession($organisation, $session_id);
@@ -279,18 +285,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AISessionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$user_id = user-12345; // string | Filter sessions by user ID
-$session_group = drupal-production; // string | Filter by session group. Returns only sessions matching the specified group.
+$organisation = ''organisation_example''; // string | The organisation ID
+$user_id = 'user-12345'; // string | Filter sessions by user ID
+$session_group = 'drupal-production'; // string | Filter by session group. Returns only sessions matching the specified group.
 $limit = 50; // int | Maximum number of sessions to return (default 50, max 100)
 $offset = 56; // int | Offset for pagination
-$model = 'model_example'; // string | Filter by model ID
+$model = ''model_example''; // string | Filter by model ID
 
 try {
     $result = $apiInstance->listAISessions($organisation, $user_id, $session_group, $limit, $offset, $model);
@@ -349,14 +356,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AISessionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$session_id = 'session_id_example'; // string | The session ID
+$organisation = ''organisation_example''; // string | The organisation ID
+$session_id = ''session_id_example''; // string | The session ID
 $update_ai_session_request = new \QuantClient\Model\UpdateAISessionRequest(); // \QuantClient\Model\UpdateAISessionRequest
 
 try {

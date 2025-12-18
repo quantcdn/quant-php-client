@@ -1,5 +1,7 @@
 # QuantClient\RulesApi
 
+Edge rules (redirects, authentication, proxies, etc.)
+
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -70,14 +72,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
 $v2_rule_auth_request = new \QuantClient\Model\V2RuleAuthRequest(); // \QuantClient\Model\V2RuleAuthRequest
 
 try {
@@ -132,15 +135,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 
 try {
     $apiInstance->rulesAuthDelete($organization, $project, $rule);
@@ -193,14 +197,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
 
 try {
     $result = $apiInstance->rulesAuthList($organization, $project);
@@ -253,15 +258,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 
 try {
     $result = $apiInstance->rulesAuthRead($organization, $project, $rule);
@@ -315,15 +321,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 $v2_rule_auth_request = new \QuantClient\Model\V2RuleAuthRequest(); // \QuantClient\Model\V2RuleAuthRequest
 
 try {
@@ -379,14 +386,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
 $v2_rule_bot_challenge_request = new \QuantClient\Model\V2RuleBotChallengeRequest(); // \QuantClient\Model\V2RuleBotChallengeRequest
 
 try {
@@ -441,15 +449,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 
 try {
     $apiInstance->rulesBotChallengeDelete($organization, $project, $rule);
@@ -502,14 +511,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
 
 try {
     $result = $apiInstance->rulesBotChallengeList($organization, $project);
@@ -562,15 +572,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 
 try {
     $result = $apiInstance->rulesBotChallengeRead($organization, $project, $rule);
@@ -624,15 +635,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 $v2_rule_bot_challenge_request = new \QuantClient\Model\V2RuleBotChallengeRequest(); // \QuantClient\Model\V2RuleBotChallengeRequest
 
 try {
@@ -688,14 +700,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
 $v2_rule_content_filter_request = new \QuantClient\Model\V2RuleContentFilterRequest(); // \QuantClient\Model\V2RuleContentFilterRequest
 
 try {
@@ -750,15 +763,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 
 try {
     $apiInstance->rulesContentFilterDelete($organization, $project, $rule);
@@ -811,14 +825,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
 
 try {
     $result = $apiInstance->rulesContentFilterList($organization, $project);
@@ -871,15 +886,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 
 try {
     $result = $apiInstance->rulesContentFilterRead($organization, $project, $rule);
@@ -933,15 +949,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 $v2_rule_content_filter_request = new \QuantClient\Model\V2RuleContentFilterRequest(); // \QuantClient\Model\V2RuleContentFilterRequest
 
 try {
@@ -997,14 +1014,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
 $v2_rule_custom_response_request = new \QuantClient\Model\V2RuleCustomResponseRequest(); // \QuantClient\Model\V2RuleCustomResponseRequest
 
 try {
@@ -1059,15 +1077,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 
 try {
     $apiInstance->rulesCustomResponseDelete($organization, $project, $rule);
@@ -1120,14 +1139,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
 
 try {
     $result = $apiInstance->rulesCustomResponseList($organization, $project);
@@ -1180,15 +1200,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 
 try {
     $result = $apiInstance->rulesCustomResponseRead($organization, $project, $rule);
@@ -1242,15 +1263,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 $v2_rule_custom_response_request = new \QuantClient\Model\V2RuleCustomResponseRequest(); // \QuantClient\Model\V2RuleCustomResponseRequest
 
 try {
@@ -1306,14 +1328,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
 $v2_rule_function_request = new \QuantClient\Model\V2RuleFunctionRequest(); // \QuantClient\Model\V2RuleFunctionRequest
 
 try {
@@ -1368,15 +1391,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 
 try {
     $apiInstance->rulesFunctionDelete($organization, $project, $rule);
@@ -1429,14 +1453,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
 
 try {
     $result = $apiInstance->rulesFunctionList($organization, $project);
@@ -1489,15 +1514,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 
 try {
     $result = $apiInstance->rulesFunctionRead($organization, $project, $rule);
@@ -1551,15 +1577,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 $v2_rule_function_request = new \QuantClient\Model\V2RuleFunctionRequest(); // \QuantClient\Model\V2RuleFunctionRequest
 
 try {
@@ -1615,14 +1642,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
 $v2_rule_header_request = new \QuantClient\Model\V2RuleHeaderRequest(); // \QuantClient\Model\V2RuleHeaderRequest
 
 try {
@@ -1677,15 +1705,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 
 try {
     $apiInstance->rulesHeadersDelete($organization, $project, $rule);
@@ -1738,14 +1767,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
 
 try {
     $result = $apiInstance->rulesHeadersList($organization, $project);
@@ -1798,15 +1828,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 
 try {
     $result = $apiInstance->rulesHeadersRead($organization, $project, $rule);
@@ -1860,15 +1891,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 $v2_rule_header_request = new \QuantClient\Model\V2RuleHeaderRequest(); // \QuantClient\Model\V2RuleHeaderRequest
 
 try {
@@ -1924,14 +1956,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
+$organization = ''organization_example''; // string
+$project = ''project_example''; // string
 $v2_rule_proxy_request = new \QuantClient\Model\V2RuleProxyRequest(); // \QuantClient\Model\V2RuleProxyRequest
 
 try {
@@ -1986,15 +2019,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
-$rule = 'rule_example'; // string
+$organization = ''organization_example''; // string
+$project = ''project_example''; // string
+$rule = ''rule_example''; // string
 
 try {
     $apiInstance->rulesProxyDelete($organization, $project, $rule);
@@ -2047,14 +2081,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
+$organization = ''organization_example''; // string
+$project = ''project_example''; // string
 
 try {
     $result = $apiInstance->rulesProxyList($organization, $project);
@@ -2107,15 +2142,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
-$rule = 'rule_example'; // string
+$organization = ''organization_example''; // string
+$project = ''project_example''; // string
+$rule = ''rule_example''; // string
 
 try {
     $result = $apiInstance->rulesProxyRead($organization, $project, $rule);
@@ -2169,15 +2205,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
-$rule = 'rule_example'; // string
+$organization = ''organization_example''; // string
+$project = ''project_example''; // string
+$rule = ''rule_example''; // string
 $v2_rule_proxy_request = new \QuantClient\Model\V2RuleProxyRequest(); // \QuantClient\Model\V2RuleProxyRequest
 
 try {
@@ -2233,14 +2270,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
+$organization = ''organization_example''; // string
+$project = ''project_example''; // string
 $v2_rule_redirect_request = new \QuantClient\Model\V2RuleRedirectRequest(); // \QuantClient\Model\V2RuleRedirectRequest
 
 try {
@@ -2295,15 +2333,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
-$rule = 'rule_example'; // string
+$organization = ''organization_example''; // string
+$project = ''project_example''; // string
+$rule = ''rule_example''; // string
 
 try {
     $apiInstance->rulesRedirectDelete($organization, $project, $rule);
@@ -2356,14 +2395,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
+$organization = ''organization_example''; // string
+$project = ''project_example''; // string
 
 try {
     $result = $apiInstance->rulesRedirectList($organization, $project);
@@ -2416,15 +2456,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
-$rule = 'rule_example'; // string
+$organization = ''organization_example''; // string
+$project = ''project_example''; // string
+$rule = ''rule_example''; // string
 
 try {
     $result = $apiInstance->rulesRedirectRead($organization, $project, $rule);
@@ -2478,15 +2519,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
-$rule = 'rule_example'; // string
+$organization = ''organization_example''; // string
+$project = ''project_example''; // string
+$rule = ''rule_example''; // string
 $v2_rule_redirect_request = new \QuantClient\Model\V2RuleRedirectRequest(); // \QuantClient\Model\V2RuleRedirectRequest
 
 try {
@@ -2542,14 +2584,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
 $v2_rule_serve_static_request = new \QuantClient\Model\V2RuleServeStaticRequest(); // \QuantClient\Model\V2RuleServeStaticRequest
 
 try {
@@ -2604,15 +2647,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 
 try {
     $apiInstance->rulesServeStaticDelete($organization, $project, $rule);
@@ -2665,14 +2709,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
 
 try {
     $result = $apiInstance->rulesServeStaticList($organization, $project);
@@ -2725,15 +2770,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 
 try {
     $result = $apiInstance->rulesServeStaticRead($organization, $project, $rule);
@@ -2787,15 +2833,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$rule = 'rule_example'; // string | Rule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$rule = ''rule_example''; // string | Rule identifier
 $v2_rule_serve_static_request = new \QuantClient\Model\V2RuleServeStaticRequest(); // \QuantClient\Model\V2RuleServeStaticRequest
 
 try {

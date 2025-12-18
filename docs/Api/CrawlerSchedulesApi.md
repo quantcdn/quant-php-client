@@ -1,5 +1,7 @@
 # QuantClient\CrawlerSchedulesApi
 
+Scheduled website crawl operations
+
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -30,15 +32,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\CrawlerSchedulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$crawler = 'crawler_example'; // string | Crawler identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$crawler = ''crawler_example''; // string | Crawler identifier
 $v2_crawler_schedule_request = new \QuantClient\Model\V2CrawlerScheduleRequest(); // \QuantClient\Model\V2CrawlerScheduleRequest
 
 try {
@@ -94,16 +97,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\CrawlerSchedulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$crawler = 'crawler_example'; // string | Crawler identifier
-$crawler_schedule = 'crawler_schedule_example'; // string | Crawler schedule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$crawler = ''crawler_example''; // string | Crawler identifier
+$crawler_schedule = ''crawler_schedule_example''; // string | Crawler schedule identifier
 
 try {
     $apiInstance->crawlerSchedulesDelete($organization, $project, $crawler, $crawler_schedule);
@@ -157,16 +161,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\CrawlerSchedulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$crawler = 'crawler_example'; // string | Crawler identifier
-$crawler_schedule = 'crawler_schedule_example'; // string | Crawler schedule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$crawler = ''crawler_example''; // string | Crawler identifier
+$crawler_schedule = ''crawler_schedule_example''; // string | Crawler schedule identifier
 $v2_crawler_schedule_request = new \QuantClient\Model\V2CrawlerScheduleRequest(); // \QuantClient\Model\V2CrawlerScheduleRequest
 
 try {
@@ -223,15 +228,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\CrawlerSchedulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = test-org; // string
-$project = test-project; // string
-$crawler = 00000000-0000-0000-0000-000000000000; // string
+$organization = 'test-org'; // string
+$project = 'test-project'; // string
+$crawler = '00000000-0000-0000-0000-000000000000'; // string
 
 try {
     $result = $apiInstance->crawlerSchedulesList($organization, $project, $crawler);
@@ -285,16 +291,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\CrawlerSchedulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string | Organization identifier
-$project = 'project_example'; // string | Project identifier
-$crawler = 'crawler_example'; // string | Crawler identifier
-$crawler_schedule = 'crawler_schedule_example'; // string | Crawler schedule identifier
+$organization = ''organization_example''; // string | Organization identifier
+$project = ''project_example''; // string | Project identifier
+$crawler = ''crawler_example''; // string | Crawler identifier
+$crawler_schedule = ''crawler_schedule_example''; // string | Crawler schedule identifier
 
 try {
     $result = $apiInstance->crawlerSchedulesShow($organization, $project, $crawler, $crawler_schedule);

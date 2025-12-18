@@ -1,5 +1,7 @@
 # QuantClient\AIModelsApi
 
+
+
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -29,14 +31,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIModelsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$model_id = amazon.nova-lite-v1:0; // string | The model identifier (e.g., amazon.nova-lite-v1:0)
+$organisation = ''organisation_example''; // string | The organisation ID
+$model_id = 'amazon.nova-lite-v1:0'; // string | The model identifier (e.g., amazon.nova-lite-v1:0)
 
 try {
     $result = $apiInstance->getAIModel($organisation, $model_id);
@@ -89,14 +92,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIModelsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$feature = embeddings; // string | Filter models by supported feature
+$organisation = ''organisation_example''; // string | The organisation ID
+$feature = 'embeddings'; // string | Filter models by supported feature
 
 try {
     $result = $apiInstance->listAIModels($organisation, $feature);

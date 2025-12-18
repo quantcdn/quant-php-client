@@ -1,5 +1,7 @@
 # QuantClient\ProjectsApi
 
+Static site project management
+
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -30,13 +32,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = test-org; // string | Organization identifier
+$organization = 'test-org'; // string | Organization identifier
 $v2_project_request = new \QuantClient\Model\V2ProjectRequest(); // \QuantClient\Model\V2ProjectRequest
 
 try {
@@ -90,14 +93,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = test-org; // string | Organization identifier
-$project = test-project; // string | Project identifier
+$organization = 'test-org'; // string | Organization identifier
+$project = 'test-project'; // string | Project identifier
 
 try {
     $apiInstance->projectsDelete($organization, $project);
@@ -149,13 +153,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = test-org; // string | Organization identifier
+$organization = 'test-org'; // string | Organization identifier
 
 try {
     $result = $apiInstance->projectsList($organization);
@@ -207,14 +212,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = test-org; // string | Organization identifier
-$project = test-project; // string | Project identifier
+$organization = 'test-org'; // string | Organization identifier
+$project = 'test-project'; // string | Project identifier
 $with_token = false; // bool
 
 try {
@@ -269,14 +275,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organization = test-org; // string | Organization identifier
-$project = test-project; // string | Project identifier
+$organization = 'test-org'; // string | Organization identifier
+$project = 'test-project'; // string | Project identifier
 $v2_project_request = new \QuantClient\Model\V2ProjectRequest(); // \QuantClient\Model\V2ProjectRequest
 
 try {

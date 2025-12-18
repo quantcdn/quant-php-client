@@ -1,5 +1,7 @@
 # QuantClient\AIVectorDatabaseApi
 
+
+
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -33,13 +35,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIVectorDatabaseApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
+$organisation = ''organisation_example''; // string | The organisation ID
 $create_vector_collection_request = new \QuantClient\Model\CreateVectorCollectionRequest(); // \QuantClient\Model\CreateVectorCollectionRequest
 
 try {
@@ -95,14 +98,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIVectorDatabaseApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$collection_id = 'collection_id_example'; // string | The collection ID
+$organisation = ''organisation_example''; // string | The organisation ID
+$collection_id = ''collection_id_example''; // string | The collection ID
 
 try {
     $result = $apiInstance->deleteVectorCollection($organisation, $collection_id);
@@ -157,14 +161,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIVectorDatabaseApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$collection_id = 'collection_id_example'; // string | The collection ID
+$organisation = ''organisation_example''; // string | The organisation ID
+$collection_id = ''collection_id_example''; // string | The collection ID
 
 try {
     $result = $apiInstance->getVectorCollection($organisation, $collection_id);
@@ -219,13 +224,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIVectorDatabaseApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
+$organisation = ''organisation_example''; // string | The organisation ID
 
 try {
     $result = $apiInstance->listVectorCollections($organisation);
@@ -279,14 +285,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIVectorDatabaseApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$collection_id = 'collection_id_example'; // string | The collection ID
+$organisation = ''organisation_example''; // string | The organisation ID
+$collection_id = ''collection_id_example''; // string | The collection ID
 $query_vector_collection_request = new \QuantClient\Model\QueryVectorCollectionRequest(); // \QuantClient\Model\QueryVectorCollectionRequest
 
 try {
@@ -343,14 +350,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIVectorDatabaseApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$collection_id = 'collection_id_example'; // string | The collection ID
+$organisation = ''organisation_example''; // string | The organisation ID
+$collection_id = ''collection_id_example''; // string | The collection ID
 $upload_vector_documents_request = new \QuantClient\Model\UploadVectorDocumentsRequest(); // \QuantClient\Model\UploadVectorDocumentsRequest
 
 try {

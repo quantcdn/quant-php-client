@@ -1,5 +1,7 @@
 # QuantClient\AIInferenceApi
 
+
+
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -31,13 +33,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIInferenceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
+$organisation = ''organisation_example''; // string | The organisation ID
 $chat_inference_request = new \QuantClient\Model\ChatInferenceRequest(); // \QuantClient\Model\ChatInferenceRequest | Chat request with optional multimodal content blocks
 
 try {
@@ -93,13 +96,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIInferenceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
+$organisation = ''organisation_example''; // string | The organisation ID
 $chat_inference_stream_request = new \QuantClient\Model\ChatInferenceStreamRequest(); // \QuantClient\Model\ChatInferenceStreamRequest | Chat request with optional multimodal content blocks
 
 try {
@@ -155,13 +159,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIInferenceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
+$organisation = ''organisation_example''; // string | The organisation ID
 $embeddings_request = {"input":"The Australian government announced new climate policy","modelId":"amazon.titan-embed-text-v2:0","dimensions":1024,"normalize":true}; // \QuantClient\Model\EmbeddingsRequest | Embedding request with single or multiple texts
 
 try {
@@ -217,13 +222,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIInferenceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
+$organisation = ''organisation_example''; // string | The organisation ID
 $image_generation_request = {"taskType":"TEXT_IMAGE","textToImageParams":{"text":"A serene mountain landscape at sunset with snow-capped peaks","negativeText":"blurry, low quality, distorted","style":"PHOTOREALISM"},"imageGenerationConfig":{"width":1024,"height":1024,"quality":"premium","numberOfImages":1,"cfgScale":7},"region":"us-east-1"}; // \QuantClient\Model\ImageGenerationRequest | Image generation request
 
 try {

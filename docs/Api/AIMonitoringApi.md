@@ -1,5 +1,7 @@
 # QuantClient\AIMonitoringApi
 
+
+
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -26,14 +28,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\AIMonitoringApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$month = 2025-10; // string | Month to retrieve statistics for (YYYY-MM format)
+$organisation = ''organisation_example''; // string | The organisation ID
+$month = '2025-10'; // string | Month to retrieve statistics for (YYYY-MM format)
 
 try {
     $result = $apiInstance->getAIUsageStats($organisation, $month);

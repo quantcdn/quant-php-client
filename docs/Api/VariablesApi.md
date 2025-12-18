@@ -1,5 +1,7 @@
 # QuantClient\VariablesApi
 
+Environment variable management
+
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -29,15 +31,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\VariablesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$api_organisation = test-org; // string | The organisation ID
-$api_application = test-app; // string | The application ID
-$api_environment = test-env; // string | The environment ID
+$api_organisation = 'test-org'; // string | The organisation ID
+$api_application = 'test-app'; // string | The application ID
+$api_environment = 'test-env'; // string | The environment ID
 $bulk_set_environment_variables_request = new \QuantClient\Model\BulkSetEnvironmentVariablesRequest(); // \QuantClient\Model\BulkSetEnvironmentVariablesRequest
 
 try {
@@ -92,16 +95,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\VariablesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$api_organisation = 'api_organisation_example'; // string | The organisation ID
-$api_application = 'api_application_example'; // string | The application ID
-$api_environment = 'api_environment_example'; // string | The environment ID
-$api_variable = 'api_variable_example'; // string | The variable key
+$api_organisation = ''api_organisation_example''; // string | The organisation ID
+$api_application = ''api_application_example''; // string | The application ID
+$api_environment = ''api_environment_example''; // string | The environment ID
+$api_variable = ''api_variable_example''; // string | The variable key
 
 try {
     $apiInstance->deleteEnvironmentVariable($api_organisation, $api_application, $api_environment, $api_variable);
@@ -155,15 +159,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\VariablesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$api_organisation = test-org; // string | The organisation ID
-$api_application = test-app; // string | The application ID
-$api_environment = test-env; // string | The environment ID
+$api_organisation = 'test-org'; // string | The organisation ID
+$api_application = 'test-app'; // string | The application ID
+$api_environment = 'test-env'; // string | The environment ID
 
 try {
     $apiInstance->listEnvironmentVariables($api_organisation, $api_application, $api_environment);
@@ -216,16 +221,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\VariablesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$api_organisation = test-org; // string | The organisation ID
-$api_application = test-app; // string | The application ID
-$api_environment = test-env; // string | The environment ID
-$api_variable = 'api_variable_example'; // string | The variable key
+$api_organisation = 'test-org'; // string | The organisation ID
+$api_application = 'test-app'; // string | The application ID
+$api_environment = 'test-env'; // string | The environment ID
+$api_variable = ''api_variable_example''; // string | The variable key
 $update_environment_variable_request = new \QuantClient\Model\UpdateEnvironmentVariableRequest(); // \QuantClient\Model\UpdateEnvironmentVariableRequest
 
 try {

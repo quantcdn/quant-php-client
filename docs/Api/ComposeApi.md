@@ -1,5 +1,7 @@
 # QuantClient\ComposeApi
 
+Docker compose configuration management
+
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -28,15 +30,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\ComposeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
-$environment = test-env; // string | The environment ID
+$organisation = 'test-org'; // string | The organisation ID
+$application = 'test-app'; // string | The application ID
+$environment = 'test-env'; // string | The environment ID
 
 try {
     $result = $apiInstance->getEnvironmentCompose($organisation, $application, $environment);
@@ -92,15 +95,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\ComposeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
-$environment = test-env; // string | The environment ID
+$organisation = 'test-org'; // string | The organisation ID
+$application = 'test-app'; // string | The application ID
+$environment = 'test-env'; // string | The environment ID
 $patch_environment_compose_request = new \QuantClient\Model\PatchEnvironmentComposeRequest(); // \QuantClient\Model\PatchEnvironmentComposeRequest | Partial compose definition updates. All fields are optional.
 
 try {
@@ -158,15 +162,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\ComposeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
+$organisation = 'test-org'; // string | The organisation ID
 $validate_compose_request = new \QuantClient\Model\ValidateComposeRequest(); // \QuantClient\Model\ValidateComposeRequest | The docker-compose.yml file content. Can be sent as raw YAML string or as a JSON wrapper containing both yamlContent (string) and imageSuffix (string) fields. Query parameter imageSuffix takes precedence if both are provided.
-$image_suffix = pr-456; // string | Optional. Image tag suffix to apply during translation. Transforms internal image tags to consistent '{containerName}-{suffix}' format (e.g., 'nginx-pr-456'). External images are left unchanged. Useful for feature branch deployments.
+$image_suffix = 'pr-456'; // string | Optional. Image tag suffix to apply during translation. Transforms internal image tags to consistent '{containerName}-{suffix}' format (e.g., 'nginx-pr-456'). External images are left unchanged. Useful for feature branch deployments.
 
 try {
     $result = $apiInstance->validateCompose($organisation, $validate_compose_request, $image_suffix);
