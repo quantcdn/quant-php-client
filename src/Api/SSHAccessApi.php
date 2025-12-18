@@ -130,9 +130,9 @@ class SSHAccessApi
      *
      * Get SSH access credentials for an environment
      *
-     * @param  string $organisation The organisation machine name (required)
-     * @param  string $application The application name (required)
-     * @param  string $environment The environment name (required)
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The environment ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSshAccessCredentials'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -150,9 +150,9 @@ class SSHAccessApi
      *
      * Get SSH access credentials for an environment
      *
-     * @param  string $organisation The organisation machine name (required)
-     * @param  string $application The application name (required)
-     * @param  string $environment The environment name (required)
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The environment ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSshAccessCredentials'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -237,9 +237,9 @@ class SSHAccessApi
      *
      * Get SSH access credentials for an environment
      *
-     * @param  string $organisation The organisation machine name (required)
-     * @param  string $application The application name (required)
-     * @param  string $environment The environment name (required)
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The environment ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSshAccessCredentials'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -260,9 +260,9 @@ class SSHAccessApi
      *
      * Get SSH access credentials for an environment
      *
-     * @param  string $organisation The organisation machine name (required)
-     * @param  string $application The application name (required)
-     * @param  string $environment The environment name (required)
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The environment ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSshAccessCredentials'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -312,9 +312,9 @@ class SSHAccessApi
     /**
      * Create request for operation 'getSshAccessCredentials'
      *
-     * @param  string $organisation The organisation machine name (required)
-     * @param  string $application The application name (required)
-     * @param  string $environment The environment name (required)
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The environment ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSshAccessCredentials'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

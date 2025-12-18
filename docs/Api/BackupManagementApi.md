@@ -1,5 +1,7 @@
 # QuantClient\BackupManagementApi
 
+
+
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -29,15 +31,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\BackupManagementApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $type = 'type_example'; // string | The backup type
 $create_backup_request = new \QuantClient\Model\CreateBackupRequest(); // \QuantClient\Model\CreateBackupRequest
 
@@ -95,15 +98,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\BackupManagementApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $type = 'type_example'; // string | The backup type
 $backup_id = 'backup_id_example'; // string | The backup ID
 
@@ -161,15 +165,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\BackupManagementApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $type = 'type_example'; // string | The backup type
 $backup_id = 'backup_id_example'; // string | The backup ID
 
@@ -229,15 +234,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\BackupManagementApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $type = 'type_example'; // string | The backup type
 $order = 'desc'; // string | Sort order for backups by creation date (asc = oldest first, desc = newest first)
 $limit = 50; // int | Maximum number of backups to return (max 100)

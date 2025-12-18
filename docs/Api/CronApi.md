@@ -1,5 +1,7 @@
 # QuantClient\CronApi
 
+Scheduled task management
+
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -32,15 +34,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\CronApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $create_cron_job_request = new \QuantClient\Model\CreateCronJobRequest(); // \QuantClient\Model\CreateCronJobRequest
 
 try {
@@ -96,15 +99,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\CronApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $cron = 'cron_example'; // string | The cron job ID
 
 try {
@@ -159,15 +163,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\CronApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $cron = 'cron_example'; // string | The cron job ID
 
 try {
@@ -223,16 +228,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\CronApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
-$cron = 'cron_example'; // string | The cron job ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
+$cron = test-cron; // string | The cron job ID
 $run = 'run_example'; // string | The cron run ID
 
 try {
@@ -289,16 +295,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\CronApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
-$cron = 'cron_example'; // string | The cron job ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
+$cron = test-cron; // string | The cron job ID
 
 try {
     $result = $apiInstance->listCronJobRuns($organisation, $application, $environment, $cron);
@@ -353,15 +360,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\CronApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 
 try {
     $result = $apiInstance->listCronJobs($organisation, $application, $environment);
@@ -415,15 +423,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
+
 $apiInstance = new QuantClient\Api\CronApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $cron = 'cron_example'; // string | The cron job ID
 $update_cron_job_request = new \QuantClient\Model\UpdateCronJobRequest(); // \QuantClient\Model\UpdateCronJobRequest
 
