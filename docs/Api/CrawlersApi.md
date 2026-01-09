@@ -1,7 +1,5 @@
 # QuantClient\CrawlersApi
 
-Website crawler configuration and management
-
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -33,7 +31,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure Bearer (JWT) authorization: BearerAuth
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 
 $apiInstance = new QuantClient\Api\CrawlersApi(
@@ -98,7 +95,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-
 $apiInstance = new QuantClient\Api\CrawlersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -158,7 +154,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure Bearer (JWT) authorization: BearerAuth
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 
 $apiInstance = new QuantClient\Api\CrawlersApi(
@@ -225,7 +220,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-
 $apiInstance = new QuantClient\Api\CrawlersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -288,7 +282,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-
 $apiInstance = new QuantClient\Api\CrawlersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -346,7 +339,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure Bearer (JWT) authorization: BearerAuth
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 
 $apiInstance = new QuantClient\Api\CrawlersApi(
@@ -411,7 +403,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-
 $apiInstance = new QuantClient\Api\CrawlersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -438,7 +429,7 @@ try {
 | **organization** | **string**| Organization identifier | |
 | **project** | **string**| Project identifier | |
 | **crawler** | **string**| Crawler identifier | |
-| **crawlers_run_request** | [**\QuantClient\Model\CrawlersRunRequest**](../Model/CrawlersRunRequest.md)|  | |
+| **crawlers_run_request** | [**\QuantClient\Model\CrawlersRunRequest**](../Model/CrawlersRunRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -474,7 +465,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure Bearer (JWT) authorization: BearerAuth
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 
 $apiInstance = new QuantClient\Api\CrawlersApi(

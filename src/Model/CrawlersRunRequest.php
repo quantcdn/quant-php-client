@@ -302,7 +302,7 @@ class CrawlersRunRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets urls
      *
-     * @param string[]|null $urls URLs to crawl
+     * @param string[]|null $urls Optional URLs to crawl (overrides crawler's default URL configuration). If not provided, the crawler will use its configured URLs or perform a full crawl.
      *
      * @return self
      */

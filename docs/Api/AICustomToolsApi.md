@@ -1,7 +1,5 @@
 # QuantClient\AICustomToolsApi
 
-
-
 All URIs are relative to https://dashboard.quantcdn.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -30,7 +28,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure Bearer (JWT) authorization: BearerAuth
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 
 $apiInstance = new QuantClient\Api\AICustomToolsApi(
@@ -95,7 +92,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-
 $apiInstance = new QuantClient\Api\AICustomToolsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -156,7 +152,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure Bearer (JWT) authorization: BearerAuth
 $config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 
 $apiInstance = new QuantClient\Api\AICustomToolsApi(

@@ -2125,14 +2125,14 @@ class CrawlersApi
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
      * @param  string $crawler Crawler identifier (required)
-     * @param  \QuantClient\Model\CrawlersRunRequest $crawlers_run_request crawlers_run_request (required)
+     * @param  \QuantClient\Model\CrawlersRunRequest|null $crawlers_run_request crawlers_run_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersRun'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \QuantClient\Model\CrawlersRun200Response|\QuantClient\Model\V2Error|\QuantClient\Model\V2Error|\QuantClient\Model\V2Error|\QuantClient\Model\V2Error
      */
-    public function crawlersRun($organization, $project, $crawler, $crawlers_run_request, string $contentType = self::contentTypes['crawlersRun'][0])
+    public function crawlersRun($organization, $project, $crawler, $crawlers_run_request = null, string $contentType = self::contentTypes['crawlersRun'][0])
     {
         list($response) = $this->crawlersRunWithHttpInfo($organization, $project, $crawler, $crawlers_run_request, $contentType);
         return $response;
@@ -2146,14 +2146,14 @@ class CrawlersApi
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
      * @param  string $crawler Crawler identifier (required)
-     * @param  \QuantClient\Model\CrawlersRunRequest $crawlers_run_request (required)
+     * @param  \QuantClient\Model\CrawlersRunRequest|null $crawlers_run_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersRun'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \QuantClient\Model\CrawlersRun200Response|\QuantClient\Model\V2Error|\QuantClient\Model\V2Error|\QuantClient\Model\V2Error|\QuantClient\Model\V2Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function crawlersRunWithHttpInfo($organization, $project, $crawler, $crawlers_run_request, string $contentType = self::contentTypes['crawlersRun'][0])
+    public function crawlersRunWithHttpInfo($organization, $project, $crawler, $crawlers_run_request = null, string $contentType = self::contentTypes['crawlersRun'][0])
     {
         $request = $this->crawlersRunRequest($organization, $project, $crawler, $crawlers_run_request, $contentType);
 
@@ -2290,13 +2290,13 @@ class CrawlersApi
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
      * @param  string $crawler Crawler identifier (required)
-     * @param  \QuantClient\Model\CrawlersRunRequest $crawlers_run_request (required)
+     * @param  \QuantClient\Model\CrawlersRunRequest|null $crawlers_run_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersRun'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function crawlersRunAsync($organization, $project, $crawler, $crawlers_run_request, string $contentType = self::contentTypes['crawlersRun'][0])
+    public function crawlersRunAsync($organization, $project, $crawler, $crawlers_run_request = null, string $contentType = self::contentTypes['crawlersRun'][0])
     {
         return $this->crawlersRunAsyncWithHttpInfo($organization, $project, $crawler, $crawlers_run_request, $contentType)
             ->then(
@@ -2314,13 +2314,13 @@ class CrawlersApi
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
      * @param  string $crawler Crawler identifier (required)
-     * @param  \QuantClient\Model\CrawlersRunRequest $crawlers_run_request (required)
+     * @param  \QuantClient\Model\CrawlersRunRequest|null $crawlers_run_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersRun'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function crawlersRunAsyncWithHttpInfo($organization, $project, $crawler, $crawlers_run_request, string $contentType = self::contentTypes['crawlersRun'][0])
+    public function crawlersRunAsyncWithHttpInfo($organization, $project, $crawler, $crawlers_run_request = null, string $contentType = self::contentTypes['crawlersRun'][0])
     {
         $returnType = '\QuantClient\Model\CrawlersRun200Response';
         $request = $this->crawlersRunRequest($organization, $project, $crawler, $crawlers_run_request, $contentType);
@@ -2367,13 +2367,13 @@ class CrawlersApi
      * @param  string $organization Organization identifier (required)
      * @param  string $project Project identifier (required)
      * @param  string $crawler Crawler identifier (required)
-     * @param  \QuantClient\Model\CrawlersRunRequest $crawlers_run_request (required)
+     * @param  \QuantClient\Model\CrawlersRunRequest|null $crawlers_run_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['crawlersRun'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function crawlersRunRequest($organization, $project, $crawler, $crawlers_run_request, string $contentType = self::contentTypes['crawlersRun'][0])
+    public function crawlersRunRequest($organization, $project, $crawler, $crawlers_run_request = null, string $contentType = self::contentTypes['crawlersRun'][0])
     {
 
         // verify the required parameter 'organization' is set
@@ -2397,12 +2397,6 @@ class CrawlersApi
             );
         }
 
-        // verify the required parameter 'crawlers_run_request' is set
-        if ($crawlers_run_request === null || (is_array($crawlers_run_request) && count($crawlers_run_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $crawlers_run_request when calling crawlersRun'
-            );
-        }
 
 
         $resourcePath = '/api/v2/organizations/{organization}/projects/{project}/crawlers/{crawler}/run';
