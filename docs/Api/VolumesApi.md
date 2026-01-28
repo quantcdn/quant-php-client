@@ -35,9 +35,9 @@ $apiInstance = new QuantClient\Api\VolumesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $create_volume_request = new \QuantClient\Model\CreateVolumeRequest(); // \QuantClient\Model\CreateVolumeRequest
 
 try {
@@ -99,9 +99,9 @@ $apiInstance = new QuantClient\Api\VolumesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $volume = 'volume_example'; // string | The volume ID
 
 try {
@@ -162,9 +162,9 @@ $apiInstance = new QuantClient\Api\VolumesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 $volume = 'volume_example'; // string | The volume ID
 
 try {
@@ -226,9 +226,9 @@ $apiInstance = new QuantClient\Api\VolumesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = 'organisation_example'; // string | The organisation ID
-$application = 'application_example'; // string | The application ID
-$environment = 'environment_example'; // string | The environment ID
+$organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
+$environment = test-env; // string | The environment ID
 
 try {
     $result = $apiInstance->listVolumes($organisation, $application, $environment);

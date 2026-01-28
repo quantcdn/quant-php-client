@@ -35,9 +35,9 @@ $apiInstance = new QuantClient\Api\VariablesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$api_organisation = 'api_organisation_example'; // string | The organisation ID
-$api_application = 'api_application_example'; // string | The application ID
-$api_environment = 'api_environment_example'; // string | The environment ID
+$api_organisation = test-org; // string | The organisation ID
+$api_application = test-app; // string | The application ID
+$api_environment = test-env; // string | The environment ID
 $bulk_set_environment_variables_request = new \QuantClient\Model\BulkSetEnvironmentVariablesRequest(); // \QuantClient\Model\BulkSetEnvironmentVariablesRequest
 
 try {
@@ -161,9 +161,9 @@ $apiInstance = new QuantClient\Api\VariablesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$api_organisation = 'api_organisation_example'; // string | The organisation ID
-$api_application = 'api_application_example'; // string | The application ID
-$api_environment = 'api_environment_example'; // string | The environment ID
+$api_organisation = test-org; // string | The organisation ID
+$api_application = test-app; // string | The application ID
+$api_environment = test-env; // string | The environment ID
 
 try {
     $apiInstance->listEnvironmentVariables($api_organisation, $api_application, $api_environment);
@@ -222,9 +222,9 @@ $apiInstance = new QuantClient\Api\VariablesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$api_organisation = 'api_organisation_example'; // string | The organisation ID
-$api_application = 'api_application_example'; // string | The application ID
-$api_environment = 'api_environment_example'; // string | The environment ID
+$api_organisation = test-org; // string | The organisation ID
+$api_application = test-app; // string | The application ID
+$api_environment = test-env; // string | The environment ID
 $api_variable = 'api_variable_example'; // string | The variable key
 $update_environment_variable_request = new \QuantClient\Model\UpdateEnvironmentVariableRequest(); // \QuantClient\Model\UpdateEnvironmentVariableRequest
 

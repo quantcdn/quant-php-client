@@ -40,8 +40,8 @@ $apiInstance = new QuantClient\Api\KVApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
 $v2_store_request = new \QuantClient\Model\V2StoreRequest(); // \QuantClient\Model\V2StoreRequest
 
 try {
@@ -56,8 +56,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organization** | **string**|  | |
-| **project** | **string**|  | |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
 | **v2_store_request** | [**\QuantClient\Model\V2StoreRequest**](../Model/V2StoreRequest.md)|  | |
 
 ### Return type
@@ -102,9 +102,9 @@ $apiInstance = new QuantClient\Api\KVApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
-$store_id = 'store_id_example'; // string
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
+$store_id = 0000; // string
 
 try {
     $apiInstance->kVDelete($organization, $project, $store_id);
@@ -117,8 +117,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organization** | **string**|  | |
-| **project** | **string**|  | |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
 | **store_id** | **string**|  | |
 
 ### Return type
@@ -163,9 +163,9 @@ $apiInstance = new QuantClient\Api\KVApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
-$store_id = 'store_id_example'; // string
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
+$store_id = 0000; // string
 $v2_store_item_request = new \QuantClient\Model\V2StoreItemRequest(); // \QuantClient\Model\V2StoreItemRequest
 
 try {
@@ -180,8 +180,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organization** | **string**|  | |
-| **project** | **string**|  | |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
 | **store_id** | **string**|  | |
 | **v2_store_item_request** | [**\QuantClient\Model\V2StoreItemRequest**](../Model/V2StoreItemRequest.md)|  | |
 
@@ -227,9 +227,9 @@ $apiInstance = new QuantClient\Api\KVApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
-$store_id = 'store_id_example'; // string
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
+$store_id = 0000; // string
 $key = 'key_example'; // string
 
 try {
@@ -244,8 +244,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organization** | **string**|  | |
-| **project** | **string**|  | |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
 | **store_id** | **string**|  | |
 | **key** | **string**|  | |
 
@@ -291,9 +291,9 @@ $apiInstance = new QuantClient\Api\KVApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
-$store_id = 'store_id_example'; // string
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
+$store_id = 0000; // string
 $cursor = 'cursor_example'; // string | Cursor for pagination
 $limit = 10; // int | Number of items to return
 $search = 'search_example'; // string | Search filter for keys
@@ -311,8 +311,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organization** | **string**|  | |
-| **project** | **string**|  | |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
 | **store_id** | **string**|  | |
 | **cursor** | **string**| Cursor for pagination | [optional] |
 | **limit** | **int**| Number of items to return | [optional] [default to 10] |
@@ -363,9 +363,9 @@ $apiInstance = new QuantClient\Api\KVApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
-$store_id = 'store_id_example'; // string
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
+$store_id = 0000; // string
 $key = 'key_example'; // string
 
 try {
@@ -380,8 +380,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organization** | **string**|  | |
-| **project** | **string**|  | |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
 | **store_id** | **string**|  | |
 | **key** | **string**|  | |
 
@@ -427,9 +427,9 @@ $apiInstance = new QuantClient\Api\KVApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
-$store_id = 'store_id_example'; // string
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
+$store_id = 0000; // string
 $key = 'key_example'; // string
 $v2_store_item_update_request = new \QuantClient\Model\V2StoreItemUpdateRequest(); // \QuantClient\Model\V2StoreItemUpdateRequest
 
@@ -445,8 +445,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organization** | **string**|  | |
-| **project** | **string**|  | |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
 | **store_id** | **string**|  | |
 | **key** | **string**|  | |
 | **v2_store_item_update_request** | [**\QuantClient\Model\V2StoreItemUpdateRequest**](../Model/V2StoreItemUpdateRequest.md)|  | |
@@ -493,8 +493,8 @@ $apiInstance = new QuantClient\Api\KVApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
 
 try {
     $result = $apiInstance->kVList($organization, $project);
@@ -508,8 +508,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organization** | **string**|  | |
-| **project** | **string**|  | |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
 
 ### Return type
 
@@ -553,9 +553,9 @@ $apiInstance = new QuantClient\Api\KVApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
-$store_id = 'store_id_example'; // string
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
+$store_id = 0000; // string
 
 try {
     $result = $apiInstance->kVShow($organization, $project, $store_id);
@@ -569,8 +569,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organization** | **string**|  | |
-| **project** | **string**|  | |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
 | **store_id** | **string**|  | |
 
 ### Return type

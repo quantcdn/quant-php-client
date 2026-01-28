@@ -32,8 +32,8 @@ $apiInstance = new QuantClient\Api\PurgeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
 $purge_create_request = new \QuantClient\Model\PurgeCreateRequest(); // \QuantClient\Model\PurgeCreateRequest
 
 try {
@@ -48,8 +48,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organization** | **string**|  | |
-| **project** | **string**|  | |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
 | **purge_create_request** | [**\QuantClient\Model\PurgeCreateRequest**](../Model/PurgeCreateRequest.md)|  | |
 
 ### Return type

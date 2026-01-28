@@ -34,8 +34,8 @@ $apiInstance = new QuantClient\Api\HeadersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
 $v2_custom_header_request = new \QuantClient\Model\V2CustomHeaderRequest(); // \QuantClient\Model\V2CustomHeaderRequest
 
 try {
@@ -50,8 +50,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organization** | **string**|  | |
-| **project** | **string**|  | |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
 | **v2_custom_header_request** | [**\QuantClient\Model\V2CustomHeaderRequest**](../Model/V2CustomHeaderRequest.md)|  | |
 
 ### Return type
@@ -96,8 +96,8 @@ $apiInstance = new QuantClient\Api\HeadersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
 $v2_custom_header_request = new \QuantClient\Model\V2CustomHeaderRequest(); // \QuantClient\Model\V2CustomHeaderRequest
 
 try {
@@ -111,8 +111,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organization** | **string**|  | |
-| **project** | **string**|  | |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
 | **v2_custom_header_request** | [**\QuantClient\Model\V2CustomHeaderRequest**](../Model/V2CustomHeaderRequest.md)|  | |
 
 ### Return type
@@ -157,8 +157,8 @@ $apiInstance = new QuantClient\Api\HeadersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 'organization_example'; // string
-$project = 'project_example'; // string
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
 
 try {
     $result = $apiInstance->headersList($organization, $project);
@@ -172,8 +172,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organization** | **string**|  | |
-| **project** | **string**|  | |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
 
 ### Return type
 
