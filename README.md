@@ -86,10 +86,16 @@ Class | Method | HTTP request | Description
 *AICustomToolsApi* | [**createCustomTool**](docs/Api/AICustomToolsApi.md#createcustomtool) | **POST** /api/v3/organizations/{organisation}/ai/custom-tools | Register Custom Edge Function Tool
 *AICustomToolsApi* | [**deleteCustomTool**](docs/Api/AICustomToolsApi.md#deletecustomtool) | **DELETE** /api/v3/organizations/{organisation}/ai/custom-tools/{toolName} | Delete Custom Tool
 *AICustomToolsApi* | [**listCustomTools**](docs/Api/AICustomToolsApi.md#listcustomtools) | **GET** /api/v3/organizations/{organisation}/ai/custom-tools | List Custom Tools
+*AIFileStorageApi* | [**deleteFile**](docs/Api/AIFileStorageApi.md#deletefile) | **DELETE** /api/v3/organizations/{organisation}/ai/files/{fileId} | Delete File
+*AIFileStorageApi* | [**getFile**](docs/Api/AIFileStorageApi.md#getfile) | **GET** /api/v3/organizations/{organisation}/ai/files/{fileId} | Get File
+*AIFileStorageApi* | [**listFiles**](docs/Api/AIFileStorageApi.md#listfiles) | **GET** /api/v3/organizations/{organisation}/ai/files | List Files
+*AIFileStorageApi* | [**uploadFile**](docs/Api/AIFileStorageApi.md#uploadfile) | **POST** /api/v3/organizations/{organisation}/ai/files | Upload File to S3
 *AIInferenceApi* | [**chatInference**](docs/Api/AIInferenceApi.md#chatinference) | **POST** /api/v3/organizations/{organisation}/ai/chat | Chat inference via API Gateway (buffered responses) with multimodal support
 *AIInferenceApi* | [**chatInferenceStream**](docs/Api/AIInferenceApi.md#chatinferencestream) | **POST** /api/v3/organizations/{organisation}/ai/chat/stream | Chat inference via streaming endpoint (true HTTP streaming) with multimodal support
 *AIInferenceApi* | [**embeddings**](docs/Api/AIInferenceApi.md#embeddings) | **POST** /api/v3/organizations/{organisation}/ai/embeddings | Generate text embeddings for semantic search and RAG applications
+*AIInferenceApi* | [**getDurableExecutionStatus**](docs/Api/AIInferenceApi.md#getdurableexecutionstatus) | **GET** /api/v3/organizations/{organisation}/ai/chat/executions/{identifier} | Get Durable Execution Status
 *AIInferenceApi* | [**imageGeneration**](docs/Api/AIInferenceApi.md#imagegeneration) | **POST** /api/v3/organizations/{organisation}/ai/image-generation | Generate images with Amazon Nova Canvas
+*AIInferenceApi* | [**submitToolCallback**](docs/Api/AIInferenceApi.md#submittoolcallback) | **POST** /api/v3/organizations/{organisation}/ai/chat/callback | Submit Client Tool Results (Callback)
 *AIModelsApi* | [**getAIModel**](docs/Api/AIModelsApi.md#getaimodel) | **GET** /api/v3/organizations/{organisation}/ai/models/{modelId} | Get AI Model Details
 *AIModelsApi* | [**listAIModels**](docs/Api/AIModelsApi.md#listaimodels) | **GET** /api/v3/organizations/{organisation}/ai/models | List available AI models for an organization
 *AIMonitoringApi* | [**getAIUsageStats**](docs/Api/AIMonitoringApi.md#getaiusagestats) | **GET** /api/v3/organizations/{organisation}/ai/usage | Get AI usage statistics
@@ -99,6 +105,13 @@ Class | Method | HTTP request | Description
 *AISessionsApi* | [**getAISession**](docs/Api/AISessionsApi.md#getaisession) | **GET** /api/v3/organizations/{organisation}/ai/sessions/{sessionId} | Get a specific chat session
 *AISessionsApi* | [**listAISessions**](docs/Api/AISessionsApi.md#listaisessions) | **GET** /api/v3/organizations/{organisation}/ai/sessions | List chat sessions with multi-tenant filtering
 *AISessionsApi* | [**updateAISession**](docs/Api/AISessionsApi.md#updateaisession) | **PUT** /api/v3/organizations/{organisation}/ai/sessions/{sessionId} | Update Session
+*AITaskManagementApi* | [**createTask**](docs/Api/AITaskManagementApi.md#createtask) | **POST** /api/v3/organizations/{organisation}/ai/tasks | Create a new task
+*AITaskManagementApi* | [**deleteTask**](docs/Api/AITaskManagementApi.md#deletetask) | **DELETE** /api/v3/organizations/{organisation}/ai/tasks/{taskId} | Delete a task
+*AITaskManagementApi* | [**getDependencyGraph**](docs/Api/AITaskManagementApi.md#getdependencygraph) | **GET** /api/v3/organizations/{organisation}/ai/tasks/{taskListId}/dependency-graph | Get dependency graph for a task list
+*AITaskManagementApi* | [**getTask**](docs/Api/AITaskManagementApi.md#gettask) | **GET** /api/v3/organizations/{organisation}/ai/tasks/{taskId} | Get task details
+*AITaskManagementApi* | [**listTasks**](docs/Api/AITaskManagementApi.md#listtasks) | **GET** /api/v3/organizations/{organisation}/ai/tasks | List tasks with optional filtering
+*AITaskManagementApi* | [**updateTask**](docs/Api/AITaskManagementApi.md#updatetask) | **PUT** /api/v3/organizations/{organisation}/ai/tasks/{taskId} | Update a task
+*AIToolsApi* | [**getAIOrchestrationStatus**](docs/Api/AIToolsApi.md#getaiorchestrationstatus) | **GET** /api/v3/organizations/{organisation}/ai/tools/orchestrations/{orchestrationId} | Get Orchestration Status
 *AIToolsApi* | [**getAIToolExecutionStatus**](docs/Api/AIToolsApi.md#getaitoolexecutionstatus) | **GET** /api/v3/organizations/{organisation}/ai/tools/executions/{executionId} | Get async tool execution status and result
 *AIToolsApi* | [**listAIToolExecutions**](docs/Api/AIToolsApi.md#listaitoolexecutions) | **GET** /api/v3/organizations/{organisation}/ai/tools/executions | List tool executions for monitoring and debugging
 *AIToolsApi* | [**listAIToolNames**](docs/Api/AIToolsApi.md#listaitoolnames) | **GET** /api/v3/organizations/{organisation}/ai/tools/names | List tool names only (lightweight response)
@@ -173,6 +186,7 @@ Class | Method | HTTP request | Description
 *KVApi* | [**kVItemsUpdate**](docs/Api/KVApi.md#kvitemsupdate) | **PUT** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key} | Update an item in a kv store
 *KVApi* | [**kVList**](docs/Api/KVApi.md#kvlist) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv | List key-value stores
 *KVApi* | [**kVShow**](docs/Api/KVApi.md#kvshow) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id} | Get a kv store
+*OrchestrationApi* | [**getAIOrchestrationStatus**](docs/Api/OrchestrationApi.md#getaiorchestrationstatus) | **GET** /api/v3/organizations/{organisation}/ai/tools/orchestrations/{orchestrationId} | Get Orchestration Status
 *OrganizationsApi* | [**organizationsList**](docs/Api/OrganizationsApi.md#organizationslist) | **GET** /api/v2/organizations | Retrieve all organizations
 *OrganizationsApi* | [**organizationsRead**](docs/Api/OrganizationsApi.md#organizationsread) | **GET** /api/v2/organizations/{organization} | Get details of a single organization
 *ProjectsApi* | [**projectsCreate**](docs/Api/ProjectsApi.md#projectscreate) | **POST** /api/v2/organizations/{organization}/projects | Create a new project
@@ -256,6 +270,7 @@ Class | Method | HTTP request | Description
 - [ChatInference200ResponseResponseToolUseOneOf1Inner](docs/Model/ChatInference200ResponseResponseToolUseOneOf1Inner.md)
 - [ChatInference200ResponseResponseToolUseOneOfResult](docs/Model/ChatInference200ResponseResponseToolUseOneOfResult.md)
 - [ChatInference200ResponseUsage](docs/Model/ChatInference200ResponseUsage.md)
+- [ChatInference202Response](docs/Model/ChatInference202Response.md)
 - [ChatInferenceRequest](docs/Model/ChatInferenceRequest.md)
 - [ChatInferenceRequestMessagesInner](docs/Model/ChatInferenceRequestMessagesInner.md)
 - [ChatInferenceRequestMessagesInnerContent](docs/Model/ChatInferenceRequestMessagesInnerContent.md)
@@ -281,6 +296,7 @@ Class | Method | HTTP request | Description
 - [ChatWithAIAgent200Response](docs/Model/ChatWithAIAgent200Response.md)
 - [ChatWithAIAgent200ResponseResponse](docs/Model/ChatWithAIAgent200ResponseResponse.md)
 - [ChatWithAIAgent200ResponseResponseUsage](docs/Model/ChatWithAIAgent200ResponseResponseUsage.md)
+- [ChatWithAIAgent202Response](docs/Model/ChatWithAIAgent202Response.md)
 - [ChatWithAIAgentRequest](docs/Model/ChatWithAIAgentRequest.md)
 - [Command](docs/Model/Command.md)
 - [Compose](docs/Model/Compose.md)
@@ -313,6 +329,8 @@ Class | Method | HTTP request | Description
 - [CreateEnvironment403Response](docs/Model/CreateEnvironment403Response.md)
 - [CreateEnvironmentRequest](docs/Model/CreateEnvironmentRequest.md)
 - [CreateEnvironmentRequestEnvironmentInner](docs/Model/CreateEnvironmentRequestEnvironmentInner.md)
+- [CreateTask201Response](docs/Model/CreateTask201Response.md)
+- [CreateTaskRequest](docs/Model/CreateTaskRequest.md)
 - [CreateVectorCollection201Response](docs/Model/CreateVectorCollection201Response.md)
 - [CreateVectorCollection201ResponseCollection](docs/Model/CreateVectorCollection201ResponseCollection.md)
 - [CreateVectorCollectionRequest](docs/Model/CreateVectorCollectionRequest.md)
@@ -323,6 +341,9 @@ Class | Method | HTTP request | Description
 - [DeleteAISession200Response](docs/Model/DeleteAISession200Response.md)
 - [DeleteBackup200Response](docs/Model/DeleteBackup200Response.md)
 - [DeleteCustomTool200Response](docs/Model/DeleteCustomTool200Response.md)
+- [DeleteFile200Response](docs/Model/DeleteFile200Response.md)
+- [DeleteTask200Response](docs/Model/DeleteTask200Response.md)
+- [DeleteTask409Response](docs/Model/DeleteTask409Response.md)
 - [DeleteVectorCollection200Response](docs/Model/DeleteVectorCollection200Response.md)
 - [DownloadBackup200Response](docs/Model/DownloadBackup200Response.md)
 - [Embeddings200Response](docs/Model/Embeddings200Response.md)
@@ -341,17 +362,29 @@ Class | Method | HTTP request | Description
 - [GetAIModel200ResponseCapabilities](docs/Model/GetAIModel200ResponseCapabilities.md)
 - [GetAIModel200ResponsePricing](docs/Model/GetAIModel200ResponsePricing.md)
 - [GetAIModel404Response](docs/Model/GetAIModel404Response.md)
+- [GetAIOrchestrationStatus200Response](docs/Model/GetAIOrchestrationStatus200Response.md)
+- [GetAIOrchestrationStatus200ResponseToolsInner](docs/Model/GetAIOrchestrationStatus200ResponseToolsInner.md)
+- [GetAIOrchestrationStatus404Response](docs/Model/GetAIOrchestrationStatus404Response.md)
 - [GetAISession200Response](docs/Model/GetAISession200Response.md)
 - [GetAIToolExecutionStatus200Response](docs/Model/GetAIToolExecutionStatus200Response.md)
 - [GetAIToolExecutionStatus200ResponseResult](docs/Model/GetAIToolExecutionStatus200ResponseResult.md)
 - [GetAIToolExecutionStatus404Response](docs/Model/GetAIToolExecutionStatus404Response.md)
 - [GetAIUsageStats200Response](docs/Model/GetAIUsageStats200Response.md)
 - [GetAIUsageStats200ResponseByModelValue](docs/Model/GetAIUsageStats200ResponseByModelValue.md)
+- [GetDependencyGraph200Response](docs/Model/GetDependencyGraph200Response.md)
+- [GetDurableExecutionStatus200Response](docs/Model/GetDurableExecutionStatus200Response.md)
+- [GetDurableExecutionStatus200ResponseError](docs/Model/GetDurableExecutionStatus200ResponseError.md)
+- [GetDurableExecutionStatus200ResponsePendingToolsInner](docs/Model/GetDurableExecutionStatus200ResponsePendingToolsInner.md)
+- [GetDurableExecutionStatus200ResponseResult](docs/Model/GetDurableExecutionStatus200ResponseResult.md)
+- [GetDurableExecutionStatus200ResponseResultResponse](docs/Model/GetDurableExecutionStatus200ResponseResultResponse.md)
+- [GetDurableExecutionStatus200ResponseResultUsage](docs/Model/GetDurableExecutionStatus200ResponseResultUsage.md)
 - [GetEcrLoginCredentials200Response](docs/Model/GetEcrLoginCredentials200Response.md)
 - [GetEnvironmentLogs200Response](docs/Model/GetEnvironmentLogs200Response.md)
 - [GetEnvironmentLogs200ResponseLogEventsInner](docs/Model/GetEnvironmentLogs200ResponseLogEventsInner.md)
+- [GetFile200Response](docs/Model/GetFile200Response.md)
 - [GetSshAccessCredentials200Response](docs/Model/GetSshAccessCredentials200Response.md)
 - [GetSshAccessCredentials200ResponseCredentials](docs/Model/GetSshAccessCredentials200ResponseCredentials.md)
+- [GetTask200Response](docs/Model/GetTask200Response.md)
 - [GetVectorCollection200Response](docs/Model/GetVectorCollection200Response.md)
 - [GetVectorCollection200ResponseCollection](docs/Model/GetVectorCollection200ResponseCollection.md)
 - [ImageGeneration200Response](docs/Model/ImageGeneration200Response.md)
@@ -385,6 +418,10 @@ Class | Method | HTTP request | Description
 - [ListBackups422Response](docs/Model/ListBackups422Response.md)
 - [ListCustomTools200Response](docs/Model/ListCustomTools200Response.md)
 - [ListCustomTools200ResponseToolsInner](docs/Model/ListCustomTools200ResponseToolsInner.md)
+- [ListFiles200Response](docs/Model/ListFiles200Response.md)
+- [ListFiles200ResponseFilesInner](docs/Model/ListFiles200ResponseFilesInner.md)
+- [ListTasks200Response](docs/Model/ListTasks200Response.md)
+- [ListTasks200ResponseTasksInner](docs/Model/ListTasks200ResponseTasksInner.md)
 - [ListVectorCollections200Response](docs/Model/ListVectorCollections200Response.md)
 - [ListVectorCollections200ResponseCollectionsInner](docs/Model/ListVectorCollections200ResponseCollectionsInner.md)
 - [OrganizationsList200ResponseInner](docs/Model/OrganizationsList200ResponseInner.md)
@@ -395,11 +432,15 @@ Class | Method | HTTP request | Description
 - [PatchEnvironmentComposeRequestSpotConfiguration](docs/Model/PatchEnvironmentComposeRequestSpotConfiguration.md)
 - [PurgeCreateRequest](docs/Model/PurgeCreateRequest.md)
 - [QueryVectorCollection200Response](docs/Model/QueryVectorCollection200Response.md)
+- [QueryVectorCollection200ResponsePagination](docs/Model/QueryVectorCollection200ResponsePagination.md)
 - [QueryVectorCollection200ResponseResultsInner](docs/Model/QueryVectorCollection200ResponseResultsInner.md)
-- [QueryVectorCollection200ResponseResultsInnerMetadata](docs/Model/QueryVectorCollection200ResponseResultsInnerMetadata.md)
 - [QueryVectorCollectionRequest](docs/Model/QueryVectorCollectionRequest.md)
+- [QueryVectorCollectionRequestFilter](docs/Model/QueryVectorCollectionRequestFilter.md)
 - [ScalingPolicy](docs/Model/ScalingPolicy.md)
 - [SpotConfiguration](docs/Model/SpotConfiguration.md)
+- [SubmitToolCallback200Response](docs/Model/SubmitToolCallback200Response.md)
+- [SubmitToolCallbackRequest](docs/Model/SubmitToolCallbackRequest.md)
+- [SubmitToolCallbackRequestToolResultsInner](docs/Model/SubmitToolCallbackRequestToolResultsInner.md)
 - [SyncOperation](docs/Model/SyncOperation.md)
 - [SyncToEnvironmentRequest](docs/Model/SyncToEnvironmentRequest.md)
 - [UpdateAIAgent200Response](docs/Model/UpdateAIAgent200Response.md)
@@ -411,6 +452,10 @@ Class | Method | HTTP request | Description
 - [UpdateEnvironmentRequest](docs/Model/UpdateEnvironmentRequest.md)
 - [UpdateEnvironmentStateRequest](docs/Model/UpdateEnvironmentStateRequest.md)
 - [UpdateEnvironmentVariableRequest](docs/Model/UpdateEnvironmentVariableRequest.md)
+- [UpdateTask200Response](docs/Model/UpdateTask200Response.md)
+- [UpdateTaskRequest](docs/Model/UpdateTaskRequest.md)
+- [UploadFile201Response](docs/Model/UploadFile201Response.md)
+- [UploadFileRequest](docs/Model/UploadFileRequest.md)
 - [UploadVectorDocuments200Response](docs/Model/UploadVectorDocuments200Response.md)
 - [UploadVectorDocumentsRequest](docs/Model/UploadVectorDocumentsRequest.md)
 - [UploadVectorDocumentsRequestDocumentsInner](docs/Model/UploadVectorDocumentsRequestDocumentsInner.md)
@@ -547,7 +592,7 @@ vendor/bin/phpunit
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `4.8.0`
-    - Package version: `4.8.0`
+- API version: `4.9.0`
+    - Package version: `4.9.0`
     - Generator version: `7.13.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
