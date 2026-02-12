@@ -8,12 +8,14 @@ docs/Api/AIFileStorageApi.md
 docs/Api/AIInferenceApi.md
 docs/Api/AIModelsApi.md
 docs/Api/AIMonitoringApi.md
+docs/Api/AIOrchestrationsApi.md
 docs/Api/AISessionsApi.md
 docs/Api/AITaskManagementApi.md
 docs/Api/AIToolsApi.md
 docs/Api/AIVectorDatabaseApi.md
 docs/Api/ApplicationsApi.md
 docs/Api/BackupManagementApi.md
+docs/Api/CDNMetricsApi.md
 docs/Api/CommandsApi.md
 docs/Api/ComposeApi.md
 docs/Api/ContainersApi.md
@@ -50,6 +52,7 @@ docs/Model/ChatInference200ResponseResponseToolUseOneOfResult.md
 docs/Model/ChatInference200ResponseUsage.md
 docs/Model/ChatInference202Response.md
 docs/Model/ChatInferenceRequest.md
+docs/Model/ChatInferenceRequestGuardrails.md
 docs/Model/ChatInferenceRequestMessagesInner.md
 docs/Model/ChatInferenceRequestMessagesInnerContent.md
 docs/Model/ChatInferenceRequestMessagesInnerContentOneOfInner.md
@@ -107,6 +110,9 @@ docs/Model/CreateCustomToolRequest.md
 docs/Model/CreateEnvironment403Response.md
 docs/Model/CreateEnvironmentRequest.md
 docs/Model/CreateEnvironmentRequestEnvironmentInner.md
+docs/Model/CreateOrchestrationRequest.md
+docs/Model/CreateOrchestrationRequestInputSource.md
+docs/Model/CreateOrchestrationRequestStopCondition.md
 docs/Model/CreateTask201Response.md
 docs/Model/CreateTaskRequest.md
 docs/Model/CreateVectorCollection201Response.md
@@ -123,6 +129,9 @@ docs/Model/DeleteFile200Response.md
 docs/Model/DeleteTask200Response.md
 docs/Model/DeleteTask409Response.md
 docs/Model/DeleteVectorCollection200Response.md
+docs/Model/DeleteVectorDocuments200Response.md
+docs/Model/DeleteVectorDocumentsRequest.md
+docs/Model/DeleteVectorDocumentsRequestMetadata.md
 docs/Model/DownloadBackup200Response.md
 docs/Model/Embeddings200Response.md
 docs/Model/Embeddings200ResponseEmbeddings.md
@@ -178,6 +187,8 @@ docs/Model/KVItemsCreate200Response.md
 docs/Model/KVItemsDelete200Response.md
 docs/Model/KVItemsShow200Response.md
 docs/Model/KVItemsShow200ResponseValue.md
+docs/Model/KVLinkToProject200Response.md
+docs/Model/KVLinkToProjectRequest.md
 docs/Model/ListAIAgents200Response.md
 docs/Model/ListAIAgents200ResponseAgentsInner.md
 docs/Model/ListAIModels200Response.md
@@ -198,6 +209,9 @@ docs/Model/ListCustomTools200Response.md
 docs/Model/ListCustomTools200ResponseToolsInner.md
 docs/Model/ListFiles200Response.md
 docs/Model/ListFiles200ResponseFilesInner.md
+docs/Model/ListOrchestrationBatches200Response.md
+docs/Model/ListOrchestrationBatches200ResponseBatchesInner.md
+docs/Model/ListOrchestrations200Response.md
 docs/Model/ListTasks200Response.md
 docs/Model/ListTasks200ResponseTasksInner.md
 docs/Model/ListVectorCollections200Response.md
@@ -293,6 +307,11 @@ docs/Model/V2DomainDnsGoLiveRecordsInner.md
 docs/Model/V2DomainDnsValidationRecordsInner.md
 docs/Model/V2DomainRequest.md
 docs/Model/V2Error.md
+docs/Model/V2MetricData.md
+docs/Model/V2MetricDataPoint.md
+docs/Model/V2MetricDataPointTimestamp.md
+docs/Model/V2MetricsMeta.md
+docs/Model/V2MetricsResponse.md
 docs/Model/V2Organization.md
 docs/Model/V2OrganizationRequest.md
 docs/Model/V2Project.md
@@ -353,12 +372,14 @@ src/Api/AIFileStorageApi.php
 src/Api/AIInferenceApi.php
 src/Api/AIModelsApi.php
 src/Api/AIMonitoringApi.php
+src/Api/AIOrchestrationsApi.php
 src/Api/AISessionsApi.php
 src/Api/AITaskManagementApi.php
 src/Api/AIToolsApi.php
 src/Api/AIVectorDatabaseApi.php
 src/Api/ApplicationsApi.php
 src/Api/BackupManagementApi.php
+src/Api/CDNMetricsApi.php
 src/Api/CommandsApi.php
 src/Api/ComposeApi.php
 src/Api/ContainersApi.php
@@ -399,6 +420,7 @@ src/Model/ChatInference200ResponseResponseToolUseOneOfResult.php
 src/Model/ChatInference200ResponseUsage.php
 src/Model/ChatInference202Response.php
 src/Model/ChatInferenceRequest.php
+src/Model/ChatInferenceRequestGuardrails.php
 src/Model/ChatInferenceRequestMessagesInner.php
 src/Model/ChatInferenceRequestMessagesInnerContent.php
 src/Model/ChatInferenceRequestMessagesInnerContentOneOfInner.php
@@ -456,6 +478,9 @@ src/Model/CreateCustomToolRequest.php
 src/Model/CreateEnvironment403Response.php
 src/Model/CreateEnvironmentRequest.php
 src/Model/CreateEnvironmentRequestEnvironmentInner.php
+src/Model/CreateOrchestrationRequest.php
+src/Model/CreateOrchestrationRequestInputSource.php
+src/Model/CreateOrchestrationRequestStopCondition.php
 src/Model/CreateTask201Response.php
 src/Model/CreateTaskRequest.php
 src/Model/CreateVectorCollection201Response.php
@@ -472,6 +497,9 @@ src/Model/DeleteFile200Response.php
 src/Model/DeleteTask200Response.php
 src/Model/DeleteTask409Response.php
 src/Model/DeleteVectorCollection200Response.php
+src/Model/DeleteVectorDocuments200Response.php
+src/Model/DeleteVectorDocumentsRequest.php
+src/Model/DeleteVectorDocumentsRequestMetadata.php
 src/Model/DownloadBackup200Response.php
 src/Model/Embeddings200Response.php
 src/Model/Embeddings200ResponseEmbeddings.php
@@ -527,6 +555,8 @@ src/Model/KVItemsCreate200Response.php
 src/Model/KVItemsDelete200Response.php
 src/Model/KVItemsShow200Response.php
 src/Model/KVItemsShow200ResponseValue.php
+src/Model/KVLinkToProject200Response.php
+src/Model/KVLinkToProjectRequest.php
 src/Model/ListAIAgents200Response.php
 src/Model/ListAIAgents200ResponseAgentsInner.php
 src/Model/ListAIModels200Response.php
@@ -547,6 +577,9 @@ src/Model/ListCustomTools200Response.php
 src/Model/ListCustomTools200ResponseToolsInner.php
 src/Model/ListFiles200Response.php
 src/Model/ListFiles200ResponseFilesInner.php
+src/Model/ListOrchestrationBatches200Response.php
+src/Model/ListOrchestrationBatches200ResponseBatchesInner.php
+src/Model/ListOrchestrations200Response.php
 src/Model/ListTasks200Response.php
 src/Model/ListTasks200ResponseTasksInner.php
 src/Model/ListVectorCollections200Response.php
@@ -643,6 +676,11 @@ src/Model/V2DomainDnsGoLiveRecordsInner.php
 src/Model/V2DomainDnsValidationRecordsInner.php
 src/Model/V2DomainRequest.php
 src/Model/V2Error.php
+src/Model/V2MetricData.php
+src/Model/V2MetricDataPoint.php
+src/Model/V2MetricDataPointTimestamp.php
+src/Model/V2MetricsMeta.php
+src/Model/V2MetricsResponse.php
 src/Model/V2Organization.php
 src/Model/V2OrganizationRequest.php
 src/Model/V2Project.php
