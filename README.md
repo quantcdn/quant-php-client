@@ -99,6 +99,15 @@ Class | Method | HTTP request | Description
 *AIModelsApi* | [**getAIModel**](docs/Api/AIModelsApi.md#getaimodel) | **GET** /api/v3/organizations/{organisation}/ai/models/{modelId} | Get AI Model Details
 *AIModelsApi* | [**listAIModels**](docs/Api/AIModelsApi.md#listaimodels) | **GET** /api/v3/organizations/{organisation}/ai/models | List available AI models for an organization
 *AIMonitoringApi* | [**getAIUsageStats**](docs/Api/AIMonitoringApi.md#getaiusagestats) | **GET** /api/v3/organizations/{organisation}/ai/usage | Get AI usage statistics
+*AIOrchestrationsApi* | [**cancelOrchestration**](docs/Api/AIOrchestrationsApi.md#cancelorchestration) | **POST** /api/v3/organizations/{organisation}/ai/orchestrations/{orchestrationId}/cancel | Cancel Durable Orchestration
+*AIOrchestrationsApi* | [**createOrchestration**](docs/Api/AIOrchestrationsApi.md#createorchestration) | **POST** /api/v3/organizations/{organisation}/ai/orchestrations | Create Durable Orchestration
+*AIOrchestrationsApi* | [**deleteOrchestration**](docs/Api/AIOrchestrationsApi.md#deleteorchestration) | **DELETE** /api/v3/organizations/{organisation}/ai/orchestrations/{orchestrationId} | Delete Durable Orchestration
+*AIOrchestrationsApi* | [**getOrchestration**](docs/Api/AIOrchestrationsApi.md#getorchestration) | **GET** /api/v3/organizations/{organisation}/ai/orchestrations/{orchestrationId} | Get Durable Orchestration
+*AIOrchestrationsApi* | [**listOrchestrationBatches**](docs/Api/AIOrchestrationsApi.md#listorchestrationbatches) | **GET** /api/v3/organizations/{organisation}/ai/orchestrations/{orchestrationId}/batches | List Orchestration Batches
+*AIOrchestrationsApi* | [**listOrchestrations**](docs/Api/AIOrchestrationsApi.md#listorchestrations) | **GET** /api/v3/organizations/{organisation}/ai/orchestrations | List Durable Orchestrations
+*AIOrchestrationsApi* | [**pauseOrchestration**](docs/Api/AIOrchestrationsApi.md#pauseorchestration) | **POST** /api/v3/organizations/{organisation}/ai/orchestrations/{orchestrationId}/pause | Pause Durable Orchestration
+*AIOrchestrationsApi* | [**resumeOrchestration**](docs/Api/AIOrchestrationsApi.md#resumeorchestration) | **POST** /api/v3/organizations/{organisation}/ai/orchestrations/{orchestrationId}/resume | Resume Durable Orchestration
+*AIOrchestrationsApi* | [**startOrchestration**](docs/Api/AIOrchestrationsApi.md#startorchestration) | **POST** /api/v3/organizations/{organisation}/ai/orchestrations/{orchestrationId}/start | Start Durable Orchestration
 *AISessionsApi* | [**createAISession**](docs/Api/AISessionsApi.md#createaisession) | **POST** /api/v3/organizations/{organisation}/ai/sessions | Create a new chat session with multi-tenant isolation
 *AISessionsApi* | [**deleteAISession**](docs/Api/AISessionsApi.md#deleteaisession) | **DELETE** /api/v3/organizations/{organisation}/ai/sessions/{sessionId} | Delete a chat session
 *AISessionsApi* | [**extendAISession**](docs/Api/AISessionsApi.md#extendaisession) | **PUT** /api/v3/organizations/{organisation}/ai/sessions/{sessionId}/extend | Extend Session Expiration
@@ -111,13 +120,14 @@ Class | Method | HTTP request | Description
 *AITaskManagementApi* | [**getTask**](docs/Api/AITaskManagementApi.md#gettask) | **GET** /api/v3/organizations/{organisation}/ai/tasks/{taskId} | Get task details
 *AITaskManagementApi* | [**listTasks**](docs/Api/AITaskManagementApi.md#listtasks) | **GET** /api/v3/organizations/{organisation}/ai/tasks | List tasks with optional filtering
 *AITaskManagementApi* | [**updateTask**](docs/Api/AITaskManagementApi.md#updatetask) | **PUT** /api/v3/organizations/{organisation}/ai/tasks/{taskId} | Update a task
-*AIToolsApi* | [**getAIOrchestrationStatus**](docs/Api/AIToolsApi.md#getaiorchestrationstatus) | **GET** /api/v3/organizations/{organisation}/ai/tools/orchestrations/{orchestrationId} | Get Orchestration Status
+*AIToolsApi* | [**getAIOrchestrationStatus**](docs/Api/AIToolsApi.md#getaiorchestrationstatus) | **GET** /api/v3/organizations/{organisation}/ai/tools/orchestrations/{orchestrationId} | Get Tool Orchestration Status (Async Tool Polling)
 *AIToolsApi* | [**getAIToolExecutionStatus**](docs/Api/AIToolsApi.md#getaitoolexecutionstatus) | **GET** /api/v3/organizations/{organisation}/ai/tools/executions/{executionId} | Get async tool execution status and result
 *AIToolsApi* | [**listAIToolExecutions**](docs/Api/AIToolsApi.md#listaitoolexecutions) | **GET** /api/v3/organizations/{organisation}/ai/tools/executions | List tool executions for monitoring and debugging
 *AIToolsApi* | [**listAIToolNames**](docs/Api/AIToolsApi.md#listaitoolnames) | **GET** /api/v3/organizations/{organisation}/ai/tools/names | List tool names only (lightweight response)
 *AIToolsApi* | [**listAITools**](docs/Api/AIToolsApi.md#listaitools) | **GET** /api/v3/organizations/{organisation}/ai/tools | List available built-in tools for function calling
 *AIVectorDatabaseApi* | [**createVectorCollection**](docs/Api/AIVectorDatabaseApi.md#createvectorcollection) | **POST** /api/v3/organizations/{organisation}/ai/vector-db/collections | Create Vector Database Collection
 *AIVectorDatabaseApi* | [**deleteVectorCollection**](docs/Api/AIVectorDatabaseApi.md#deletevectorcollection) | **DELETE** /api/v3/organizations/{organisation}/ai/vector-db/collections/{collectionId} | Delete Collection
+*AIVectorDatabaseApi* | [**deleteVectorDocuments**](docs/Api/AIVectorDatabaseApi.md#deletevectordocuments) | **DELETE** /api/v3/organizations/{organisation}/ai/vector-db/collections/{collectionId}/documents | Delete Documents from Collection
 *AIVectorDatabaseApi* | [**getVectorCollection**](docs/Api/AIVectorDatabaseApi.md#getvectorcollection) | **GET** /api/v3/organizations/{organisation}/ai/vector-db/collections/{collectionId} | Get Collection Details
 *AIVectorDatabaseApi* | [**listVectorCollections**](docs/Api/AIVectorDatabaseApi.md#listvectorcollections) | **GET** /api/v3/organizations/{organisation}/ai/vector-db/collections | List Vector Database Collections
 *AIVectorDatabaseApi* | [**queryVectorCollection**](docs/Api/AIVectorDatabaseApi.md#queryvectorcollection) | **POST** /api/v3/organizations/{organisation}/ai/vector-db/collections/{collectionId}/query | Semantic Search Query
@@ -131,6 +141,9 @@ Class | Method | HTTP request | Description
 *BackupManagementApi* | [**deleteBackup**](docs/Api/BackupManagementApi.md#deletebackup) | **DELETE** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/backups/{type}/{backupId} | Delete a backup
 *BackupManagementApi* | [**downloadBackup**](docs/Api/BackupManagementApi.md#downloadbackup) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/backups/{type}/{backupId}/download | Generate a download URL for a backup
 *BackupManagementApi* | [**listBackups**](docs/Api/BackupManagementApi.md#listbackups) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/backups/{type} | List backups for an environment
+*CDNMetricsApi* | [**getDailyMetrics**](docs/Api/CDNMetricsApi.md#getdailymetrics) | **GET** /v2/organizations/{organization}/projects/{project}/metrics/daily | Get daily metrics
+*CDNMetricsApi* | [**getHourlyMetrics**](docs/Api/CDNMetricsApi.md#gethourlymetrics) | **GET** /v2/organizations/{organization}/projects/{project}/metrics/hourly | Get hourly metrics
+*CDNMetricsApi* | [**getMonthlyMetrics**](docs/Api/CDNMetricsApi.md#getmonthlymetrics) | **GET** /v2/organizations/{organization}/projects/{project}/metrics/monthly | Get monthly metrics
 *CommandsApi* | [**createCommand**](docs/Api/CommandsApi.md#createcommand) | **POST** /api/v3/organizations/{organisation}/environments/{environment}/commands | Create a command for an environment
 *CommandsApi* | [**getCommand**](docs/Api/CommandsApi.md#getcommand) | **GET** /api/v3/organizations/{organisation}/environments/{environment}/commands/{command} | Get a command
 *CommandsApi* | [**listCommands**](docs/Api/CommandsApi.md#listcommands) | **GET** /api/v3/organizations/{organisation}/environments/{environment}/commands | Get all commands for an environment
@@ -184,9 +197,11 @@ Class | Method | HTTP request | Description
 *KVApi* | [**kVItemsList**](docs/Api/KVApi.md#kvitemslist) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items | List items in a kv store
 *KVApi* | [**kVItemsShow**](docs/Api/KVApi.md#kvitemsshow) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key} | Get an item from a kv store
 *KVApi* | [**kVItemsUpdate**](docs/Api/KVApi.md#kvitemsupdate) | **PUT** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key} | Update an item in a kv store
+*KVApi* | [**kVLinkToProject**](docs/Api/KVApi.md#kvlinktoproject) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/link | Link a KV store to another project
 *KVApi* | [**kVList**](docs/Api/KVApi.md#kvlist) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv | List key-value stores
 *KVApi* | [**kVShow**](docs/Api/KVApi.md#kvshow) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id} | Get a kv store
-*OrchestrationApi* | [**getAIOrchestrationStatus**](docs/Api/OrchestrationApi.md#getaiorchestrationstatus) | **GET** /api/v3/organizations/{organisation}/ai/tools/orchestrations/{orchestrationId} | Get Orchestration Status
+*KVApi* | [**kVUnlinkFromProject**](docs/Api/KVApi.md#kvunlinkfromproject) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/link | Unlink a KV store from this project
+*OrchestrationApi* | [**getAIOrchestrationStatus**](docs/Api/OrchestrationApi.md#getaiorchestrationstatus) | **GET** /api/v3/organizations/{organisation}/ai/tools/orchestrations/{orchestrationId} | Get Tool Orchestration Status (Async Tool Polling)
 *OrganizationsApi* | [**organizationsList**](docs/Api/OrganizationsApi.md#organizationslist) | **GET** /api/v2/organizations | Retrieve all organizations
 *OrganizationsApi* | [**organizationsRead**](docs/Api/OrganizationsApi.md#organizationsread) | **GET** /api/v2/organizations/{organization} | Get details of a single organization
 *ProjectsApi* | [**projectsCreate**](docs/Api/ProjectsApi.md#projectscreate) | **POST** /api/v2/organizations/{organization}/projects | Create a new project
@@ -244,6 +259,9 @@ Class | Method | HTTP request | Description
 *ScalingPolicyApi* | [**deleteScalingPolicy**](docs/Api/ScalingPolicyApi.md#deletescalingpolicy) | **DELETE** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/scaling-policies/{policyName} | Delete the scaling policy for an environment
 *ScalingPolicyApi* | [**getScalingPolicies**](docs/Api/ScalingPolicyApi.md#getscalingpolicies) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/scaling-policies | Get the scaling policies for an environment
 *ScalingPolicyApi* | [**updateScalingPolicy**](docs/Api/ScalingPolicyApi.md#updatescalingpolicy) | **PUT** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/scaling-policies | Update the scaling policy for an environment
+*TokensApi* | [**tokensCreate**](docs/Api/TokensApi.md#tokenscreate) | **POST** /api/v2/organizations/{organization}/tokens | Create a new API token scoped to this organization
+*TokensApi* | [**tokensDelete**](docs/Api/TokensApi.md#tokensdelete) | **DELETE** /api/v2/organizations/{organization}/tokens/{token_id} | Revoke an API token
+*TokensApi* | [**tokensList**](docs/Api/TokensApi.md#tokenslist) | **GET** /api/v2/organizations/{organization}/tokens | List API tokens scoped to this organization
 *VariablesApi* | [**bulkSetEnvironmentVariables**](docs/Api/VariablesApi.md#bulksetenvironmentvariables) | **PUT** /api/v3/organizations/{api_organisation}/applications/{api_application}/environments/{api_environment}/variables | Bulk set/replace environment variables
 *VariablesApi* | [**deleteEnvironmentVariable**](docs/Api/VariablesApi.md#deleteenvironmentvariable) | **DELETE** /api/v3/organizations/{api_organisation}/applications/{api_application}/environments/{api_environment}/variables/{api_variable} | Delete a variable
 *VariablesApi* | [**listEnvironmentVariables**](docs/Api/VariablesApi.md#listenvironmentvariables) | **GET** /api/v3/organizations/{api_organisation}/applications/{api_application}/environments/{api_environment}/variables | Get all variables for an environment
@@ -272,6 +290,7 @@ Class | Method | HTTP request | Description
 - [ChatInference200ResponseUsage](docs/Model/ChatInference200ResponseUsage.md)
 - [ChatInference202Response](docs/Model/ChatInference202Response.md)
 - [ChatInferenceRequest](docs/Model/ChatInferenceRequest.md)
+- [ChatInferenceRequestGuardrails](docs/Model/ChatInferenceRequestGuardrails.md)
 - [ChatInferenceRequestMessagesInner](docs/Model/ChatInferenceRequestMessagesInner.md)
 - [ChatInferenceRequestMessagesInnerContent](docs/Model/ChatInferenceRequestMessagesInnerContent.md)
 - [ChatInferenceRequestMessagesInnerContentOneOfInner](docs/Model/ChatInferenceRequestMessagesInnerContentOneOfInner.md)
@@ -329,6 +348,9 @@ Class | Method | HTTP request | Description
 - [CreateEnvironment403Response](docs/Model/CreateEnvironment403Response.md)
 - [CreateEnvironmentRequest](docs/Model/CreateEnvironmentRequest.md)
 - [CreateEnvironmentRequestEnvironmentInner](docs/Model/CreateEnvironmentRequestEnvironmentInner.md)
+- [CreateOrchestrationRequest](docs/Model/CreateOrchestrationRequest.md)
+- [CreateOrchestrationRequestInputSource](docs/Model/CreateOrchestrationRequestInputSource.md)
+- [CreateOrchestrationRequestStopCondition](docs/Model/CreateOrchestrationRequestStopCondition.md)
 - [CreateTask201Response](docs/Model/CreateTask201Response.md)
 - [CreateTaskRequest](docs/Model/CreateTaskRequest.md)
 - [CreateVectorCollection201Response](docs/Model/CreateVectorCollection201Response.md)
@@ -345,6 +367,9 @@ Class | Method | HTTP request | Description
 - [DeleteTask200Response](docs/Model/DeleteTask200Response.md)
 - [DeleteTask409Response](docs/Model/DeleteTask409Response.md)
 - [DeleteVectorCollection200Response](docs/Model/DeleteVectorCollection200Response.md)
+- [DeleteVectorDocuments200Response](docs/Model/DeleteVectorDocuments200Response.md)
+- [DeleteVectorDocumentsRequest](docs/Model/DeleteVectorDocumentsRequest.md)
+- [DeleteVectorDocumentsRequestMetadata](docs/Model/DeleteVectorDocumentsRequestMetadata.md)
 - [DownloadBackup200Response](docs/Model/DownloadBackup200Response.md)
 - [Embeddings200Response](docs/Model/Embeddings200Response.md)
 - [Embeddings200ResponseEmbeddings](docs/Model/Embeddings200ResponseEmbeddings.md)
@@ -400,6 +425,8 @@ Class | Method | HTTP request | Description
 - [KVItemsDelete200Response](docs/Model/KVItemsDelete200Response.md)
 - [KVItemsShow200Response](docs/Model/KVItemsShow200Response.md)
 - [KVItemsShow200ResponseValue](docs/Model/KVItemsShow200ResponseValue.md)
+- [KVLinkToProject200Response](docs/Model/KVLinkToProject200Response.md)
+- [KVLinkToProjectRequest](docs/Model/KVLinkToProjectRequest.md)
 - [ListAIAgents200Response](docs/Model/ListAIAgents200Response.md)
 - [ListAIAgents200ResponseAgentsInner](docs/Model/ListAIAgents200ResponseAgentsInner.md)
 - [ListAIModels200Response](docs/Model/ListAIModels200Response.md)
@@ -420,6 +447,9 @@ Class | Method | HTTP request | Description
 - [ListCustomTools200ResponseToolsInner](docs/Model/ListCustomTools200ResponseToolsInner.md)
 - [ListFiles200Response](docs/Model/ListFiles200Response.md)
 - [ListFiles200ResponseFilesInner](docs/Model/ListFiles200ResponseFilesInner.md)
+- [ListOrchestrationBatches200Response](docs/Model/ListOrchestrationBatches200Response.md)
+- [ListOrchestrationBatches200ResponseBatchesInner](docs/Model/ListOrchestrationBatches200ResponseBatchesInner.md)
+- [ListOrchestrations200Response](docs/Model/ListOrchestrations200Response.md)
 - [ListTasks200Response](docs/Model/ListTasks200Response.md)
 - [ListTasks200ResponseTasksInner](docs/Model/ListTasks200ResponseTasksInner.md)
 - [ListVectorCollections200Response](docs/Model/ListVectorCollections200Response.md)
@@ -443,6 +473,10 @@ Class | Method | HTTP request | Description
 - [SubmitToolCallbackRequestToolResultsInner](docs/Model/SubmitToolCallbackRequestToolResultsInner.md)
 - [SyncOperation](docs/Model/SyncOperation.md)
 - [SyncToEnvironmentRequest](docs/Model/SyncToEnvironmentRequest.md)
+- [TokensCreate201Response](docs/Model/TokensCreate201Response.md)
+- [TokensCreateRequest](docs/Model/TokensCreateRequest.md)
+- [TokensDelete200Response](docs/Model/TokensDelete200Response.md)
+- [TokensList200ResponseInner](docs/Model/TokensList200ResponseInner.md)
 - [UpdateAIAgent200Response](docs/Model/UpdateAIAgent200Response.md)
 - [UpdateAIAgentRequest](docs/Model/UpdateAIAgentRequest.md)
 - [UpdateAISession200Response](docs/Model/UpdateAISession200Response.md)
@@ -515,6 +549,11 @@ Class | Method | HTTP request | Description
 - [V2DomainDnsValidationRecordsInner](docs/Model/V2DomainDnsValidationRecordsInner.md)
 - [V2DomainRequest](docs/Model/V2DomainRequest.md)
 - [V2Error](docs/Model/V2Error.md)
+- [V2MetricData](docs/Model/V2MetricData.md)
+- [V2MetricDataPoint](docs/Model/V2MetricDataPoint.md)
+- [V2MetricDataPointTimestamp](docs/Model/V2MetricDataPointTimestamp.md)
+- [V2MetricsMeta](docs/Model/V2MetricsMeta.md)
+- [V2MetricsResponse](docs/Model/V2MetricsResponse.md)
 - [V2Organization](docs/Model/V2Organization.md)
 - [V2OrganizationRequest](docs/Model/V2OrganizationRequest.md)
 - [V2Project](docs/Model/V2Project.md)
@@ -592,7 +631,7 @@ vendor/bin/phpunit
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `4.9.0`
-    - Package version: `4.9.0`
+- API version: `4.11.0`
+    - Package version: `4.11.0`
     - Generator version: `7.13.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
