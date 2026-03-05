@@ -6,6 +6,7 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 | ------------- | ------------- | ------------- |
 | [**createVectorCollection()**](AIVectorDatabaseApi.md#createVectorCollection) | **POST** /api/v3/organizations/{organisation}/ai/vector-db/collections | Create Vector Database Collection |
 | [**deleteVectorCollection()**](AIVectorDatabaseApi.md#deleteVectorCollection) | **DELETE** /api/v3/organizations/{organisation}/ai/vector-db/collections/{collectionId} | Delete Collection |
+| [**deleteVectorDocuments()**](AIVectorDatabaseApi.md#deleteVectorDocuments) | **DELETE** /api/v3/organizations/{organisation}/ai/vector-db/collections/{collectionId}/documents | Delete Documents from Collection |
 | [**getVectorCollection()**](AIVectorDatabaseApi.md#getVectorCollection) | **GET** /api/v3/organizations/{organisation}/ai/vector-db/collections/{collectionId} | Get Collection Details |
 | [**listVectorCollections()**](AIVectorDatabaseApi.md#listVectorCollections) | **GET** /api/v3/organizations/{organisation}/ai/vector-db/collections | List Vector Database Collections |
 | [**queryVectorCollection()**](AIVectorDatabaseApi.md#queryVectorCollection) | **POST** /api/v3/organizations/{organisation}/ai/vector-db/collections/{collectionId}/query | Semantic Search Query |
@@ -77,7 +78,7 @@ try {
 ## `deleteVectorCollection()`
 
 ```php
-deleteVectorCollection($organisation, $collection_id): \QuantClient\Model\DeleteVectorCollection200Response
+deleteVectorCollection($organisation, $collection_id): \QuantClient\Model\DeleteSkillCollection200Response
 ```
 
 Delete Collection
@@ -121,7 +122,7 @@ try {
 
 ### Return type
 
-[**\QuantClient\Model\DeleteVectorCollection200Response**](../Model/DeleteVectorCollection200Response.md)
+[**\QuantClient\Model\DeleteSkillCollection200Response**](../Model/DeleteSkillCollection200Response.md)
 
 ### Authorization
 
@@ -130,6 +131,70 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteVectorDocuments()`
+
+```php
+deleteVectorDocuments($organisation, $collection_id, $delete_vector_documents_request): \QuantClient\Model\DeleteVectorDocuments200Response
+```
+
+Delete Documents from Collection
+
+Delete documents from a collection. Supports three deletion modes:      *      * 1. **Purge All** - Set `purgeAll: true` to delete ALL documents in the collection      *      * 2. **By Document IDs** - Provide `documentIds` array with specific document UUIDs      *      * 3. **By Metadata** - Provide `metadata` object with `field` and `values` to delete documents where the metadata field matches any of the values      *      * **Drupal Integration:**      * When using with Drupal AI Search, use metadata deletion with:      * - `field: 'drupal_entity_id'` to delete all chunks for specific entities      * - `field: 'drupal_long_id'` to delete specific chunks
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\AIVectorDatabaseApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organisation = 'organisation_example'; // string | Organisation machine name
+$collection_id = 'collection_id_example'; // string | Collection UUID
+$delete_vector_documents_request = new \QuantClient\Model\DeleteVectorDocumentsRequest(); // \QuantClient\Model\DeleteVectorDocumentsRequest
+
+try {
+    $result = $apiInstance->deleteVectorDocuments($organisation, $collection_id, $delete_vector_documents_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AIVectorDatabaseApi->deleteVectorDocuments: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation** | **string**| Organisation machine name | |
+| **collection_id** | **string**| Collection UUID | |
+| **delete_vector_documents_request** | [**\QuantClient\Model\DeleteVectorDocumentsRequest**](../Model/DeleteVectorDocumentsRequest.md)|  | |
+
+### Return type
+
+[**\QuantClient\Model\DeleteVectorDocuments200Response**](../Model/DeleteVectorDocuments200Response.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
