@@ -15,5 +15,8 @@ Name | Type | Description | Notes
 **tool_config** | [**\QuantClient\Model\ChatInferenceRequestToolConfig**](ChatInferenceRequestToolConfig.md) |  | [optional]
 **session_id** | **string** | Optional session ID for conversation continuity. Omit to use stateless mode, include to continue an existing session. | [optional]
 **async** | **bool** | Enable async/durable execution mode. When true, returns 202 with pollUrl instead of streaming. Use for long-running inference, client-executed tools, or operations &gt;30 seconds. | [optional] [default to false]
+**allowed_tools** | **string[]** | Top-level convenience alias for toolConfig.allowedTools. Whitelists which tools can be auto-executed. | [optional]
+**guardrails** | [**\QuantClient\Model\ChatInferenceRequestGuardrails**](ChatInferenceRequestGuardrails.md) |  | [optional]
+**long_context** | **bool** | Enable 1M context window support regardless of token estimation. Use when sending large payloads (&gt;200K tokens). | [optional] [default to false]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

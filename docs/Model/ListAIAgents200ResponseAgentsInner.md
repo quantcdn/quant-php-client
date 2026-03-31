@@ -12,6 +12,11 @@ Name | Type | Description | Notes
 **temperature** | **float** |  | [optional]
 **max_tokens** | **int** |  | [optional]
 **allowed_tools** | **string[]** |  | [optional]
+**assigned_skills** | **string[]** |  | [optional]
+**long_context** | **bool** |  | [optional]
+**guardrail_preset** | **string** |  | [optional]
+**is_global** | **bool** |  | [optional]
+**has_overlay** | **bool** |  | [optional]
 **created_at** | **\DateTime** |  | [optional]
 **updated_at** | **\DateTime** |  | [optional]
 
