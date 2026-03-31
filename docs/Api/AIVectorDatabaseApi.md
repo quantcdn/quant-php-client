@@ -9,6 +9,7 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 | [**deleteVectorDocuments()**](AIVectorDatabaseApi.md#deleteVectorDocuments) | **DELETE** /api/v3/organizations/{organisation}/ai/vector-db/collections/{collectionId}/documents | Delete Documents from Collection |
 | [**getVectorCollection()**](AIVectorDatabaseApi.md#getVectorCollection) | **GET** /api/v3/organizations/{organisation}/ai/vector-db/collections/{collectionId} | Get Collection Details |
 | [**listVectorCollections()**](AIVectorDatabaseApi.md#listVectorCollections) | **GET** /api/v3/organizations/{organisation}/ai/vector-db/collections | List Vector Database Collections |
+| [**listVectorDocuments()**](AIVectorDatabaseApi.md#listVectorDocuments) | **GET** /api/v3/organizations/{organisation}/ai/vector-db/collections/{collectionId}/documents | List Documents in Collection |
 | [**queryVectorCollection()**](AIVectorDatabaseApi.md#queryVectorCollection) | **POST** /api/v3/organizations/{organisation}/ai/vector-db/collections/{collectionId}/query | Semantic Search Query |
 
 
@@ -317,6 +318,73 @@ try {
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `listVectorDocuments()`
+
+```php
+listVectorDocuments($organisation, $collection_id, $key, $limit, $offset)
+```
+
+List Documents in Collection
+
+Lists documents in a collection with pagination. Supports filtering by document key.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\AIVectorDatabaseApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organisation = 'organisation_example'; // string
+$collection_id = 'collection_id_example'; // string
+$key = 'key_example'; // string | Filter by document key
+$limit = 50; // int
+$offset = 0; // int
+
+try {
+    $apiInstance->listVectorDocuments($organisation, $collection_id, $key, $limit, $offset);
+} catch (Exception $e) {
+    echo 'Exception when calling AIVectorDatabaseApi->listVectorDocuments: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation** | **string**|  | |
+| **collection_id** | **string**|  | |
+| **key** | **string**| Filter by document key | [optional] |
+| **limit** | **int**|  | [optional] [default to 50] |
+| **offset** | **int**|  | [optional] [default to 0] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

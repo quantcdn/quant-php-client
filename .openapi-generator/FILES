@@ -39,7 +39,6 @@ docs/Api/SSHAccessApi.md
 docs/Api/ScalingPolicyApi.md
 docs/Api/TokensApi.md
 docs/Api/VariablesApi.md
-docs/Api/VectorDatabaseApi.md
 docs/Api/VolumesApi.md
 docs/Model/Application.md
 docs/Model/ApplicationDatabase.md
@@ -456,7 +455,6 @@ src/Api/SSHAccessApi.php
 src/Api/ScalingPolicyApi.php
 src/Api/TokensApi.php
 src/Api/VariablesApi.php
-src/Api/VectorDatabaseApi.php
 src/Api/VolumesApi.php
 src/ApiException.php
 src/Configuration.php
