@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **crawler_uuid** | **string** | Crawler UUID | [optional]
 **project_id** | **int** | Project ID |
 **crawler_last_run_id** | **int** | Last run ID |
-**schedule_cron_string** | **string** | Cron schedule string |
+**schedule_cron_string** | **string** | Standard Unix cron expression with 5 space-separated fields: minute, hour, day-of-month, month, day-of-week. Example: 0 2 * * * runs daily at 2 AM. |
 **created_at** | **\DateTime** | Creation timestamp | [optional]
 **updated_at** | **\DateTime** | Last update timestamp | [optional]
 

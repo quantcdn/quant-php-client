@@ -19,6 +19,9 @@ Name | Type | Description | Notes
 **ip** | **string** | IP filter type (ip_is, ip_is_not, any) | [optional]
 **ip_is** | **string[]** | Allowed IP addresses | [optional]
 **ip_is_not** | **string[]** | Excluded IP addresses | [optional]
+**asn** | **string** | ASN filter type (asn_is, asn_is_not, any) | [optional]
+**asn_is** | **string[]** | Allowed AS numbers | [optional]
+**asn_is_not** | **string[]** | Excluded AS numbers | [optional]
 **to** | **string** | Target URL to proxy to |
 **host** | **string** | Host header override | [optional]
 **auth_user** | **string** | Basic auth username | [optional] [default to '']
