@@ -6,6 +6,7 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 | ------------- | ------------- | ------------- |
 | [**createCustomTool()**](AICustomToolsApi.md#createCustomTool) | **POST** /api/v3/organizations/{organisation}/ai/custom-tools | Register Custom Edge Function Tool |
 | [**deleteCustomTool()**](AICustomToolsApi.md#deleteCustomTool) | **DELETE** /api/v3/organizations/{organisation}/ai/custom-tools/{toolName} | Delete Custom Tool |
+| [**getCustomTool()**](AICustomToolsApi.md#getCustomTool) | **GET** /api/v3/organizations/{organisation}/ai/custom-tools/{toolName} | Get Custom Tool |
 | [**listCustomTools()**](AICustomToolsApi.md#listCustomTools) | **GET** /api/v3/organizations/{organisation}/ai/custom-tools | List Custom Tools |
 
 
@@ -119,6 +120,68 @@ try {
 ### Return type
 
 [**\QuantClient\Model\DeleteCustomTool200Response**](../Model/DeleteCustomTool200Response.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getCustomTool()`
+
+```php
+getCustomTool($organisation, $tool_name): \QuantClient\Model\GetCustomTool200Response
+```
+
+Get Custom Tool
+
+Retrieves a single registered custom tool by name.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\AICustomToolsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organisation = 'organisation_example'; // string | The organisation ID
+$tool_name = 'tool_name_example'; // string | The tool name to retrieve
+
+try {
+    $result = $apiInstance->getCustomTool($organisation, $tool_name);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AICustomToolsApi->getCustomTool: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation** | **string**| The organisation ID | |
+| **tool_name** | **string**| The tool name to retrieve | |
+
+### Return type
+
+[**\QuantClient\Model\GetCustomTool200Response**](../Model/GetCustomTool200Response.md)
 
 ### Authorization
 

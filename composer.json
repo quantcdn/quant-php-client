@@ -1,6 +1,6 @@
 {
   "name": "quantcdn/quant-php-client",
-  "version": "4.9.0",
+  "version": "4.15.6",
   "description": "Unified API for QuantCDN Admin and QuantCloud Platform services",
   "keywords": [
     "openapitools",
