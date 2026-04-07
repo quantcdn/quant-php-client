@@ -62,7 +62,7 @@ class UpdateGovernanceConfigRequest implements ModelInterface, ArrayAccess, \Jso
         'model_list' => 'string[]',
         'mandatory_guardrail_preset' => 'string',
         'mandatory_filter_policies' => 'string[]',
-        'spend_limits' => 'object',
+        'spend_limits' => '\QuantClient\Model\GetGovernanceConfig200ResponseSpendLimits',
         'version' => 'int'
     ];
 
@@ -554,7 +554,7 @@ class UpdateGovernanceConfigRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets spend_limits
      *
-     * @return object|null
+     * @return \QuantClient\Model\GetGovernanceConfig200ResponseSpendLimits|null
      */
     public function getSpendLimits()
     {
@@ -564,7 +564,7 @@ class UpdateGovernanceConfigRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets spend_limits
      *
-     * @param object|null $spend_limits spend_limits
+     * @param \QuantClient\Model\GetGovernanceConfig200ResponseSpendLimits|null $spend_limits spend_limits
      *
      * @return self
      */

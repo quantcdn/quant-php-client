@@ -57,13 +57,28 @@ class UpdateSlackBotRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'agent_id' => 'string',
+        'name' => 'string',
         'status' => 'string',
+        'system_prompt' => 'string',
+        'model_id' => 'string',
+        'temperature' => 'float',
+        'max_tokens' => 'int',
+        'allowed_tools' => 'string[]',
+        'assigned_skills' => 'string[]',
+        'allowed_collections' => 'string[]',
+        'allowed_sub_agents' => 'string[]',
+        'guardrail_preset' => 'string',
+        'filter_policies' => 'string[]',
+        'long_context' => 'bool',
         'session_ttl_days' => 'int',
         'allowed_channels' => 'string[]',
+        'allowed_users' => 'string[]',
+        'denied_users' => 'string[]',
+        'allow_guests' => 'bool',
+        'home_tab_content' => 'string',
+        'agent_access_control' => 'object',
         'keywords_enabled' => 'bool',
-        'keywords' => 'string[]',
-        'slash_commands' => 'string[]'
+        'keywords' => 'string[]'
     ];
 
     /**
@@ -74,13 +89,28 @@ class UpdateSlackBotRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'agent_id' => null,
+        'name' => null,
         'status' => null,
+        'system_prompt' => null,
+        'model_id' => null,
+        'temperature' => null,
+        'max_tokens' => null,
+        'allowed_tools' => null,
+        'assigned_skills' => null,
+        'allowed_collections' => null,
+        'allowed_sub_agents' => null,
+        'guardrail_preset' => null,
+        'filter_policies' => null,
+        'long_context' => null,
         'session_ttl_days' => null,
         'allowed_channels' => null,
+        'allowed_users' => null,
+        'denied_users' => null,
+        'allow_guests' => null,
+        'home_tab_content' => null,
+        'agent_access_control' => null,
         'keywords_enabled' => null,
-        'keywords' => null,
-        'slash_commands' => null
+        'keywords' => null
     ];
 
     /**
@@ -89,13 +119,28 @@ class UpdateSlackBotRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'agent_id' => false,
+        'name' => false,
         'status' => false,
+        'system_prompt' => false,
+        'model_id' => false,
+        'temperature' => false,
+        'max_tokens' => false,
+        'allowed_tools' => false,
+        'assigned_skills' => false,
+        'allowed_collections' => false,
+        'allowed_sub_agents' => false,
+        'guardrail_preset' => false,
+        'filter_policies' => false,
+        'long_context' => false,
         'session_ttl_days' => false,
         'allowed_channels' => false,
+        'allowed_users' => false,
+        'denied_users' => false,
+        'allow_guests' => false,
+        'home_tab_content' => false,
+        'agent_access_control' => false,
         'keywords_enabled' => false,
-        'keywords' => false,
-        'slash_commands' => false
+        'keywords' => false
     ];
 
     /**
@@ -184,13 +229,28 @@ class UpdateSlackBotRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'agent_id' => 'agentId',
+        'name' => 'name',
         'status' => 'status',
+        'system_prompt' => 'systemPrompt',
+        'model_id' => 'modelId',
+        'temperature' => 'temperature',
+        'max_tokens' => 'maxTokens',
+        'allowed_tools' => 'allowedTools',
+        'assigned_skills' => 'assignedSkills',
+        'allowed_collections' => 'allowedCollections',
+        'allowed_sub_agents' => 'allowedSubAgents',
+        'guardrail_preset' => 'guardrailPreset',
+        'filter_policies' => 'filterPolicies',
+        'long_context' => 'longContext',
         'session_ttl_days' => 'sessionTtlDays',
         'allowed_channels' => 'allowedChannels',
+        'allowed_users' => 'allowedUsers',
+        'denied_users' => 'deniedUsers',
+        'allow_guests' => 'allowGuests',
+        'home_tab_content' => 'homeTabContent',
+        'agent_access_control' => 'agentAccessControl',
         'keywords_enabled' => 'keywordsEnabled',
-        'keywords' => 'keywords',
-        'slash_commands' => 'slashCommands'
+        'keywords' => 'keywords'
     ];
 
     /**
@@ -199,13 +259,28 @@ class UpdateSlackBotRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'agent_id' => 'setAgentId',
+        'name' => 'setName',
         'status' => 'setStatus',
+        'system_prompt' => 'setSystemPrompt',
+        'model_id' => 'setModelId',
+        'temperature' => 'setTemperature',
+        'max_tokens' => 'setMaxTokens',
+        'allowed_tools' => 'setAllowedTools',
+        'assigned_skills' => 'setAssignedSkills',
+        'allowed_collections' => 'setAllowedCollections',
+        'allowed_sub_agents' => 'setAllowedSubAgents',
+        'guardrail_preset' => 'setGuardrailPreset',
+        'filter_policies' => 'setFilterPolicies',
+        'long_context' => 'setLongContext',
         'session_ttl_days' => 'setSessionTtlDays',
         'allowed_channels' => 'setAllowedChannels',
+        'allowed_users' => 'setAllowedUsers',
+        'denied_users' => 'setDeniedUsers',
+        'allow_guests' => 'setAllowGuests',
+        'home_tab_content' => 'setHomeTabContent',
+        'agent_access_control' => 'setAgentAccessControl',
         'keywords_enabled' => 'setKeywordsEnabled',
-        'keywords' => 'setKeywords',
-        'slash_commands' => 'setSlashCommands'
+        'keywords' => 'setKeywords'
     ];
 
     /**
@@ -214,13 +289,28 @@ class UpdateSlackBotRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'agent_id' => 'getAgentId',
+        'name' => 'getName',
         'status' => 'getStatus',
+        'system_prompt' => 'getSystemPrompt',
+        'model_id' => 'getModelId',
+        'temperature' => 'getTemperature',
+        'max_tokens' => 'getMaxTokens',
+        'allowed_tools' => 'getAllowedTools',
+        'assigned_skills' => 'getAssignedSkills',
+        'allowed_collections' => 'getAllowedCollections',
+        'allowed_sub_agents' => 'getAllowedSubAgents',
+        'guardrail_preset' => 'getGuardrailPreset',
+        'filter_policies' => 'getFilterPolicies',
+        'long_context' => 'getLongContext',
         'session_ttl_days' => 'getSessionTtlDays',
         'allowed_channels' => 'getAllowedChannels',
+        'allowed_users' => 'getAllowedUsers',
+        'denied_users' => 'getDeniedUsers',
+        'allow_guests' => 'getAllowGuests',
+        'home_tab_content' => 'getHomeTabContent',
+        'agent_access_control' => 'getAgentAccessControl',
         'keywords_enabled' => 'getKeywordsEnabled',
-        'keywords' => 'getKeywords',
-        'slash_commands' => 'getSlashCommands'
+        'keywords' => 'getKeywords'
     ];
 
     /**
@@ -295,13 +385,28 @@ class UpdateSlackBotRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('agent_id', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('system_prompt', $data ?? [], null);
+        $this->setIfExists('model_id', $data ?? [], null);
+        $this->setIfExists('temperature', $data ?? [], null);
+        $this->setIfExists('max_tokens', $data ?? [], null);
+        $this->setIfExists('allowed_tools', $data ?? [], null);
+        $this->setIfExists('assigned_skills', $data ?? [], null);
+        $this->setIfExists('allowed_collections', $data ?? [], null);
+        $this->setIfExists('allowed_sub_agents', $data ?? [], null);
+        $this->setIfExists('guardrail_preset', $data ?? [], null);
+        $this->setIfExists('filter_policies', $data ?? [], null);
+        $this->setIfExists('long_context', $data ?? [], null);
         $this->setIfExists('session_ttl_days', $data ?? [], null);
         $this->setIfExists('allowed_channels', $data ?? [], null);
+        $this->setIfExists('allowed_users', $data ?? [], null);
+        $this->setIfExists('denied_users', $data ?? [], null);
+        $this->setIfExists('allow_guests', $data ?? [], null);
+        $this->setIfExists('home_tab_content', $data ?? [], null);
+        $this->setIfExists('agent_access_control', $data ?? [], null);
         $this->setIfExists('keywords_enabled', $data ?? [], null);
         $this->setIfExists('keywords', $data ?? [], null);
-        $this->setIfExists('slash_commands', $data ?? [], null);
     }
 
     /**
@@ -340,6 +445,18 @@ class UpdateSlackBotRequest implements ModelInterface, ArrayAccess, \JsonSeriali
             );
         }
 
+        if (!is_null($this->container['temperature']) && ($this->container['temperature'] > 2)) {
+            $invalidProperties[] = "invalid value for 'temperature', must be smaller than or equal to 2.";
+        }
+
+        if (!is_null($this->container['temperature']) && ($this->container['temperature'] < 0)) {
+            $invalidProperties[] = "invalid value for 'temperature', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['max_tokens']) && ($this->container['max_tokens'] < 1)) {
+            $invalidProperties[] = "invalid value for 'max_tokens', must be bigger than or equal to 1.";
+        }
+
         if (!is_null($this->container['session_ttl_days']) && ($this->container['session_ttl_days'] > 90)) {
             $invalidProperties[] = "invalid value for 'session_ttl_days', must be smaller than or equal to 90.";
         }
@@ -364,28 +481,28 @@ class UpdateSlackBotRequest implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets agent_id
+     * Gets name
      *
      * @return string|null
      */
-    public function getAgentId()
+    public function getName()
     {
-        return $this->container['agent_id'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets agent_id
+     * Sets name
      *
-     * @param string|null $agent_id Change the backing AI agent
+     * @param string|null $name Display name for the bot
      *
      * @return self
      */
-    public function setAgentId($agent_id)
+    public function setName($name)
     {
-        if (is_null($agent_id)) {
-            throw new \InvalidArgumentException('non-nullable agent_id cannot be null');
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-        $this->container['agent_id'] = $agent_id;
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -423,6 +540,316 @@ class UpdateSlackBotRequest implements ModelInterface, ArrayAccess, \JsonSeriali
             );
         }
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets system_prompt
+     *
+     * @return string|null
+     */
+    public function getSystemPrompt()
+    {
+        return $this->container['system_prompt'];
+    }
+
+    /**
+     * Sets system_prompt
+     *
+     * @param string|null $system_prompt System prompt for the backing AI agent
+     *
+     * @return self
+     */
+    public function setSystemPrompt($system_prompt)
+    {
+        if (is_null($system_prompt)) {
+            throw new \InvalidArgumentException('non-nullable system_prompt cannot be null');
+        }
+        $this->container['system_prompt'] = $system_prompt;
+
+        return $this;
+    }
+
+    /**
+     * Gets model_id
+     *
+     * @return string|null
+     */
+    public function getModelId()
+    {
+        return $this->container['model_id'];
+    }
+
+    /**
+     * Sets model_id
+     *
+     * @param string|null $model_id AI model identifier
+     *
+     * @return self
+     */
+    public function setModelId($model_id)
+    {
+        if (is_null($model_id)) {
+            throw new \InvalidArgumentException('non-nullable model_id cannot be null');
+        }
+        $this->container['model_id'] = $model_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets temperature
+     *
+     * @return float|null
+     */
+    public function getTemperature()
+    {
+        return $this->container['temperature'];
+    }
+
+    /**
+     * Sets temperature
+     *
+     * @param float|null $temperature Sampling temperature
+     *
+     * @return self
+     */
+    public function setTemperature($temperature)
+    {
+        if (is_null($temperature)) {
+            throw new \InvalidArgumentException('non-nullable temperature cannot be null');
+        }
+
+        if (($temperature > 2)) {
+            throw new \InvalidArgumentException('invalid value for $temperature when calling UpdateSlackBotRequest., must be smaller than or equal to 2.');
+        }
+        if (($temperature < 0)) {
+            throw new \InvalidArgumentException('invalid value for $temperature when calling UpdateSlackBotRequest., must be bigger than or equal to 0.');
+        }
+
+        $this->container['temperature'] = $temperature;
+
+        return $this;
+    }
+
+    /**
+     * Gets max_tokens
+     *
+     * @return int|null
+     */
+    public function getMaxTokens()
+    {
+        return $this->container['max_tokens'];
+    }
+
+    /**
+     * Sets max_tokens
+     *
+     * @param int|null $max_tokens Maximum response tokens
+     *
+     * @return self
+     */
+    public function setMaxTokens($max_tokens)
+    {
+        if (is_null($max_tokens)) {
+            throw new \InvalidArgumentException('non-nullable max_tokens cannot be null');
+        }
+
+        if (($max_tokens < 1)) {
+            throw new \InvalidArgumentException('invalid value for $max_tokens when calling UpdateSlackBotRequest., must be bigger than or equal to 1.');
+        }
+
+        $this->container['max_tokens'] = $max_tokens;
+
+        return $this;
+    }
+
+    /**
+     * Gets allowed_tools
+     *
+     * @return string[]|null
+     */
+    public function getAllowedTools()
+    {
+        return $this->container['allowed_tools'];
+    }
+
+    /**
+     * Sets allowed_tools
+     *
+     * @param string[]|null $allowed_tools Tools the agent may use
+     *
+     * @return self
+     */
+    public function setAllowedTools($allowed_tools)
+    {
+        if (is_null($allowed_tools)) {
+            throw new \InvalidArgumentException('non-nullable allowed_tools cannot be null');
+        }
+        $this->container['allowed_tools'] = $allowed_tools;
+
+        return $this;
+    }
+
+    /**
+     * Gets assigned_skills
+     *
+     * @return string[]|null
+     */
+    public function getAssignedSkills()
+    {
+        return $this->container['assigned_skills'];
+    }
+
+    /**
+     * Sets assigned_skills
+     *
+     * @param string[]|null $assigned_skills Skills assigned to the agent
+     *
+     * @return self
+     */
+    public function setAssignedSkills($assigned_skills)
+    {
+        if (is_null($assigned_skills)) {
+            throw new \InvalidArgumentException('non-nullable assigned_skills cannot be null');
+        }
+        $this->container['assigned_skills'] = $assigned_skills;
+
+        return $this;
+    }
+
+    /**
+     * Gets allowed_collections
+     *
+     * @return string[]|null
+     */
+    public function getAllowedCollections()
+    {
+        return $this->container['allowed_collections'];
+    }
+
+    /**
+     * Sets allowed_collections
+     *
+     * @param string[]|null $allowed_collections Vector DB collections the agent may query
+     *
+     * @return self
+     */
+    public function setAllowedCollections($allowed_collections)
+    {
+        if (is_null($allowed_collections)) {
+            throw new \InvalidArgumentException('non-nullable allowed_collections cannot be null');
+        }
+        $this->container['allowed_collections'] = $allowed_collections;
+
+        return $this;
+    }
+
+    /**
+     * Gets allowed_sub_agents
+     *
+     * @return string[]|null
+     */
+    public function getAllowedSubAgents()
+    {
+        return $this->container['allowed_sub_agents'];
+    }
+
+    /**
+     * Sets allowed_sub_agents
+     *
+     * @param string[]|null $allowed_sub_agents Sub-agents the agent may call
+     *
+     * @return self
+     */
+    public function setAllowedSubAgents($allowed_sub_agents)
+    {
+        if (is_null($allowed_sub_agents)) {
+            throw new \InvalidArgumentException('non-nullable allowed_sub_agents cannot be null');
+        }
+        $this->container['allowed_sub_agents'] = $allowed_sub_agents;
+
+        return $this;
+    }
+
+    /**
+     * Gets guardrail_preset
+     *
+     * @return string|null
+     */
+    public function getGuardrailPreset()
+    {
+        return $this->container['guardrail_preset'];
+    }
+
+    /**
+     * Sets guardrail_preset
+     *
+     * @param string|null $guardrail_preset Guardrail preset name
+     *
+     * @return self
+     */
+    public function setGuardrailPreset($guardrail_preset)
+    {
+        if (is_null($guardrail_preset)) {
+            throw new \InvalidArgumentException('non-nullable guardrail_preset cannot be null');
+        }
+        $this->container['guardrail_preset'] = $guardrail_preset;
+
+        return $this;
+    }
+
+    /**
+     * Gets filter_policies
+     *
+     * @return string[]|null
+     */
+    public function getFilterPolicies()
+    {
+        return $this->container['filter_policies'];
+    }
+
+    /**
+     * Sets filter_policies
+     *
+     * @param string[]|null $filter_policies Content filter policies
+     *
+     * @return self
+     */
+    public function setFilterPolicies($filter_policies)
+    {
+        if (is_null($filter_policies)) {
+            throw new \InvalidArgumentException('non-nullable filter_policies cannot be null');
+        }
+        $this->container['filter_policies'] = $filter_policies;
+
+        return $this;
+    }
+
+    /**
+     * Gets long_context
+     *
+     * @return bool|null
+     */
+    public function getLongContext()
+    {
+        return $this->container['long_context'];
+    }
+
+    /**
+     * Sets long_context
+     *
+     * @param bool|null $long_context Enable long context mode
+     *
+     * @return self
+     */
+    public function setLongContext($long_context)
+    {
+        if (is_null($long_context)) {
+            throw new \InvalidArgumentException('non-nullable long_context cannot be null');
+        }
+        $this->container['long_context'] = $long_context;
 
         return $this;
     }
@@ -490,6 +917,141 @@ class UpdateSlackBotRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
+     * Gets allowed_users
+     *
+     * @return string[]|null
+     */
+    public function getAllowedUsers()
+    {
+        return $this->container['allowed_users'];
+    }
+
+    /**
+     * Sets allowed_users
+     *
+     * @param string[]|null $allowed_users Slack user IDs allowed to interact with the bot
+     *
+     * @return self
+     */
+    public function setAllowedUsers($allowed_users)
+    {
+        if (is_null($allowed_users)) {
+            throw new \InvalidArgumentException('non-nullable allowed_users cannot be null');
+        }
+        $this->container['allowed_users'] = $allowed_users;
+
+        return $this;
+    }
+
+    /**
+     * Gets denied_users
+     *
+     * @return string[]|null
+     */
+    public function getDeniedUsers()
+    {
+        return $this->container['denied_users'];
+    }
+
+    /**
+     * Sets denied_users
+     *
+     * @param string[]|null $denied_users Slack user IDs denied from interacting with the bot
+     *
+     * @return self
+     */
+    public function setDeniedUsers($denied_users)
+    {
+        if (is_null($denied_users)) {
+            throw new \InvalidArgumentException('non-nullable denied_users cannot be null');
+        }
+        $this->container['denied_users'] = $denied_users;
+
+        return $this;
+    }
+
+    /**
+     * Gets allow_guests
+     *
+     * @return bool|null
+     */
+    public function getAllowGuests()
+    {
+        return $this->container['allow_guests'];
+    }
+
+    /**
+     * Sets allow_guests
+     *
+     * @param bool|null $allow_guests Whether guest users may interact with the bot
+     *
+     * @return self
+     */
+    public function setAllowGuests($allow_guests)
+    {
+        if (is_null($allow_guests)) {
+            throw new \InvalidArgumentException('non-nullable allow_guests cannot be null');
+        }
+        $this->container['allow_guests'] = $allow_guests;
+
+        return $this;
+    }
+
+    /**
+     * Gets home_tab_content
+     *
+     * @return string|null
+     */
+    public function getHomeTabContent()
+    {
+        return $this->container['home_tab_content'];
+    }
+
+    /**
+     * Sets home_tab_content
+     *
+     * @param string|null $home_tab_content Content shown on the bot's Home tab in Slack
+     *
+     * @return self
+     */
+    public function setHomeTabContent($home_tab_content)
+    {
+        if (is_null($home_tab_content)) {
+            throw new \InvalidArgumentException('non-nullable home_tab_content cannot be null');
+        }
+        $this->container['home_tab_content'] = $home_tab_content;
+
+        return $this;
+    }
+
+    /**
+     * Gets agent_access_control
+     *
+     * @return object|null
+     */
+    public function getAgentAccessControl()
+    {
+        return $this->container['agent_access_control'];
+    }
+
+    /**
+     * Sets agent_access_control
+     *
+     * @param object|null $agent_access_control Agent-level access control settings
+     *
+     * @return self
+     */
+    public function setAgentAccessControl($agent_access_control)
+    {
+        if (is_null($agent_access_control)) {
+            throw new \InvalidArgumentException('non-nullable agent_access_control cannot be null');
+        }
+        $this->container['agent_access_control'] = $agent_access_control;
+
+        return $this;
+    }
+
+    /**
      * Gets keywords_enabled
      *
      * @return bool|null
@@ -539,33 +1101,6 @@ class UpdateSlackBotRequest implements ModelInterface, ArrayAccess, \JsonSeriali
             throw new \InvalidArgumentException('non-nullable keywords cannot be null');
         }
         $this->container['keywords'] = $keywords;
-
-        return $this;
-    }
-
-    /**
-     * Gets slash_commands
-     *
-     * @return string[]|null
-     */
-    public function getSlashCommands()
-    {
-        return $this->container['slash_commands'];
-    }
-
-    /**
-     * Sets slash_commands
-     *
-     * @param string[]|null $slash_commands Slash commands the bot responds to
-     *
-     * @return self
-     */
-    public function setSlashCommands($slash_commands)
-    {
-        if (is_null($slash_commands)) {
-            throw new \InvalidArgumentException('non-nullable slash_commands cannot be null');
-        }
-        $this->container['slash_commands'] = $slash_commands;
 
         return $this;
     }
