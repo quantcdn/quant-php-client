@@ -19,6 +19,9 @@ Name | Type | Description | Notes
 **ip** | **string** | IP filter type (ip_is, ip_is_not, any) | [optional]
 **ip_is** | **string[]** | Allowed IP addresses | [optional]
 **ip_is_not** | **string[]** | Excluded IP addresses | [optional]
+**asn** | **string** | ASN filter type (asn_is, asn_is_not, any) | [optional]
+**asn_is** | **string[]** | Allowed AS numbers | [optional]
+**asn_is_not** | **string[]** | Excluded AS numbers | [optional]
 **static_file_path** | **string** | Path to the static file to serve |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
