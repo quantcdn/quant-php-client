@@ -19,6 +19,9 @@ Name | Type | Description | Notes
 **ip** | **string** | IP filter type (ip_is, ip_is_not, any) | [optional]
 **ip_is** | **string[]** | Allowed IP addresses | [optional]
 **ip_is_not** | **string[]** | Excluded IP addresses | [optional]
+**asn** | **string** | ASN filter type (asn_is, asn_is_not, any) | [optional]
+**asn_is** | **string[]** | Allowed AS numbers | [optional]
+**asn_is_not** | **string[]** | Excluded AS numbers | [optional]
 **robot_challenge_type** | **string** | Challenge type (invisible or checkbox) |
 **robot_challenge_verification_ttl** | **int** | Verification TTL in seconds | [optional] [default to 10800]
 **robot_challenge_challenge_ttl** | **int** | Challenge TTL in seconds | [optional] [default to 30]

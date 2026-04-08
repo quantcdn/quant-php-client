@@ -19,6 +19,9 @@ Name | Type | Description | Notes
 **ip** | **string** | IP filter type (ip_is, ip_is_not, any) | [optional]
 **ip_is** | **string[]** | Allowed IP addresses | [optional]
 **ip_is_not** | **string[]** | Excluded IP addresses | [optional]
+**asn** | **string** | ASN filter type (asn_is, asn_is_not, any) | [optional]
+**asn_is** | **string[]** | Allowed AS numbers | [optional]
+**asn_is_not** | **string[]** | Excluded AS numbers | [optional]
 **custom_response_body** | **string** | Custom response body content |
 **custom_response_status_code** | **int** | HTTP status code for custom response | [optional] [default to 200]
 **status_code** | **int** | Legacy field for status code (deprecated) | [optional]
