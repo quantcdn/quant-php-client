@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**monthly_limit** | **int** | Per-user monthly budget in US cents | [optional]
-**daily_limit** | **int** | Per-user daily budget in US cents | [optional]
+**monthly_limit** | [**\QuantClient\Model\GetMyUsage200ResponseQuotaMonthlyLimit**](GetMyUsage200ResponseQuotaMonthlyLimit.md) |  | [optional]
+**daily_limit** | [**\QuantClient\Model\GetMyUsage200ResponseQuotaDailyLimit**](GetMyUsage200ResponseQuotaDailyLimit.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

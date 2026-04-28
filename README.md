@@ -491,6 +491,8 @@ Class | Method | HTTP request | Description
 - [GetMyUsage200ResponseDaily](docs/Model/GetMyUsage200ResponseDaily.md)
 - [GetMyUsage200ResponseMonthly](docs/Model/GetMyUsage200ResponseMonthly.md)
 - [GetMyUsage200ResponseQuota](docs/Model/GetMyUsage200ResponseQuota.md)
+- [GetMyUsage200ResponseQuotaDailyLimit](docs/Model/GetMyUsage200ResponseQuotaDailyLimit.md)
+- [GetMyUsage200ResponseQuotaMonthlyLimit](docs/Model/GetMyUsage200ResponseQuotaMonthlyLimit.md)
 - [GetSkill200Response](docs/Model/GetSkill200Response.md)
 - [GetSkill200ResponseSkill](docs/Model/GetSkill200ResponseSkill.md)
 - [GetSlackBot200Response](docs/Model/GetSlackBot200Response.md)

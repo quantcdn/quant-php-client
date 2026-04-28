@@ -1,6 +1,6 @@
 <?php
 /**
- * GetMyUsage200ResponseQuota
+ * GetMyUsage200ResponseQuotaDailyLimit
  *
  * PHP version 8.1
  *
@@ -32,15 +32,16 @@ use \ArrayAccess;
 use \QuantClient\ObjectSerializer;
 
 /**
- * GetMyUsage200ResponseQuota Class Doc Comment
+ * GetMyUsage200ResponseQuotaDailyLimit Class Doc Comment
  *
  * @category Class
+ * @description Per-user daily spend cap (object form, present when an org-level perUserDailyBudget is configured)
  * @package  QuantClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class GetMyUsage200ResponseQuota implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetMyUsage200ResponseQuotaDailyLimit implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class GetMyUsage200ResponseQuota implements ModelInterface, ArrayAccess, \JsonSe
       *
       * @var string
       */
-    protected static $openAPIModelName = 'getMyUsage_200_response_quota';
+    protected static $openAPIModelName = 'getMyUsage_200_response_quota_dailyLimit';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +58,10 @@ class GetMyUsage200ResponseQuota implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'monthly_limit' => '\QuantClient\Model\GetMyUsage200ResponseQuotaMonthlyLimit',
-        'daily_limit' => '\QuantClient\Model\GetMyUsage200ResponseQuotaDailyLimit'
+        'limit_cents' => 'int',
+        'used_percent' => 'float',
+        'remaining_cents' => 'int',
+        'resets_at' => '\DateTime'
     ];
 
     /**
@@ -69,8 +72,10 @@ class GetMyUsage200ResponseQuota implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'monthly_limit' => null,
-        'daily_limit' => null
+        'limit_cents' => null,
+        'used_percent' => 'float',
+        'remaining_cents' => null,
+        'resets_at' => 'date-time'
     ];
 
     /**
@@ -79,8 +84,10 @@ class GetMyUsage200ResponseQuota implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'monthly_limit' => true,
-        'daily_limit' => true
+        'limit_cents' => false,
+        'used_percent' => false,
+        'remaining_cents' => false,
+        'resets_at' => false
     ];
 
     /**
@@ -169,8 +176,10 @@ class GetMyUsage200ResponseQuota implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'monthly_limit' => 'monthlyLimit',
-        'daily_limit' => 'dailyLimit'
+        'limit_cents' => 'limitCents',
+        'used_percent' => 'usedPercent',
+        'remaining_cents' => 'remainingCents',
+        'resets_at' => 'resetsAt'
     ];
 
     /**
@@ -179,8 +188,10 @@ class GetMyUsage200ResponseQuota implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'monthly_limit' => 'setMonthlyLimit',
-        'daily_limit' => 'setDailyLimit'
+        'limit_cents' => 'setLimitCents',
+        'used_percent' => 'setUsedPercent',
+        'remaining_cents' => 'setRemainingCents',
+        'resets_at' => 'setResetsAt'
     ];
 
     /**
@@ -189,8 +200,10 @@ class GetMyUsage200ResponseQuota implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'monthly_limit' => 'getMonthlyLimit',
-        'daily_limit' => 'getDailyLimit'
+        'limit_cents' => 'getLimitCents',
+        'used_percent' => 'getUsedPercent',
+        'remaining_cents' => 'getRemainingCents',
+        'resets_at' => 'getResetsAt'
     ];
 
     /**
@@ -250,8 +263,10 @@ class GetMyUsage200ResponseQuota implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('monthly_limit', $data ?? [], null);
-        $this->setIfExists('daily_limit', $data ?? [], null);
+        $this->setIfExists('limit_cents', $data ?? [], null);
+        $this->setIfExists('used_percent', $data ?? [], null);
+        $this->setIfExists('remaining_cents', $data ?? [], null);
+        $this->setIfExists('resets_at', $data ?? [], null);
     }
 
     /**
@@ -297,69 +312,109 @@ class GetMyUsage200ResponseQuota implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
-     * Gets monthly_limit
+     * Gets limit_cents
      *
-     * @return \QuantClient\Model\GetMyUsage200ResponseQuotaMonthlyLimit|null
+     * @return int|null
      */
-    public function getMonthlyLimit()
+    public function getLimitCents()
     {
-        return $this->container['monthly_limit'];
+        return $this->container['limit_cents'];
     }
 
     /**
-     * Sets monthly_limit
+     * Sets limit_cents
      *
-     * @param \QuantClient\Model\GetMyUsage200ResponseQuotaMonthlyLimit|null $monthly_limit monthly_limit
+     * @param int|null $limit_cents The configured daily cap in US cents
      *
      * @return self
      */
-    public function setMonthlyLimit($monthly_limit)
+    public function setLimitCents($limit_cents)
     {
-        if (is_null($monthly_limit)) {
-            array_push($this->openAPINullablesSetToNull, 'monthly_limit');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('monthly_limit', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($limit_cents)) {
+            throw new \InvalidArgumentException('non-nullable limit_cents cannot be null');
         }
-        $this->container['monthly_limit'] = $monthly_limit;
+        $this->container['limit_cents'] = $limit_cents;
 
         return $this;
     }
 
     /**
-     * Gets daily_limit
+     * Gets used_percent
      *
-     * @return \QuantClient\Model\GetMyUsage200ResponseQuotaDailyLimit|null
+     * @return float|null
      */
-    public function getDailyLimit()
+    public function getUsedPercent()
     {
-        return $this->container['daily_limit'];
+        return $this->container['used_percent'];
     }
 
     /**
-     * Sets daily_limit
+     * Sets used_percent
      *
-     * @param \QuantClient\Model\GetMyUsage200ResponseQuotaDailyLimit|null $daily_limit daily_limit
+     * @param float|null $used_percent Percentage of the cap consumed today (0–100+)
      *
      * @return self
      */
-    public function setDailyLimit($daily_limit)
+    public function setUsedPercent($used_percent)
     {
-        if (is_null($daily_limit)) {
-            array_push($this->openAPINullablesSetToNull, 'daily_limit');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('daily_limit', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($used_percent)) {
+            throw new \InvalidArgumentException('non-nullable used_percent cannot be null');
         }
-        $this->container['daily_limit'] = $daily_limit;
+        $this->container['used_percent'] = $used_percent;
+
+        return $this;
+    }
+
+    /**
+     * Gets remaining_cents
+     *
+     * @return int|null
+     */
+    public function getRemainingCents()
+    {
+        return $this->container['remaining_cents'];
+    }
+
+    /**
+     * Sets remaining_cents
+     *
+     * @param int|null $remaining_cents Cents remaining before the cap is hit; can be negative if overspent
+     *
+     * @return self
+     */
+    public function setRemainingCents($remaining_cents)
+    {
+        if (is_null($remaining_cents)) {
+            throw new \InvalidArgumentException('non-nullable remaining_cents cannot be null');
+        }
+        $this->container['remaining_cents'] = $remaining_cents;
+
+        return $this;
+    }
+
+    /**
+     * Gets resets_at
+     *
+     * @return \DateTime|null
+     */
+    public function getResetsAt()
+    {
+        return $this->container['resets_at'];
+    }
+
+    /**
+     * Sets resets_at
+     *
+     * @param \DateTime|null $resets_at UTC timestamp when the daily counter resets (always next UTC midnight)
+     *
+     * @return self
+     */
+    public function setResetsAt($resets_at)
+    {
+        if (is_null($resets_at)) {
+            throw new \InvalidArgumentException('non-nullable resets_at cannot be null');
+        }
+        $this->container['resets_at'] = $resets_at;
 
         return $this;
     }

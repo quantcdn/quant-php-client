@@ -209,6 +209,8 @@ docs/Model/GetMyUsage200Response.md
 docs/Model/GetMyUsage200ResponseDaily.md
 docs/Model/GetMyUsage200ResponseMonthly.md
 docs/Model/GetMyUsage200ResponseQuota.md
+docs/Model/GetMyUsage200ResponseQuotaDailyLimit.md
+docs/Model/GetMyUsage200ResponseQuotaMonthlyLimit.md
 docs/Model/GetSkill200Response.md
 docs/Model/GetSkill200ResponseSkill.md
 docs/Model/GetSlackBot200Response.md
@@ -650,6 +652,8 @@ src/Model/GetMyUsage200Response.php
 src/Model/GetMyUsage200ResponseDaily.php
 src/Model/GetMyUsage200ResponseMonthly.php
 src/Model/GetMyUsage200ResponseQuota.php
+src/Model/GetMyUsage200ResponseQuotaDailyLimit.php
+src/Model/GetMyUsage200ResponseQuotaMonthlyLimit.php
 src/Model/GetSkill200Response.php
 src/Model/GetSkill200ResponseSkill.php
 src/Model/GetSlackBot200Response.php
