@@ -1,12 +1,11 @@
-# # ScalingPolicy
+# # RestoreDatabase202Response
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metric** | **string** |  | [optional]
-**target_value** | **float** |  | [optional]
-**scale_in_cooldown_seconds** | **int** |  | [optional]
-**scale_out_cooldown_seconds** | **int** |  | [optional]
+**restore_id** | **string** |  | [optional]
+**status** | **string** |  | [optional]
+**message** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

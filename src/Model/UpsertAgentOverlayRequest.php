@@ -106,7 +106,7 @@ class UpsertAgentOverlayRequest implements ModelInterface, ArrayAccess, \JsonSer
         'disabled_tools' => false,
         'system_prompt_append' => false,
         'allowed_collections' => false,
-        'guardrail_preset' => false,
+        'guardrail_preset' => true,
         'version' => false
     ];
 
@@ -673,10 +673,17 @@ class UpsertAgentOverlayRequest implements ModelInterface, ArrayAccess, \JsonSer
     public function setGuardrailPreset($guardrail_preset)
     {
         if (is_null($guardrail_preset)) {
-            throw new \InvalidArgumentException('non-nullable guardrail_preset cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'guardrail_preset');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('guardrail_preset', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $allowedValues = $this->getGuardrailPresetAllowableValues();
-        if (!in_array($guardrail_preset, $allowedValues, true)) {
+        if (!is_null($guardrail_preset) && !in_array($guardrail_preset, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'guardrail_preset', must be one of '%s'",

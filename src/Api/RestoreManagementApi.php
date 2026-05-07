@@ -1,6 +1,6 @@
 <?php
 /**
- * ScalingPolicyApi
+ * RestoreManagementApi
  * PHP version 8.1
  *
  * @category Class
@@ -43,14 +43,14 @@ use QuantClient\HeaderSelector;
 use QuantClient\ObjectSerializer;
 
 /**
- * ScalingPolicyApi Class Doc Comment
+ * RestoreManagementApi Class Doc Comment
  *
  * @category Class
  * @package  QuantClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ScalingPolicyApi
+class RestoreManagementApi
 {
     /**
      * @var ClientInterface
@@ -74,13 +74,13 @@ class ScalingPolicyApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'deleteScalingPolicy' => [
+        'getRestoreStatus' => [
             'application/json',
         ],
-        'listScalingPolicies' => [
+        'restoreDatabase' => [
             'application/json',
         ],
-        'upsertScalingPolicy' => [
+        'restoreFilesystem' => [
             'application/json',
         ],
     ];
@@ -132,338 +132,44 @@ class ScalingPolicyApi
     }
 
     /**
-     * Operation deleteScalingPolicy
+     * Operation getRestoreStatus
      *
-     * Delete Scaling Policy
+     * Get the status of a restore operation
      *
-     * @param  string $organisation organisation (required)
-     * @param  string $application application (required)
-     * @param  string $environment environment (required)
-     * @param  string|null $metric Optional. Delete by metric type. (optional)
-     * @param  string|null $policy_name Optional. Delete by exact policy name. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteScalingPolicy'] to see the possible values for this operation
-     *
-     * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function deleteScalingPolicy($organisation, $application, $environment, $metric = null, $policy_name = null, string $contentType = self::contentTypes['deleteScalingPolicy'][0])
-    {
-        $this->deleteScalingPolicyWithHttpInfo($organisation, $application, $environment, $metric, $policy_name, $contentType);
-    }
-
-    /**
-     * Operation deleteScalingPolicyWithHttpInfo
-     *
-     * Delete Scaling Policy
-     *
-     * @param  string $organisation (required)
-     * @param  string $application (required)
-     * @param  string $environment (required)
-     * @param  string|null $metric Optional. Delete by metric type. (optional)
-     * @param  string|null $policy_name Optional. Delete by exact policy name. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteScalingPolicy'] to see the possible values for this operation
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The environment ID (required)
+     * @param  string $restore_id The restore operation ID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRestoreStatus'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return \QuantClient\Model\GetRestoreStatus200Response
      */
-    public function deleteScalingPolicyWithHttpInfo($organisation, $application, $environment, $metric = null, $policy_name = null, string $contentType = self::contentTypes['deleteScalingPolicy'][0])
+    public function getRestoreStatus($organisation, $application, $environment, $restore_id, string $contentType = self::contentTypes['getRestoreStatus'][0])
     {
-        $request = $this->deleteScalingPolicyRequest($organisation, $application, $environment, $metric, $policy_name, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation deleteScalingPolicyAsync
-     *
-     * Delete Scaling Policy
-     *
-     * @param  string $organisation (required)
-     * @param  string $application (required)
-     * @param  string $environment (required)
-     * @param  string|null $metric Optional. Delete by metric type. (optional)
-     * @param  string|null $policy_name Optional. Delete by exact policy name. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteScalingPolicy'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function deleteScalingPolicyAsync($organisation, $application, $environment, $metric = null, $policy_name = null, string $contentType = self::contentTypes['deleteScalingPolicy'][0])
-    {
-        return $this->deleteScalingPolicyAsyncWithHttpInfo($organisation, $application, $environment, $metric, $policy_name, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation deleteScalingPolicyAsyncWithHttpInfo
-     *
-     * Delete Scaling Policy
-     *
-     * @param  string $organisation (required)
-     * @param  string $application (required)
-     * @param  string $environment (required)
-     * @param  string|null $metric Optional. Delete by metric type. (optional)
-     * @param  string|null $policy_name Optional. Delete by exact policy name. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteScalingPolicy'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function deleteScalingPolicyAsyncWithHttpInfo($organisation, $application, $environment, $metric = null, $policy_name = null, string $contentType = self::contentTypes['deleteScalingPolicy'][0])
-    {
-        $returnType = '';
-        $request = $this->deleteScalingPolicyRequest($organisation, $application, $environment, $metric, $policy_name, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'deleteScalingPolicy'
-     *
-     * @param  string $organisation (required)
-     * @param  string $application (required)
-     * @param  string $environment (required)
-     * @param  string|null $metric Optional. Delete by metric type. (optional)
-     * @param  string|null $policy_name Optional. Delete by exact policy name. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteScalingPolicy'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function deleteScalingPolicyRequest($organisation, $application, $environment, $metric = null, $policy_name = null, string $contentType = self::contentTypes['deleteScalingPolicy'][0])
-    {
-
-        // verify the required parameter 'organisation' is set
-        if ($organisation === null || (is_array($organisation) && count($organisation) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $organisation when calling deleteScalingPolicy'
-            );
-        }
-
-        // verify the required parameter 'application' is set
-        if ($application === null || (is_array($application) && count($application) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $application when calling deleteScalingPolicy'
-            );
-        }
-
-        // verify the required parameter 'environment' is set
-        if ($environment === null || (is_array($environment) && count($environment) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $environment when calling deleteScalingPolicy'
-            );
-        }
-
-
-
-
-        $resourcePath = '/api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/scaling-policies';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $metric,
-            'metric', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $policy_name,
-            'policyName', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-
-
-        // path params
-        if ($organisation !== null) {
-            $resourcePath = str_replace(
-                '{' . 'organisation' . '}',
-                ObjectSerializer::toPathValue($organisation),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($application !== null) {
-            $resourcePath = str_replace(
-                '{' . 'application' . '}',
-                ObjectSerializer::toPathValue($application),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($environment !== null) {
-            $resourcePath = str_replace(
-                '{' . 'environment' . '}',
-                ObjectSerializer::toPathValue($environment),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation listScalingPolicies
-     *
-     * List Scaling Policies
-     *
-     * @param  string $organisation organisation (required)
-     * @param  string $application application (required)
-     * @param  string $environment environment (required)
-     * @param  string|null $metric Optional. Filter policies by metric type. (optional)
-     * @param  string|null $policy_name Optional. Filter policies by exact policy name. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listScalingPolicies'] to see the possible values for this operation
-     *
-     * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \QuantClient\Model\ScalingPolicyListResponse
-     */
-    public function listScalingPolicies($organisation, $application, $environment, $metric = null, $policy_name = null, string $contentType = self::contentTypes['listScalingPolicies'][0])
-    {
-        list($response) = $this->listScalingPoliciesWithHttpInfo($organisation, $application, $environment, $metric, $policy_name, $contentType);
+        list($response) = $this->getRestoreStatusWithHttpInfo($organisation, $application, $environment, $restore_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation listScalingPoliciesWithHttpInfo
+     * Operation getRestoreStatusWithHttpInfo
      *
-     * List Scaling Policies
+     * Get the status of a restore operation
      *
-     * @param  string $organisation (required)
-     * @param  string $application (required)
-     * @param  string $environment (required)
-     * @param  string|null $metric Optional. Filter policies by metric type. (optional)
-     * @param  string|null $policy_name Optional. Filter policies by exact policy name. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listScalingPolicies'] to see the possible values for this operation
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The environment ID (required)
+     * @param  string $restore_id The restore operation ID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRestoreStatus'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \QuantClient\Model\ScalingPolicyListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \QuantClient\Model\GetRestoreStatus200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listScalingPoliciesWithHttpInfo($organisation, $application, $environment, $metric = null, $policy_name = null, string $contentType = self::contentTypes['listScalingPolicies'][0])
+    public function getRestoreStatusWithHttpInfo($organisation, $application, $environment, $restore_id, string $contentType = self::contentTypes['getRestoreStatus'][0])
     {
-        $request = $this->listScalingPoliciesRequest($organisation, $application, $environment, $metric, $policy_name, $contentType);
+        $request = $this->getRestoreStatusRequest($organisation, $application, $environment, $restore_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -491,7 +197,7 @@ class ScalingPolicyApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\QuantClient\Model\ScalingPolicyListResponse',
+                        '\QuantClient\Model\GetRestoreStatus200Response',
                         $request,
                         $response,
                     );
@@ -513,7 +219,7 @@ class ScalingPolicyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\QuantClient\Model\ScalingPolicyListResponse',
+                '\QuantClient\Model\GetRestoreStatus200Response',
                 $request,
                 $response,
             );
@@ -522,7 +228,7 @@ class ScalingPolicyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\QuantClient\Model\ScalingPolicyListResponse',
+                        '\QuantClient\Model\GetRestoreStatus200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -535,23 +241,22 @@ class ScalingPolicyApi
     }
 
     /**
-     * Operation listScalingPoliciesAsync
+     * Operation getRestoreStatusAsync
      *
-     * List Scaling Policies
+     * Get the status of a restore operation
      *
-     * @param  string $organisation (required)
-     * @param  string $application (required)
-     * @param  string $environment (required)
-     * @param  string|null $metric Optional. Filter policies by metric type. (optional)
-     * @param  string|null $policy_name Optional. Filter policies by exact policy name. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listScalingPolicies'] to see the possible values for this operation
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The environment ID (required)
+     * @param  string $restore_id The restore operation ID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRestoreStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listScalingPoliciesAsync($organisation, $application, $environment, $metric = null, $policy_name = null, string $contentType = self::contentTypes['listScalingPolicies'][0])
+    public function getRestoreStatusAsync($organisation, $application, $environment, $restore_id, string $contentType = self::contentTypes['getRestoreStatus'][0])
     {
-        return $this->listScalingPoliciesAsyncWithHttpInfo($organisation, $application, $environment, $metric, $policy_name, $contentType)
+        return $this->getRestoreStatusAsyncWithHttpInfo($organisation, $application, $environment, $restore_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -560,24 +265,23 @@ class ScalingPolicyApi
     }
 
     /**
-     * Operation listScalingPoliciesAsyncWithHttpInfo
+     * Operation getRestoreStatusAsyncWithHttpInfo
      *
-     * List Scaling Policies
+     * Get the status of a restore operation
      *
-     * @param  string $organisation (required)
-     * @param  string $application (required)
-     * @param  string $environment (required)
-     * @param  string|null $metric Optional. Filter policies by metric type. (optional)
-     * @param  string|null $policy_name Optional. Filter policies by exact policy name. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listScalingPolicies'] to see the possible values for this operation
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The environment ID (required)
+     * @param  string $restore_id The restore operation ID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRestoreStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listScalingPoliciesAsyncWithHttpInfo($organisation, $application, $environment, $metric = null, $policy_name = null, string $contentType = self::contentTypes['listScalingPolicies'][0])
+    public function getRestoreStatusAsyncWithHttpInfo($organisation, $application, $environment, $restore_id, string $contentType = self::contentTypes['getRestoreStatus'][0])
     {
-        $returnType = '\QuantClient\Model\ScalingPolicyListResponse';
-        $request = $this->listScalingPoliciesRequest($organisation, $application, $environment, $metric, $policy_name, $contentType);
+        $returnType = '\QuantClient\Model\GetRestoreStatus200Response';
+        $request = $this->getRestoreStatusRequest($organisation, $application, $environment, $restore_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -616,70 +320,56 @@ class ScalingPolicyApi
     }
 
     /**
-     * Create request for operation 'listScalingPolicies'
+     * Create request for operation 'getRestoreStatus'
      *
-     * @param  string $organisation (required)
-     * @param  string $application (required)
-     * @param  string $environment (required)
-     * @param  string|null $metric Optional. Filter policies by metric type. (optional)
-     * @param  string|null $policy_name Optional. Filter policies by exact policy name. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listScalingPolicies'] to see the possible values for this operation
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The environment ID (required)
+     * @param  string $restore_id The restore operation ID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRestoreStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listScalingPoliciesRequest($organisation, $application, $environment, $metric = null, $policy_name = null, string $contentType = self::contentTypes['listScalingPolicies'][0])
+    public function getRestoreStatusRequest($organisation, $application, $environment, $restore_id, string $contentType = self::contentTypes['getRestoreStatus'][0])
     {
 
         // verify the required parameter 'organisation' is set
         if ($organisation === null || (is_array($organisation) && count($organisation) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organisation when calling listScalingPolicies'
+                'Missing the required parameter $organisation when calling getRestoreStatus'
             );
         }
 
         // verify the required parameter 'application' is set
         if ($application === null || (is_array($application) && count($application) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $application when calling listScalingPolicies'
+                'Missing the required parameter $application when calling getRestoreStatus'
             );
         }
 
         // verify the required parameter 'environment' is set
         if ($environment === null || (is_array($environment) && count($environment) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $environment when calling listScalingPolicies'
+                'Missing the required parameter $environment when calling getRestoreStatus'
+            );
+        }
+
+        // verify the required parameter 'restore_id' is set
+        if ($restore_id === null || (is_array($restore_id) && count($restore_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $restore_id when calling getRestoreStatus'
             );
         }
 
 
-
-
-        $resourcePath = '/api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/scaling-policies';
+        $resourcePath = '/api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/restores/{restoreId}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $metric,
-            'metric', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $policy_name,
-            'policyName', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
 
 
         // path params
@@ -703,6 +393,14 @@ class ScalingPolicyApi
             $resourcePath = str_replace(
                 '{' . 'environment' . '}',
                 ObjectSerializer::toPathValue($environment),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($restore_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'restoreId' . '}',
+                ObjectSerializer::toPathValue($restore_id),
                 $resourcePath
             );
         }
@@ -766,46 +464,46 @@ class ScalingPolicyApi
     }
 
     /**
-     * Operation upsertScalingPolicy
+     * Operation restoreDatabase
      *
-     * Upsert Scaling Policy
+     * Restore a database backup to a target environment
      *
-     * @param  string $organisation organisation (required)
-     * @param  string $application application (required)
-     * @param  string $environment environment (required)
-     * @param  \QuantClient\Model\SetScalingPolicyRequest $set_scaling_policy_request set_scaling_policy_request (required)
-     * @param  string|null $policy_name Optional. Specify a custom policy name to upsert. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['upsertScalingPolicy'] to see the possible values for this operation
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The TARGET environment ID to restore INTO (required)
+     * @param  string $backup_id The backup ID to restore from (required)
+     * @param  \QuantClient\Model\RestoreDatabaseRequest $restore_database_request restore_database_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreDatabase'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \QuantClient\Model\GetScalingPolicyResponse
+     * @return \QuantClient\Model\RestoreDatabase202Response|\QuantClient\Model\PatchEnvironmentCompose400Response
      */
-    public function upsertScalingPolicy($organisation, $application, $environment, $set_scaling_policy_request, $policy_name = null, string $contentType = self::contentTypes['upsertScalingPolicy'][0])
+    public function restoreDatabase($organisation, $application, $environment, $backup_id, $restore_database_request, string $contentType = self::contentTypes['restoreDatabase'][0])
     {
-        list($response) = $this->upsertScalingPolicyWithHttpInfo($organisation, $application, $environment, $set_scaling_policy_request, $policy_name, $contentType);
+        list($response) = $this->restoreDatabaseWithHttpInfo($organisation, $application, $environment, $backup_id, $restore_database_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation upsertScalingPolicyWithHttpInfo
+     * Operation restoreDatabaseWithHttpInfo
      *
-     * Upsert Scaling Policy
+     * Restore a database backup to a target environment
      *
-     * @param  string $organisation (required)
-     * @param  string $application (required)
-     * @param  string $environment (required)
-     * @param  \QuantClient\Model\SetScalingPolicyRequest $set_scaling_policy_request (required)
-     * @param  string|null $policy_name Optional. Specify a custom policy name to upsert. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['upsertScalingPolicy'] to see the possible values for this operation
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The TARGET environment ID to restore INTO (required)
+     * @param  string $backup_id The backup ID to restore from (required)
+     * @param  \QuantClient\Model\RestoreDatabaseRequest $restore_database_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreDatabase'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \QuantClient\Model\GetScalingPolicyResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \QuantClient\Model\RestoreDatabase202Response|\QuantClient\Model\PatchEnvironmentCompose400Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function upsertScalingPolicyWithHttpInfo($organisation, $application, $environment, $set_scaling_policy_request, $policy_name = null, string $contentType = self::contentTypes['upsertScalingPolicy'][0])
+    public function restoreDatabaseWithHttpInfo($organisation, $application, $environment, $backup_id, $restore_database_request, string $contentType = self::contentTypes['restoreDatabase'][0])
     {
-        $request = $this->upsertScalingPolicyRequest($organisation, $application, $environment, $set_scaling_policy_request, $policy_name, $contentType);
+        $request = $this->restoreDatabaseRequest($organisation, $application, $environment, $backup_id, $restore_database_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -831,9 +529,15 @@ class ScalingPolicyApi
 
 
             switch($statusCode) {
-                case 200:
+                case 202:
                     return $this->handleResponseWithDataType(
-                        '\QuantClient\Model\GetScalingPolicyResponse',
+                        '\QuantClient\Model\RestoreDatabase202Response',
+                        $request,
+                        $response,
+                    );
+                case 422:
+                    return $this->handleResponseWithDataType(
+                        '\QuantClient\Model\PatchEnvironmentCompose400Response',
                         $request,
                         $response,
                     );
@@ -855,16 +559,24 @@ class ScalingPolicyApi
             }
 
             return $this->handleResponseWithDataType(
-                '\QuantClient\Model\GetScalingPolicyResponse',
+                '\QuantClient\Model\RestoreDatabase202Response',
                 $request,
                 $response,
             );
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
+                case 202:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\QuantClient\Model\GetScalingPolicyResponse',
+                        '\QuantClient\Model\RestoreDatabase202Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\QuantClient\Model\PatchEnvironmentCompose400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -877,23 +589,23 @@ class ScalingPolicyApi
     }
 
     /**
-     * Operation upsertScalingPolicyAsync
+     * Operation restoreDatabaseAsync
      *
-     * Upsert Scaling Policy
+     * Restore a database backup to a target environment
      *
-     * @param  string $organisation (required)
-     * @param  string $application (required)
-     * @param  string $environment (required)
-     * @param  \QuantClient\Model\SetScalingPolicyRequest $set_scaling_policy_request (required)
-     * @param  string|null $policy_name Optional. Specify a custom policy name to upsert. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['upsertScalingPolicy'] to see the possible values for this operation
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The TARGET environment ID to restore INTO (required)
+     * @param  string $backup_id The backup ID to restore from (required)
+     * @param  \QuantClient\Model\RestoreDatabaseRequest $restore_database_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreDatabase'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function upsertScalingPolicyAsync($organisation, $application, $environment, $set_scaling_policy_request, $policy_name = null, string $contentType = self::contentTypes['upsertScalingPolicy'][0])
+    public function restoreDatabaseAsync($organisation, $application, $environment, $backup_id, $restore_database_request, string $contentType = self::contentTypes['restoreDatabase'][0])
     {
-        return $this->upsertScalingPolicyAsyncWithHttpInfo($organisation, $application, $environment, $set_scaling_policy_request, $policy_name, $contentType)
+        return $this->restoreDatabaseAsyncWithHttpInfo($organisation, $application, $environment, $backup_id, $restore_database_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -902,24 +614,24 @@ class ScalingPolicyApi
     }
 
     /**
-     * Operation upsertScalingPolicyAsyncWithHttpInfo
+     * Operation restoreDatabaseAsyncWithHttpInfo
      *
-     * Upsert Scaling Policy
+     * Restore a database backup to a target environment
      *
-     * @param  string $organisation (required)
-     * @param  string $application (required)
-     * @param  string $environment (required)
-     * @param  \QuantClient\Model\SetScalingPolicyRequest $set_scaling_policy_request (required)
-     * @param  string|null $policy_name Optional. Specify a custom policy name to upsert. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['upsertScalingPolicy'] to see the possible values for this operation
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The TARGET environment ID to restore INTO (required)
+     * @param  string $backup_id The backup ID to restore from (required)
+     * @param  \QuantClient\Model\RestoreDatabaseRequest $restore_database_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreDatabase'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function upsertScalingPolicyAsyncWithHttpInfo($organisation, $application, $environment, $set_scaling_policy_request, $policy_name = null, string $contentType = self::contentTypes['upsertScalingPolicy'][0])
+    public function restoreDatabaseAsyncWithHttpInfo($organisation, $application, $environment, $backup_id, $restore_database_request, string $contentType = self::contentTypes['restoreDatabase'][0])
     {
-        $returnType = '\QuantClient\Model\GetScalingPolicyResponse';
-        $request = $this->upsertScalingPolicyRequest($organisation, $application, $environment, $set_scaling_policy_request, $policy_name, $contentType);
+        $returnType = '\QuantClient\Model\RestoreDatabase202Response';
+        $request = $this->restoreDatabaseRequest($organisation, $application, $environment, $backup_id, $restore_database_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -958,67 +670,64 @@ class ScalingPolicyApi
     }
 
     /**
-     * Create request for operation 'upsertScalingPolicy'
+     * Create request for operation 'restoreDatabase'
      *
-     * @param  string $organisation (required)
-     * @param  string $application (required)
-     * @param  string $environment (required)
-     * @param  \QuantClient\Model\SetScalingPolicyRequest $set_scaling_policy_request (required)
-     * @param  string|null $policy_name Optional. Specify a custom policy name to upsert. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['upsertScalingPolicy'] to see the possible values for this operation
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The TARGET environment ID to restore INTO (required)
+     * @param  string $backup_id The backup ID to restore from (required)
+     * @param  \QuantClient\Model\RestoreDatabaseRequest $restore_database_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreDatabase'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function upsertScalingPolicyRequest($organisation, $application, $environment, $set_scaling_policy_request, $policy_name = null, string $contentType = self::contentTypes['upsertScalingPolicy'][0])
+    public function restoreDatabaseRequest($organisation, $application, $environment, $backup_id, $restore_database_request, string $contentType = self::contentTypes['restoreDatabase'][0])
     {
 
         // verify the required parameter 'organisation' is set
         if ($organisation === null || (is_array($organisation) && count($organisation) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organisation when calling upsertScalingPolicy'
+                'Missing the required parameter $organisation when calling restoreDatabase'
             );
         }
 
         // verify the required parameter 'application' is set
         if ($application === null || (is_array($application) && count($application) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $application when calling upsertScalingPolicy'
+                'Missing the required parameter $application when calling restoreDatabase'
             );
         }
 
         // verify the required parameter 'environment' is set
         if ($environment === null || (is_array($environment) && count($environment) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $environment when calling upsertScalingPolicy'
+                'Missing the required parameter $environment when calling restoreDatabase'
             );
         }
 
-        // verify the required parameter 'set_scaling_policy_request' is set
-        if ($set_scaling_policy_request === null || (is_array($set_scaling_policy_request) && count($set_scaling_policy_request) === 0)) {
+        // verify the required parameter 'backup_id' is set
+        if ($backup_id === null || (is_array($backup_id) && count($backup_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $set_scaling_policy_request when calling upsertScalingPolicy'
+                'Missing the required parameter $backup_id when calling restoreDatabase'
+            );
+        }
+
+        // verify the required parameter 'restore_database_request' is set
+        if ($restore_database_request === null || (is_array($restore_database_request) && count($restore_database_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $restore_database_request when calling restoreDatabase'
             );
         }
 
 
-
-        $resourcePath = '/api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/scaling-policies';
+        $resourcePath = '/api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/backups/{backupId}/restore-database';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $policy_name,
-            'policyName', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
 
 
         // path params
@@ -1045,6 +754,14 @@ class ScalingPolicyApi
                 $resourcePath
             );
         }
+        // path params
+        if ($backup_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'backupId' . '}',
+                ObjectSerializer::toPathValue($backup_id),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -1054,12 +771,12 @@ class ScalingPolicyApi
         );
 
         // for model (json/xml)
-        if (isset($set_scaling_policy_request)) {
+        if (isset($restore_database_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($set_scaling_policy_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($restore_database_request));
             } else {
-                $httpBody = $set_scaling_policy_request;
+                $httpBody = $restore_database_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1104,7 +821,372 @@ class ScalingPolicyApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'PUT',
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation restoreFilesystem
+     *
+     * Restore a filesystem backup to a target environment
+     *
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The TARGET environment ID to restore INTO (required)
+     * @param  string $backup_id The backup ID to restore from (required)
+     * @param  \QuantClient\Model\RestoreFilesystemRequest $restore_filesystem_request restore_filesystem_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreFilesystem'] to see the possible values for this operation
+     *
+     * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \QuantClient\Model\RestoreFilesystem202Response|\QuantClient\Model\PatchEnvironmentCompose400Response
+     */
+    public function restoreFilesystem($organisation, $application, $environment, $backup_id, $restore_filesystem_request, string $contentType = self::contentTypes['restoreFilesystem'][0])
+    {
+        list($response) = $this->restoreFilesystemWithHttpInfo($organisation, $application, $environment, $backup_id, $restore_filesystem_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation restoreFilesystemWithHttpInfo
+     *
+     * Restore a filesystem backup to a target environment
+     *
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The TARGET environment ID to restore INTO (required)
+     * @param  string $backup_id The backup ID to restore from (required)
+     * @param  \QuantClient\Model\RestoreFilesystemRequest $restore_filesystem_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreFilesystem'] to see the possible values for this operation
+     *
+     * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \QuantClient\Model\RestoreFilesystem202Response|\QuantClient\Model\PatchEnvironmentCompose400Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function restoreFilesystemWithHttpInfo($organisation, $application, $environment, $backup_id, $restore_filesystem_request, string $contentType = self::contentTypes['restoreFilesystem'][0])
+    {
+        $request = $this->restoreFilesystemRequest($organisation, $application, $environment, $backup_id, $restore_filesystem_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 202:
+                    return $this->handleResponseWithDataType(
+                        '\QuantClient\Model\RestoreFilesystem202Response',
+                        $request,
+                        $response,
+                    );
+                case 422:
+                    return $this->handleResponseWithDataType(
+                        '\QuantClient\Model\PatchEnvironmentCompose400Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\QuantClient\Model\RestoreFilesystem202Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 202:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\QuantClient\Model\RestoreFilesystem202Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\QuantClient\Model\PatchEnvironmentCompose400Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation restoreFilesystemAsync
+     *
+     * Restore a filesystem backup to a target environment
+     *
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The TARGET environment ID to restore INTO (required)
+     * @param  string $backup_id The backup ID to restore from (required)
+     * @param  \QuantClient\Model\RestoreFilesystemRequest $restore_filesystem_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreFilesystem'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function restoreFilesystemAsync($organisation, $application, $environment, $backup_id, $restore_filesystem_request, string $contentType = self::contentTypes['restoreFilesystem'][0])
+    {
+        return $this->restoreFilesystemAsyncWithHttpInfo($organisation, $application, $environment, $backup_id, $restore_filesystem_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation restoreFilesystemAsyncWithHttpInfo
+     *
+     * Restore a filesystem backup to a target environment
+     *
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The TARGET environment ID to restore INTO (required)
+     * @param  string $backup_id The backup ID to restore from (required)
+     * @param  \QuantClient\Model\RestoreFilesystemRequest $restore_filesystem_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreFilesystem'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function restoreFilesystemAsyncWithHttpInfo($organisation, $application, $environment, $backup_id, $restore_filesystem_request, string $contentType = self::contentTypes['restoreFilesystem'][0])
+    {
+        $returnType = '\QuantClient\Model\RestoreFilesystem202Response';
+        $request = $this->restoreFilesystemRequest($organisation, $application, $environment, $backup_id, $restore_filesystem_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'restoreFilesystem'
+     *
+     * @param  string $organisation The organisation ID (required)
+     * @param  string $application The application ID (required)
+     * @param  string $environment The TARGET environment ID to restore INTO (required)
+     * @param  string $backup_id The backup ID to restore from (required)
+     * @param  \QuantClient\Model\RestoreFilesystemRequest $restore_filesystem_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreFilesystem'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function restoreFilesystemRequest($organisation, $application, $environment, $backup_id, $restore_filesystem_request, string $contentType = self::contentTypes['restoreFilesystem'][0])
+    {
+
+        // verify the required parameter 'organisation' is set
+        if ($organisation === null || (is_array($organisation) && count($organisation) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organisation when calling restoreFilesystem'
+            );
+        }
+
+        // verify the required parameter 'application' is set
+        if ($application === null || (is_array($application) && count($application) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $application when calling restoreFilesystem'
+            );
+        }
+
+        // verify the required parameter 'environment' is set
+        if ($environment === null || (is_array($environment) && count($environment) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $environment when calling restoreFilesystem'
+            );
+        }
+
+        // verify the required parameter 'backup_id' is set
+        if ($backup_id === null || (is_array($backup_id) && count($backup_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $backup_id when calling restoreFilesystem'
+            );
+        }
+
+        // verify the required parameter 'restore_filesystem_request' is set
+        if ($restore_filesystem_request === null || (is_array($restore_filesystem_request) && count($restore_filesystem_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $restore_filesystem_request when calling restoreFilesystem'
+            );
+        }
+
+
+        $resourcePath = '/api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/backups/{backupId}/restore-filesystem';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($organisation !== null) {
+            $resourcePath = str_replace(
+                '{' . 'organisation' . '}',
+                ObjectSerializer::toPathValue($organisation),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($application !== null) {
+            $resourcePath = str_replace(
+                '{' . 'application' . '}',
+                ObjectSerializer::toPathValue($application),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($environment !== null) {
+            $resourcePath = str_replace(
+                '{' . 'environment' . '}',
+                ObjectSerializer::toPathValue($environment),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($backup_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'backupId' . '}',
+                ObjectSerializer::toPathValue($backup_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($restore_filesystem_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($restore_filesystem_request));
+            } else {
+                $httpBody = $restore_filesystem_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

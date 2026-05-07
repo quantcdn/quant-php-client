@@ -112,7 +112,7 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'allowed_collections' => false,
         'assigned_skills' => false,
         'long_context' => false,
-        'guardrail_preset' => false,
+        'guardrail_preset' => true,
         'filter_policies' => false
     ];
 
@@ -748,10 +748,17 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setGuardrailPreset($guardrail_preset)
     {
         if (is_null($guardrail_preset)) {
-            throw new \InvalidArgumentException('non-nullable guardrail_preset cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'guardrail_preset');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('guardrail_preset', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $allowedValues = $this->getGuardrailPresetAllowableValues();
-        if (!in_array($guardrail_preset, $allowedValues, true)) {
+        if (!is_null($guardrail_preset) && !in_array($guardrail_preset, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'guardrail_preset', must be one of '%s'",

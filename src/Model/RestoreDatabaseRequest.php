@@ -1,6 +1,6 @@
 <?php
 /**
- * ScalingPolicy
+ * RestoreDatabaseRequest
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \QuantClient\ObjectSerializer;
 
 /**
- * ScalingPolicy Class Doc Comment
+ * RestoreDatabaseRequest Class Doc Comment
  *
  * @category Class
  * @package  QuantClient
@@ -40,7 +40,7 @@ use \QuantClient\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ScalingPolicy implements ModelInterface, ArrayAccess, \JsonSerializable
+class RestoreDatabaseRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ScalingPolicy implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ScalingPolicy';
+    protected static $openAPIModelName = 'restoreDatabase_request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,8 @@ class ScalingPolicy implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'metric' => 'string',
-        'target_value' => 'float',
-        'scale_in_cooldown_seconds' => 'int',
-        'scale_out_cooldown_seconds' => 'int'
+        'backup_id' => 'string',
+        'acknowledge_dataloss' => 'bool'
     ];
 
     /**
@@ -71,10 +69,8 @@ class ScalingPolicy implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'metric' => null,
-        'target_value' => null,
-        'scale_in_cooldown_seconds' => null,
-        'scale_out_cooldown_seconds' => null
+        'backup_id' => null,
+        'acknowledge_dataloss' => null
     ];
 
     /**
@@ -83,10 +79,8 @@ class ScalingPolicy implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'metric' => false,
-        'target_value' => false,
-        'scale_in_cooldown_seconds' => false,
-        'scale_out_cooldown_seconds' => false
+        'backup_id' => false,
+        'acknowledge_dataloss' => false
     ];
 
     /**
@@ -175,10 +169,8 @@ class ScalingPolicy implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'metric' => 'metric',
-        'target_value' => 'targetValue',
-        'scale_in_cooldown_seconds' => 'scaleInCooldownSeconds',
-        'scale_out_cooldown_seconds' => 'scaleOutCooldownSeconds'
+        'backup_id' => 'backupId',
+        'acknowledge_dataloss' => 'acknowledgeDataloss'
     ];
 
     /**
@@ -187,10 +179,8 @@ class ScalingPolicy implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'metric' => 'setMetric',
-        'target_value' => 'setTargetValue',
-        'scale_in_cooldown_seconds' => 'setScaleInCooldownSeconds',
-        'scale_out_cooldown_seconds' => 'setScaleOutCooldownSeconds'
+        'backup_id' => 'setBackupId',
+        'acknowledge_dataloss' => 'setAcknowledgeDataloss'
     ];
 
     /**
@@ -199,10 +189,8 @@ class ScalingPolicy implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'metric' => 'getMetric',
-        'target_value' => 'getTargetValue',
-        'scale_in_cooldown_seconds' => 'getScaleInCooldownSeconds',
-        'scale_out_cooldown_seconds' => 'getScaleOutCooldownSeconds'
+        'backup_id' => 'getBackupId',
+        'acknowledge_dataloss' => 'getAcknowledgeDataloss'
     ];
 
     /**
@@ -246,23 +234,6 @@ class ScalingPolicy implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    public const METRIC_CPU_UTILIZATION = 'CPUUtilization';
-    public const METRIC_MEMORY_UTILIZATION = 'MemoryUtilization';
-    public const METRIC_RPS = 'RPS';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getMetricAllowableValues()
-    {
-        return [
-            self::METRIC_CPU_UTILIZATION,
-            self::METRIC_MEMORY_UTILIZATION,
-            self::METRIC_RPS,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -279,10 +250,8 @@ class ScalingPolicy implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('metric', $data ?? [], null);
-        $this->setIfExists('target_value', $data ?? [], null);
-        $this->setIfExists('scale_in_cooldown_seconds', $data ?? [], null);
-        $this->setIfExists('scale_out_cooldown_seconds', $data ?? [], null);
+        $this->setIfExists('backup_id', $data ?? [], null);
+        $this->setIfExists('acknowledge_dataloss', $data ?? [], null);
     }
 
     /**
@@ -312,15 +281,12 @@ class ScalingPolicy implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getMetricAllowableValues();
-        if (!is_null($this->container['metric']) && !in_array($this->container['metric'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'metric', must be one of '%s'",
-                $this->container['metric'],
-                implode("', '", $allowedValues)
-            );
+        if ($this->container['backup_id'] === null) {
+            $invalidProperties[] = "'backup_id' can't be null";
         }
-
+        if ($this->container['acknowledge_dataloss'] === null) {
+            $invalidProperties[] = "'acknowledge_dataloss' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -337,119 +303,55 @@ class ScalingPolicy implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets metric
+     * Gets backup_id
      *
-     * @return string|null
+     * @return string
      */
-    public function getMetric()
+    public function getBackupId()
     {
-        return $this->container['metric'];
+        return $this->container['backup_id'];
     }
 
     /**
-     * Sets metric
+     * Sets backup_id
      *
-     * @param string|null $metric metric
+     * @param string $backup_id The backup ID to restore (must match path param)
      *
      * @return self
      */
-    public function setMetric($metric)
+    public function setBackupId($backup_id)
     {
-        if (is_null($metric)) {
-            throw new \InvalidArgumentException('non-nullable metric cannot be null');
+        if (is_null($backup_id)) {
+            throw new \InvalidArgumentException('non-nullable backup_id cannot be null');
         }
-        $allowedValues = $this->getMetricAllowableValues();
-        if (!in_array($metric, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'metric', must be one of '%s'",
-                    $metric,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['metric'] = $metric;
+        $this->container['backup_id'] = $backup_id;
 
         return $this;
     }
 
     /**
-     * Gets target_value
+     * Gets acknowledge_dataloss
      *
-     * @return float|null
+     * @return bool
      */
-    public function getTargetValue()
+    public function getAcknowledgeDataloss()
     {
-        return $this->container['target_value'];
+        return $this->container['acknowledge_dataloss'];
     }
 
     /**
-     * Sets target_value
+     * Sets acknowledge_dataloss
      *
-     * @param float|null $target_value target_value
+     * @param bool $acknowledge_dataloss Must be true to confirm existing data will be overwritten
      *
      * @return self
      */
-    public function setTargetValue($target_value)
+    public function setAcknowledgeDataloss($acknowledge_dataloss)
     {
-        if (is_null($target_value)) {
-            throw new \InvalidArgumentException('non-nullable target_value cannot be null');
+        if (is_null($acknowledge_dataloss)) {
+            throw new \InvalidArgumentException('non-nullable acknowledge_dataloss cannot be null');
         }
-        $this->container['target_value'] = $target_value;
-
-        return $this;
-    }
-
-    /**
-     * Gets scale_in_cooldown_seconds
-     *
-     * @return int|null
-     */
-    public function getScaleInCooldownSeconds()
-    {
-        return $this->container['scale_in_cooldown_seconds'];
-    }
-
-    /**
-     * Sets scale_in_cooldown_seconds
-     *
-     * @param int|null $scale_in_cooldown_seconds scale_in_cooldown_seconds
-     *
-     * @return self
-     */
-    public function setScaleInCooldownSeconds($scale_in_cooldown_seconds)
-    {
-        if (is_null($scale_in_cooldown_seconds)) {
-            throw new \InvalidArgumentException('non-nullable scale_in_cooldown_seconds cannot be null');
-        }
-        $this->container['scale_in_cooldown_seconds'] = $scale_in_cooldown_seconds;
-
-        return $this;
-    }
-
-    /**
-     * Gets scale_out_cooldown_seconds
-     *
-     * @return int|null
-     */
-    public function getScaleOutCooldownSeconds()
-    {
-        return $this->container['scale_out_cooldown_seconds'];
-    }
-
-    /**
-     * Sets scale_out_cooldown_seconds
-     *
-     * @param int|null $scale_out_cooldown_seconds scale_out_cooldown_seconds
-     *
-     * @return self
-     */
-    public function setScaleOutCooldownSeconds($scale_out_cooldown_seconds)
-    {
-        if (is_null($scale_out_cooldown_seconds)) {
-            throw new \InvalidArgumentException('non-nullable scale_out_cooldown_seconds cannot be null');
-        }
-        $this->container['scale_out_cooldown_seconds'] = $scale_out_cooldown_seconds;
+        $this->container['acknowledge_dataloss'] = $acknowledge_dataloss;
 
         return $this;
     }
