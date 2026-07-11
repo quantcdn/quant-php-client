@@ -63,6 +63,8 @@ class Compose implements ModelInterface, ArrayAccess, \JsonSerializable
         'task_memory' => 'int',
         'min_capacity' => 'int',
         'max_capacity' => 'int',
+        'single_task_only' => 'bool',
+        'startup_grace_period_seconds' => 'int',
         'spot_configuration' => '\QuantClient\Model\SpotConfiguration',
         'enable_cross_env_networking' => 'bool',
         'enable_cross_app_networking' => 'bool'
@@ -82,6 +84,8 @@ class Compose implements ModelInterface, ArrayAccess, \JsonSerializable
         'task_memory' => null,
         'min_capacity' => null,
         'max_capacity' => null,
+        'single_task_only' => null,
+        'startup_grace_period_seconds' => null,
         'spot_configuration' => null,
         'enable_cross_env_networking' => null,
         'enable_cross_app_networking' => null
@@ -99,6 +103,8 @@ class Compose implements ModelInterface, ArrayAccess, \JsonSerializable
         'task_memory' => false,
         'min_capacity' => false,
         'max_capacity' => false,
+        'single_task_only' => true,
+        'startup_grace_period_seconds' => true,
         'spot_configuration' => false,
         'enable_cross_env_networking' => true,
         'enable_cross_app_networking' => true
@@ -196,6 +202,8 @@ class Compose implements ModelInterface, ArrayAccess, \JsonSerializable
         'task_memory' => 'taskMemory',
         'min_capacity' => 'minCapacity',
         'max_capacity' => 'maxCapacity',
+        'single_task_only' => 'singleTaskOnly',
+        'startup_grace_period_seconds' => 'startupGracePeriodSeconds',
         'spot_configuration' => 'spotConfiguration',
         'enable_cross_env_networking' => 'enableCrossEnvNetworking',
         'enable_cross_app_networking' => 'enableCrossAppNetworking'
@@ -213,6 +221,8 @@ class Compose implements ModelInterface, ArrayAccess, \JsonSerializable
         'task_memory' => 'setTaskMemory',
         'min_capacity' => 'setMinCapacity',
         'max_capacity' => 'setMaxCapacity',
+        'single_task_only' => 'setSingleTaskOnly',
+        'startup_grace_period_seconds' => 'setStartupGracePeriodSeconds',
         'spot_configuration' => 'setSpotConfiguration',
         'enable_cross_env_networking' => 'setEnableCrossEnvNetworking',
         'enable_cross_app_networking' => 'setEnableCrossAppNetworking'
@@ -230,6 +240,8 @@ class Compose implements ModelInterface, ArrayAccess, \JsonSerializable
         'task_memory' => 'getTaskMemory',
         'min_capacity' => 'getMinCapacity',
         'max_capacity' => 'getMaxCapacity',
+        'single_task_only' => 'getSingleTaskOnly',
+        'startup_grace_period_seconds' => 'getStartupGracePeriodSeconds',
         'spot_configuration' => 'getSpotConfiguration',
         'enable_cross_env_networking' => 'getEnableCrossEnvNetworking',
         'enable_cross_app_networking' => 'getEnableCrossAppNetworking'
@@ -298,6 +310,8 @@ class Compose implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('task_memory', $data ?? [], null);
         $this->setIfExists('min_capacity', $data ?? [], null);
         $this->setIfExists('max_capacity', $data ?? [], null);
+        $this->setIfExists('single_task_only', $data ?? [], null);
+        $this->setIfExists('startup_grace_period_seconds', $data ?? [], 120);
         $this->setIfExists('spot_configuration', $data ?? [], null);
         $this->setIfExists('enable_cross_env_networking', $data ?? [], false);
         $this->setIfExists('enable_cross_app_networking', $data ?? [], false);
@@ -329,6 +343,14 @@ class Compose implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['startup_grace_period_seconds']) && ($this->container['startup_grace_period_seconds'] > 3600)) {
+            $invalidProperties[] = "invalid value for 'startup_grace_period_seconds', must be smaller than or equal to 3600.";
+        }
+
+        if (!is_null($this->container['startup_grace_period_seconds']) && ($this->container['startup_grace_period_seconds'] < 0)) {
+            $invalidProperties[] = "invalid value for 'startup_grace_period_seconds', must be bigger than or equal to 0.";
+        }
 
         return $invalidProperties;
     }
@@ -503,6 +525,82 @@ class Compose implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable max_capacity cannot be null');
         }
         $this->container['max_capacity'] = $max_capacity;
+
+        return $this;
+    }
+
+    /**
+     * Gets single_task_only
+     *
+     * @return bool|null
+     */
+    public function getSingleTaskOnly()
+    {
+        return $this->container['single_task_only'];
+    }
+
+    /**
+     * Sets single_task_only
+     *
+     * @param bool|null $single_task_only Optional. Forces single-task mode for data-safe applications (max one running task). When true: capacity is locked to 1. When false: explicitly allows scaling. When omitted: the platform auto-detects stateful containers and enables single-task mode if found.
+     *
+     * @return self
+     */
+    public function setSingleTaskOnly($single_task_only)
+    {
+        if (is_null($single_task_only)) {
+            array_push($this->openAPINullablesSetToNull, 'single_task_only');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('single_task_only', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['single_task_only'] = $single_task_only;
+
+        return $this;
+    }
+
+    /**
+     * Gets startup_grace_period_seconds
+     *
+     * @return int|null
+     */
+    public function getStartupGracePeriodSeconds()
+    {
+        return $this->container['startup_grace_period_seconds'];
+    }
+
+    /**
+     * Sets startup_grace_period_seconds
+     *
+     * @param int|null $startup_grace_period_seconds Optional. Seconds the load balancer waits after a task starts before an unhealthy health check can replace it (applied as the ECS service's healthCheckGracePeriodSeconds when a load balancer is attached). Raise for apps that are slow to boot, e.g. run migrations on startup. Tasks that become healthy sooner still enter service immediately. Defaults to 120 when omitted.
+     *
+     * @return self
+     */
+    public function setStartupGracePeriodSeconds($startup_grace_period_seconds)
+    {
+        if (is_null($startup_grace_period_seconds)) {
+            array_push($this->openAPINullablesSetToNull, 'startup_grace_period_seconds');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('startup_grace_period_seconds', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($startup_grace_period_seconds) && ($startup_grace_period_seconds > 3600)) {
+            throw new \InvalidArgumentException('invalid value for $startup_grace_period_seconds when calling Compose., must be smaller than or equal to 3600.');
+        }
+        if (!is_null($startup_grace_period_seconds) && ($startup_grace_period_seconds < 0)) {
+            throw new \InvalidArgumentException('invalid value for $startup_grace_period_seconds when calling Compose., must be bigger than or equal to 0.');
+        }
+
+        $this->container['startup_grace_period_seconds'] = $startup_grace_period_seconds;
 
         return $this;
     }

@@ -61,6 +61,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
         'organisation' => 'string',
         'database' => '\QuantClient\Model\ApplicationDatabase',
         'filesystem' => '\QuantClient\Model\ApplicationFilesystem',
+        'cache' => '\QuantClient\Model\ApplicationCache',
         'compose_definition' => '\QuantClient\Model\Compose',
         'status' => 'string',
         'deployment_information' => '\QuantClient\Model\ApplicationDeploymentInformationInner[]',
@@ -85,6 +86,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
         'organisation' => null,
         'database' => null,
         'filesystem' => null,
+        'cache' => null,
         'compose_definition' => null,
         'status' => null,
         'deployment_information' => null,
@@ -107,6 +109,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
         'organisation' => false,
         'database' => true,
         'filesystem' => true,
+        'cache' => true,
         'compose_definition' => false,
         'status' => true,
         'deployment_information' => true,
@@ -209,6 +212,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
         'organisation' => 'organisation',
         'database' => 'database',
         'filesystem' => 'filesystem',
+        'cache' => 'cache',
         'compose_definition' => 'composeDefinition',
         'status' => 'status',
         'deployment_information' => 'deploymentInformation',
@@ -231,6 +235,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
         'organisation' => 'setOrganisation',
         'database' => 'setDatabase',
         'filesystem' => 'setFilesystem',
+        'cache' => 'setCache',
         'compose_definition' => 'setComposeDefinition',
         'status' => 'setStatus',
         'deployment_information' => 'setDeploymentInformation',
@@ -253,6 +258,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
         'organisation' => 'getOrganisation',
         'database' => 'getDatabase',
         'filesystem' => 'getFilesystem',
+        'cache' => 'getCache',
         'compose_definition' => 'getComposeDefinition',
         'status' => 'getStatus',
         'deployment_information' => 'getDeploymentInformation',
@@ -326,6 +332,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('organisation', $data ?? [], null);
         $this->setIfExists('database', $data ?? [], null);
         $this->setIfExists('filesystem', $data ?? [], null);
+        $this->setIfExists('cache', $data ?? [], null);
         $this->setIfExists('compose_definition', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('deployment_information', $data ?? [], null);
@@ -504,6 +511,40 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['filesystem'] = $filesystem;
+
+        return $this;
+    }
+
+    /**
+     * Gets cache
+     *
+     * @return \QuantClient\Model\ApplicationCache|null
+     */
+    public function getCache()
+    {
+        return $this->container['cache'];
+    }
+
+    /**
+     * Sets cache
+     *
+     * @param \QuantClient\Model\ApplicationCache|null $cache cache
+     *
+     * @return self
+     */
+    public function setCache($cache)
+    {
+        if (is_null($cache)) {
+            array_push($this->openAPINullablesSetToNull, 'cache');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('cache', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['cache'] = $cache;
 
         return $this;
     }

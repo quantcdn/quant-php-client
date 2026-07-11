@@ -63,7 +63,10 @@ class GetGovernanceConfig200ResponseSpendLimits implements ModelInterface, Array
         'per_user_daily_budget_cents' => 'int',
         'warning_threshold_percent' => 'int',
         'interface_limits' => 'array<string,\QuantClient\Model\GetGovernanceConfig200ResponseSpendLimitsInterfaceLimitsValue>',
-        'user_overrides' => 'array<string,\QuantClient\Model\GetGovernanceConfig200ResponseSpendLimitsUserOverridesValue>'
+        'user_overrides' => 'array<string,\QuantClient\Model\GetGovernanceConfig200ResponseSpendLimitsUserOverridesValue>',
+        'per_token_monthly_budget_cents' => 'int',
+        'per_token_daily_budget_cents' => 'int',
+        'token_overrides' => 'array<string,\QuantClient\Model\GetGovernanceConfig200ResponseSpendLimitsUserOverridesValue>'
     ];
 
     /**
@@ -80,7 +83,10 @@ class GetGovernanceConfig200ResponseSpendLimits implements ModelInterface, Array
         'per_user_daily_budget_cents' => null,
         'warning_threshold_percent' => null,
         'interface_limits' => null,
-        'user_overrides' => null
+        'user_overrides' => null,
+        'per_token_monthly_budget_cents' => null,
+        'per_token_daily_budget_cents' => null,
+        'token_overrides' => null
     ];
 
     /**
@@ -95,7 +101,10 @@ class GetGovernanceConfig200ResponseSpendLimits implements ModelInterface, Array
         'per_user_daily_budget_cents' => true,
         'warning_threshold_percent' => true,
         'interface_limits' => false,
-        'user_overrides' => false
+        'user_overrides' => false,
+        'per_token_monthly_budget_cents' => true,
+        'per_token_daily_budget_cents' => true,
+        'token_overrides' => false
     ];
 
     /**
@@ -190,7 +199,10 @@ class GetGovernanceConfig200ResponseSpendLimits implements ModelInterface, Array
         'per_user_daily_budget_cents' => 'perUserDailyBudgetCents',
         'warning_threshold_percent' => 'warningThresholdPercent',
         'interface_limits' => 'interfaceLimits',
-        'user_overrides' => 'userOverrides'
+        'user_overrides' => 'userOverrides',
+        'per_token_monthly_budget_cents' => 'perTokenMonthlyBudgetCents',
+        'per_token_daily_budget_cents' => 'perTokenDailyBudgetCents',
+        'token_overrides' => 'tokenOverrides'
     ];
 
     /**
@@ -205,7 +217,10 @@ class GetGovernanceConfig200ResponseSpendLimits implements ModelInterface, Array
         'per_user_daily_budget_cents' => 'setPerUserDailyBudgetCents',
         'warning_threshold_percent' => 'setWarningThresholdPercent',
         'interface_limits' => 'setInterfaceLimits',
-        'user_overrides' => 'setUserOverrides'
+        'user_overrides' => 'setUserOverrides',
+        'per_token_monthly_budget_cents' => 'setPerTokenMonthlyBudgetCents',
+        'per_token_daily_budget_cents' => 'setPerTokenDailyBudgetCents',
+        'token_overrides' => 'setTokenOverrides'
     ];
 
     /**
@@ -220,7 +235,10 @@ class GetGovernanceConfig200ResponseSpendLimits implements ModelInterface, Array
         'per_user_daily_budget_cents' => 'getPerUserDailyBudgetCents',
         'warning_threshold_percent' => 'getWarningThresholdPercent',
         'interface_limits' => 'getInterfaceLimits',
-        'user_overrides' => 'getUserOverrides'
+        'user_overrides' => 'getUserOverrides',
+        'per_token_monthly_budget_cents' => 'getPerTokenMonthlyBudgetCents',
+        'per_token_daily_budget_cents' => 'getPerTokenDailyBudgetCents',
+        'token_overrides' => 'getTokenOverrides'
     ];
 
     /**
@@ -287,6 +305,9 @@ class GetGovernanceConfig200ResponseSpendLimits implements ModelInterface, Array
         $this->setIfExists('warning_threshold_percent', $data ?? [], null);
         $this->setIfExists('interface_limits', $data ?? [], null);
         $this->setIfExists('user_overrides', $data ?? [], null);
+        $this->setIfExists('per_token_monthly_budget_cents', $data ?? [], null);
+        $this->setIfExists('per_token_daily_budget_cents', $data ?? [], null);
+        $this->setIfExists('token_overrides', $data ?? [], null);
     }
 
     /**
@@ -551,6 +572,101 @@ class GetGovernanceConfig200ResponseSpendLimits implements ModelInterface, Array
             throw new \InvalidArgumentException('non-nullable user_overrides cannot be null');
         }
         $this->container['user_overrides'] = $user_overrides;
+
+        return $this;
+    }
+
+    /**
+     * Gets per_token_monthly_budget_cents
+     *
+     * @return int|null
+     */
+    public function getPerTokenMonthlyBudgetCents()
+    {
+        return $this->container['per_token_monthly_budget_cents'];
+    }
+
+    /**
+     * Sets per_token_monthly_budget_cents
+     *
+     * @param int|null $per_token_monthly_budget_cents Flat monthly cap in cents applied to every API token without a named override
+     *
+     * @return self
+     */
+    public function setPerTokenMonthlyBudgetCents($per_token_monthly_budget_cents)
+    {
+        if (is_null($per_token_monthly_budget_cents)) {
+            array_push($this->openAPINullablesSetToNull, 'per_token_monthly_budget_cents');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('per_token_monthly_budget_cents', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['per_token_monthly_budget_cents'] = $per_token_monthly_budget_cents;
+
+        return $this;
+    }
+
+    /**
+     * Gets per_token_daily_budget_cents
+     *
+     * @return int|null
+     */
+    public function getPerTokenDailyBudgetCents()
+    {
+        return $this->container['per_token_daily_budget_cents'];
+    }
+
+    /**
+     * Sets per_token_daily_budget_cents
+     *
+     * @param int|null $per_token_daily_budget_cents Flat daily cap in cents applied to every API token without a named override
+     *
+     * @return self
+     */
+    public function setPerTokenDailyBudgetCents($per_token_daily_budget_cents)
+    {
+        if (is_null($per_token_daily_budget_cents)) {
+            array_push($this->openAPINullablesSetToNull, 'per_token_daily_budget_cents');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('per_token_daily_budget_cents', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['per_token_daily_budget_cents'] = $per_token_daily_budget_cents;
+
+        return $this;
+    }
+
+    /**
+     * Gets token_overrides
+     *
+     * @return array<string,\QuantClient\Model\GetGovernanceConfig200ResponseSpendLimitsUserOverridesValue>|null
+     */
+    public function getTokenOverrides()
+    {
+        return $this->container['token_overrides'];
+    }
+
+    /**
+     * Sets token_overrides
+     *
+     * @param array<string,\QuantClient\Model\GetGovernanceConfig200ResponseSpendLimitsUserOverridesValue>|null $token_overrides Per-token budget overrides keyed by API token id. Replaces the flat per-token budget for that token; unlimited=true exempts it.
+     *
+     * @return self
+     */
+    public function setTokenOverrides($token_overrides)
+    {
+        if (is_null($token_overrides)) {
+            throw new \InvalidArgumentException('non-nullable token_overrides cannot be null');
+        }
+        $this->container['token_overrides'] = $token_overrides;
 
         return $this;
     }

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **organisation** | **string** | Organisation machine name |
 **database** | [**\QuantClient\Model\ApplicationDatabase**](ApplicationDatabase.md) |  | [optional]
 **filesystem** | [**\QuantClient\Model\ApplicationFilesystem**](ApplicationFilesystem.md) |  | [optional]
+**cache** | [**\QuantClient\Model\ApplicationCache**](ApplicationCache.md) |  | [optional]
 **compose_definition** | [**\QuantClient\Model\Compose**](Compose.md) |  | [optional]
 **status** | **string** | Application status | [optional] [readonly]
 **deployment_information** | [**\QuantClient\Model\ApplicationDeploymentInformationInner[]**](ApplicationDeploymentInformationInner.md) | Deployment history | [optional] [readonly]
