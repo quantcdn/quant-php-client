@@ -7,9 +7,12 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 | [**chatWithAIAgent()**](AIAgentsApi.md#chatWithAIAgent) | **POST** /api/v3/organizations/{organisation}/ai/agents/{agentId}/chat | Chat with AI Agent |
 | [**createAIAgent()**](AIAgentsApi.md#createAIAgent) | **POST** /api/v3/organizations/{organisation}/ai/agents | Create AI Agent |
 | [**deleteAIAgent()**](AIAgentsApi.md#deleteAIAgent) | **DELETE** /api/v3/organizations/{organisation}/ai/agents/{agentId} | Delete Agent |
+| [**deleteAgentOverlay()**](AIAgentsApi.md#deleteAgentOverlay) | **DELETE** /api/v3/organizations/{organisation}/ai/agents/{agentId}/overlay | Delete Agent Overlay |
 | [**getAIAgent()**](AIAgentsApi.md#getAIAgent) | **GET** /api/v3/organizations/{organisation}/ai/agents/{agentId} | Get Agent Details |
+| [**getAgentOverlay()**](AIAgentsApi.md#getAgentOverlay) | **GET** /api/v3/organizations/{organisation}/ai/agents/{agentId}/overlay | Get Agent Overlay |
 | [**listAIAgents()**](AIAgentsApi.md#listAIAgents) | **GET** /api/v3/organizations/{organisation}/ai/agents | List AI Agents |
 | [**updateAIAgent()**](AIAgentsApi.md#updateAIAgent) | **PUT** /api/v3/organizations/{organisation}/ai/agents/{agentId} | Update Agent |
+| [**upsertAgentOverlay()**](AIAgentsApi.md#upsertAgentOverlay) | **PUT** /api/v3/organizations/{organisation}/ai/agents/{agentId}/overlay | Upsert Agent Overlay |
 
 
 ## `chatWithAIAgent()`
@@ -200,6 +203,68 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `deleteAgentOverlay()`
+
+```php
+deleteAgentOverlay($organisation, $agent_id): \QuantClient\Model\DeleteAgentOverlay200Response
+```
+
+Delete Agent Overlay
+
+Removes the per-organisation overlay for a global agent, reverting it to platform defaults.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\AIAgentsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organisation = 'organisation_example'; // string | The organisation ID
+$agent_id = 'agent_id_example'; // string | Global agent identifier
+
+try {
+    $result = $apiInstance->deleteAgentOverlay($organisation, $agent_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AIAgentsApi->deleteAgentOverlay: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation** | **string**| The organisation ID | |
+| **agent_id** | **string**| Global agent identifier | |
+
+### Return type
+
+[**\QuantClient\Model\DeleteAgentOverlay200Response**](../Model/DeleteAgentOverlay200Response.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getAIAgent()`
 
 ```php
@@ -248,6 +313,68 @@ try {
 ### Return type
 
 [**\QuantClient\Model\GetAIAgent200Response**](../Model/GetAIAgent200Response.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getAgentOverlay()`
+
+```php
+getAgentOverlay($organisation, $agent_id): \QuantClient\Model\GetAgentOverlay200Response
+```
+
+Get Agent Overlay
+
+Returns the per-organisation overlay for a global agent, plus base agent metadata for UI context. If no overlay exists the response contains `overlay: null`. Overlays can only be created for global agents.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\AIAgentsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organisation = 'organisation_example'; // string | The organisation ID
+$agent_id = 'agent_id_example'; // string | Global agent identifier (e.g., 'quantgov-code')
+
+try {
+    $result = $apiInstance->getAgentOverlay($organisation, $agent_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AIAgentsApi->getAgentOverlay: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation** | **string**| The organisation ID | |
+| **agent_id** | **string**| Global agent identifier (e.g., &#39;quantgov-code&#39;) | |
+
+### Return type
+
+[**\QuantClient\Model\GetAgentOverlay200Response**](../Model/GetAgentOverlay200Response.md)
 
 ### Authorization
 
@@ -374,6 +501,70 @@ try {
 ### Return type
 
 [**\QuantClient\Model\UpdateAIAgent200Response**](../Model/UpdateAIAgent200Response.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `upsertAgentOverlay()`
+
+```php
+upsertAgentOverlay($organisation, $agent_id, $upsert_agent_overlay_request): \QuantClient\Model\UpsertAgentOverlay200Response
+```
+
+Upsert Agent Overlay
+
+Creates or replaces the per-organisation overlay for a global agent. PUT is full replacement — omitted optional fields are removed. Include `version` from a prior GET to enable compare-and-swap (409 on conflict). Omit for last-writer-wins.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\AIAgentsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organisation = 'organisation_example'; // string | The organisation ID
+$agent_id = 'agent_id_example'; // string | Global agent identifier
+$upsert_agent_overlay_request = new \QuantClient\Model\UpsertAgentOverlayRequest(); // \QuantClient\Model\UpsertAgentOverlayRequest
+
+try {
+    $result = $apiInstance->upsertAgentOverlay($organisation, $agent_id, $upsert_agent_overlay_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AIAgentsApi->upsertAgentOverlay: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation** | **string**| The organisation ID | |
+| **agent_id** | **string**| Global agent identifier | |
+| **upsert_agent_overlay_request** | [**\QuantClient\Model\UpsertAgentOverlayRequest**](../Model/UpsertAgentOverlayRequest.md)|  | |
+
+### Return type
+
+[**\QuantClient\Model\UpsertAgentOverlay200Response**](../Model/UpsertAgentOverlay200Response.md)
 
 ### Authorization
 
