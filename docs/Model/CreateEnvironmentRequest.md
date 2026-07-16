@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **env_name** | **string** | Environment name (e.g., &#39;staging&#39;, &#39;development&#39;) |
 **min_capacity** | **int** | Minimum number of instances | [optional]
 **max_capacity** | **int** | Maximum number of instances | [optional]
+**single_task_only** | **bool** | Optional. Forces single-task mode (max one running task). When omitted, the platform auto-detects stateful containers. | [optional]
+**startup_grace_period_seconds** | **int** | Optional. Seconds the load balancer waits after a task starts before an unhealthy health check can replace it. If not set, the value from composeDefinition (or default 120) is used. | [optional] [default to 120]
 **clone_configuration_from** | **string** | Clone configuration from an existing environment | [optional]
 **compose_definition** | [**\QuantClient\Model\Compose**](Compose.md) |  | [optional]
 **image_suffix** | **string** | Optional image tag suffix for cloning | [optional]
