@@ -4,18 +4,20 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**deleteScalingPolicy()**](ScalingPolicyApi.md#deleteScalingPolicy) | **DELETE** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/scaling-policies/{policyName} | Delete the scaling policy for an environment |
-| [**getScalingPolicies()**](ScalingPolicyApi.md#getScalingPolicies) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/scaling-policies | Get the scaling policies for an environment |
-| [**updateScalingPolicy()**](ScalingPolicyApi.md#updateScalingPolicy) | **PUT** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/scaling-policies | Update the scaling policy for an environment |
+| [**deleteScalingPolicy()**](ScalingPolicyApi.md#deleteScalingPolicy) | **DELETE** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/scaling-policies | Delete Scaling Policy |
+| [**listScalingPolicies()**](ScalingPolicyApi.md#listScalingPolicies) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/scaling-policies | List Scaling Policies |
+| [**upsertScalingPolicy()**](ScalingPolicyApi.md#upsertScalingPolicy) | **PUT** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/scaling-policies | Upsert Scaling Policy |
 
 
 ## `deleteScalingPolicy()`
 
 ```php
-deleteScalingPolicy($organisation, $application, $environment, $policy_name)
+deleteScalingPolicy($organisation, $application, $environment, $metric, $policy_name)
 ```
 
-Delete the scaling policy for an environment
+Delete Scaling Policy
+
+Deletes a specific scaling policy for the environment. Specify the metric type or policy name to delete a single policy. If neither is provided, all policies will be deleted.
 
 ### Example
 
@@ -34,13 +36,14 @@ $apiInstance = new QuantClient\Api\ScalingPolicyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
-$environment = test-env; // string | The environment ID
-$policy_name = 'policy_name_example'; // string | The policy name
+$organisation = 'organisation_example'; // string
+$application = 'application_example'; // string
+$environment = 'environment_example'; // string
+$metric = 'metric_example'; // string | Optional. Delete by metric type.
+$policy_name = 'policy_name_example'; // string | Optional. Delete by exact policy name.
 
 try {
-    $apiInstance->deleteScalingPolicy($organisation, $application, $environment, $policy_name);
+    $apiInstance->deleteScalingPolicy($organisation, $application, $environment, $metric, $policy_name);
 } catch (Exception $e) {
     echo 'Exception when calling ScalingPolicyApi->deleteScalingPolicy: ', $e->getMessage(), PHP_EOL;
 }
@@ -50,10 +53,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organisation** | **string**| The organisation ID | |
-| **application** | **string**| The application ID | |
-| **environment** | **string**| The environment ID | |
-| **policy_name** | **string**| The policy name | |
+| **organisation** | **string**|  | |
+| **application** | **string**|  | |
+| **environment** | **string**|  | |
+| **metric** | **string**| Optional. Delete by metric type. | [optional] |
+| **policy_name** | **string**| Optional. Delete by exact policy name. | [optional] |
 
 ### Return type
 
@@ -72,13 +76,15 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getScalingPolicies()`
+## `listScalingPolicies()`
 
 ```php
-getScalingPolicies($organisation, $application, $environment)
+listScalingPolicies($organisation, $application, $environment, $metric, $policy_name): \QuantClient\Model\ScalingPolicyListResponse
 ```
 
-Get the scaling policies for an environment
+List Scaling Policies
+
+Retrieves all active target tracking scaling policies for the environment. Returns an array of policies, each with its metric, target value, cooldowns, and resource label (if applicable).
 
 ### Example
 
@@ -97,14 +103,17 @@ $apiInstance = new QuantClient\Api\ScalingPolicyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
-$environment = test-env; // string | The environment ID
+$organisation = 'organisation_example'; // string
+$application = 'application_example'; // string
+$environment = 'environment_example'; // string
+$metric = 'metric_example'; // string | Optional. Filter policies by metric type.
+$policy_name = 'policy_name_example'; // string | Optional. Filter policies by exact policy name.
 
 try {
-    $apiInstance->getScalingPolicies($organisation, $application, $environment);
+    $result = $apiInstance->listScalingPolicies($organisation, $application, $environment, $metric, $policy_name);
+    print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ScalingPolicyApi->getScalingPolicies: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ScalingPolicyApi->listScalingPolicies: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -112,13 +121,15 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organisation** | **string**| The organisation ID | |
-| **application** | **string**| The application ID | |
-| **environment** | **string**| The environment ID | |
+| **organisation** | **string**|  | |
+| **application** | **string**|  | |
+| **environment** | **string**|  | |
+| **metric** | **string**| Optional. Filter policies by metric type. | [optional] |
+| **policy_name** | **string**| Optional. Filter policies by exact policy name. | [optional] |
 
 ### Return type
 
-void (empty response body)
+[**\QuantClient\Model\ScalingPolicyListResponse**](../Model/ScalingPolicyListResponse.md)
 
 ### Authorization
 
@@ -127,19 +138,21 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `updateScalingPolicy()`
+## `upsertScalingPolicy()`
 
 ```php
-updateScalingPolicy($organisation, $application, $environment, $scaling_policy)
+upsertScalingPolicy($organisation, $application, $environment, $set_scaling_policy_request, $policy_name): \QuantClient\Model\GetScalingPolicyResponse
 ```
 
-Update the scaling policy for an environment
+Upsert Scaling Policy
+
+Creates or updates a target tracking scaling policy for the environment. Specify the metric type and target value. If a policy with the same metric or name exists, it will be updated. Optionally, provide a custom policy name via query.
 
 ### Example
 
@@ -158,15 +171,17 @@ $apiInstance = new QuantClient\Api\ScalingPolicyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organisation = test-org; // string | The organisation ID
-$application = test-app; // string | The application ID
-$environment = test-env; // string | The environment ID
-$scaling_policy = new \QuantClient\Model\ScalingPolicy(); // \QuantClient\Model\ScalingPolicy
+$organisation = 'organisation_example'; // string
+$application = 'application_example'; // string
+$environment = 'environment_example'; // string
+$set_scaling_policy_request = new \QuantClient\Model\SetScalingPolicyRequest(); // \QuantClient\Model\SetScalingPolicyRequest
+$policy_name = 'policy_name_example'; // string | Optional. Specify a custom policy name to upsert.
 
 try {
-    $apiInstance->updateScalingPolicy($organisation, $application, $environment, $scaling_policy);
+    $result = $apiInstance->upsertScalingPolicy($organisation, $application, $environment, $set_scaling_policy_request, $policy_name);
+    print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ScalingPolicyApi->updateScalingPolicy: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ScalingPolicyApi->upsertScalingPolicy: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -174,14 +189,15 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **organisation** | **string**| The organisation ID | |
-| **application** | **string**| The application ID | |
-| **environment** | **string**| The environment ID | |
-| **scaling_policy** | [**\QuantClient\Model\ScalingPolicy**](../Model/ScalingPolicy.md)|  | |
+| **organisation** | **string**|  | |
+| **application** | **string**|  | |
+| **environment** | **string**|  | |
+| **set_scaling_policy_request** | [**\QuantClient\Model\SetScalingPolicyRequest**](../Model/SetScalingPolicyRequest.md)|  | |
+| **policy_name** | **string**| Optional. Specify a custom policy name to upsert. | [optional] |
 
 ### Return type
 
-void (empty response body)
+[**\QuantClient\Model\GetScalingPolicyResponse**](../Model/GetScalingPolicyResponse.md)
 
 ### Authorization
 
@@ -190,7 +206,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

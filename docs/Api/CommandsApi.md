@@ -4,15 +4,15 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**createCommand()**](CommandsApi.md#createCommand) | **POST** /api/v3/organizations/{organisation}/environments/{environment}/commands | Create a command for an environment |
-| [**getCommand()**](CommandsApi.md#getCommand) | **GET** /api/v3/organizations/{organisation}/environments/{environment}/commands/{command} | Get a command |
-| [**listCommands()**](CommandsApi.md#listCommands) | **GET** /api/v3/organizations/{organisation}/environments/{environment}/commands | Get all commands for an environment |
+| [**createCommand()**](CommandsApi.md#createCommand) | **POST** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/commands | Create a command for an environment |
+| [**getCommand()**](CommandsApi.md#getCommand) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/commands/{command} | Get a command |
+| [**listCommands()**](CommandsApi.md#listCommands) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/commands | Get all commands for an environment |
 
 
 ## `createCommand()`
 
 ```php
-createCommand($organisation, $environment, $create_command_request): \QuantClient\Model\Command
+createCommand($organisation, $application, $environment, $create_command_request): \QuantClient\Model\Command
 ```
 
 Create a command for an environment
@@ -35,11 +35,12 @@ $apiInstance = new QuantClient\Api\CommandsApi(
     $config
 );
 $organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
 $environment = test-env; // string | The environment ID
 $create_command_request = new \QuantClient\Model\CreateCommandRequest(); // \QuantClient\Model\CreateCommandRequest
 
 try {
-    $result = $apiInstance->createCommand($organisation, $environment, $create_command_request);
+    $result = $apiInstance->createCommand($organisation, $application, $environment, $create_command_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CommandsApi->createCommand: ', $e->getMessage(), PHP_EOL;
@@ -51,6 +52,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **organisation** | **string**| The organisation ID | |
+| **application** | **string**| The application ID | |
 | **environment** | **string**| The environment ID | |
 | **create_command_request** | [**\QuantClient\Model\CreateCommandRequest**](../Model/CreateCommandRequest.md)|  | |
 
@@ -74,7 +76,7 @@ try {
 ## `getCommand()`
 
 ```php
-getCommand($organisation, $environment, $command): \QuantClient\Model\Command
+getCommand($organisation, $application, $environment, $command): \QuantClient\Model\Command
 ```
 
 Get a command
@@ -97,11 +99,12 @@ $apiInstance = new QuantClient\Api\CommandsApi(
     $config
 );
 $organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
 $environment = test-env; // string | The environment ID
-$command = test-cmd; // string | The command ID
+$command = test-cmd; // string | The command run ID
 
 try {
-    $result = $apiInstance->getCommand($organisation, $environment, $command);
+    $result = $apiInstance->getCommand($organisation, $application, $environment, $command);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CommandsApi->getCommand: ', $e->getMessage(), PHP_EOL;
@@ -113,8 +116,9 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **organisation** | **string**| The organisation ID | |
+| **application** | **string**| The application ID | |
 | **environment** | **string**| The environment ID | |
-| **command** | **string**| The command ID | |
+| **command** | **string**| The command run ID | |
 
 ### Return type
 
@@ -136,7 +140,7 @@ try {
 ## `listCommands()`
 
 ```php
-listCommands($organisation, $environment): \QuantClient\Model\Command
+listCommands($organisation, $application, $environment)
 ```
 
 Get all commands for an environment
@@ -159,11 +163,11 @@ $apiInstance = new QuantClient\Api\CommandsApi(
     $config
 );
 $organisation = test-org; // string | The organisation ID
+$application = test-app; // string | The application ID
 $environment = test-env; // string | The environment ID
 
 try {
-    $result = $apiInstance->listCommands($organisation, $environment);
-    print_r($result);
+    $apiInstance->listCommands($organisation, $application, $environment);
 } catch (Exception $e) {
     echo 'Exception when calling CommandsApi->listCommands: ', $e->getMessage(), PHP_EOL;
 }
@@ -174,11 +178,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **organisation** | **string**| The organisation ID | |
+| **application** | **string**| The application ID | |
 | **environment** | **string**| The environment ID | |
 
 ### Return type
 
-[**\QuantClient\Model\Command**](../Model/Command.md)
+void (empty response body)
 
 ### Authorization
 
@@ -187,7 +192,7 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

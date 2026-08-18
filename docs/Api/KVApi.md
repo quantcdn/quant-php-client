@@ -11,8 +11,10 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 | [**kVItemsList()**](KVApi.md#kVItemsList) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items | List items in a kv store |
 | [**kVItemsShow()**](KVApi.md#kVItemsShow) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key} | Get an item from a kv store |
 | [**kVItemsUpdate()**](KVApi.md#kVItemsUpdate) | **PUT** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key} | Update an item in a kv store |
+| [**kVLinkToProject()**](KVApi.md#kVLinkToProject) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/link | Link a KV store to another project |
 | [**kVList()**](KVApi.md#kVList) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv | List key-value stores |
 | [**kVShow()**](KVApi.md#kVShow) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id} | Get a kv store |
+| [**kVUnlinkFromProject()**](KVApi.md#kVUnlinkFromProject) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/link | Unlink a KV store from this project |
 
 
 ## `kVCreate()`
@@ -468,6 +470,72 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `kVLinkToProject()`
+
+```php
+kVLinkToProject($organization, $project, $store_id, $kv_link_to_project_request): \QuantClient\Model\KVLinkToProject200Response
+```
+
+Link a KV store to another project
+
+Share a KV store from the source project with a target project. The store will be accessible in the target project.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\KVApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Source project identifier
+$store_id = store-123; // string | KV store identifier
+$kv_link_to_project_request = new \QuantClient\Model\KVLinkToProjectRequest(); // \QuantClient\Model\KVLinkToProjectRequest
+
+try {
+    $result = $apiInstance->kVLinkToProject($organization, $project, $store_id, $kv_link_to_project_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling KVApi->kVLinkToProject: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Source project identifier | |
+| **store_id** | **string**| KV store identifier | |
+| **kv_link_to_project_request** | [**\QuantClient\Model\KVLinkToProjectRequest**](../Model/KVLinkToProjectRequest.md)|  | |
+
+### Return type
+
+[**\QuantClient\Model\KVLinkToProject200Response**](../Model/KVLinkToProject200Response.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `kVList()`
 
 ```php
@@ -576,6 +644,70 @@ try {
 ### Return type
 
 [**\QuantClient\Model\V2Store**](../Model/V2Store.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `kVUnlinkFromProject()`
+
+```php
+kVUnlinkFromProject($organization, $project, $store_id): \QuantClient\Model\KVLinkToProject200Response
+```
+
+Unlink a KV store from this project
+
+Remove access to a linked KV store from this project. The store must be linked (not owned by this project).
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\KVApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
+$store_id = store-123; // string | KV store identifier
+
+try {
+    $result = $apiInstance->kVUnlinkFromProject($organization, $project, $store_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling KVApi->kVUnlinkFromProject: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
+| **store_id** | **string**| KV store identifier | |
+
+### Return type
+
+[**\QuantClient\Model\KVLinkToProject200Response**](../Model/KVLinkToProject200Response.md)
 
 ### Authorization
 
