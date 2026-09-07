@@ -58,6 +58,8 @@ class GetEnvironmentLogs200Response implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPITypes = [
         'log_events' => '\QuantClient\Model\GetEnvironmentLogs200ResponseLogEventsInner[]',
+        'log_group_name' => 'string',
+        'pagination' => '\QuantClient\Model\GetEnvironmentLogs200ResponsePagination',
         'next_token' => 'string'
     ];
 
@@ -70,6 +72,8 @@ class GetEnvironmentLogs200Response implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPIFormats = [
         'log_events' => null,
+        'log_group_name' => null,
+        'pagination' => null,
         'next_token' => null
     ];
 
@@ -80,6 +84,8 @@ class GetEnvironmentLogs200Response implements ModelInterface, ArrayAccess, \Jso
       */
     protected static array $openAPINullables = [
         'log_events' => false,
+        'log_group_name' => true,
+        'pagination' => false,
         'next_token' => true
     ];
 
@@ -170,6 +176,8 @@ class GetEnvironmentLogs200Response implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $attributeMap = [
         'log_events' => 'logEvents',
+        'log_group_name' => 'logGroupName',
+        'pagination' => 'pagination',
         'next_token' => 'nextToken'
     ];
 
@@ -180,6 +188,8 @@ class GetEnvironmentLogs200Response implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $setters = [
         'log_events' => 'setLogEvents',
+        'log_group_name' => 'setLogGroupName',
+        'pagination' => 'setPagination',
         'next_token' => 'setNextToken'
     ];
 
@@ -190,6 +200,8 @@ class GetEnvironmentLogs200Response implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $getters = [
         'log_events' => 'getLogEvents',
+        'log_group_name' => 'getLogGroupName',
+        'pagination' => 'getPagination',
         'next_token' => 'getNextToken'
     ];
 
@@ -251,6 +263,8 @@ class GetEnvironmentLogs200Response implements ModelInterface, ArrayAccess, \Jso
     public function __construct(?array $data = null)
     {
         $this->setIfExists('log_events', $data ?? [], null);
+        $this->setIfExists('log_group_name', $data ?? [], null);
+        $this->setIfExists('pagination', $data ?? [], null);
         $this->setIfExists('next_token', $data ?? [], null);
     }
 
@@ -324,6 +338,67 @@ class GetEnvironmentLogs200Response implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
+     * Gets log_group_name
+     *
+     * @return string|null
+     */
+    public function getLogGroupName()
+    {
+        return $this->container['log_group_name'];
+    }
+
+    /**
+     * Sets log_group_name
+     *
+     * @param string|null $log_group_name CloudWatch log group the events were read from
+     *
+     * @return self
+     */
+    public function setLogGroupName($log_group_name)
+    {
+        if (is_null($log_group_name)) {
+            array_push($this->openAPINullablesSetToNull, 'log_group_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('log_group_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['log_group_name'] = $log_group_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets pagination
+     *
+     * @return \QuantClient\Model\GetEnvironmentLogs200ResponsePagination|null
+     */
+    public function getPagination()
+    {
+        return $this->container['pagination'];
+    }
+
+    /**
+     * Sets pagination
+     *
+     * @param \QuantClient\Model\GetEnvironmentLogs200ResponsePagination|null $pagination pagination
+     *
+     * @return self
+     */
+    public function setPagination($pagination)
+    {
+        if (is_null($pagination)) {
+            throw new \InvalidArgumentException('non-nullable pagination cannot be null');
+        }
+        $this->container['pagination'] = $pagination;
+
+        return $this;
+    }
+
+    /**
      * Gets next_token
      *
      * @return string|null
@@ -336,7 +411,7 @@ class GetEnvironmentLogs200Response implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets next_token
      *
-     * @param string|null $next_token Token for fetching next page of results (null if no more pages)
+     * @param string|null $next_token Same as pagination.nextToken; kept for backward compatibility
      *
      * @return self
      */

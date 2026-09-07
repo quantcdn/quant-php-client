@@ -1,6 +1,6 @@
 <?php
 /**
- * AttachOrgResourceRequest
+ * KVDelete409Response
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \QuantClient\ObjectSerializer;
 
 /**
- * AttachOrgResourceRequest Class Doc Comment
+ * KVDelete409Response Class Doc Comment
  *
  * @category Class
  * @package  QuantClient
@@ -40,7 +40,7 @@ use \QuantClient\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class KVDelete409Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
       *
       * @var string
       */
-    protected static $openAPIModelName = 'attachOrgResource_request';
+    protected static $openAPIModelName = 'KV_delete_409_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,9 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'application' => 'string',
-        'environment' => 'string',
-        'env_var_prefix' => 'string',
-        'access_level' => 'string'
+        'error' => 'bool',
+        'message' => 'string',
+        'hint' => 'string'
     ];
 
     /**
@@ -71,10 +70,9 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'application' => null,
-        'environment' => null,
-        'env_var_prefix' => null,
-        'access_level' => null
+        'error' => null,
+        'message' => null,
+        'hint' => null
     ];
 
     /**
@@ -83,10 +81,9 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'application' => false,
-        'environment' => false,
-        'env_var_prefix' => false,
-        'access_level' => false
+        'error' => false,
+        'message' => false,
+        'hint' => false
     ];
 
     /**
@@ -175,10 +172,9 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'application' => 'application',
-        'environment' => 'environment',
-        'env_var_prefix' => 'envVarPrefix',
-        'access_level' => 'accessLevel'
+        'error' => 'error',
+        'message' => 'message',
+        'hint' => 'hint'
     ];
 
     /**
@@ -187,10 +183,9 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'application' => 'setApplication',
-        'environment' => 'setEnvironment',
-        'env_var_prefix' => 'setEnvVarPrefix',
-        'access_level' => 'setAccessLevel'
+        'error' => 'setError',
+        'message' => 'setMessage',
+        'hint' => 'setHint'
     ];
 
     /**
@@ -199,10 +194,9 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'application' => 'getApplication',
-        'environment' => 'getEnvironment',
-        'env_var_prefix' => 'getEnvVarPrefix',
-        'access_level' => 'getAccessLevel'
+        'error' => 'getError',
+        'message' => 'getMessage',
+        'hint' => 'getHint'
     ];
 
     /**
@@ -246,21 +240,6 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
         return self::$openAPIModelName;
     }
 
-    public const ACCESS_LEVEL_SCOPED = 'scoped';
-    public const ACCESS_LEVEL_ADMIN = 'admin';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getAccessLevelAllowableValues()
-    {
-        return [
-            self::ACCESS_LEVEL_SCOPED,
-            self::ACCESS_LEVEL_ADMIN,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -277,10 +256,9 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('application', $data ?? [], null);
-        $this->setIfExists('environment', $data ?? [], null);
-        $this->setIfExists('env_var_prefix', $data ?? [], null);
-        $this->setIfExists('access_level', $data ?? [], 'scoped');
+        $this->setIfExists('error', $data ?? [], null);
+        $this->setIfExists('message', $data ?? [], null);
+        $this->setIfExists('hint', $data ?? [], null);
     }
 
     /**
@@ -310,21 +288,6 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['application'] === null) {
-            $invalidProperties[] = "'application' can't be null";
-        }
-        if ($this->container['environment'] === null) {
-            $invalidProperties[] = "'environment' can't be null";
-        }
-        $allowedValues = $this->getAccessLevelAllowableValues();
-        if (!is_null($this->container['access_level']) && !in_array($this->container['access_level'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'access_level', must be one of '%s'",
-                $this->container['access_level'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -341,119 +304,82 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets application
+     * Gets error
      *
-     * @return string
+     * @return bool|null
      */
-    public function getApplication()
+    public function getError()
     {
-        return $this->container['application'];
+        return $this->container['error'];
     }
 
     /**
-     * Sets application
+     * Sets error
      *
-     * @param string $application application
+     * @param bool|null $error error
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setError($error)
     {
-        if (is_null($application)) {
-            throw new \InvalidArgumentException('non-nullable application cannot be null');
+        if (is_null($error)) {
+            throw new \InvalidArgumentException('non-nullable error cannot be null');
         }
-        $this->container['application'] = $application;
+        $this->container['error'] = $error;
 
         return $this;
     }
 
     /**
-     * Gets environment
-     *
-     * @return string
-     */
-    public function getEnvironment()
-    {
-        return $this->container['environment'];
-    }
-
-    /**
-     * Sets environment
-     *
-     * @param string $environment environment
-     *
-     * @return self
-     */
-    public function setEnvironment($environment)
-    {
-        if (is_null($environment)) {
-            throw new \InvalidArgumentException('non-nullable environment cannot be null');
-        }
-        $this->container['environment'] = $environment;
-
-        return $this;
-    }
-
-    /**
-     * Gets env_var_prefix
+     * Gets message
      *
      * @return string|null
      */
-    public function getEnvVarPrefix()
+    public function getMessage()
     {
-        return $this->container['env_var_prefix'];
+        return $this->container['message'];
     }
 
     /**
-     * Sets env_var_prefix
+     * Sets message
      *
-     * @param string|null $env_var_prefix Namespaces every injected variable, so MEDIA yields MEDIA_S3_BUCKET
+     * @param string|null $message message
      *
      * @return self
      */
-    public function setEnvVarPrefix($env_var_prefix)
+    public function setMessage($message)
     {
-        if (is_null($env_var_prefix)) {
-            throw new \InvalidArgumentException('non-nullable env_var_prefix cannot be null');
+        if (is_null($message)) {
+            throw new \InvalidArgumentException('non-nullable message cannot be null');
         }
-        $this->container['env_var_prefix'] = $env_var_prefix;
+        $this->container['message'] = $message;
 
         return $this;
     }
 
     /**
-     * Gets access_level
+     * Gets hint
      *
      * @return string|null
      */
-    public function getAccessLevel()
+    public function getHint()
     {
-        return $this->container['access_level'];
+        return $this->container['hint'];
     }
 
     /**
-     * Sets access_level
+     * Sets hint
      *
-     * @param string|null $access_level Cache only. scoped injects an RBAC user limited to this environment's CACHE_PREFIX (plain and {hash-tag} forms) with FLUSHALL and FLUSHDB denied. admin injects the cache-wide credential for integrations that require FLUSHDB, such as Laravel Cache::flush() or the WordPress object cache without selective flush; it can read, write and flush every attached environment's keys.
+     * @param string|null $hint hint
      *
      * @return self
      */
-    public function setAccessLevel($access_level)
+    public function setHint($hint)
     {
-        if (is_null($access_level)) {
-            throw new \InvalidArgumentException('non-nullable access_level cannot be null');
+        if (is_null($hint)) {
+            throw new \InvalidArgumentException('non-nullable hint cannot be null');
         }
-        $allowedValues = $this->getAccessLevelAllowableValues();
-        if (!in_array($access_level, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'access_level', must be one of '%s'",
-                    $access_level,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['access_level'] = $access_level;
+        $this->container['hint'] = $hint;
 
         return $this;
     }

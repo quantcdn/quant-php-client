@@ -1,6 +1,6 @@
 <?php
 /**
- * AttachOrgResourceRequest
+ * KVItemsPurge200Response
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \QuantClient\ObjectSerializer;
 
 /**
- * AttachOrgResourceRequest Class Doc Comment
+ * KVItemsPurge200Response Class Doc Comment
  *
  * @category Class
  * @package  QuantClient
@@ -40,7 +40,7 @@ use \QuantClient\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class KVItemsPurge200Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
       *
       * @var string
       */
-    protected static $openAPIModelName = 'attachOrgResource_request';
+    protected static $openAPIModelName = 'KV_items_purge_200_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,9 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'application' => 'string',
-        'environment' => 'string',
-        'env_var_prefix' => 'string',
-        'access_level' => 'string'
+        'status' => 'string',
+        'deleted' => 'int',
+        'scanned' => 'int'
     ];
 
     /**
@@ -71,10 +70,9 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'application' => null,
-        'environment' => null,
-        'env_var_prefix' => null,
-        'access_level' => null
+        'status' => null,
+        'deleted' => null,
+        'scanned' => null
     ];
 
     /**
@@ -83,10 +81,9 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'application' => false,
-        'environment' => false,
-        'env_var_prefix' => false,
-        'access_level' => false
+        'status' => false,
+        'deleted' => false,
+        'scanned' => false
     ];
 
     /**
@@ -175,10 +172,9 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'application' => 'application',
-        'environment' => 'environment',
-        'env_var_prefix' => 'envVarPrefix',
-        'access_level' => 'accessLevel'
+        'status' => 'status',
+        'deleted' => 'deleted',
+        'scanned' => 'scanned'
     ];
 
     /**
@@ -187,10 +183,9 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'application' => 'setApplication',
-        'environment' => 'setEnvironment',
-        'env_var_prefix' => 'setEnvVarPrefix',
-        'access_level' => 'setAccessLevel'
+        'status' => 'setStatus',
+        'deleted' => 'setDeleted',
+        'scanned' => 'setScanned'
     ];
 
     /**
@@ -199,10 +194,9 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'application' => 'getApplication',
-        'environment' => 'getEnvironment',
-        'env_var_prefix' => 'getEnvVarPrefix',
-        'access_level' => 'getAccessLevel'
+        'status' => 'getStatus',
+        'deleted' => 'getDeleted',
+        'scanned' => 'getScanned'
     ];
 
     /**
@@ -246,21 +240,6 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
         return self::$openAPIModelName;
     }
 
-    public const ACCESS_LEVEL_SCOPED = 'scoped';
-    public const ACCESS_LEVEL_ADMIN = 'admin';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getAccessLevelAllowableValues()
-    {
-        return [
-            self::ACCESS_LEVEL_SCOPED,
-            self::ACCESS_LEVEL_ADMIN,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -277,10 +256,9 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('application', $data ?? [], null);
-        $this->setIfExists('environment', $data ?? [], null);
-        $this->setIfExists('env_var_prefix', $data ?? [], null);
-        $this->setIfExists('access_level', $data ?? [], 'scoped');
+        $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('deleted', $data ?? [], null);
+        $this->setIfExists('scanned', $data ?? [], null);
     }
 
     /**
@@ -310,21 +288,6 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['application'] === null) {
-            $invalidProperties[] = "'application' can't be null";
-        }
-        if ($this->container['environment'] === null) {
-            $invalidProperties[] = "'environment' can't be null";
-        }
-        $allowedValues = $this->getAccessLevelAllowableValues();
-        if (!is_null($this->container['access_level']) && !in_array($this->container['access_level'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'access_level', must be one of '%s'",
-                $this->container['access_level'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -341,119 +304,82 @@ class AttachOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets application
-     *
-     * @return string
-     */
-    public function getApplication()
-    {
-        return $this->container['application'];
-    }
-
-    /**
-     * Sets application
-     *
-     * @param string $application application
-     *
-     * @return self
-     */
-    public function setApplication($application)
-    {
-        if (is_null($application)) {
-            throw new \InvalidArgumentException('non-nullable application cannot be null');
-        }
-        $this->container['application'] = $application;
-
-        return $this;
-    }
-
-    /**
-     * Gets environment
-     *
-     * @return string
-     */
-    public function getEnvironment()
-    {
-        return $this->container['environment'];
-    }
-
-    /**
-     * Sets environment
-     *
-     * @param string $environment environment
-     *
-     * @return self
-     */
-    public function setEnvironment($environment)
-    {
-        if (is_null($environment)) {
-            throw new \InvalidArgumentException('non-nullable environment cannot be null');
-        }
-        $this->container['environment'] = $environment;
-
-        return $this;
-    }
-
-    /**
-     * Gets env_var_prefix
+     * Gets status
      *
      * @return string|null
      */
-    public function getEnvVarPrefix()
+    public function getStatus()
     {
-        return $this->container['env_var_prefix'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets env_var_prefix
+     * Sets status
      *
-     * @param string|null $env_var_prefix Namespaces every injected variable, so MEDIA yields MEDIA_S3_BUCKET
+     * @param string|null $status status
      *
      * @return self
      */
-    public function setEnvVarPrefix($env_var_prefix)
+    public function setStatus($status)
     {
-        if (is_null($env_var_prefix)) {
-            throw new \InvalidArgumentException('non-nullable env_var_prefix cannot be null');
+        if (is_null($status)) {
+            throw new \InvalidArgumentException('non-nullable status cannot be null');
         }
-        $this->container['env_var_prefix'] = $env_var_prefix;
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets access_level
+     * Gets deleted
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getAccessLevel()
+    public function getDeleted()
     {
-        return $this->container['access_level'];
+        return $this->container['deleted'];
     }
 
     /**
-     * Sets access_level
+     * Sets deleted
      *
-     * @param string|null $access_level Cache only. scoped injects an RBAC user limited to this environment's CACHE_PREFIX (plain and {hash-tag} forms) with FLUSHALL and FLUSHDB denied. admin injects the cache-wide credential for integrations that require FLUSHDB, such as Laravel Cache::flush() or the WordPress object cache without selective flush; it can read, write and flush every attached environment's keys.
+     * @param int|null $deleted deleted
      *
      * @return self
      */
-    public function setAccessLevel($access_level)
+    public function setDeleted($deleted)
     {
-        if (is_null($access_level)) {
-            throw new \InvalidArgumentException('non-nullable access_level cannot be null');
+        if (is_null($deleted)) {
+            throw new \InvalidArgumentException('non-nullable deleted cannot be null');
         }
-        $allowedValues = $this->getAccessLevelAllowableValues();
-        if (!in_array($access_level, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'access_level', must be one of '%s'",
-                    $access_level,
-                    implode("', '", $allowedValues)
-                )
-            );
+        $this->container['deleted'] = $deleted;
+
+        return $this;
+    }
+
+    /**
+     * Gets scanned
+     *
+     * @return int|null
+     */
+    public function getScanned()
+    {
+        return $this->container['scanned'];
+    }
+
+    /**
+     * Sets scanned
+     *
+     * @param int|null $scanned scanned
+     *
+     * @return self
+     */
+    public function setScanned($scanned)
+    {
+        if (is_null($scanned)) {
+            throw new \InvalidArgumentException('non-nullable scanned cannot be null');
         }
-        $this->container['access_level'] = $access_level;
+        $this->container['scanned'] = $scanned;
 
         return $this;
     }

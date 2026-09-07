@@ -1,6 +1,6 @@
 <?php
 /**
- * ResourceAttachment
+ * PurgeOrgResourceRequest
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \QuantClient\ObjectSerializer;
 
 /**
- * ResourceAttachment Class Doc Comment
+ * PurgeOrgResourceRequest Class Doc Comment
  *
  * @category Class
  * @package  QuantClient
@@ -40,7 +40,7 @@ use \QuantClient\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializable
+class PurgeOrgResourceRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResourceAttachment';
+    protected static $openAPIModelName = 'purgeOrgResource_request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,15 +57,11 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'app_name' => 'string',
-        'env_name' => 'string',
-        'env_var_prefix' => 'string',
-        'access_key_id' => 'string',
-        'cache_user_id' => 'string',
-        'access_level' => 'string',
-        'injected_keys' => 'string[]',
-        'created_at' => '\DateTime',
-        'note' => 'string'
+        'scope' => 'string',
+        'application' => 'string',
+        'environment' => 'string',
+        'confirm' => 'bool',
+        'cursor' => 'string'
     ];
 
     /**
@@ -76,15 +72,11 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'app_name' => null,
-        'env_name' => null,
-        'env_var_prefix' => null,
-        'access_key_id' => null,
-        'cache_user_id' => null,
-        'access_level' => null,
-        'injected_keys' => null,
-        'created_at' => 'date-time',
-        'note' => null
+        'scope' => null,
+        'application' => null,
+        'environment' => null,
+        'confirm' => null,
+        'cursor' => null
     ];
 
     /**
@@ -93,15 +85,11 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'app_name' => false,
-        'env_name' => false,
-        'env_var_prefix' => false,
-        'access_key_id' => false,
-        'cache_user_id' => false,
-        'access_level' => false,
-        'injected_keys' => false,
-        'created_at' => false,
-        'note' => false
+        'scope' => false,
+        'application' => false,
+        'environment' => false,
+        'confirm' => false,
+        'cursor' => false
     ];
 
     /**
@@ -190,15 +178,11 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'app_name' => 'appName',
-        'env_name' => 'envName',
-        'env_var_prefix' => 'envVarPrefix',
-        'access_key_id' => 'accessKeyId',
-        'cache_user_id' => 'cacheUserId',
-        'access_level' => 'accessLevel',
-        'injected_keys' => 'injectedKeys',
-        'created_at' => 'createdAt',
-        'note' => 'note'
+        'scope' => 'scope',
+        'application' => 'application',
+        'environment' => 'environment',
+        'confirm' => 'confirm',
+        'cursor' => 'cursor'
     ];
 
     /**
@@ -207,15 +191,11 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'app_name' => 'setAppName',
-        'env_name' => 'setEnvName',
-        'env_var_prefix' => 'setEnvVarPrefix',
-        'access_key_id' => 'setAccessKeyId',
-        'cache_user_id' => 'setCacheUserId',
-        'access_level' => 'setAccessLevel',
-        'injected_keys' => 'setInjectedKeys',
-        'created_at' => 'setCreatedAt',
-        'note' => 'setNote'
+        'scope' => 'setScope',
+        'application' => 'setApplication',
+        'environment' => 'setEnvironment',
+        'confirm' => 'setConfirm',
+        'cursor' => 'setCursor'
     ];
 
     /**
@@ -224,15 +204,11 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'app_name' => 'getAppName',
-        'env_name' => 'getEnvName',
-        'env_var_prefix' => 'getEnvVarPrefix',
-        'access_key_id' => 'getAccessKeyId',
-        'cache_user_id' => 'getCacheUserId',
-        'access_level' => 'getAccessLevel',
-        'injected_keys' => 'getInjectedKeys',
-        'created_at' => 'getCreatedAt',
-        'note' => 'getNote'
+        'scope' => 'getScope',
+        'application' => 'getApplication',
+        'environment' => 'getEnvironment',
+        'confirm' => 'getConfirm',
+        'cursor' => 'getCursor'
     ];
 
     /**
@@ -276,19 +252,19 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
         return self::$openAPIModelName;
     }
 
-    public const ACCESS_LEVEL_SCOPED = 'scoped';
-    public const ACCESS_LEVEL_ADMIN = 'admin';
+    public const SCOPE_ENVIRONMENT = 'environment';
+    public const SCOPE_ALL = 'all';
 
     /**
      * Gets allowable values of the enum
      *
      * @return string[]
      */
-    public function getAccessLevelAllowableValues()
+    public function getScopeAllowableValues()
     {
         return [
-            self::ACCESS_LEVEL_SCOPED,
-            self::ACCESS_LEVEL_ADMIN,
+            self::SCOPE_ENVIRONMENT,
+            self::SCOPE_ALL,
         ];
     }
 
@@ -307,15 +283,11 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('app_name', $data ?? [], null);
-        $this->setIfExists('env_name', $data ?? [], null);
-        $this->setIfExists('env_var_prefix', $data ?? [], null);
-        $this->setIfExists('access_key_id', $data ?? [], null);
-        $this->setIfExists('cache_user_id', $data ?? [], null);
-        $this->setIfExists('access_level', $data ?? [], null);
-        $this->setIfExists('injected_keys', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
-        $this->setIfExists('note', $data ?? [], null);
+        $this->setIfExists('scope', $data ?? [], null);
+        $this->setIfExists('application', $data ?? [], null);
+        $this->setIfExists('environment', $data ?? [], null);
+        $this->setIfExists('confirm', $data ?? [], null);
+        $this->setIfExists('cursor', $data ?? [], null);
     }
 
     /**
@@ -345,11 +317,14 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getAccessLevelAllowableValues();
-        if (!is_null($this->container['access_level']) && !in_array($this->container['access_level'], $allowedValues, true)) {
+        if ($this->container['scope'] === null) {
+            $invalidProperties[] = "'scope' can't be null";
+        }
+        $allowedValues = $this->getScopeAllowableValues();
+        if (!is_null($this->container['scope']) && !in_array($this->container['scope'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'access_level', must be one of '%s'",
-                $this->container['access_level'],
+                "invalid value '%s' for 'scope', must be one of '%s'",
+                $this->container['scope'],
                 implode("', '", $allowedValues)
             );
         }
@@ -370,254 +345,146 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets app_name
+     * Gets scope
      *
-     * @return string|null
+     * @return string
      */
-    public function getAppName()
+    public function getScope()
     {
-        return $this->container['app_name'];
+        return $this->container['scope'];
     }
 
     /**
-     * Sets app_name
+     * Sets scope
      *
-     * @param string|null $app_name app_name
+     * @param string $scope scope
      *
      * @return self
      */
-    public function setAppName($app_name)
+    public function setScope($scope)
     {
-        if (is_null($app_name)) {
-            throw new \InvalidArgumentException('non-nullable app_name cannot be null');
+        if (is_null($scope)) {
+            throw new \InvalidArgumentException('non-nullable scope cannot be null');
         }
-        $this->container['app_name'] = $app_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets env_name
-     *
-     * @return string|null
-     */
-    public function getEnvName()
-    {
-        return $this->container['env_name'];
-    }
-
-    /**
-     * Sets env_name
-     *
-     * @param string|null $env_name env_name
-     *
-     * @return self
-     */
-    public function setEnvName($env_name)
-    {
-        if (is_null($env_name)) {
-            throw new \InvalidArgumentException('non-nullable env_name cannot be null');
-        }
-        $this->container['env_name'] = $env_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets env_var_prefix
-     *
-     * @return string|null
-     */
-    public function getEnvVarPrefix()
-    {
-        return $this->container['env_var_prefix'];
-    }
-
-    /**
-     * Sets env_var_prefix
-     *
-     * @param string|null $env_var_prefix Namespaces every injected variable, so MEDIA yields MEDIA_S3_BUCKET
-     *
-     * @return self
-     */
-    public function setEnvVarPrefix($env_var_prefix)
-    {
-        if (is_null($env_var_prefix)) {
-            throw new \InvalidArgumentException('non-nullable env_var_prefix cannot be null');
-        }
-        $this->container['env_var_prefix'] = $env_var_prefix;
-
-        return $this;
-    }
-
-    /**
-     * Gets access_key_id
-     *
-     * @return string|null
-     */
-    public function getAccessKeyId()
-    {
-        return $this->container['access_key_id'];
-    }
-
-    /**
-     * Sets access_key_id
-     *
-     * @param string|null $access_key_id Object storage only. The secret half is written to the environment's secrets and never returned.
-     *
-     * @return self
-     */
-    public function setAccessKeyId($access_key_id)
-    {
-        if (is_null($access_key_id)) {
-            throw new \InvalidArgumentException('non-nullable access_key_id cannot be null');
-        }
-        $this->container['access_key_id'] = $access_key_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets cache_user_id
-     *
-     * @return string|null
-     */
-    public function getCacheUserId()
-    {
-        return $this->container['cache_user_id'];
-    }
-
-    /**
-     * Sets cache_user_id
-     *
-     * @param string|null $cache_user_id Cache only. This environment's own RBAC user, limited to its CACHE_PREFIX with FLUSHALL and FLUSHDB denied, so it cannot touch another environment's keys.
-     *
-     * @return self
-     */
-    public function setCacheUserId($cache_user_id)
-    {
-        if (is_null($cache_user_id)) {
-            throw new \InvalidArgumentException('non-nullable cache_user_id cannot be null');
-        }
-        $this->container['cache_user_id'] = $cache_user_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets access_level
-     *
-     * @return string|null
-     */
-    public function getAccessLevel()
-    {
-        return $this->container['access_level'];
-    }
-
-    /**
-     * Sets access_level
-     *
-     * @param string|null $access_level Cache only. scoped: the environment holds its own RBAC user. admin: it holds the cache-wide credential and can read, write and flush every attached environment's keys. Absent on attachments made before access levels existed (treated as scoped).
-     *
-     * @return self
-     */
-    public function setAccessLevel($access_level)
-    {
-        if (is_null($access_level)) {
-            throw new \InvalidArgumentException('non-nullable access_level cannot be null');
-        }
-        $allowedValues = $this->getAccessLevelAllowableValues();
-        if (!in_array($access_level, $allowedValues, true)) {
+        $allowedValues = $this->getScopeAllowableValues();
+        if (!in_array($scope, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'access_level', must be one of '%s'",
-                    $access_level,
+                    "Invalid value '%s' for 'scope', must be one of '%s'",
+                    $scope,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['access_level'] = $access_level;
+        $this->container['scope'] = $scope;
 
         return $this;
     }
 
     /**
-     * Gets injected_keys
-     *
-     * @return string[]|null
-     */
-    public function getInjectedKeys()
-    {
-        return $this->container['injected_keys'];
-    }
-
-    /**
-     * Sets injected_keys
-     *
-     * @param string[]|null $injected_keys The exact variable names this attachment wrote, removed precisely on detach
-     *
-     * @return self
-     */
-    public function setInjectedKeys($injected_keys)
-    {
-        if (is_null($injected_keys)) {
-            throw new \InvalidArgumentException('non-nullable injected_keys cannot be null');
-        }
-        $this->container['injected_keys'] = $injected_keys;
-
-        return $this;
-    }
-
-    /**
-     * Gets created_at
-     *
-     * @return \DateTime|null
-     */
-    public function getCreatedAt()
-    {
-        return $this->container['created_at'];
-    }
-
-    /**
-     * Sets created_at
-     *
-     * @param \DateTime|null $created_at created_at
-     *
-     * @return self
-     */
-    public function setCreatedAt($created_at)
-    {
-        if (is_null($created_at)) {
-            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
-        }
-        $this->container['created_at'] = $created_at;
-
-        return $this;
-    }
-
-    /**
-     * Gets note
+     * Gets application
      *
      * @return string|null
      */
-    public function getNote()
+    public function getApplication()
     {
-        return $this->container['note'];
+        return $this->container['application'];
     }
 
     /**
-     * Sets note
+     * Sets application
      *
-     * @param string|null $note When the credentials take effect
+     * @param string|null $application scope environment only
      *
      * @return self
      */
-    public function setNote($note)
+    public function setApplication($application)
     {
-        if (is_null($note)) {
-            throw new \InvalidArgumentException('non-nullable note cannot be null');
+        if (is_null($application)) {
+            throw new \InvalidArgumentException('non-nullable application cannot be null');
         }
-        $this->container['note'] = $note;
+        $this->container['application'] = $application;
+
+        return $this;
+    }
+
+    /**
+     * Gets environment
+     *
+     * @return string|null
+     */
+    public function getEnvironment()
+    {
+        return $this->container['environment'];
+    }
+
+    /**
+     * Sets environment
+     *
+     * @param string|null $environment scope environment only
+     *
+     * @return self
+     */
+    public function setEnvironment($environment)
+    {
+        if (is_null($environment)) {
+            throw new \InvalidArgumentException('non-nullable environment cannot be null');
+        }
+        $this->container['environment'] = $environment;
+
+        return $this;
+    }
+
+    /**
+     * Gets confirm
+     *
+     * @return bool|null
+     */
+    public function getConfirm()
+    {
+        return $this->container['confirm'];
+    }
+
+    /**
+     * Sets confirm
+     *
+     * @param bool|null $confirm scope all only; must be true
+     *
+     * @return self
+     */
+    public function setConfirm($confirm)
+    {
+        if (is_null($confirm)) {
+            throw new \InvalidArgumentException('non-nullable confirm cannot be null');
+        }
+        $this->container['confirm'] = $confirm;
+
+        return $this;
+    }
+
+    /**
+     * Gets cursor
+     *
+     * @return string|null
+     */
+    public function getCursor()
+    {
+        return $this->container['cursor'];
+    }
+
+    /**
+     * Sets cursor
+     *
+     * @param string|null $cursor scope environment only; resume a partial purge
+     *
+     * @return self
+     */
+    public function setCursor($cursor)
+    {
+        if (is_null($cursor)) {
+            throw new \InvalidArgumentException('non-nullable cursor cannot be null');
+        }
+        $this->container['cursor'] = $cursor;
 
         return $this;
     }

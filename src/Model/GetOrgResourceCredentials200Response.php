@@ -1,6 +1,6 @@
 <?php
 /**
- * ResourceAttachment
+ * GetOrgResourceCredentials200Response
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \QuantClient\ObjectSerializer;
 
 /**
- * ResourceAttachment Class Doc Comment
+ * GetOrgResourceCredentials200Response Class Doc Comment
  *
  * @category Class
  * @package  QuantClient
@@ -40,7 +40,7 @@ use \QuantClient\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetOrgResourceCredentials200Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResourceAttachment';
+    protected static $openAPIModelName = 'getOrgResourceCredentials_200_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,14 +57,11 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'app_name' => 'string',
-        'env_name' => 'string',
-        'env_var_prefix' => 'string',
-        'access_key_id' => 'string',
-        'cache_user_id' => 'string',
-        'access_level' => 'string',
-        'injected_keys' => 'string[]',
-        'created_at' => '\DateTime',
+        'host' => 'string',
+        'port' => 'int',
+        'tls' => 'bool',
+        'username' => 'string',
+        'password' => 'string',
         'note' => 'string'
     ];
 
@@ -76,14 +73,11 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'app_name' => null,
-        'env_name' => null,
-        'env_var_prefix' => null,
-        'access_key_id' => null,
-        'cache_user_id' => null,
-        'access_level' => null,
-        'injected_keys' => null,
-        'created_at' => 'date-time',
+        'host' => null,
+        'port' => null,
+        'tls' => null,
+        'username' => null,
+        'password' => null,
         'note' => null
     ];
 
@@ -93,14 +87,11 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'app_name' => false,
-        'env_name' => false,
-        'env_var_prefix' => false,
-        'access_key_id' => false,
-        'cache_user_id' => false,
-        'access_level' => false,
-        'injected_keys' => false,
-        'created_at' => false,
+        'host' => false,
+        'port' => false,
+        'tls' => false,
+        'username' => false,
+        'password' => false,
         'note' => false
     ];
 
@@ -190,14 +181,11 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'app_name' => 'appName',
-        'env_name' => 'envName',
-        'env_var_prefix' => 'envVarPrefix',
-        'access_key_id' => 'accessKeyId',
-        'cache_user_id' => 'cacheUserId',
-        'access_level' => 'accessLevel',
-        'injected_keys' => 'injectedKeys',
-        'created_at' => 'createdAt',
+        'host' => 'host',
+        'port' => 'port',
+        'tls' => 'tls',
+        'username' => 'username',
+        'password' => 'password',
         'note' => 'note'
     ];
 
@@ -207,14 +195,11 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'app_name' => 'setAppName',
-        'env_name' => 'setEnvName',
-        'env_var_prefix' => 'setEnvVarPrefix',
-        'access_key_id' => 'setAccessKeyId',
-        'cache_user_id' => 'setCacheUserId',
-        'access_level' => 'setAccessLevel',
-        'injected_keys' => 'setInjectedKeys',
-        'created_at' => 'setCreatedAt',
+        'host' => 'setHost',
+        'port' => 'setPort',
+        'tls' => 'setTls',
+        'username' => 'setUsername',
+        'password' => 'setPassword',
         'note' => 'setNote'
     ];
 
@@ -224,14 +209,11 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'app_name' => 'getAppName',
-        'env_name' => 'getEnvName',
-        'env_var_prefix' => 'getEnvVarPrefix',
-        'access_key_id' => 'getAccessKeyId',
-        'cache_user_id' => 'getCacheUserId',
-        'access_level' => 'getAccessLevel',
-        'injected_keys' => 'getInjectedKeys',
-        'created_at' => 'getCreatedAt',
+        'host' => 'getHost',
+        'port' => 'getPort',
+        'tls' => 'getTls',
+        'username' => 'getUsername',
+        'password' => 'getPassword',
         'note' => 'getNote'
     ];
 
@@ -276,21 +258,6 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
         return self::$openAPIModelName;
     }
 
-    public const ACCESS_LEVEL_SCOPED = 'scoped';
-    public const ACCESS_LEVEL_ADMIN = 'admin';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getAccessLevelAllowableValues()
-    {
-        return [
-            self::ACCESS_LEVEL_SCOPED,
-            self::ACCESS_LEVEL_ADMIN,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -307,14 +274,11 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('app_name', $data ?? [], null);
-        $this->setIfExists('env_name', $data ?? [], null);
-        $this->setIfExists('env_var_prefix', $data ?? [], null);
-        $this->setIfExists('access_key_id', $data ?? [], null);
-        $this->setIfExists('cache_user_id', $data ?? [], null);
-        $this->setIfExists('access_level', $data ?? [], null);
-        $this->setIfExists('injected_keys', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('host', $data ?? [], null);
+        $this->setIfExists('port', $data ?? [], null);
+        $this->setIfExists('tls', $data ?? [], null);
+        $this->setIfExists('username', $data ?? [], null);
+        $this->setIfExists('password', $data ?? [], null);
         $this->setIfExists('note', $data ?? [], null);
     }
 
@@ -345,15 +309,6 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getAccessLevelAllowableValues();
-        if (!is_null($this->container['access_level']) && !in_array($this->container['access_level'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'access_level', must be one of '%s'",
-                $this->container['access_level'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -370,227 +325,136 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets app_name
+     * Gets host
      *
      * @return string|null
      */
-    public function getAppName()
+    public function getHost()
     {
-        return $this->container['app_name'];
+        return $this->container['host'];
     }
 
     /**
-     * Sets app_name
+     * Sets host
      *
-     * @param string|null $app_name app_name
+     * @param string|null $host host
      *
      * @return self
      */
-    public function setAppName($app_name)
+    public function setHost($host)
     {
-        if (is_null($app_name)) {
-            throw new \InvalidArgumentException('non-nullable app_name cannot be null');
+        if (is_null($host)) {
+            throw new \InvalidArgumentException('non-nullable host cannot be null');
         }
-        $this->container['app_name'] = $app_name;
+        $this->container['host'] = $host;
 
         return $this;
     }
 
     /**
-     * Gets env_name
+     * Gets port
+     *
+     * @return int|null
+     */
+    public function getPort()
+    {
+        return $this->container['port'];
+    }
+
+    /**
+     * Sets port
+     *
+     * @param int|null $port port
+     *
+     * @return self
+     */
+    public function setPort($port)
+    {
+        if (is_null($port)) {
+            throw new \InvalidArgumentException('non-nullable port cannot be null');
+        }
+        $this->container['port'] = $port;
+
+        return $this;
+    }
+
+    /**
+     * Gets tls
+     *
+     * @return bool|null
+     */
+    public function getTls()
+    {
+        return $this->container['tls'];
+    }
+
+    /**
+     * Sets tls
+     *
+     * @param bool|null $tls tls
+     *
+     * @return self
+     */
+    public function setTls($tls)
+    {
+        if (is_null($tls)) {
+            throw new \InvalidArgumentException('non-nullable tls cannot be null');
+        }
+        $this->container['tls'] = $tls;
+
+        return $this;
+    }
+
+    /**
+     * Gets username
      *
      * @return string|null
      */
-    public function getEnvName()
+    public function getUsername()
     {
-        return $this->container['env_name'];
+        return $this->container['username'];
     }
 
     /**
-     * Sets env_name
+     * Sets username
      *
-     * @param string|null $env_name env_name
+     * @param string|null $username username
      *
      * @return self
      */
-    public function setEnvName($env_name)
+    public function setUsername($username)
     {
-        if (is_null($env_name)) {
-            throw new \InvalidArgumentException('non-nullable env_name cannot be null');
+        if (is_null($username)) {
+            throw new \InvalidArgumentException('non-nullable username cannot be null');
         }
-        $this->container['env_name'] = $env_name;
+        $this->container['username'] = $username;
 
         return $this;
     }
 
     /**
-     * Gets env_var_prefix
+     * Gets password
      *
      * @return string|null
      */
-    public function getEnvVarPrefix()
+    public function getPassword()
     {
-        return $this->container['env_var_prefix'];
+        return $this->container['password'];
     }
 
     /**
-     * Sets env_var_prefix
+     * Sets password
      *
-     * @param string|null $env_var_prefix Namespaces every injected variable, so MEDIA yields MEDIA_S3_BUCKET
+     * @param string|null $password password
      *
      * @return self
      */
-    public function setEnvVarPrefix($env_var_prefix)
+    public function setPassword($password)
     {
-        if (is_null($env_var_prefix)) {
-            throw new \InvalidArgumentException('non-nullable env_var_prefix cannot be null');
+        if (is_null($password)) {
+            throw new \InvalidArgumentException('non-nullable password cannot be null');
         }
-        $this->container['env_var_prefix'] = $env_var_prefix;
-
-        return $this;
-    }
-
-    /**
-     * Gets access_key_id
-     *
-     * @return string|null
-     */
-    public function getAccessKeyId()
-    {
-        return $this->container['access_key_id'];
-    }
-
-    /**
-     * Sets access_key_id
-     *
-     * @param string|null $access_key_id Object storage only. The secret half is written to the environment's secrets and never returned.
-     *
-     * @return self
-     */
-    public function setAccessKeyId($access_key_id)
-    {
-        if (is_null($access_key_id)) {
-            throw new \InvalidArgumentException('non-nullable access_key_id cannot be null');
-        }
-        $this->container['access_key_id'] = $access_key_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets cache_user_id
-     *
-     * @return string|null
-     */
-    public function getCacheUserId()
-    {
-        return $this->container['cache_user_id'];
-    }
-
-    /**
-     * Sets cache_user_id
-     *
-     * @param string|null $cache_user_id Cache only. This environment's own RBAC user, limited to its CACHE_PREFIX with FLUSHALL and FLUSHDB denied, so it cannot touch another environment's keys.
-     *
-     * @return self
-     */
-    public function setCacheUserId($cache_user_id)
-    {
-        if (is_null($cache_user_id)) {
-            throw new \InvalidArgumentException('non-nullable cache_user_id cannot be null');
-        }
-        $this->container['cache_user_id'] = $cache_user_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets access_level
-     *
-     * @return string|null
-     */
-    public function getAccessLevel()
-    {
-        return $this->container['access_level'];
-    }
-
-    /**
-     * Sets access_level
-     *
-     * @param string|null $access_level Cache only. scoped: the environment holds its own RBAC user. admin: it holds the cache-wide credential and can read, write and flush every attached environment's keys. Absent on attachments made before access levels existed (treated as scoped).
-     *
-     * @return self
-     */
-    public function setAccessLevel($access_level)
-    {
-        if (is_null($access_level)) {
-            throw new \InvalidArgumentException('non-nullable access_level cannot be null');
-        }
-        $allowedValues = $this->getAccessLevelAllowableValues();
-        if (!in_array($access_level, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'access_level', must be one of '%s'",
-                    $access_level,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['access_level'] = $access_level;
-
-        return $this;
-    }
-
-    /**
-     * Gets injected_keys
-     *
-     * @return string[]|null
-     */
-    public function getInjectedKeys()
-    {
-        return $this->container['injected_keys'];
-    }
-
-    /**
-     * Sets injected_keys
-     *
-     * @param string[]|null $injected_keys The exact variable names this attachment wrote, removed precisely on detach
-     *
-     * @return self
-     */
-    public function setInjectedKeys($injected_keys)
-    {
-        if (is_null($injected_keys)) {
-            throw new \InvalidArgumentException('non-nullable injected_keys cannot be null');
-        }
-        $this->container['injected_keys'] = $injected_keys;
-
-        return $this;
-    }
-
-    /**
-     * Gets created_at
-     *
-     * @return \DateTime|null
-     */
-    public function getCreatedAt()
-    {
-        return $this->container['created_at'];
-    }
-
-    /**
-     * Sets created_at
-     *
-     * @param \DateTime|null $created_at created_at
-     *
-     * @return self
-     */
-    public function setCreatedAt($created_at)
-    {
-        if (is_null($created_at)) {
-            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
-        }
-        $this->container['created_at'] = $created_at;
+        $this->container['password'] = $password;
 
         return $this;
     }
@@ -608,7 +472,7 @@ class ResourceAttachment implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets note
      *
-     * @param string|null $note When the credentials take effect
+     * @param string|null $note note
      *
      * @return self
      */

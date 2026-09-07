@@ -74,6 +74,9 @@ class ProjectsApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
+        'getProjectLogs' => [
+            'application/json',
+        ],
         'projectsCreate' => [
             'application/json',
         ],
@@ -135,6 +138,422 @@ class ProjectsApi
     public function getConfig()
     {
         return $this->config;
+    }
+
+    /**
+     * Operation getProjectLogs
+     *
+     * Get CDN access logs for a project
+     *
+     * @param  string $organization The organization machine name (required)
+     * @param  string $project The project machine name (required)
+     * @param  int|null $limit Maximum number of log entries to return per page (default 100) (optional, default to 100)
+     * @param  string|null $start_time Start of the time range. ISO 8601 or Unix epoch milliseconds. (optional)
+     * @param  string|null $end_time End of the time range. ISO 8601 or Unix epoch milliseconds. (optional)
+     * @param  string|null $filter CloudWatch JSON filter expression AND-ed with the project constraint, e.g. $.status_code &#x3D; 404. Outer braces are optional; nested braces are rejected. (optional)
+     * @param  string|null $domain Only return entries for this domain (optional)
+     * @param  string|null $next_token Opaque pagination token from the previous response. Pass back unchanged to fetch the next page. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProjectLogs'] to see the possible values for this operation
+     *
+     * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \QuantClient\Model\GetProjectLogs200Response|\QuantClient\Model\GetProjectLogs400Response|\QuantClient\Model\GetProjectLogs400Response
+     */
+    public function getProjectLogs($organization, $project, $limit = 100, $start_time = null, $end_time = null, $filter = null, $domain = null, $next_token = null, string $contentType = self::contentTypes['getProjectLogs'][0])
+    {
+        list($response) = $this->getProjectLogsWithHttpInfo($organization, $project, $limit, $start_time, $end_time, $filter, $domain, $next_token, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getProjectLogsWithHttpInfo
+     *
+     * Get CDN access logs for a project
+     *
+     * @param  string $organization The organization machine name (required)
+     * @param  string $project The project machine name (required)
+     * @param  int|null $limit Maximum number of log entries to return per page (default 100) (optional, default to 100)
+     * @param  string|null $start_time Start of the time range. ISO 8601 or Unix epoch milliseconds. (optional)
+     * @param  string|null $end_time End of the time range. ISO 8601 or Unix epoch milliseconds. (optional)
+     * @param  string|null $filter CloudWatch JSON filter expression AND-ed with the project constraint, e.g. $.status_code &#x3D; 404. Outer braces are optional; nested braces are rejected. (optional)
+     * @param  string|null $domain Only return entries for this domain (optional)
+     * @param  string|null $next_token Opaque pagination token from the previous response. Pass back unchanged to fetch the next page. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProjectLogs'] to see the possible values for this operation
+     *
+     * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \QuantClient\Model\GetProjectLogs200Response|\QuantClient\Model\GetProjectLogs400Response|\QuantClient\Model\GetProjectLogs400Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getProjectLogsWithHttpInfo($organization, $project, $limit = 100, $start_time = null, $end_time = null, $filter = null, $domain = null, $next_token = null, string $contentType = self::contentTypes['getProjectLogs'][0])
+    {
+        $request = $this->getProjectLogsRequest($organization, $project, $limit, $start_time, $end_time, $filter, $domain, $next_token, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\QuantClient\Model\GetProjectLogs200Response',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\QuantClient\Model\GetProjectLogs400Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\QuantClient\Model\GetProjectLogs400Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\QuantClient\Model\GetProjectLogs200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\QuantClient\Model\GetProjectLogs200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\QuantClient\Model\GetProjectLogs400Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\QuantClient\Model\GetProjectLogs400Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getProjectLogsAsync
+     *
+     * Get CDN access logs for a project
+     *
+     * @param  string $organization The organization machine name (required)
+     * @param  string $project The project machine name (required)
+     * @param  int|null $limit Maximum number of log entries to return per page (default 100) (optional, default to 100)
+     * @param  string|null $start_time Start of the time range. ISO 8601 or Unix epoch milliseconds. (optional)
+     * @param  string|null $end_time End of the time range. ISO 8601 or Unix epoch milliseconds. (optional)
+     * @param  string|null $filter CloudWatch JSON filter expression AND-ed with the project constraint, e.g. $.status_code &#x3D; 404. Outer braces are optional; nested braces are rejected. (optional)
+     * @param  string|null $domain Only return entries for this domain (optional)
+     * @param  string|null $next_token Opaque pagination token from the previous response. Pass back unchanged to fetch the next page. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProjectLogs'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getProjectLogsAsync($organization, $project, $limit = 100, $start_time = null, $end_time = null, $filter = null, $domain = null, $next_token = null, string $contentType = self::contentTypes['getProjectLogs'][0])
+    {
+        return $this->getProjectLogsAsyncWithHttpInfo($organization, $project, $limit, $start_time, $end_time, $filter, $domain, $next_token, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getProjectLogsAsyncWithHttpInfo
+     *
+     * Get CDN access logs for a project
+     *
+     * @param  string $organization The organization machine name (required)
+     * @param  string $project The project machine name (required)
+     * @param  int|null $limit Maximum number of log entries to return per page (default 100) (optional, default to 100)
+     * @param  string|null $start_time Start of the time range. ISO 8601 or Unix epoch milliseconds. (optional)
+     * @param  string|null $end_time End of the time range. ISO 8601 or Unix epoch milliseconds. (optional)
+     * @param  string|null $filter CloudWatch JSON filter expression AND-ed with the project constraint, e.g. $.status_code &#x3D; 404. Outer braces are optional; nested braces are rejected. (optional)
+     * @param  string|null $domain Only return entries for this domain (optional)
+     * @param  string|null $next_token Opaque pagination token from the previous response. Pass back unchanged to fetch the next page. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProjectLogs'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getProjectLogsAsyncWithHttpInfo($organization, $project, $limit = 100, $start_time = null, $end_time = null, $filter = null, $domain = null, $next_token = null, string $contentType = self::contentTypes['getProjectLogs'][0])
+    {
+        $returnType = '\QuantClient\Model\GetProjectLogs200Response';
+        $request = $this->getProjectLogsRequest($organization, $project, $limit, $start_time, $end_time, $filter, $domain, $next_token, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getProjectLogs'
+     *
+     * @param  string $organization The organization machine name (required)
+     * @param  string $project The project machine name (required)
+     * @param  int|null $limit Maximum number of log entries to return per page (default 100) (optional, default to 100)
+     * @param  string|null $start_time Start of the time range. ISO 8601 or Unix epoch milliseconds. (optional)
+     * @param  string|null $end_time End of the time range. ISO 8601 or Unix epoch milliseconds. (optional)
+     * @param  string|null $filter CloudWatch JSON filter expression AND-ed with the project constraint, e.g. $.status_code &#x3D; 404. Outer braces are optional; nested braces are rejected. (optional)
+     * @param  string|null $domain Only return entries for this domain (optional)
+     * @param  string|null $next_token Opaque pagination token from the previous response. Pass back unchanged to fetch the next page. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProjectLogs'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getProjectLogsRequest($organization, $project, $limit = 100, $start_time = null, $end_time = null, $filter = null, $domain = null, $next_token = null, string $contentType = self::contentTypes['getProjectLogs'][0])
+    {
+
+        // verify the required parameter 'organization' is set
+        if ($organization === null || (is_array($organization) && count($organization) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organization when calling getProjectLogs'
+            );
+        }
+
+        // verify the required parameter 'project' is set
+        if ($project === null || (is_array($project) && count($project) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $project when calling getProjectLogs'
+            );
+        }
+
+        if ($limit !== null && $limit > 10000) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling ProjectsApi.getProjectLogs, must be smaller than or equal to 10000.');
+        }
+        if ($limit !== null && $limit < 1) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling ProjectsApi.getProjectLogs, must be bigger than or equal to 1.');
+        }
+        
+
+
+
+
+
+
+        $resourcePath = '/api/v2/organizations/{organization}/projects/{project}/logs';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start_time,
+            'startTime', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_time,
+            'endTime', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $filter,
+            'filter', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $domain,
+            'domain', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $next_token,
+            'nextToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($organization !== null) {
+            $resourcePath = str_replace(
+                '{' . 'organization' . '}',
+                ObjectSerializer::toPathValue($organization),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($project !== null) {
+            $resourcePath = str_replace(
+                '{' . 'project' . '}',
+                ObjectSerializer::toPathValue($project),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
     }
 
     /**

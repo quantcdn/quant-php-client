@@ -9,7 +9,9 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 | [**deleteOrgResource()**](ResourcesApi.md#deleteOrgResource) | **DELETE** /api/v3/organizations/{organisation}/resources/{resource} | Delete a shared resource |
 | [**detachOrgResource()**](ResourcesApi.md#detachOrgResource) | **DELETE** /api/v3/organizations/{organisation}/resources/{resource}/attachments/{application}/{environment} | Detach a resource from an application environment |
 | [**getOrgResource()**](ResourcesApi.md#getOrgResource) | **GET** /api/v3/organizations/{organisation}/resources/{resource} | Get a shared resource and its attachments |
+| [**getOrgResourceCredentials()**](ResourcesApi.md#getOrgResourceCredentials) | **GET** /api/v3/organizations/{organisation}/resources/{resource}/credentials | Get a cache&#39;s administrative credential |
 | [**listOrgResources()**](ResourcesApi.md#listOrgResources) | **GET** /api/v3/organizations/{organisation}/resources | List an organisation&#39;s shared resources |
+| [**purgeOrgResource()**](ResourcesApi.md#purgeOrgResource) | **POST** /api/v3/organizations/{organisation}/resources/{resource}/purge | Purge keys from a cache |
 
 
 ## `attachOrgResource()`
@@ -326,6 +328,68 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getOrgResourceCredentials()`
+
+```php
+getOrgResourceCredentials($organisation, $resource): \QuantClient\Model\GetOrgResourceCredentials200Response
+```
+
+Get a cache's administrative credential
+
+Cache resources only. Returns the cache-wide user (every key, every command, including FLUSHDB) with host and port. Environments attached to the cache use their own scoped users; this credential is for operators who genuinely need unrestricted access. Every read is audit-logged against the requesting user.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\ResourcesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organisation = test-org; // string | The organisation ID
+$resource = vk-sessions; // string | The resource ID
+
+try {
+    $result = $apiInstance->getOrgResourceCredentials($organisation, $resource);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ResourcesApi->getOrgResourceCredentials: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation** | **string**| The organisation ID | |
+| **resource** | **string**| The resource ID | |
+
+### Return type
+
+[**\QuantClient\Model\GetOrgResourceCredentials200Response**](../Model/GetOrgResourceCredentials200Response.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `listOrgResources()`
 
 ```php
@@ -378,6 +442,70 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `purgeOrgResource()`
+
+```php
+purgeOrgResource($organisation, $resource, $purge_org_resource_request): \QuantClient\Model\PurgeOrgResource200Response
+```
+
+Purge keys from a cache
+
+Cache resources only. scope environment deletes that environment's keys, using the CACHE_PREFIX recorded on its attachment rather than anything in the request. scope all flushes every key for every attached environment and requires confirm=true. A large environment purge may return complete=false with a cursor to resume.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\ResourcesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organisation = test-org; // string | The organisation ID
+$resource = vk-sessions; // string | The resource ID
+$purge_org_resource_request = new \QuantClient\Model\PurgeOrgResourceRequest(); // \QuantClient\Model\PurgeOrgResourceRequest
+
+try {
+    $result = $apiInstance->purgeOrgResource($organisation, $resource, $purge_org_resource_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ResourcesApi->purgeOrgResource: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation** | **string**| The organisation ID | |
+| **resource** | **string**| The resource ID | |
+| **purge_org_resource_request** | [**\QuantClient\Model\PurgeOrgResourceRequest**](../Model/PurgeOrgResourceRequest.md)|  | |
+
+### Return type
+
+[**\QuantClient\Model\PurgeOrgResource200Response**](../Model/PurgeOrgResource200Response.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
