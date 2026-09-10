@@ -1028,7 +1028,7 @@ class V2CrawlerRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets user_agent
      *
-     * @param string|null $user_agent Custom user agent, only when browser_mode is false
+     * @param string|null $user_agent Custom user agent. Valid with or without browser_mode.
      *
      * @return self
      */
