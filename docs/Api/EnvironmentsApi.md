@@ -204,12 +204,12 @@ try {
 ## `getEnvironmentLogs()`
 
 ```php
-getEnvironmentLogs($organisation, $application, $environment, $start_time, $end_time, $container_name, $filter_pattern, $limit, $next_token): \QuantClient\Model\GetEnvironmentLogs200Response
+getEnvironmentLogs($organisation, $application, $environment, $start_time, $end_time, $container_name, $filter_pattern, $limit, $next_token, $order, $include_total): \QuantClient\Model\GetEnvironmentLogs200Response
 ```
 
 Get the logs for an environment
 
-Retrieves logs from CloudWatch for the specified environment with optional filtering by time range, container, and pattern matching. Supports pagination via nextToken.
+Retrieves logs from CloudWatch for the specified environment with optional filtering by time range, container, and literal text. Newest-first by default; pass the nextToken from the previous response to fetch the next page.
 
 ### Example
 
@@ -234,12 +234,14 @@ $environment = test-env; // string | The environment ID
 $start_time = 'start_time_example'; // string | Start time for log retrieval (ISO 8601 format or Unix timestamp)
 $end_time = 'end_time_example'; // string | End time for log retrieval (ISO 8601 format or Unix timestamp)
 $container_name = 'container_name_example'; // string | Filter logs by specific container name
-$filter_pattern = 'filter_pattern_example'; // string | CloudWatch Logs filter pattern for searching log content
-$limit = 56; // int | Maximum number of log entries to return per page
-$next_token = 'next_token_example'; // string | Pagination token from previous response for retrieving next page of results
+$filter_pattern = 'filter_pattern_example'; // string | Literal, case-sensitive text to match anywhere in the log message
+$limit = 50; // int | Maximum number of log entries to return per page (default 50)
+$next_token = 'next_token_example'; // string | Opaque pagination token from the previous response. Pass back unchanged to fetch the next page.
+$order = 'desc'; // string | Sort order. desc returns newest first, asc returns oldest first.
+$include_total = false; // bool | When true, the response pagination object includes the total log count for the time range. Adds 1-2 seconds of latency.
 
 try {
-    $result = $apiInstance->getEnvironmentLogs($organisation, $application, $environment, $start_time, $end_time, $container_name, $filter_pattern, $limit, $next_token);
+    $result = $apiInstance->getEnvironmentLogs($organisation, $application, $environment, $start_time, $end_time, $container_name, $filter_pattern, $limit, $next_token, $order, $include_total);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentsApi->getEnvironmentLogs: ', $e->getMessage(), PHP_EOL;
@@ -256,9 +258,11 @@ try {
 | **start_time** | **string**| Start time for log retrieval (ISO 8601 format or Unix timestamp) | [optional] |
 | **end_time** | **string**| End time for log retrieval (ISO 8601 format or Unix timestamp) | [optional] |
 | **container_name** | **string**| Filter logs by specific container name | [optional] |
-| **filter_pattern** | **string**| CloudWatch Logs filter pattern for searching log content | [optional] |
-| **limit** | **int**| Maximum number of log entries to return per page | [optional] |
-| **next_token** | **string**| Pagination token from previous response for retrieving next page of results | [optional] |
+| **filter_pattern** | **string**| Literal, case-sensitive text to match anywhere in the log message | [optional] |
+| **limit** | **int**| Maximum number of log entries to return per page (default 50) | [optional] [default to 50] |
+| **next_token** | **string**| Opaque pagination token from the previous response. Pass back unchanged to fetch the next page. | [optional] |
+| **order** | **string**| Sort order. desc returns newest first, asc returns oldest first. | [optional] [default to &#39;desc&#39;] |
+| **include_total** | **bool**| When true, the response pagination object includes the total log count for the time range. Adds 1-2 seconds of latency. | [optional] [default to false] |
 
 ### Return type
 

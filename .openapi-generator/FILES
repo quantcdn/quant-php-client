@@ -31,11 +31,13 @@ docs/Api/CronApi.md
 docs/Api/DomainsApi.md
 docs/Api/EnvironmentsApi.md
 docs/Api/HeadersApi.md
+docs/Api/IdleSleepApi.md
 docs/Api/KVApi.md
 docs/Api/OpenAICompatibilityApi.md
 docs/Api/OrganizationsApi.md
 docs/Api/ProjectsApi.md
 docs/Api/PurgeApi.md
+docs/Api/ResourcesApi.md
 docs/Api/RestoreManagementApi.md
 docs/Api/RulesApi.md
 docs/Api/SSHAccessApi.md
@@ -58,6 +60,7 @@ docs/Model/ApplicationDatabase.md
 docs/Model/ApplicationDeploymentInformationInner.md
 docs/Model/ApplicationFilesystem.md
 docs/Model/ApplicationImageReference.md
+docs/Model/AttachOrgResourceRequest.md
 docs/Model/BulkSetEnvironmentVariablesRequest.md
 docs/Model/BulkSetEnvironmentVariablesRequestEnvironmentInner.md
 docs/Model/ChatInference200Response.md
@@ -133,6 +136,8 @@ docs/Model/CreateFilterPolicyRequestRulesInnerMatch.md
 docs/Model/CreateOrchestrationRequest.md
 docs/Model/CreateOrchestrationRequestInputSource.md
 docs/Model/CreateOrchestrationRequestStopCondition.md
+docs/Model/CreateOrgResourceRequest.md
+docs/Model/CreateOrgResourceRequestConfig.md
 docs/Model/CreateSkill201Response.md
 docs/Model/CreateSkillRequest.md
 docs/Model/CreateSlackBot201Response.md
@@ -198,6 +203,7 @@ docs/Model/GetDurableExecutionStatus200ResponseResultUsage.md
 docs/Model/GetEcrLoginCredentials200Response.md
 docs/Model/GetEnvironmentLogs200Response.md
 docs/Model/GetEnvironmentLogs200ResponseLogEventsInner.md
+docs/Model/GetEnvironmentLogs200ResponsePagination.md
 docs/Model/GetFile200Response.md
 docs/Model/GetGovernanceConfig200Response.md
 docs/Model/GetGovernanceConfig200ResponseSpendLimits.md
@@ -215,6 +221,10 @@ docs/Model/GetMyUsage200ResponseMonthly.md
 docs/Model/GetMyUsage200ResponseQuota.md
 docs/Model/GetMyUsage200ResponseQuotaDailyLimit.md
 docs/Model/GetMyUsage200ResponseQuotaMonthlyLimit.md
+docs/Model/GetOrgResourceCredentials200Response.md
+docs/Model/GetProjectLogs200Response.md
+docs/Model/GetProjectLogs200ResponseLogsInner.md
+docs/Model/GetProjectLogs400Response.md
 docs/Model/GetRestoreStatus200Response.md
 docs/Model/GetScalingPolicyResponse.md
 docs/Model/GetSkill200Response.md
@@ -226,6 +236,7 @@ docs/Model/GetSshAccessCredentials200ResponseCredentials.md
 docs/Model/GetTask200Response.md
 docs/Model/GetVectorCollection200Response.md
 docs/Model/GetVectorCollection200ResponseCollection.md
+docs/Model/IdleSleepResponse.md
 docs/Model/ImageGeneration200Response.md
 docs/Model/ImageGenerationRequest.md
 docs/Model/ImageGenerationRequestBackgroundRemovalParams.md
@@ -241,8 +252,11 @@ docs/Model/ImportSkillCollectionRequest.md
 docs/Model/ImportSkillCollectionRequestSource.md
 docs/Model/ImportSkillRequest.md
 docs/Model/ImportSkillRequestSource.md
+docs/Model/KVDelete409Response.md
 docs/Model/KVItemsCreate200Response.md
 docs/Model/KVItemsDelete200Response.md
+docs/Model/KVItemsPurge200Response.md
+docs/Model/KVItemsPurge202Response.md
 docs/Model/KVItemsShow200Response.md
 docs/Model/KVItemsShow200ResponseValue.md
 docs/Model/KVLinkToProject200Response.md
@@ -267,6 +281,8 @@ docs/Model/ListCustomTools200Response.md
 docs/Model/ListCustomTools200ResponseToolsInner.md
 docs/Model/ListFiles200Response.md
 docs/Model/ListFiles200ResponseFilesInner.md
+docs/Model/ListMcpServers200Response.md
+docs/Model/ListMcpServers200ResponseServersInner.md
 docs/Model/ListOrchestrationBatches200Response.md
 docs/Model/ListOrchestrationBatches200ResponseBatchesInner.md
 docs/Model/ListOrchestrations200Response.md
@@ -293,6 +309,7 @@ docs/Model/OaiEmbeddingsRequest.md
 docs/Model/OaiGetModel200Response.md
 docs/Model/OaiListModels200Response.md
 docs/Model/OaiListModels200ResponseDataInner.md
+docs/Model/OrgResource.md
 docs/Model/OrganizationsList200ResponseInner.md
 docs/Model/PatchEnvironmentCompose202Response.md
 docs/Model/PatchEnvironmentCompose202ResponseSpotConfiguration.md
@@ -300,11 +317,14 @@ docs/Model/PatchEnvironmentCompose400Response.md
 docs/Model/PatchEnvironmentComposeRequest.md
 docs/Model/PatchEnvironmentComposeRequestSpotConfiguration.md
 docs/Model/PurgeCreateRequest.md
+docs/Model/PurgeOrgResource200Response.md
+docs/Model/PurgeOrgResourceRequest.md
 docs/Model/QueryVectorCollection200Response.md
 docs/Model/QueryVectorCollection200ResponsePagination.md
 docs/Model/QueryVectorCollection200ResponseResultsInner.md
 docs/Model/QueryVectorCollectionRequest.md
 docs/Model/QueryVectorCollectionRequestFilter.md
+docs/Model/ResourceAttachment.md
 docs/Model/RestoreDatabase202Response.md
 docs/Model/RestoreDatabaseRequest.md
 docs/Model/RestoreFilesystem202Response.md
@@ -314,6 +334,7 @@ docs/Model/SearchSlackWorkspaceChannels200Response.md
 docs/Model/SearchSlackWorkspaceChannels200ResponseResultsInner.md
 docs/Model/SearchSlackWorkspaceUsers200Response.md
 docs/Model/SearchSlackWorkspaceUsers200ResponseResultsInner.md
+docs/Model/SetIdleSleepRequest.md
 docs/Model/SetScalingPolicyRequest.md
 docs/Model/SpotConfiguration.md
 docs/Model/SubmitToolCallback200Response.md
@@ -494,11 +515,13 @@ src/Api/CronApi.php
 src/Api/DomainsApi.php
 src/Api/EnvironmentsApi.php
 src/Api/HeadersApi.php
+src/Api/IdleSleepApi.php
 src/Api/KVApi.php
 src/Api/OpenAICompatibilityApi.php
 src/Api/OrganizationsApi.php
 src/Api/ProjectsApi.php
 src/Api/PurgeApi.php
+src/Api/ResourcesApi.php
 src/Api/RestoreManagementApi.php
 src/Api/RulesApi.php
 src/Api/SSHAccessApi.php
@@ -525,6 +548,7 @@ src/Model/ApplicationDatabase.php
 src/Model/ApplicationDeploymentInformationInner.php
 src/Model/ApplicationFilesystem.php
 src/Model/ApplicationImageReference.php
+src/Model/AttachOrgResourceRequest.php
 src/Model/BulkSetEnvironmentVariablesRequest.php
 src/Model/BulkSetEnvironmentVariablesRequestEnvironmentInner.php
 src/Model/ChatInference200Response.php
@@ -600,6 +624,8 @@ src/Model/CreateFilterPolicyRequestRulesInnerMatch.php
 src/Model/CreateOrchestrationRequest.php
 src/Model/CreateOrchestrationRequestInputSource.php
 src/Model/CreateOrchestrationRequestStopCondition.php
+src/Model/CreateOrgResourceRequest.php
+src/Model/CreateOrgResourceRequestConfig.php
 src/Model/CreateSkill201Response.php
 src/Model/CreateSkillRequest.php
 src/Model/CreateSlackBot201Response.php
@@ -665,6 +691,7 @@ src/Model/GetDurableExecutionStatus200ResponseResultUsage.php
 src/Model/GetEcrLoginCredentials200Response.php
 src/Model/GetEnvironmentLogs200Response.php
 src/Model/GetEnvironmentLogs200ResponseLogEventsInner.php
+src/Model/GetEnvironmentLogs200ResponsePagination.php
 src/Model/GetFile200Response.php
 src/Model/GetGovernanceConfig200Response.php
 src/Model/GetGovernanceConfig200ResponseSpendLimits.php
@@ -682,6 +709,10 @@ src/Model/GetMyUsage200ResponseMonthly.php
 src/Model/GetMyUsage200ResponseQuota.php
 src/Model/GetMyUsage200ResponseQuotaDailyLimit.php
 src/Model/GetMyUsage200ResponseQuotaMonthlyLimit.php
+src/Model/GetOrgResourceCredentials200Response.php
+src/Model/GetProjectLogs200Response.php
+src/Model/GetProjectLogs200ResponseLogsInner.php
+src/Model/GetProjectLogs400Response.php
 src/Model/GetRestoreStatus200Response.php
 src/Model/GetScalingPolicyResponse.php
 src/Model/GetSkill200Response.php
@@ -693,6 +724,7 @@ src/Model/GetSshAccessCredentials200ResponseCredentials.php
 src/Model/GetTask200Response.php
 src/Model/GetVectorCollection200Response.php
 src/Model/GetVectorCollection200ResponseCollection.php
+src/Model/IdleSleepResponse.php
 src/Model/ImageGeneration200Response.php
 src/Model/ImageGenerationRequest.php
 src/Model/ImageGenerationRequestBackgroundRemovalParams.php
@@ -708,8 +740,11 @@ src/Model/ImportSkillCollectionRequest.php
 src/Model/ImportSkillCollectionRequestSource.php
 src/Model/ImportSkillRequest.php
 src/Model/ImportSkillRequestSource.php
+src/Model/KVDelete409Response.php
 src/Model/KVItemsCreate200Response.php
 src/Model/KVItemsDelete200Response.php
+src/Model/KVItemsPurge200Response.php
+src/Model/KVItemsPurge202Response.php
 src/Model/KVItemsShow200Response.php
 src/Model/KVItemsShow200ResponseValue.php
 src/Model/KVLinkToProject200Response.php
@@ -734,6 +769,8 @@ src/Model/ListCustomTools200Response.php
 src/Model/ListCustomTools200ResponseToolsInner.php
 src/Model/ListFiles200Response.php
 src/Model/ListFiles200ResponseFilesInner.php
+src/Model/ListMcpServers200Response.php
+src/Model/ListMcpServers200ResponseServersInner.php
 src/Model/ListOrchestrationBatches200Response.php
 src/Model/ListOrchestrationBatches200ResponseBatchesInner.php
 src/Model/ListOrchestrations200Response.php
@@ -761,6 +798,7 @@ src/Model/OaiEmbeddingsRequest.php
 src/Model/OaiGetModel200Response.php
 src/Model/OaiListModels200Response.php
 src/Model/OaiListModels200ResponseDataInner.php
+src/Model/OrgResource.php
 src/Model/OrganizationsList200ResponseInner.php
 src/Model/PatchEnvironmentCompose202Response.php
 src/Model/PatchEnvironmentCompose202ResponseSpotConfiguration.php
@@ -768,11 +806,14 @@ src/Model/PatchEnvironmentCompose400Response.php
 src/Model/PatchEnvironmentComposeRequest.php
 src/Model/PatchEnvironmentComposeRequestSpotConfiguration.php
 src/Model/PurgeCreateRequest.php
+src/Model/PurgeOrgResource200Response.php
+src/Model/PurgeOrgResourceRequest.php
 src/Model/QueryVectorCollection200Response.php
 src/Model/QueryVectorCollection200ResponsePagination.php
 src/Model/QueryVectorCollection200ResponseResultsInner.php
 src/Model/QueryVectorCollectionRequest.php
 src/Model/QueryVectorCollectionRequestFilter.php
+src/Model/ResourceAttachment.php
 src/Model/RestoreDatabase202Response.php
 src/Model/RestoreDatabaseRequest.php
 src/Model/RestoreFilesystem202Response.php
@@ -782,6 +823,7 @@ src/Model/SearchSlackWorkspaceChannels200Response.php
 src/Model/SearchSlackWorkspaceChannels200ResponseResultsInner.php
 src/Model/SearchSlackWorkspaceUsers200Response.php
 src/Model/SearchSlackWorkspaceUsers200ResponseResultsInner.php
+src/Model/SetIdleSleepRequest.php
 src/Model/SetScalingPolicyRequest.php
 src/Model/SpotConfiguration.php
 src/Model/SubmitToolCallback200Response.php

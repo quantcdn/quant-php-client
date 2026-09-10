@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **status_ok** | **int[]** | HTTP status codes that will result in content being captured and pushed to Quant | [optional]
 **sitemap** | [**\QuantClient\Model\V2CrawlerSitemapInner[]**](V2CrawlerSitemapInner.md) | Sitemap configuration | [optional]
 **allowed_domains** | **string[]** | Allowed domains for multi-domain crawling, automatically enables merge_domains | [optional]
-**user_agent** | **string** | Custom user agent, only when browser_mode is false | [optional]
+**user_agent** | **string** | Custom user agent. Valid with or without browser_mode. | [optional]
 **assets** | [**\QuantClient\Model\V2CrawlerAssets**](V2CrawlerAssets.md) |  | [optional]
 **max_errors** | **int** | Maximum errors before stopping crawl | [optional]
 
