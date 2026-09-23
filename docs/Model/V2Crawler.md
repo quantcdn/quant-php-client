@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **webhook_auth_header** | **string** | Authorization header for webhook | [optional]
 **webhook_extra_vars** | **string** | Extra variables for webhook | [optional]
 **browser_mode** | **bool** | Browser mode enabled | [optional]
+**tracking** | **bool** | Content tracking enabled: the crawl reports progress and page status to the project tracking site | [optional]
 **workers** | **int** | Number of concurrent workers | [optional]
 **delay** | **float** | Delay between requests in seconds | [optional]
 **depth** | **int** | Maximum crawl depth | [optional]
