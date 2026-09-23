@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **name** | **string** | Crawler name | [optional]
 **domain** | **string** | Domain to crawl |
 **browser_mode** | **bool** | Enable browser mode | [optional] [default to false]
+**tracking** | **bool** | Enable content tracking. Records crawl progress and per-page status against the project tracking site. Needs no domain verification. | [optional] [default to false]
 **urls** | **string[]** | URLs to crawl | [optional]
 **start_urls** | **string[]** | Starting URLs for crawl | [optional]
 **headers** | **array<string,string>** | Custom headers | [optional]
