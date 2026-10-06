@@ -1,6 +1,6 @@
 <?php
 /**
- * GetMyUsage200ResponseMonthly
+ * V2CrawlerBrowserConfig
  *
  * PHP version 8.1
  *
@@ -32,15 +32,16 @@ use \ArrayAccess;
 use \QuantClient\ObjectSerializer;
 
 /**
- * GetMyUsage200ResponseMonthly Class Doc Comment
+ * V2CrawlerBrowserConfig Class Doc Comment
  *
  * @category Class
+ * @description Browser-mode behaviour. Only applies when browser_mode is true.
  * @package  QuantClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \JsonSerializable
+class V2CrawlerBrowserConfig implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static $openAPIModelName = 'getMyUsage_200_response_monthly';
+    protected static $openAPIModelName = 'V2Crawler_browser_config';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +58,9 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'spend_cents' => 'float',
-        'request_count' => 'int'
+        'capture_api_responses' => 'bool',
+        'wait_for_network_idle' => 'int',
+        'use_rendered_html' => 'bool'
     ];
 
     /**
@@ -69,8 +71,9 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'spend_cents' => null,
-        'request_count' => null
+        'capture_api_responses' => null,
+        'wait_for_network_idle' => null,
+        'use_rendered_html' => null
     ];
 
     /**
@@ -79,8 +82,9 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'spend_cents' => false,
-        'request_count' => false
+        'capture_api_responses' => false,
+        'wait_for_network_idle' => false,
+        'use_rendered_html' => false
     ];
 
     /**
@@ -169,8 +173,9 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'spend_cents' => 'spendCents',
-        'request_count' => 'requestCount'
+        'capture_api_responses' => 'capture_api_responses',
+        'wait_for_network_idle' => 'wait_for_network_idle',
+        'use_rendered_html' => 'use_rendered_html'
     ];
 
     /**
@@ -179,8 +184,9 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'spend_cents' => 'setSpendCents',
-        'request_count' => 'setRequestCount'
+        'capture_api_responses' => 'setCaptureApiResponses',
+        'wait_for_network_idle' => 'setWaitForNetworkIdle',
+        'use_rendered_html' => 'setUseRenderedHtml'
     ];
 
     /**
@@ -189,8 +195,9 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'spend_cents' => 'getSpendCents',
-        'request_count' => 'getRequestCount'
+        'capture_api_responses' => 'getCaptureApiResponses',
+        'wait_for_network_idle' => 'getWaitForNetworkIdle',
+        'use_rendered_html' => 'getUseRenderedHtml'
     ];
 
     /**
@@ -250,8 +257,9 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('spend_cents', $data ?? [], null);
-        $this->setIfExists('request_count', $data ?? [], null);
+        $this->setIfExists('capture_api_responses', $data ?? [], null);
+        $this->setIfExists('wait_for_network_idle', $data ?? [], null);
+        $this->setIfExists('use_rendered_html', $data ?? [], null);
     }
 
     /**
@@ -297,55 +305,82 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets spend_cents
+     * Gets capture_api_responses
      *
-     * @return float|null
+     * @return bool|null
      */
-    public function getSpendCents()
+    public function getCaptureApiResponses()
     {
-        return $this->container['spend_cents'];
+        return $this->container['capture_api_responses'];
     }
 
     /**
-     * Sets spend_cents
+     * Sets capture_api_responses
      *
-     * @param float|null $spend_cents spend_cents
+     * @param bool|null $capture_api_responses Store XHR/fetch responses as files, so a static copy can serve a site whose navigation or content is rendered client-side from a JSON endpoint
      *
      * @return self
      */
-    public function setSpendCents($spend_cents)
+    public function setCaptureApiResponses($capture_api_responses)
     {
-        if (is_null($spend_cents)) {
-            throw new \InvalidArgumentException('non-nullable spend_cents cannot be null');
+        if (is_null($capture_api_responses)) {
+            throw new \InvalidArgumentException('non-nullable capture_api_responses cannot be null');
         }
-        $this->container['spend_cents'] = $spend_cents;
+        $this->container['capture_api_responses'] = $capture_api_responses;
 
         return $this;
     }
 
     /**
-     * Gets request_count
+     * Gets wait_for_network_idle
      *
      * @return int|null
      */
-    public function getRequestCount()
+    public function getWaitForNetworkIdle()
     {
-        return $this->container['request_count'];
+        return $this->container['wait_for_network_idle'];
     }
 
     /**
-     * Sets request_count
+     * Sets wait_for_network_idle
      *
-     * @param int|null $request_count request_count
+     * @param int|null $wait_for_network_idle Wait for the network to settle before capture, in milliseconds. Useful for API-driven sites
      *
      * @return self
      */
-    public function setRequestCount($request_count)
+    public function setWaitForNetworkIdle($wait_for_network_idle)
     {
-        if (is_null($request_count)) {
-            throw new \InvalidArgumentException('non-nullable request_count cannot be null');
+        if (is_null($wait_for_network_idle)) {
+            throw new \InvalidArgumentException('non-nullable wait_for_network_idle cannot be null');
         }
-        $this->container['request_count'] = $request_count;
+        $this->container['wait_for_network_idle'] = $wait_for_network_idle;
+
+        return $this;
+    }
+
+    /**
+     * Gets use_rendered_html
+     *
+     * @return bool|null
+     */
+    public function getUseRenderedHtml()
+    {
+        return $this->container['use_rendered_html'];
+    }
+
+    /**
+     * Sets use_rendered_html
+     *
+     * @param bool|null $use_rendered_html Store the JavaScript-modified DOM instead of the original HTML response
+     *
+     * @return self
+     */
+    public function setUseRenderedHtml($use_rendered_html)
+    {
+        if (is_null($use_rendered_html)) {
+            throw new \InvalidArgumentException('non-nullable use_rendered_html cannot be null');
+        }
+        $this->container['use_rendered_html'] = $use_rendered_html;
 
         return $this;
     }

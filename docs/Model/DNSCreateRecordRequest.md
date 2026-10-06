@@ -1,10 +1,12 @@
-# # GetGovernanceSpend200ResponseTodayTotal
+# # DNSCreateRecordRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spend_cents** | **float** | Org spend today in US cents, exact to 6 decimal places | [optional]
-**request_count** | **int** |  | [optional]
+**name** | **string** | Name relative to the zone; @ denotes the apex |
+**type** | **string** |  |
+**value** | **string** |  |
+**ttl** | **int** |  | [optional] [default to 300]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

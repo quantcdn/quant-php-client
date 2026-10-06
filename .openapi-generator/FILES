@@ -150,6 +150,7 @@ docs/Model/CreateVectorCollectionRequest.md
 docs/Model/CreateVolumeRequest.md
 docs/Model/Cron.md
 docs/Model/CronRun.md
+docs/Model/DNSCreateRecordRequest.md
 docs/Model/DeleteAIAgent200Response.md
 docs/Model/DeleteAISession200Response.md
 docs/Model/DeleteAgentOverlay200Response.md
@@ -416,6 +417,7 @@ docs/Model/V2Crawler.md
 docs/Model/V2CrawlerAssets.md
 docs/Model/V2CrawlerAssetsNetworkIntercept.md
 docs/Model/V2CrawlerAssetsParser.md
+docs/Model/V2CrawlerBrowserConfig.md
 docs/Model/V2CrawlerRequest.md
 docs/Model/V2CrawlerRun.md
 docs/Model/V2CrawlerSchedule.md
@@ -641,6 +643,7 @@ src/Model/CreateVectorCollectionRequest.php
 src/Model/CreateVolumeRequest.php
 src/Model/Cron.php
 src/Model/CronRun.php
+src/Model/DNSCreateRecordRequest.php
 src/Model/DeleteAIAgent200Response.php
 src/Model/DeleteAISession200Response.php
 src/Model/DeleteAgentOverlay200Response.php
@@ -908,6 +911,7 @@ src/Model/V2Crawler.php
 src/Model/V2CrawlerAssets.php
 src/Model/V2CrawlerAssetsNetworkIntercept.php
 src/Model/V2CrawlerAssetsParser.php
+src/Model/V2CrawlerBrowserConfig.php
 src/Model/V2CrawlerRequest.php
 src/Model/V2CrawlerRun.php
 src/Model/V2CrawlerSchedule.php

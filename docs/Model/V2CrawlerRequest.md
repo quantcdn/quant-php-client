@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **allowed_domains** | **string[]** | Allowed domains for multi-domain crawling, automatically enables merge_domains | [optional]
 **user_agent** | **string** | Custom user agent. Valid with or without browser_mode. | [optional]
 **assets** | [**\QuantClient\Model\V2CrawlerAssets**](V2CrawlerAssets.md) |  | [optional]
+**browser_config** | [**\QuantClient\Model\V2CrawlerBrowserConfig**](V2CrawlerBrowserConfig.md) |  | [optional]
 **max_errors** | **int** | Maximum errors before stopping crawl | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

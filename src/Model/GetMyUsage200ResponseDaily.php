@@ -57,7 +57,7 @@ class GetMyUsage200ResponseDaily implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'spend_cents' => 'int'
+        'spend_cents' => 'float'
     ];
 
     /**
@@ -292,7 +292,7 @@ class GetMyUsage200ResponseDaily implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets spend_cents
      *
-     * @return int|null
+     * @return float|null
      */
     public function getSpendCents()
     {
@@ -302,7 +302,7 @@ class GetMyUsage200ResponseDaily implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets spend_cents
      *
-     * @param int|null $spend_cents spend_cents
+     * @param float|null $spend_cents spend_cents
      *
      * @return self
      */

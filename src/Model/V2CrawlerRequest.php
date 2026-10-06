@@ -79,6 +79,7 @@ class V2CrawlerRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'allowed_domains' => 'string[]',
         'user_agent' => 'string',
         'assets' => '\QuantClient\Model\V2CrawlerAssets',
+        'browser_config' => '\QuantClient\Model\V2CrawlerBrowserConfig',
         'max_errors' => 'int'
     ];
 
@@ -112,6 +113,7 @@ class V2CrawlerRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'allowed_domains' => null,
         'user_agent' => null,
         'assets' => null,
+        'browser_config' => null,
         'max_errors' => null
     ];
 
@@ -143,6 +145,7 @@ class V2CrawlerRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'allowed_domains' => false,
         'user_agent' => false,
         'assets' => false,
+        'browser_config' => false,
         'max_errors' => false
     ];
 
@@ -254,6 +257,7 @@ class V2CrawlerRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'allowed_domains' => 'allowed_domains',
         'user_agent' => 'user_agent',
         'assets' => 'assets',
+        'browser_config' => 'browser_config',
         'max_errors' => 'max_errors'
     ];
 
@@ -285,6 +289,7 @@ class V2CrawlerRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'allowed_domains' => 'setAllowedDomains',
         'user_agent' => 'setUserAgent',
         'assets' => 'setAssets',
+        'browser_config' => 'setBrowserConfig',
         'max_errors' => 'setMaxErrors'
     ];
 
@@ -316,6 +321,7 @@ class V2CrawlerRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'allowed_domains' => 'getAllowedDomains',
         'user_agent' => 'getUserAgent',
         'assets' => 'getAssets',
+        'browser_config' => 'getBrowserConfig',
         'max_errors' => 'getMaxErrors'
     ];
 
@@ -398,6 +404,7 @@ class V2CrawlerRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('allowed_domains', $data ?? [], null);
         $this->setIfExists('user_agent', $data ?? [], null);
         $this->setIfExists('assets', $data ?? [], null);
+        $this->setIfExists('browser_config', $data ?? [], null);
         $this->setIfExists('max_errors', $data ?? [], null);
     }
 
@@ -1099,6 +1106,33 @@ class V2CrawlerRequest implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable assets cannot be null');
         }
         $this->container['assets'] = $assets;
+
+        return $this;
+    }
+
+    /**
+     * Gets browser_config
+     *
+     * @return \QuantClient\Model\V2CrawlerBrowserConfig|null
+     */
+    public function getBrowserConfig()
+    {
+        return $this->container['browser_config'];
+    }
+
+    /**
+     * Sets browser_config
+     *
+     * @param \QuantClient\Model\V2CrawlerBrowserConfig|null $browser_config browser_config
+     *
+     * @return self
+     */
+    public function setBrowserConfig($browser_config)
+    {
+        if (is_null($browser_config)) {
+            throw new \InvalidArgumentException('non-nullable browser_config cannot be null');
+        }
+        $this->container['browser_config'] = $browser_config;
 
         return $this;
     }

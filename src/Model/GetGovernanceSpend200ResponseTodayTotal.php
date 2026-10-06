@@ -57,7 +57,7 @@ class GetGovernanceSpend200ResponseTodayTotal implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'spend_cents' => 'int',
+        'spend_cents' => 'float',
         'request_count' => 'int'
     ];
 
@@ -299,7 +299,7 @@ class GetGovernanceSpend200ResponseTodayTotal implements ModelInterface, ArrayAc
     /**
      * Gets spend_cents
      *
-     * @return int|null
+     * @return float|null
      */
     public function getSpendCents()
     {
@@ -309,7 +309,7 @@ class GetGovernanceSpend200ResponseTodayTotal implements ModelInterface, ArrayAc
     /**
      * Sets spend_cents
      *
-     * @param int|null $spend_cents Org spend today in US cents
+     * @param float|null $spend_cents Org spend today in US cents, exact to 6 decimal places
      *
      * @return self
      */

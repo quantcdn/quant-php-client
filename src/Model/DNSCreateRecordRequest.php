@@ -1,6 +1,6 @@
 <?php
 /**
- * GetMyUsage200ResponseMonthly
+ * DNSCreateRecordRequest
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \QuantClient\ObjectSerializer;
 
 /**
- * GetMyUsage200ResponseMonthly Class Doc Comment
+ * DNSCreateRecordRequest Class Doc Comment
  *
  * @category Class
  * @package  QuantClient
@@ -40,7 +40,7 @@ use \QuantClient\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \JsonSerializable
+class DNSCreateRecordRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static $openAPIModelName = 'getMyUsage_200_response_monthly';
+    protected static $openAPIModelName = 'DNS_createRecord_request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,10 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'spend_cents' => 'float',
-        'request_count' => 'int'
+        'name' => 'string',
+        'type' => 'string',
+        'value' => 'string',
+        'ttl' => 'int'
     ];
 
     /**
@@ -69,8 +71,10 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'spend_cents' => null,
-        'request_count' => null
+        'name' => null,
+        'type' => null,
+        'value' => 'ipv4',
+        'ttl' => null
     ];
 
     /**
@@ -79,8 +83,10 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'spend_cents' => false,
-        'request_count' => false
+        'name' => false,
+        'type' => false,
+        'value' => false,
+        'ttl' => false
     ];
 
     /**
@@ -169,8 +175,10 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'spend_cents' => 'spendCents',
-        'request_count' => 'requestCount'
+        'name' => 'name',
+        'type' => 'type',
+        'value' => 'value',
+        'ttl' => 'ttl'
     ];
 
     /**
@@ -179,8 +187,10 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'spend_cents' => 'setSpendCents',
-        'request_count' => 'setRequestCount'
+        'name' => 'setName',
+        'type' => 'setType',
+        'value' => 'setValue',
+        'ttl' => 'setTtl'
     ];
 
     /**
@@ -189,8 +199,10 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'spend_cents' => 'getSpendCents',
-        'request_count' => 'getRequestCount'
+        'name' => 'getName',
+        'type' => 'getType',
+        'value' => 'getValue',
+        'ttl' => 'getTtl'
     ];
 
     /**
@@ -234,6 +246,19 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
         return self::$openAPIModelName;
     }
 
+    public const TYPE_A = 'A';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_A,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -250,8 +275,10 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('spend_cents', $data ?? [], null);
-        $this->setIfExists('request_count', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('value', $data ?? [], null);
+        $this->setIfExists('ttl', $data ?? [], 300);
     }
 
     /**
@@ -281,6 +308,32 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
+        }
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['value'] === null) {
+            $invalidProperties[] = "'value' can't be null";
+        }
+        if (!is_null($this->container['ttl']) && ($this->container['ttl'] > 86400)) {
+            $invalidProperties[] = "invalid value for 'ttl', must be smaller than or equal to 86400.";
+        }
+
+        if (!is_null($this->container['ttl']) && ($this->container['ttl'] < 1)) {
+            $invalidProperties[] = "invalid value for 'ttl', must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -297,55 +350,127 @@ class GetMyUsage200ResponseMonthly implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets spend_cents
+     * Gets name
      *
-     * @return float|null
+     * @return string
      */
-    public function getSpendCents()
+    public function getName()
     {
-        return $this->container['spend_cents'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets spend_cents
+     * Sets name
      *
-     * @param float|null $spend_cents spend_cents
+     * @param string $name Name relative to the zone; @ denotes the apex
      *
      * @return self
      */
-    public function setSpendCents($spend_cents)
+    public function setName($name)
     {
-        if (is_null($spend_cents)) {
-            throw new \InvalidArgumentException('non-nullable spend_cents cannot be null');
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-        $this->container['spend_cents'] = $spend_cents;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets request_count
+     * Gets type
      *
-     * @return int|null
+     * @return string
      */
-    public function getRequestCount()
+    public function getType()
     {
-        return $this->container['request_count'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets request_count
+     * Sets type
      *
-     * @param int|null $request_count request_count
+     * @param string $type type
      *
      * @return self
      */
-    public function setRequestCount($request_count)
+    public function setType($type)
     {
-        if (is_null($request_count)) {
-            throw new \InvalidArgumentException('non-nullable request_count cannot be null');
+        if (is_null($type)) {
+            throw new \InvalidArgumentException('non-nullable type cannot be null');
         }
-        $this->container['request_count'] = $request_count;
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets value
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->container['value'];
+    }
+
+    /**
+     * Sets value
+     *
+     * @param string $value value
+     *
+     * @return self
+     */
+    public function setValue($value)
+    {
+        if (is_null($value)) {
+            throw new \InvalidArgumentException('non-nullable value cannot be null');
+        }
+        $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets ttl
+     *
+     * @return int|null
+     */
+    public function getTtl()
+    {
+        return $this->container['ttl'];
+    }
+
+    /**
+     * Sets ttl
+     *
+     * @param int|null $ttl ttl
+     *
+     * @return self
+     */
+    public function setTtl($ttl)
+    {
+        if (is_null($ttl)) {
+            throw new \InvalidArgumentException('non-nullable ttl cannot be null');
+        }
+
+        if (($ttl > 86400)) {
+            throw new \InvalidArgumentException('invalid value for $ttl when calling DNSCreateRecordRequest., must be smaller than or equal to 86400.');
+        }
+        if (($ttl < 1)) {
+            throw new \InvalidArgumentException('invalid value for $ttl when calling DNSCreateRecordRequest., must be bigger than or equal to 1.');
+        }
+
+        $this->container['ttl'] = $ttl;
 
         return $this;
     }

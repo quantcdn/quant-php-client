@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **sitemap** | [**\QuantClient\Model\V2CrawlerSitemapInner[]**](V2CrawlerSitemapInner.md) | Sitemap configuration | [optional]
 **allowed_domains** | **string[]** | Allowed domains | [optional]
 **assets** | [**\QuantClient\Model\V2CrawlerAssets**](V2CrawlerAssets.md) |  | [optional]
+**browser_config** | [**\QuantClient\Model\V2CrawlerBrowserConfig**](V2CrawlerBrowserConfig.md) |  | [optional]
 **created_at** | **\DateTime** | Creation timestamp | [optional]
 **updated_at** | **\DateTime** | Last update timestamp | [optional]
 **deleted_at** | **\DateTime** | Deletion timestamp | [optional]

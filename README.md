@@ -226,6 +226,10 @@ Class | Method | HTTP request | Description
 *CronApi* | [**listCronJobRuns**](docs/Api/CronApi.md#listcronjobruns) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/cron/{cron}/runs | Get all runs for a cron job
 *CronApi* | [**listCronJobs**](docs/Api/CronApi.md#listcronjobs) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/cron | Get all cron jobs for an environment
 *CronApi* | [**updateCronJob**](docs/Api/CronApi.md#updatecronjob) | **PATCH** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/cron/{cron} | Update a cron job
+*DomainsApi* | [**dNSCreateRecord**](docs/Api/DomainsApi.md#dnscreaterecord) | **POST** /api/v2/organizations/{organization}/dns/zones/{zoneId}/records | Create an A record
+*DomainsApi* | [**dNSListRecords**](docs/Api/DomainsApi.md#dnslistrecords) | **GET** /api/v2/organizations/{organization}/dns/zones/{zoneId}/records | List DNS records
+*DomainsApi* | [**dNSListZones**](docs/Api/DomainsApi.md#dnslistzones) | **GET** /api/v2/organizations/{organization}/dns/zones | List organization DNS zones
+*DomainsApi* | [**dNSShowZone**](docs/Api/DomainsApi.md#dnsshowzone) | **GET** /api/v2/organizations/{organization}/dns/zones/{zoneId} | Get a DNS zone
 *DomainsApi* | [**domainsCreate**](docs/Api/DomainsApi.md#domainscreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/domains | Add a new domain
 *DomainsApi* | [**domainsDelete**](docs/Api/DomainsApi.md#domainsdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/domains/{domain} | Delete a domain
 *DomainsApi* | [**domainsList**](docs/Api/DomainsApi.md#domainslist) | **GET** /api/v2/organizations/{organization}/projects/{project}/domains | List all domains for a project
@@ -455,6 +459,7 @@ Class | Method | HTTP request | Description
 - [CreateVolumeRequest](docs/Model/CreateVolumeRequest.md)
 - [Cron](docs/Model/Cron.md)
 - [CronRun](docs/Model/CronRun.md)
+- [DNSCreateRecordRequest](docs/Model/DNSCreateRecordRequest.md)
 - [DeleteAIAgent200Response](docs/Model/DeleteAIAgent200Response.md)
 - [DeleteAISession200Response](docs/Model/DeleteAISession200Response.md)
 - [DeleteAgentOverlay200Response](docs/Model/DeleteAgentOverlay200Response.md)
@@ -721,6 +726,7 @@ Class | Method | HTTP request | Description
 - [V2CrawlerAssets](docs/Model/V2CrawlerAssets.md)
 - [V2CrawlerAssetsNetworkIntercept](docs/Model/V2CrawlerAssetsNetworkIntercept.md)
 - [V2CrawlerAssetsParser](docs/Model/V2CrawlerAssetsParser.md)
+- [V2CrawlerBrowserConfig](docs/Model/V2CrawlerBrowserConfig.md)
 - [V2CrawlerRequest](docs/Model/V2CrawlerRequest.md)
 - [V2CrawlerRun](docs/Model/V2CrawlerRun.md)
 - [V2CrawlerSchedule](docs/Model/V2CrawlerSchedule.md)

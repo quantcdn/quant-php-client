@@ -86,6 +86,7 @@ class V2Crawler implements ModelInterface, ArrayAccess, \JsonSerializable
         'sitemap' => '\QuantClient\Model\V2CrawlerSitemapInner[]',
         'allowed_domains' => 'string[]',
         'assets' => '\QuantClient\Model\V2CrawlerAssets',
+        'browser_config' => '\QuantClient\Model\V2CrawlerBrowserConfig',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
         'deleted_at' => '\DateTime'
@@ -128,6 +129,7 @@ class V2Crawler implements ModelInterface, ArrayAccess, \JsonSerializable
         'sitemap' => null,
         'allowed_domains' => null,
         'assets' => null,
+        'browser_config' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
         'deleted_at' => 'date-time'
@@ -168,6 +170,7 @@ class V2Crawler implements ModelInterface, ArrayAccess, \JsonSerializable
         'sitemap' => false,
         'allowed_domains' => false,
         'assets' => false,
+        'browser_config' => false,
         'created_at' => false,
         'updated_at' => false,
         'deleted_at' => true
@@ -288,6 +291,7 @@ class V2Crawler implements ModelInterface, ArrayAccess, \JsonSerializable
         'sitemap' => 'sitemap',
         'allowed_domains' => 'allowed_domains',
         'assets' => 'assets',
+        'browser_config' => 'browser_config',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
         'deleted_at' => 'deleted_at'
@@ -328,6 +332,7 @@ class V2Crawler implements ModelInterface, ArrayAccess, \JsonSerializable
         'sitemap' => 'setSitemap',
         'allowed_domains' => 'setAllowedDomains',
         'assets' => 'setAssets',
+        'browser_config' => 'setBrowserConfig',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
         'deleted_at' => 'setDeletedAt'
@@ -368,6 +373,7 @@ class V2Crawler implements ModelInterface, ArrayAccess, \JsonSerializable
         'sitemap' => 'getSitemap',
         'allowed_domains' => 'getAllowedDomains',
         'assets' => 'getAssets',
+        'browser_config' => 'getBrowserConfig',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
         'deleted_at' => 'getDeletedAt'
@@ -459,6 +465,7 @@ class V2Crawler implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('sitemap', $data ?? [], null);
         $this->setIfExists('allowed_domains', $data ?? [], null);
         $this->setIfExists('assets', $data ?? [], null);
+        $this->setIfExists('browser_config', $data ?? [], null);
         $this->setIfExists('created_at', $data ?? [], null);
         $this->setIfExists('updated_at', $data ?? [], null);
         $this->setIfExists('deleted_at', $data ?? [], null);
@@ -1300,6 +1307,33 @@ class V2Crawler implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable assets cannot be null');
         }
         $this->container['assets'] = $assets;
+
+        return $this;
+    }
+
+    /**
+     * Gets browser_config
+     *
+     * @return \QuantClient\Model\V2CrawlerBrowserConfig|null
+     */
+    public function getBrowserConfig()
+    {
+        return $this->container['browser_config'];
+    }
+
+    /**
+     * Sets browser_config
+     *
+     * @param \QuantClient\Model\V2CrawlerBrowserConfig|null $browser_config browser_config
+     *
+     * @return self
+     */
+    public function setBrowserConfig($browser_config)
+    {
+        if (is_null($browser_config)) {
+            throw new \InvalidArgumentException('non-nullable browser_config cannot be null');
+        }
+        $this->container['browser_config'] = $browser_config;
 
         return $this;
     }
