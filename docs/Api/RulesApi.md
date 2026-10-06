@@ -24,6 +24,11 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 | [**rulesCustomResponseList()**](RulesApi.md#rulesCustomResponseList) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/custom-response | List custom response rules |
 | [**rulesCustomResponseRead()**](RulesApi.md#rulesCustomResponseRead) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/custom-response/{rule} | Get details of a custom response rule |
 | [**rulesCustomResponseUpdate()**](RulesApi.md#rulesCustomResponseUpdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/rules/custom-response/{rule} | Update a custom response rule |
+| [**rulesErrorPageCreate()**](RulesApi.md#rulesErrorPageCreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/rules/error-page | Create a custom error page rule |
+| [**rulesErrorPageDelete()**](RulesApi.md#rulesErrorPageDelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/rules/error-page/{rule} | Delete a custom error page rule |
+| [**rulesErrorPageList()**](RulesApi.md#rulesErrorPageList) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/error-page | List custom error page rules |
+| [**rulesErrorPageRead()**](RulesApi.md#rulesErrorPageRead) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/error-page/{rule} | Get details of a custom error page rule |
+| [**rulesErrorPageUpdate()**](RulesApi.md#rulesErrorPageUpdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/rules/error-page/{rule} | Update a custom error page rule |
 | [**rulesFunctionCreate()**](RulesApi.md#rulesFunctionCreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/rules/function | Create an edge function rule |
 | [**rulesFunctionDelete()**](RulesApi.md#rulesFunctionDelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/rules/function/{rule} | Delete an edge function rule |
 | [**rulesFunctionList()**](RulesApi.md#rulesFunctionList) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/function | List edge function rules |
@@ -1273,6 +1278,315 @@ try {
 ### Return type
 
 [**\QuantClient\Model\V2RuleCustomResponse**](../Model/V2RuleCustomResponse.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `rulesErrorPageCreate()`
+
+```php
+rulesErrorPageCreate($organization, $project, $v2_rule_error_page_request): \QuantClient\Model\V2RuleErrorPage
+```
+
+Create a custom error page rule
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\RulesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization = 'organization_example'; // string | Organization identifier
+$project = 'project_example'; // string | Project identifier
+$v2_rule_error_page_request = new \QuantClient\Model\V2RuleErrorPageRequest(); // \QuantClient\Model\V2RuleErrorPageRequest
+
+try {
+    $result = $apiInstance->rulesErrorPageCreate($organization, $project, $v2_rule_error_page_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling RulesApi->rulesErrorPageCreate: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
+| **v2_rule_error_page_request** | [**\QuantClient\Model\V2RuleErrorPageRequest**](../Model/V2RuleErrorPageRequest.md)|  | |
+
+### Return type
+
+[**\QuantClient\Model\V2RuleErrorPage**](../Model/V2RuleErrorPage.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `rulesErrorPageDelete()`
+
+```php
+rulesErrorPageDelete($organization, $project, $rule)
+```
+
+Delete a custom error page rule
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\RulesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization = 'organization_example'; // string | Organization identifier
+$project = 'project_example'; // string | Project identifier
+$rule = 'rule_example'; // string | Rule identifier
+
+try {
+    $apiInstance->rulesErrorPageDelete($organization, $project, $rule);
+} catch (Exception $e) {
+    echo 'Exception when calling RulesApi->rulesErrorPageDelete: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
+| **rule** | **string**| Rule identifier | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `rulesErrorPageList()`
+
+```php
+rulesErrorPageList($organization, $project): \QuantClient\Model\V2RuleErrorPage[]
+```
+
+List custom error page rules
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\RulesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization = 'organization_example'; // string | Organization identifier
+$project = 'project_example'; // string | Project identifier
+
+try {
+    $result = $apiInstance->rulesErrorPageList($organization, $project);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling RulesApi->rulesErrorPageList: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
+
+### Return type
+
+[**\QuantClient\Model\V2RuleErrorPage[]**](../Model/V2RuleErrorPage.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `rulesErrorPageRead()`
+
+```php
+rulesErrorPageRead($organization, $project, $rule): \QuantClient\Model\V2RuleErrorPage
+```
+
+Get details of a custom error page rule
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\RulesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization = 'organization_example'; // string | Organization identifier
+$project = 'project_example'; // string | Project identifier
+$rule = 'rule_example'; // string | Rule identifier
+
+try {
+    $result = $apiInstance->rulesErrorPageRead($organization, $project, $rule);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling RulesApi->rulesErrorPageRead: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
+| **rule** | **string**| Rule identifier | |
+
+### Return type
+
+[**\QuantClient\Model\V2RuleErrorPage**](../Model/V2RuleErrorPage.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `rulesErrorPageUpdate()`
+
+```php
+rulesErrorPageUpdate($organization, $project, $rule, $v2_rule_error_page_request): \QuantClient\Model\V2RuleErrorPage
+```
+
+Update a custom error page rule
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\RulesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization = 'organization_example'; // string | Organization identifier
+$project = 'project_example'; // string | Project identifier
+$rule = 'rule_example'; // string | Rule identifier
+$v2_rule_error_page_request = new \QuantClient\Model\V2RuleErrorPageRequest(); // \QuantClient\Model\V2RuleErrorPageRequest
+
+try {
+    $result = $apiInstance->rulesErrorPageUpdate($organization, $project, $rule, $v2_rule_error_page_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling RulesApi->rulesErrorPageUpdate: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
+| **rule** | **string**| Rule identifier | |
+| **v2_rule_error_page_request** | [**\QuantClient\Model\V2RuleErrorPageRequest**](../Model/V2RuleErrorPageRequest.md)|  | |
+
+### Return type
+
+[**\QuantClient\Model\V2RuleErrorPage**](../Model/V2RuleErrorPage.md)
 
 ### Authorization
 

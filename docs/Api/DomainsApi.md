@@ -4,12 +4,270 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**dNSCreateRecord()**](DomainsApi.md#dNSCreateRecord) | **POST** /api/v2/organizations/{organization}/dns/zones/{zoneId}/records | Create an A record |
+| [**dNSListRecords()**](DomainsApi.md#dNSListRecords) | **GET** /api/v2/organizations/{organization}/dns/zones/{zoneId}/records | List DNS records |
+| [**dNSListZones()**](DomainsApi.md#dNSListZones) | **GET** /api/v2/organizations/{organization}/dns/zones | List organization DNS zones |
+| [**dNSShowZone()**](DomainsApi.md#dNSShowZone) | **GET** /api/v2/organizations/{organization}/dns/zones/{zoneId} | Get a DNS zone |
 | [**domainsCreate()**](DomainsApi.md#domainsCreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/domains | Add a new domain |
 | [**domainsDelete()**](DomainsApi.md#domainsDelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/domains/{domain} | Delete a domain |
 | [**domainsList()**](DomainsApi.md#domainsList) | **GET** /api/v2/organizations/{organization}/projects/{project}/domains | List all domains for a project |
 | [**domainsRead()**](DomainsApi.md#domainsRead) | **GET** /api/v2/organizations/{organization}/projects/{project}/domains/{domain} | Get details of a single domain |
 | [**domainsRenew()**](DomainsApi.md#domainsRenew) | **POST** /api/v2/organizations/{organization}/projects/{project}/domains/{domain}/renew | Renew the SSL certificate for a domain |
 
+
+## `dNSCreateRecord()`
+
+```php
+dNSCreateRecord($organization, $zone_id, $dns_create_record_request)
+```
+
+Create an A record
+
+dns:write and add_domains are required. Existing names are rejected; this endpoint does not update records. Only organization-wide tokens are accepted.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\DomainsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization = 'organization_example'; // string
+$zone_id = 'zone_id_example'; // string
+$dns_create_record_request = new \QuantClient\Model\DNSCreateRecordRequest(); // \QuantClient\Model\DNSCreateRecordRequest
+
+try {
+    $apiInstance->dNSCreateRecord($organization, $zone_id, $dns_create_record_request);
+} catch (Exception $e) {
+    echo 'Exception when calling DomainsApi->dNSCreateRecord: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organization** | **string**|  | |
+| **zone_id** | **string**|  | |
+| **dns_create_record_request** | [**\QuantClient\Model\DNSCreateRecordRequest**](../Model/DNSCreateRecordRequest.md)|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `dNSListRecords()`
+
+```php
+dNSListRecords($organization, $zone_id, $type, $name, $limit, $offset, $sync)
+```
+
+List DNS records
+
+dns:read and browse_domains are required. Filters: type, name, limit (1–1000), offset, sync (true/false).
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\DomainsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization = 'organization_example'; // string
+$zone_id = 'zone_id_example'; // string
+$type = 'type_example'; // string
+$name = 'name_example'; // string
+$limit = 100; // int
+$offset = 0; // int
+$sync = false; // bool
+
+try {
+    $apiInstance->dNSListRecords($organization, $zone_id, $type, $name, $limit, $offset, $sync);
+} catch (Exception $e) {
+    echo 'Exception when calling DomainsApi->dNSListRecords: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organization** | **string**|  | |
+| **zone_id** | **string**|  | |
+| **type** | **string**|  | [optional] |
+| **name** | **string**|  | [optional] |
+| **limit** | **int**|  | [optional] [default to 100] |
+| **offset** | **int**|  | [optional] [default to 0] |
+| **sync** | **bool**|  | [optional] [default to false] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `dNSListZones()`
+
+```php
+dNSListZones($organization)
+```
+
+List organization DNS zones
+
+dns:read and browse_domains are required.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\DomainsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization = 'organization_example'; // string
+
+try {
+    $apiInstance->dNSListZones($organization);
+} catch (Exception $e) {
+    echo 'Exception when calling DomainsApi->dNSListZones: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organization** | **string**|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `dNSShowZone()`
+
+```php
+dNSShowZone($organization, $zone_id)
+```
+
+Get a DNS zone
+
+dns:read and browse_domains are required. The zone must belong to the organization.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\DomainsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization = 'organization_example'; // string
+$zone_id = 'zone_id_example'; // string
+
+try {
+    $apiInstance->dNSShowZone($organization, $zone_id);
+} catch (Exception $e) {
+    echo 'Exception when calling DomainsApi->dNSShowZone: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organization** | **string**|  | |
+| **zone_id** | **string**|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `domainsCreate()`
 

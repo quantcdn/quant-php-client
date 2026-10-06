@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **name** | **string** | Crawler name | [optional]
 **domain** | **string** | Domain to crawl |
 **browser_mode** | **bool** | Enable browser mode | [optional] [default to false]
+**tracking** | **bool** | Enable content tracking. Records crawl progress and per-page status against the project tracking site. Needs no domain verification. | [optional] [default to false]
 **urls** | **string[]** | URLs to crawl | [optional]
 **start_urls** | **string[]** | Starting URLs for crawl | [optional]
 **headers** | **array<string,string>** | Custom headers | [optional]
@@ -23,8 +24,9 @@ Name | Type | Description | Notes
 **status_ok** | **int[]** | HTTP status codes that will result in content being captured and pushed to Quant | [optional]
 **sitemap** | [**\QuantClient\Model\V2CrawlerSitemapInner[]**](V2CrawlerSitemapInner.md) | Sitemap configuration | [optional]
 **allowed_domains** | **string[]** | Allowed domains for multi-domain crawling, automatically enables merge_domains | [optional]
-**user_agent** | **string** | Custom user agent, only when browser_mode is false | [optional]
+**user_agent** | **string** | Custom user agent. Valid with or without browser_mode. | [optional]
 **assets** | [**\QuantClient\Model\V2CrawlerAssets**](V2CrawlerAssets.md) |  | [optional]
+**browser_config** | [**\QuantClient\Model\V2CrawlerBrowserConfig**](V2CrawlerBrowserConfig.md) |  | [optional]
 **max_errors** | **int** | Maximum errors before stopping crawl | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
