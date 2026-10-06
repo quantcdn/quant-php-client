@@ -176,6 +176,7 @@ Class | Method | HTTP request | Description
 *AIToolsApi* | [**listAIToolExecutions**](docs/Api/AIToolsApi.md#listaitoolexecutions) | **GET** /api/v3/organizations/{organisation}/ai/tools/executions | List tool executions for monitoring and debugging
 *AIToolsApi* | [**listAIToolNames**](docs/Api/AIToolsApi.md#listaitoolnames) | **GET** /api/v3/organizations/{organisation}/ai/tools/names | List tool names only (lightweight response)
 *AIToolsApi* | [**listAITools**](docs/Api/AIToolsApi.md#listaitools) | **GET** /api/v3/organizations/{organisation}/ai/tools | List available built-in tools for function calling
+*AIToolsApi* | [**listMcpServers**](docs/Api/AIToolsApi.md#listmcpservers) | **GET** /api/v3/organizations/{organisation}/ai/mcp-servers | List MCP servers with gateway URLs
 *AIUsageApi* | [**getMyUsage**](docs/Api/AIUsageApi.md#getmyusage) | **GET** /api/v3/organizations/{organisation}/ai/usage/me | Get AI usage summary for the authenticated user
 *AIVectorDatabaseApi* | [**createVectorCollection**](docs/Api/AIVectorDatabaseApi.md#createvectorcollection) | **POST** /api/v3/organizations/{organisation}/ai/vector-db/collections | Create Vector Database Collection
 *AIVectorDatabaseApi* | [**deleteVectorCollection**](docs/Api/AIVectorDatabaseApi.md#deletevectorcollection) | **DELETE** /api/v3/organizations/{organisation}/ai/vector-db/collections/{collectionId} | Delete Collection
@@ -225,6 +226,10 @@ Class | Method | HTTP request | Description
 *CronApi* | [**listCronJobRuns**](docs/Api/CronApi.md#listcronjobruns) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/cron/{cron}/runs | Get all runs for a cron job
 *CronApi* | [**listCronJobs**](docs/Api/CronApi.md#listcronjobs) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/cron | Get all cron jobs for an environment
 *CronApi* | [**updateCronJob**](docs/Api/CronApi.md#updatecronjob) | **PATCH** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/cron/{cron} | Update a cron job
+*DomainsApi* | [**dNSCreateRecord**](docs/Api/DomainsApi.md#dnscreaterecord) | **POST** /api/v2/organizations/{organization}/dns/zones/{zoneId}/records | Create an A record
+*DomainsApi* | [**dNSListRecords**](docs/Api/DomainsApi.md#dnslistrecords) | **GET** /api/v2/organizations/{organization}/dns/zones/{zoneId}/records | List DNS records
+*DomainsApi* | [**dNSListZones**](docs/Api/DomainsApi.md#dnslistzones) | **GET** /api/v2/organizations/{organization}/dns/zones | List organization DNS zones
+*DomainsApi* | [**dNSShowZone**](docs/Api/DomainsApi.md#dnsshowzone) | **GET** /api/v2/organizations/{organization}/dns/zones/{zoneId} | Get a DNS zone
 *DomainsApi* | [**domainsCreate**](docs/Api/DomainsApi.md#domainscreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/domains | Add a new domain
 *DomainsApi* | [**domainsDelete**](docs/Api/DomainsApi.md#domainsdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/domains/{domain} | Delete a domain
 *DomainsApi* | [**domainsList**](docs/Api/DomainsApi.md#domainslist) | **GET** /api/v2/organizations/{organization}/projects/{project}/domains | List all domains for a project
@@ -243,11 +248,14 @@ Class | Method | HTTP request | Description
 *HeadersApi* | [**headersCreate**](docs/Api/HeadersApi.md#headerscreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/custom-headers | Create or update custom headers
 *HeadersApi* | [**headersDelete**](docs/Api/HeadersApi.md#headersdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/custom-headers | Delete custom headers
 *HeadersApi* | [**headersList**](docs/Api/HeadersApi.md#headerslist) | **GET** /api/v2/organizations/{organization}/projects/{project}/custom-headers | List custom headers for a project
+*IdleSleepApi* | [**getIdleSleep**](docs/Api/IdleSleepApi.md#getidlesleep) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/idle-sleep | Get Idle Sleep Setting
+*IdleSleepApi* | [**setIdleSleep**](docs/Api/IdleSleepApi.md#setidlesleep) | **PUT** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/idle-sleep | Set Idle Sleep Setting
 *KVApi* | [**kVCreate**](docs/Api/KVApi.md#kvcreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv | Add a kv store
 *KVApi* | [**kVDelete**](docs/Api/KVApi.md#kvdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id} | Delete a kv store
 *KVApi* | [**kVItemsCreate**](docs/Api/KVApi.md#kvitemscreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items | Add an item to a kv store
 *KVApi* | [**kVItemsDelete**](docs/Api/KVApi.md#kvitemsdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key} | Delete an item from a kv store
 *KVApi* | [**kVItemsList**](docs/Api/KVApi.md#kvitemslist) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items | List items in a kv store
+*KVApi* | [**kVItemsPurge**](docs/Api/KVApi.md#kvitemspurge) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items | Delete items in bulk by prefix and/or age
 *KVApi* | [**kVItemsShow**](docs/Api/KVApi.md#kvitemsshow) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key} | Get an item from a kv store
 *KVApi* | [**kVItemsUpdate**](docs/Api/KVApi.md#kvitemsupdate) | **PUT** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key} | Update an item in a kv store
 *KVApi* | [**kVLinkToProject**](docs/Api/KVApi.md#kvlinktoproject) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/link | Link a KV store to another project
@@ -260,12 +268,21 @@ Class | Method | HTTP request | Description
 *OpenAICompatibilityApi* | [**oaiListModels**](docs/Api/OpenAICompatibilityApi.md#oailistmodels) | **GET** /oai/v1/models | List available models (OpenAI-compatible)
 *OrganizationsApi* | [**organizationsList**](docs/Api/OrganizationsApi.md#organizationslist) | **GET** /api/v2/organizations | Retrieve all organizations
 *OrganizationsApi* | [**organizationsRead**](docs/Api/OrganizationsApi.md#organizationsread) | **GET** /api/v2/organizations/{organization} | Get details of a single organization
+*ProjectsApi* | [**getProjectLogs**](docs/Api/ProjectsApi.md#getprojectlogs) | **GET** /api/v2/organizations/{organization}/projects/{project}/logs | Get CDN access logs for a project
 *ProjectsApi* | [**projectsCreate**](docs/Api/ProjectsApi.md#projectscreate) | **POST** /api/v2/organizations/{organization}/projects | Create a new project
 *ProjectsApi* | [**projectsDelete**](docs/Api/ProjectsApi.md#projectsdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project} | Delete a project
 *ProjectsApi* | [**projectsList**](docs/Api/ProjectsApi.md#projectslist) | **GET** /api/v2/organizations/{organization}/projects | Retrieve all projects for an organization
 *ProjectsApi* | [**projectsRead**](docs/Api/ProjectsApi.md#projectsread) | **GET** /api/v2/organizations/{organization}/projects/{project} | Get details of a single project
 *ProjectsApi* | [**projectsUpdate**](docs/Api/ProjectsApi.md#projectsupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project} | Update a project
 *PurgeApi* | [**purgeCreate**](docs/Api/PurgeApi.md#purgecreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/purge | Purge cache via URL or cache keys
+*ResourcesApi* | [**attachOrgResource**](docs/Api/ResourcesApi.md#attachorgresource) | **POST** /api/v3/organizations/{organisation}/resources/{resource}/attachments | Attach a resource to an application environment
+*ResourcesApi* | [**createOrgResource**](docs/Api/ResourcesApi.md#createorgresource) | **POST** /api/v3/organizations/{organisation}/resources | Create a shared resource
+*ResourcesApi* | [**deleteOrgResource**](docs/Api/ResourcesApi.md#deleteorgresource) | **DELETE** /api/v3/organizations/{organisation}/resources/{resource} | Delete a shared resource
+*ResourcesApi* | [**detachOrgResource**](docs/Api/ResourcesApi.md#detachorgresource) | **DELETE** /api/v3/organizations/{organisation}/resources/{resource}/attachments/{application}/{environment} | Detach a resource from an application environment
+*ResourcesApi* | [**getOrgResource**](docs/Api/ResourcesApi.md#getorgresource) | **GET** /api/v3/organizations/{organisation}/resources/{resource} | Get a shared resource and its attachments
+*ResourcesApi* | [**getOrgResourceCredentials**](docs/Api/ResourcesApi.md#getorgresourcecredentials) | **GET** /api/v3/organizations/{organisation}/resources/{resource}/credentials | Get a cache&#39;s administrative credential
+*ResourcesApi* | [**listOrgResources**](docs/Api/ResourcesApi.md#listorgresources) | **GET** /api/v3/organizations/{organisation}/resources | List an organisation&#39;s shared resources
+*ResourcesApi* | [**purgeOrgResource**](docs/Api/ResourcesApi.md#purgeorgresource) | **POST** /api/v3/organizations/{organisation}/resources/{resource}/purge | Purge keys from a cache
 *RestoreManagementApi* | [**getRestoreStatus**](docs/Api/RestoreManagementApi.md#getrestorestatus) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/restores/{restoreId} | Get the status of a restore operation
 *RestoreManagementApi* | [**restoreDatabase**](docs/Api/RestoreManagementApi.md#restoredatabase) | **POST** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/backups/{backupId}/restore-database | Restore a database backup to a target environment
 *RestoreManagementApi* | [**restoreFilesystem**](docs/Api/RestoreManagementApi.md#restorefilesystem) | **POST** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/backups/{backupId}/restore-filesystem | Restore a filesystem backup to a target environment
@@ -289,6 +306,11 @@ Class | Method | HTTP request | Description
 *RulesApi* | [**rulesCustomResponseList**](docs/Api/RulesApi.md#rulescustomresponselist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/custom-response | List custom response rules
 *RulesApi* | [**rulesCustomResponseRead**](docs/Api/RulesApi.md#rulescustomresponseread) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/custom-response/{rule} | Get details of a custom response rule
 *RulesApi* | [**rulesCustomResponseUpdate**](docs/Api/RulesApi.md#rulescustomresponseupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/rules/custom-response/{rule} | Update a custom response rule
+*RulesApi* | [**rulesErrorPageCreate**](docs/Api/RulesApi.md#ruleserrorpagecreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/rules/error-page | Create a custom error page rule
+*RulesApi* | [**rulesErrorPageDelete**](docs/Api/RulesApi.md#ruleserrorpagedelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/rules/error-page/{rule} | Delete a custom error page rule
+*RulesApi* | [**rulesErrorPageList**](docs/Api/RulesApi.md#ruleserrorpagelist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/error-page | List custom error page rules
+*RulesApi* | [**rulesErrorPageRead**](docs/Api/RulesApi.md#ruleserrorpageread) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/error-page/{rule} | Get details of a custom error page rule
+*RulesApi* | [**rulesErrorPageUpdate**](docs/Api/RulesApi.md#ruleserrorpageupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/rules/error-page/{rule} | Update a custom error page rule
 *RulesApi* | [**rulesFunctionCreate**](docs/Api/RulesApi.md#rulesfunctioncreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/rules/function | Create an edge function rule
 *RulesApi* | [**rulesFunctionDelete**](docs/Api/RulesApi.md#rulesfunctiondelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/rules/function/{rule} | Delete an edge function rule
 *RulesApi* | [**rulesFunctionList**](docs/Api/RulesApi.md#rulesfunctionlist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/function | List edge function rules
@@ -347,6 +369,7 @@ Class | Method | HTTP request | Description
 - [ApplicationDeploymentInformationInner](docs/Model/ApplicationDeploymentInformationInner.md)
 - [ApplicationFilesystem](docs/Model/ApplicationFilesystem.md)
 - [ApplicationImageReference](docs/Model/ApplicationImageReference.md)
+- [AttachOrgResourceRequest](docs/Model/AttachOrgResourceRequest.md)
 - [BulkSetEnvironmentVariablesRequest](docs/Model/BulkSetEnvironmentVariablesRequest.md)
 - [BulkSetEnvironmentVariablesRequestEnvironmentInner](docs/Model/BulkSetEnvironmentVariablesRequestEnvironmentInner.md)
 - [ChatInference200Response](docs/Model/ChatInference200Response.md)
@@ -422,6 +445,8 @@ Class | Method | HTTP request | Description
 - [CreateOrchestrationRequest](docs/Model/CreateOrchestrationRequest.md)
 - [CreateOrchestrationRequestInputSource](docs/Model/CreateOrchestrationRequestInputSource.md)
 - [CreateOrchestrationRequestStopCondition](docs/Model/CreateOrchestrationRequestStopCondition.md)
+- [CreateOrgResourceRequest](docs/Model/CreateOrgResourceRequest.md)
+- [CreateOrgResourceRequestConfig](docs/Model/CreateOrgResourceRequestConfig.md)
 - [CreateSkill201Response](docs/Model/CreateSkill201Response.md)
 - [CreateSkillRequest](docs/Model/CreateSkillRequest.md)
 - [CreateSlackBot201Response](docs/Model/CreateSlackBot201Response.md)
@@ -434,6 +459,7 @@ Class | Method | HTTP request | Description
 - [CreateVolumeRequest](docs/Model/CreateVolumeRequest.md)
 - [Cron](docs/Model/Cron.md)
 - [CronRun](docs/Model/CronRun.md)
+- [DNSCreateRecordRequest](docs/Model/DNSCreateRecordRequest.md)
 - [DeleteAIAgent200Response](docs/Model/DeleteAIAgent200Response.md)
 - [DeleteAISession200Response](docs/Model/DeleteAISession200Response.md)
 - [DeleteAgentOverlay200Response](docs/Model/DeleteAgentOverlay200Response.md)
@@ -487,6 +513,7 @@ Class | Method | HTTP request | Description
 - [GetEcrLoginCredentials200Response](docs/Model/GetEcrLoginCredentials200Response.md)
 - [GetEnvironmentLogs200Response](docs/Model/GetEnvironmentLogs200Response.md)
 - [GetEnvironmentLogs200ResponseLogEventsInner](docs/Model/GetEnvironmentLogs200ResponseLogEventsInner.md)
+- [GetEnvironmentLogs200ResponsePagination](docs/Model/GetEnvironmentLogs200ResponsePagination.md)
 - [GetFile200Response](docs/Model/GetFile200Response.md)
 - [GetGovernanceConfig200Response](docs/Model/GetGovernanceConfig200Response.md)
 - [GetGovernanceConfig200ResponseSpendLimits](docs/Model/GetGovernanceConfig200ResponseSpendLimits.md)
@@ -504,6 +531,10 @@ Class | Method | HTTP request | Description
 - [GetMyUsage200ResponseQuota](docs/Model/GetMyUsage200ResponseQuota.md)
 - [GetMyUsage200ResponseQuotaDailyLimit](docs/Model/GetMyUsage200ResponseQuotaDailyLimit.md)
 - [GetMyUsage200ResponseQuotaMonthlyLimit](docs/Model/GetMyUsage200ResponseQuotaMonthlyLimit.md)
+- [GetOrgResourceCredentials200Response](docs/Model/GetOrgResourceCredentials200Response.md)
+- [GetProjectLogs200Response](docs/Model/GetProjectLogs200Response.md)
+- [GetProjectLogs200ResponseLogsInner](docs/Model/GetProjectLogs200ResponseLogsInner.md)
+- [GetProjectLogs400Response](docs/Model/GetProjectLogs400Response.md)
 - [GetRestoreStatus200Response](docs/Model/GetRestoreStatus200Response.md)
 - [GetScalingPolicyResponse](docs/Model/GetScalingPolicyResponse.md)
 - [GetSkill200Response](docs/Model/GetSkill200Response.md)
@@ -515,6 +546,7 @@ Class | Method | HTTP request | Description
 - [GetTask200Response](docs/Model/GetTask200Response.md)
 - [GetVectorCollection200Response](docs/Model/GetVectorCollection200Response.md)
 - [GetVectorCollection200ResponseCollection](docs/Model/GetVectorCollection200ResponseCollection.md)
+- [IdleSleepResponse](docs/Model/IdleSleepResponse.md)
 - [ImageGeneration200Response](docs/Model/ImageGeneration200Response.md)
 - [ImageGenerationRequest](docs/Model/ImageGenerationRequest.md)
 - [ImageGenerationRequestBackgroundRemovalParams](docs/Model/ImageGenerationRequestBackgroundRemovalParams.md)
@@ -530,8 +562,11 @@ Class | Method | HTTP request | Description
 - [ImportSkillCollectionRequestSource](docs/Model/ImportSkillCollectionRequestSource.md)
 - [ImportSkillRequest](docs/Model/ImportSkillRequest.md)
 - [ImportSkillRequestSource](docs/Model/ImportSkillRequestSource.md)
+- [KVDelete409Response](docs/Model/KVDelete409Response.md)
 - [KVItemsCreate200Response](docs/Model/KVItemsCreate200Response.md)
 - [KVItemsDelete200Response](docs/Model/KVItemsDelete200Response.md)
+- [KVItemsPurge200Response](docs/Model/KVItemsPurge200Response.md)
+- [KVItemsPurge202Response](docs/Model/KVItemsPurge202Response.md)
 - [KVItemsShow200Response](docs/Model/KVItemsShow200Response.md)
 - [KVItemsShow200ResponseValue](docs/Model/KVItemsShow200ResponseValue.md)
 - [KVLinkToProject200Response](docs/Model/KVLinkToProject200Response.md)
@@ -556,6 +591,8 @@ Class | Method | HTTP request | Description
 - [ListCustomTools200ResponseToolsInner](docs/Model/ListCustomTools200ResponseToolsInner.md)
 - [ListFiles200Response](docs/Model/ListFiles200Response.md)
 - [ListFiles200ResponseFilesInner](docs/Model/ListFiles200ResponseFilesInner.md)
+- [ListMcpServers200Response](docs/Model/ListMcpServers200Response.md)
+- [ListMcpServers200ResponseServersInner](docs/Model/ListMcpServers200ResponseServersInner.md)
 - [ListOrchestrationBatches200Response](docs/Model/ListOrchestrationBatches200Response.md)
 - [ListOrchestrationBatches200ResponseBatchesInner](docs/Model/ListOrchestrationBatches200ResponseBatchesInner.md)
 - [ListOrchestrations200Response](docs/Model/ListOrchestrations200Response.md)
@@ -582,6 +619,7 @@ Class | Method | HTTP request | Description
 - [OaiGetModel200Response](docs/Model/OaiGetModel200Response.md)
 - [OaiListModels200Response](docs/Model/OaiListModels200Response.md)
 - [OaiListModels200ResponseDataInner](docs/Model/OaiListModels200ResponseDataInner.md)
+- [OrgResource](docs/Model/OrgResource.md)
 - [OrganizationsList200ResponseInner](docs/Model/OrganizationsList200ResponseInner.md)
 - [PatchEnvironmentCompose202Response](docs/Model/PatchEnvironmentCompose202Response.md)
 - [PatchEnvironmentCompose202ResponseSpotConfiguration](docs/Model/PatchEnvironmentCompose202ResponseSpotConfiguration.md)
@@ -589,11 +627,14 @@ Class | Method | HTTP request | Description
 - [PatchEnvironmentComposeRequest](docs/Model/PatchEnvironmentComposeRequest.md)
 - [PatchEnvironmentComposeRequestSpotConfiguration](docs/Model/PatchEnvironmentComposeRequestSpotConfiguration.md)
 - [PurgeCreateRequest](docs/Model/PurgeCreateRequest.md)
+- [PurgeOrgResource200Response](docs/Model/PurgeOrgResource200Response.md)
+- [PurgeOrgResourceRequest](docs/Model/PurgeOrgResourceRequest.md)
 - [QueryVectorCollection200Response](docs/Model/QueryVectorCollection200Response.md)
 - [QueryVectorCollection200ResponsePagination](docs/Model/QueryVectorCollection200ResponsePagination.md)
 - [QueryVectorCollection200ResponseResultsInner](docs/Model/QueryVectorCollection200ResponseResultsInner.md)
 - [QueryVectorCollectionRequest](docs/Model/QueryVectorCollectionRequest.md)
 - [QueryVectorCollectionRequestFilter](docs/Model/QueryVectorCollectionRequestFilter.md)
+- [ResourceAttachment](docs/Model/ResourceAttachment.md)
 - [RestoreDatabase202Response](docs/Model/RestoreDatabase202Response.md)
 - [RestoreDatabaseRequest](docs/Model/RestoreDatabaseRequest.md)
 - [RestoreFilesystem202Response](docs/Model/RestoreFilesystem202Response.md)
@@ -603,6 +644,7 @@ Class | Method | HTTP request | Description
 - [SearchSlackWorkspaceChannels200ResponseResultsInner](docs/Model/SearchSlackWorkspaceChannels200ResponseResultsInner.md)
 - [SearchSlackWorkspaceUsers200Response](docs/Model/SearchSlackWorkspaceUsers200Response.md)
 - [SearchSlackWorkspaceUsers200ResponseResultsInner](docs/Model/SearchSlackWorkspaceUsers200ResponseResultsInner.md)
+- [SetIdleSleepRequest](docs/Model/SetIdleSleepRequest.md)
 - [SetScalingPolicyRequest](docs/Model/SetScalingPolicyRequest.md)
 - [SpotConfiguration](docs/Model/SpotConfiguration.md)
 - [SubmitToolCallback200Response](docs/Model/SubmitToolCallback200Response.md)
@@ -684,6 +726,7 @@ Class | Method | HTTP request | Description
 - [V2CrawlerAssets](docs/Model/V2CrawlerAssets.md)
 - [V2CrawlerAssetsNetworkIntercept](docs/Model/V2CrawlerAssetsNetworkIntercept.md)
 - [V2CrawlerAssetsParser](docs/Model/V2CrawlerAssetsParser.md)
+- [V2CrawlerBrowserConfig](docs/Model/V2CrawlerBrowserConfig.md)
 - [V2CrawlerRequest](docs/Model/V2CrawlerRequest.md)
 - [V2CrawlerRun](docs/Model/V2CrawlerRun.md)
 - [V2CrawlerSchedule](docs/Model/V2CrawlerSchedule.md)
@@ -717,6 +760,9 @@ Class | Method | HTTP request | Description
 - [V2RuleCustomResponse](docs/Model/V2RuleCustomResponse.md)
 - [V2RuleCustomResponseAction](docs/Model/V2RuleCustomResponseAction.md)
 - [V2RuleCustomResponseRequest](docs/Model/V2RuleCustomResponseRequest.md)
+- [V2RuleErrorPage](docs/Model/V2RuleErrorPage.md)
+- [V2RuleErrorPageAction](docs/Model/V2RuleErrorPageAction.md)
+- [V2RuleErrorPageRequest](docs/Model/V2RuleErrorPageRequest.md)
 - [V2RuleFunction](docs/Model/V2RuleFunction.md)
 - [V2RuleFunctionAction](docs/Model/V2RuleFunctionAction.md)
 - [V2RuleFunctionRequest](docs/Model/V2RuleFunctionRequest.md)
@@ -777,7 +823,7 @@ vendor/bin/phpunit
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `4.21.0`
-    - Package version: `4.21.0`
+- API version: `4.25.0`
+    - Package version: `4.25.0`
     - Generator version: `7.13.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

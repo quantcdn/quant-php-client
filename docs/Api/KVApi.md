@@ -9,6 +9,7 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 | [**kVItemsCreate()**](KVApi.md#kVItemsCreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items | Add an item to a kv store |
 | [**kVItemsDelete()**](KVApi.md#kVItemsDelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key} | Delete an item from a kv store |
 | [**kVItemsList()**](KVApi.md#kVItemsList) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items | List items in a kv store |
+| [**kVItemsPurge()**](KVApi.md#kVItemsPurge) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items | Delete items in bulk by prefix and/or age |
 | [**kVItemsShow()**](KVApi.md#kVItemsShow) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key} | Get an item from a kv store |
 | [**kVItemsUpdate()**](KVApi.md#kVItemsUpdate) | **PUT** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key} | Update an item in a kv store |
 | [**kVLinkToProject()**](KVApi.md#kVLinkToProject) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/link | Link a KV store to another project |
@@ -82,7 +83,7 @@ try {
 ## `kVDelete()`
 
 ```php
-kVDelete($organization, $project, $store_id)
+kVDelete($organization, $project, $store_id, $force)
 ```
 
 Delete a kv store
@@ -107,9 +108,10 @@ $apiInstance = new QuantClient\Api\KVApi(
 $organization = test-org; // string | Organization identifier
 $project = test-project; // string | Project identifier
 $store_id = 0000; // string
+$force = false; // bool | Delete the store even if it still holds keys. Without it a non-empty store returns 409.
 
 try {
-    $apiInstance->kVDelete($organization, $project, $store_id);
+    $apiInstance->kVDelete($organization, $project, $store_id, $force);
 } catch (Exception $e) {
     echo 'Exception when calling KVApi->kVDelete: ', $e->getMessage(), PHP_EOL;
 }
@@ -122,6 +124,7 @@ try {
 | **organization** | **string**| Organization identifier | |
 | **project** | **string**| Project identifier | |
 | **store_id** | **string**|  | |
+| **force** | **bool**| Delete the store even if it still holds keys. Without it a non-empty store returns 409. | [optional] [default to false] |
 
 ### Return type
 
@@ -324,6 +327,74 @@ try {
 ### Return type
 
 [**\QuantClient\Model\V2StoreItemsListResponse**](../Model/V2StoreItemsListResponse.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `kVItemsPurge()`
+
+```php
+kVItemsPurge($organization, $project, $store_id, $prefix, $older_than): \QuantClient\Model\KVItemsPurge200Response
+```
+
+Delete items in bulk by prefix and/or age
+
+Deletes every item matching the filters. With no filters the whole store is cleared. A small purge finishes in the request and returns 200; a large one returns 202 with the counts so far and continues in the background. Idempotent.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\KVApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization = test-org; // string | Organization identifier
+$project = test-project; // string | Project identifier
+$store_id = 0000; // string
+$prefix = oauth_state:; // string | Only delete keys that start with this string.
+$older_than = 24h; // string | Only delete keys last updated before this instant. ISO 8601, or a duration with unit s, m, h or d.
+
+try {
+    $result = $apiInstance->kVItemsPurge($organization, $project, $store_id, $prefix, $older_than);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling KVApi->kVItemsPurge: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organization** | **string**| Organization identifier | |
+| **project** | **string**| Project identifier | |
+| **store_id** | **string**|  | |
+| **prefix** | **string**| Only delete keys that start with this string. | [optional] |
+| **older_than** | **string**| Only delete keys last updated before this instant. ISO 8601, or a duration with unit s, m, h or d. | [optional] |
+
+### Return type
+
+[**\QuantClient\Model\KVItemsPurge200Response**](../Model/KVItemsPurge200Response.md)
 
 ### Authorization
 
