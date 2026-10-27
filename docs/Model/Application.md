@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **filesystem** | [**\QuantClient\Model\ApplicationFilesystem**](ApplicationFilesystem.md) |  | [optional]
 **cache** | [**\QuantClient\Model\ApplicationCache**](ApplicationCache.md) |  | [optional]
 **compose_definition** | [**\QuantClient\Model\Compose**](Compose.md) |  | [optional]
+**metadata** | **array<string,string>** | Free-form key/value metadata. Maximum 50 pairs. Keys are 1-128 characters, values 0-256 characters. Letters, digits, space and + - &#x3D; . _ : / @ only. Keys starting with &#39;quant:&#39; are reserved. | [optional]
+**metadata_available** | **bool** | Present on the detail response; false when metadata could not be read | [optional] [readonly]
 **status** | **string** | Application status | [optional] [readonly]
 **deployment_information** | [**\QuantClient\Model\ApplicationDeploymentInformationInner[]**](ApplicationDeploymentInformationInner.md) | Deployment history | [optional] [readonly]
 **image_reference** | [**\QuantClient\Model\ApplicationImageReference**](ApplicationImageReference.md) |  | [optional]

@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **tools** | **object[]** | OpenAI function tool definitions | [optional]
 **tool_choice** | **mixed** | auto | none | required | {type:function, function:{name}} | [optional]
 **stream_options** | **object** | {include_usage: true} to emit a final usage chunk when streaming | [optional]
+**reasoning_effort** | **string** | none or minimal turns off default thinking on models that allow it (Claude Haiku 5.5); ignored where it cannot be turned off | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

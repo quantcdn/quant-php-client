@@ -2,6 +2,13 @@
 
 Unified API for QuantCDN Admin and QuantCloud Platform services
 
+## Rate limits
+
+- **Per token.** Each API token has a limit per organisation: by default 240 requests per minute. The limit counts after the token is validated, so tokens that share an IP address (for example Quant Cloud apps and CI runners) do not share a limit. An organisation can have a different limit (set per organisation or by subscription plan); contact Quant support to change it.
+- **Unauthenticated requests.** Requests that end without a valid token (no token, an invalid or expired token, public routes) have a coarse limit per client IP address: by default 600 requests per minute. A request with a valid token never counts against it and is never refused by it. A request with a valid token that is refused before the per-token limit runs (for example an organisation the token cannot use) still counts against the token.
+- **KV per project.** Some KV operations also have a limit per project, shared by every token: kv-admin 10 requests per minute (index create, delete and resume; upgrade; export create and resume; ledger declare, raise and drop), kv-erase 30 (ledger subject preview and shred), kv-verify 6 (ledger verify).
+- **Responses.** Over a limit the answer is 429 with a Retry-After header (seconds). KV routes answer the V2KvError body with code RATE_LIMITED and retryable true; other routes answer {\"message\": \"Too Many Attempts.\"}. Rate-limited routes send RateLimit-Limit, RateLimit-Remaining and RateLimit-Reset (IETF draft; Reset is seconds until the window resets) and X-RateLimit-Limit and X-RateLimit-Remaining on the responses of requests that reach a limiter, and X-RateLimit-Reset (Unix time) on a 429. A request refused before a limiter runs (for example a 401, 403 or 404 from an earlier check) can come back without these headers. When two limits apply, the headers describe the one with fewer requests left. Wait Retry-After seconds, then send the request again.
+
 
 ## Installation & Usage
 
@@ -96,7 +103,7 @@ Class | Method | HTTP request | Description
 *AIFileStorageApi* | [**deleteFile**](docs/Api/AIFileStorageApi.md#deletefile) | **DELETE** /api/v3/organizations/{organisation}/ai/files/{fileId} | Delete File
 *AIFileStorageApi* | [**getFile**](docs/Api/AIFileStorageApi.md#getfile) | **GET** /api/v3/organizations/{organisation}/ai/files/{fileId} | Get File
 *AIFileStorageApi* | [**listFiles**](docs/Api/AIFileStorageApi.md#listfiles) | **GET** /api/v3/organizations/{organisation}/ai/files | List Files
-*AIFileStorageApi* | [**uploadFile**](docs/Api/AIFileStorageApi.md#uploadfile) | **POST** /api/v3/organizations/{organisation}/ai/files | Upload File to S3
+*AIFileStorageApi* | [**uploadFile**](docs/Api/AIFileStorageApi.md#uploadfile) | **POST** /api/v3/organizations/{organisation}/ai/files | Upload File to object storage
 *AIFilterPoliciesApi* | [**createFilterPolicy**](docs/Api/AIFilterPoliciesApi.md#createfilterpolicy) | **POST** /api/v3/organizations/{organisation}/ai/filter-policies | Create an AI filter policy for an organisation
 *AIFilterPoliciesApi* | [**deleteFilterPolicy**](docs/Api/AIFilterPoliciesApi.md#deletefilterpolicy) | **DELETE** /api/v3/organizations/{organisation}/ai/filter-policies/{policyId} | Delete a specific AI filter policy
 *AIFilterPoliciesApi* | [**disableFilterPolicy**](docs/Api/AIFilterPoliciesApi.md#disablefilterpolicy) | **PUT** /api/v3/organizations/{organisation}/ai/filter-policies/{policyId}/disable | Disable a specific AI filter policy
@@ -111,7 +118,6 @@ Class | Method | HTTP request | Description
 *AIInferenceApi* | [**chatInferenceStream**](docs/Api/AIInferenceApi.md#chatinferencestream) | **POST** /api/v3/organizations/{organisation}/ai/chat/stream | Chat inference via streaming endpoint (true HTTP streaming) with multimodal support
 *AIInferenceApi* | [**embeddings**](docs/Api/AIInferenceApi.md#embeddings) | **POST** /api/v3/organizations/{organisation}/ai/embeddings | Generate text embeddings for semantic search and RAG applications
 *AIInferenceApi* | [**getDurableExecutionStatus**](docs/Api/AIInferenceApi.md#getdurableexecutionstatus) | **GET** /api/v3/organizations/{organisation}/ai/chat/executions/{identifier} | Get Durable Execution Status
-*AIInferenceApi* | [**imageGeneration**](docs/Api/AIInferenceApi.md#imagegeneration) | **POST** /api/v3/organizations/{organisation}/ai/image-generation | Generate images with Amazon Nova Canvas
 *AIInferenceApi* | [**submitToolCallback**](docs/Api/AIInferenceApi.md#submittoolcallback) | **POST** /api/v3/organizations/{organisation}/ai/chat/callback | Submit Client Tool Results (Callback)
 *AIModelsApi* | [**getAIModel**](docs/Api/AIModelsApi.md#getaimodel) | **GET** /api/v3/organizations/{organisation}/ai/models/{modelId} | Get AI Model Details
 *AIModelsApi* | [**listAIModels**](docs/Api/AIModelsApi.md#listaimodels) | **GET** /api/v3/organizations/{organisation}/ai/models | List available AI models for an organization
@@ -161,7 +167,11 @@ Class | Method | HTTP request | Description
 *AISlackBotsApi* | [**createSlackBot**](docs/Api/AISlackBotsApi.md#createslackbot) | **POST** /api/v3/organizations/{organisation}/ai/slack-bots | Create Slack Bot
 *AISlackBotsApi* | [**deleteSlackBot**](docs/Api/AISlackBotsApi.md#deleteslackbot) | **DELETE** /api/v3/organizations/{organisation}/ai/slack-bots/{botId} | Delete Slack Bot
 *AISlackBotsApi* | [**getSlackBot**](docs/Api/AISlackBotsApi.md#getslackbot) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/{botId} | Get Slack Bot
+*AISlackBotsApi* | [**getSlackBotThread**](docs/Api/AISlackBotsApi.md#getslackbotthread) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/threads/{channel}/{threadTs} | Read a thread
+*AISlackBotsApi* | [**listSlackBotChannelMessages**](docs/Api/AISlackBotsApi.md#listslackbotchannelmessages) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/channels/{channel}/messages | Read recent channel messages
 *AISlackBotsApi* | [**listSlackBots**](docs/Api/AISlackBotsApi.md#listslackbots) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots | List Slack Bots
+*AISlackBotsApi* | [**listSlackBotsApiEnabled**](docs/Api/AISlackBotsApi.md#listslackbotsapienabled) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/api-enabled | List API-enabled Slack bots
+*AISlackBotsApi* | [**postSlackBotMessage**](docs/Api/AISlackBotsApi.md#postslackbotmessage) | **POST** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/messages | Post a message as the bot
 *AISlackBotsApi* | [**searchSlackWorkspaceChannels**](docs/Api/AISlackBotsApi.md#searchslackworkspacechannels) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/workspace/channels | Search Slack Workspace Channels
 *AISlackBotsApi* | [**searchSlackWorkspaceUsers**](docs/Api/AISlackBotsApi.md#searchslackworkspaceusers) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/workspace/users | Search Slack Workspace Users
 *AISlackBotsApi* | [**updateSlackBot**](docs/Api/AISlackBotsApi.md#updateslackbot) | **PUT** /api/v3/organizations/{organisation}/ai/slack-bots/{botId} | Update Slack Bot
@@ -171,11 +181,14 @@ Class | Method | HTTP request | Description
 *AITaskManagementApi* | [**getTask**](docs/Api/AITaskManagementApi.md#gettask) | **GET** /api/v3/organizations/{organisation}/ai/tasks/{taskId} | Get task details
 *AITaskManagementApi* | [**listTasks**](docs/Api/AITaskManagementApi.md#listtasks) | **GET** /api/v3/organizations/{organisation}/ai/tasks | List tasks with optional filtering
 *AITaskManagementApi* | [**updateTask**](docs/Api/AITaskManagementApi.md#updatetask) | **PUT** /api/v3/organizations/{organisation}/ai/tasks/{taskId} | Update a task
+*AIToolApprovalApi* | [**decideToolProposal**](docs/Api/AIToolApprovalApi.md#decidetoolproposal) | **POST** /api/v3/organizations/{organisation}/ai/tool-proposals/{proposalId}/decision | Decide a tool approval proposal
+*AIToolApprovalApi* | [**getToolProposal**](docs/Api/AIToolApprovalApi.md#gettoolproposal) | **GET** /api/v3/organizations/{organisation}/ai/tool-proposals/{proposalId} | Get a tool approval proposal
 *AIToolsApi* | [**getAIOrchestrationStatus**](docs/Api/AIToolsApi.md#getaiorchestrationstatus) | **GET** /api/v3/organizations/{organisation}/ai/tools/orchestrations/{orchestrationId} | Get Tool Orchestration Status (Async Tool Polling)
 *AIToolsApi* | [**getAIToolExecutionStatus**](docs/Api/AIToolsApi.md#getaitoolexecutionstatus) | **GET** /api/v3/organizations/{organisation}/ai/tools/executions/{executionId} | Get async tool execution status and result
 *AIToolsApi* | [**listAIToolExecutions**](docs/Api/AIToolsApi.md#listaitoolexecutions) | **GET** /api/v3/organizations/{organisation}/ai/tools/executions | List tool executions for monitoring and debugging
 *AIToolsApi* | [**listAIToolNames**](docs/Api/AIToolsApi.md#listaitoolnames) | **GET** /api/v3/organizations/{organisation}/ai/tools/names | List tool names only (lightweight response)
 *AIToolsApi* | [**listAITools**](docs/Api/AIToolsApi.md#listaitools) | **GET** /api/v3/organizations/{organisation}/ai/tools | List available built-in tools for function calling
+*AIToolsApi* | [**listMcpServers**](docs/Api/AIToolsApi.md#listmcpservers) | **GET** /api/v3/organizations/{organisation}/ai/mcp-servers | List MCP servers with gateway URLs
 *AIUsageApi* | [**getMyUsage**](docs/Api/AIUsageApi.md#getmyusage) | **GET** /api/v3/organizations/{organisation}/ai/usage/me | Get AI usage summary for the authenticated user
 *AIVectorDatabaseApi* | [**createVectorCollection**](docs/Api/AIVectorDatabaseApi.md#createvectorcollection) | **POST** /api/v3/organizations/{organisation}/ai/vector-db/collections | Create Vector Database Collection
 *AIVectorDatabaseApi* | [**deleteVectorCollection**](docs/Api/AIVectorDatabaseApi.md#deletevectorcollection) | **DELETE** /api/v3/organizations/{organisation}/ai/vector-db/collections/{collectionId} | Delete Collection
@@ -188,8 +201,10 @@ Class | Method | HTTP request | Description
 *ApplicationsApi* | [**createApplication**](docs/Api/ApplicationsApi.md#createapplication) | **POST** /api/v3/organizations/{organisation}/applications | Create a new application
 *ApplicationsApi* | [**deleteApplication**](docs/Api/ApplicationsApi.md#deleteapplication) | **DELETE** /api/v3/organizations/{organisation}/applications/{application} | Delete an application
 *ApplicationsApi* | [**getApplication**](docs/Api/ApplicationsApi.md#getapplication) | **GET** /api/v3/organizations/{organisation}/applications/{application} | Get a single application
-*ApplicationsApi* | [**getEcrLoginCredentials**](docs/Api/ApplicationsApi.md#getecrlogincredentials) | **GET** /api/v3/organizations/{organisation}/applications/ecr-login | Get ECR login credentials
+*ApplicationsApi* | [**getEcrLoginCredentials**](docs/Api/ApplicationsApi.md#getecrlogincredentials) | **GET** /api/v3/organizations/{organisation}/applications/ecr-login | Get container registry login credentials
 *ApplicationsApi* | [**listApplications**](docs/Api/ApplicationsApi.md#listapplications) | **GET** /api/v3/organizations/{organisation}/applications | Get all applications for an organisation
+*ApplicationsApi* | [**patchApplicationMetadata**](docs/Api/ApplicationsApi.md#patchapplicationmetadata) | **PATCH** /api/v3/organizations/{organisation}/applications/{application}/metadata | Merge-patch application metadata
+*ApplicationsApi* | [**putApplicationMetadata**](docs/Api/ApplicationsApi.md#putapplicationmetadata) | **PUT** /api/v3/organizations/{organisation}/applications/{application}/metadata | Replace application metadata
 *BackupManagementApi* | [**createBackup**](docs/Api/BackupManagementApi.md#createbackup) | **POST** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/backups/{type} | Create a backup for an environment
 *BackupManagementApi* | [**deleteBackup**](docs/Api/BackupManagementApi.md#deletebackup) | **DELETE** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/backups/{type}/{backupId} | Delete a backup
 *BackupManagementApi* | [**downloadBackup**](docs/Api/BackupManagementApi.md#downloadbackup) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/backups/{type}/{backupId}/download | Generate a download URL for a backup
@@ -225,6 +240,10 @@ Class | Method | HTTP request | Description
 *CronApi* | [**listCronJobRuns**](docs/Api/CronApi.md#listcronjobruns) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/cron/{cron}/runs | Get all runs for a cron job
 *CronApi* | [**listCronJobs**](docs/Api/CronApi.md#listcronjobs) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/cron | Get all cron jobs for an environment
 *CronApi* | [**updateCronJob**](docs/Api/CronApi.md#updatecronjob) | **PATCH** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/cron/{cron} | Update a cron job
+*DomainsApi* | [**dNSCreateRecord**](docs/Api/DomainsApi.md#dnscreaterecord) | **POST** /api/v2/organizations/{organization}/dns/zones/{zoneId}/records | Create an A record
+*DomainsApi* | [**dNSListRecords**](docs/Api/DomainsApi.md#dnslistrecords) | **GET** /api/v2/organizations/{organization}/dns/zones/{zoneId}/records | List DNS records
+*DomainsApi* | [**dNSListZones**](docs/Api/DomainsApi.md#dnslistzones) | **GET** /api/v2/organizations/{organization}/dns/zones | List organization DNS zones
+*DomainsApi* | [**dNSShowZone**](docs/Api/DomainsApi.md#dnsshowzone) | **GET** /api/v2/organizations/{organization}/dns/zones/{zoneId} | Get a DNS zone
 *DomainsApi* | [**domainsCreate**](docs/Api/DomainsApi.md#domainscreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/domains | Add a new domain
 *DomainsApi* | [**domainsDelete**](docs/Api/DomainsApi.md#domainsdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/domains/{domain} | Delete a domain
 *DomainsApi* | [**domainsList**](docs/Api/DomainsApi.md#domainslist) | **GET** /api/v2/organizations/{organization}/projects/{project}/domains | List all domains for a project
@@ -235,6 +254,7 @@ Class | Method | HTTP request | Description
 *EnvironmentsApi* | [**getEnvironment**](docs/Api/EnvironmentsApi.md#getenvironment) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment} | Get a single environment
 *EnvironmentsApi* | [**getEnvironmentLogs**](docs/Api/EnvironmentsApi.md#getenvironmentlogs) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/logs | Get the logs for an environment
 *EnvironmentsApi* | [**getEnvironmentMetrics**](docs/Api/EnvironmentsApi.md#getenvironmentmetrics) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/metrics | Get the metrics for an environment
+*EnvironmentsApi* | [**getEnvironmentSlowQueries**](docs/Api/EnvironmentsApi.md#getenvironmentslowqueries) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/slow-queries | Get MySQL slow queries for an environment
 *EnvironmentsApi* | [**listEnvironments**](docs/Api/EnvironmentsApi.md#listenvironments) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments | Get all environments for an application
 *EnvironmentsApi* | [**listSyncOperations**](docs/Api/EnvironmentsApi.md#listsyncoperations) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/sync/{type} | List the sync operations for an environment
 *EnvironmentsApi* | [**syncToEnvironment**](docs/Api/EnvironmentsApi.md#synctoenvironment) | **POST** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/sync/{type} | Perform a sync operation from a source environment to the current environment
@@ -243,34 +263,96 @@ Class | Method | HTTP request | Description
 *HeadersApi* | [**headersCreate**](docs/Api/HeadersApi.md#headerscreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/custom-headers | Create or update custom headers
 *HeadersApi* | [**headersDelete**](docs/Api/HeadersApi.md#headersdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/custom-headers | Delete custom headers
 *HeadersApi* | [**headersList**](docs/Api/HeadersApi.md#headerslist) | **GET** /api/v2/organizations/{organization}/projects/{project}/custom-headers | List custom headers for a project
+*IdleSleepApi* | [**getIdleSleep**](docs/Api/IdleSleepApi.md#getidlesleep) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/idle-sleep | Get Idle Sleep Setting
+*IdleSleepApi* | [**setIdleSleep**](docs/Api/IdleSleepApi.md#setidlesleep) | **PUT** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/idle-sleep | Set Idle Sleep Setting
+*KVApi* | [**kVArchivesList**](docs/Api/KVApi.md#kvarchiveslist) | **GET** /api/v2/organizations/{organization}/kv/archives | List retained ledger archives
+*KVApi* | [**kVArchivesPurge**](docs/Api/KVApi.md#kvarchivespurge) | **POST** /api/v2/organizations/{organization}/kv/archives/{store_name}/purge | Dry run or start a purge of a retained archive
+*KVApi* | [**kVArchivesPurgeManifest**](docs/Api/KVApi.md#kvarchivespurgemanifest) | **GET** /api/v2/organizations/{organization}/kv/archives/{store_name}/purges/{purge_id}/manifest | Get the manifest of a purge
+*KVApi* | [**kVArchivesPurgeReceipt**](docs/Api/KVApi.md#kvarchivespurgereceipt) | **GET** /api/v2/organizations/{organization}/kv/archives/{store_name}/purges/{purge_id}/receipt | Get the signed receipt of a purge
+*KVApi* | [**kVArchivesPurgeShow**](docs/Api/KVApi.md#kvarchivespurgeshow) | **GET** /api/v2/organizations/{organization}/kv/archives/{store_name}/purges/{purge_id} | Show one purge of an archive
+*KVApi* | [**kVArchivesShow**](docs/Api/KVApi.md#kvarchivesshow) | **GET** /api/v2/organizations/{organization}/kv/archives/{store_name} | Show the archive of a deleted store
 *KVApi* | [**kVCreate**](docs/Api/KVApi.md#kvcreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv | Add a kv store
 *KVApi* | [**kVDelete**](docs/Api/KVApi.md#kvdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id} | Delete a kv store
+*KVApi* | [**kVEntriesDelete**](docs/Api/KVApi.md#kventriesdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key}/entry | Delete a key, optionally only at a version
+*KVApi* | [**kVEntriesPut**](docs/Api/KVApi.md#kventriesput) | **PUT** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key}/entry | Set a key, optionally only if absent or only at a version
+*KVApi* | [**kVEntriesShow**](docs/Api/KVApi.md#kventriesshow) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key}/entry | Get a key with its version and metadata
+*KVApi* | [**kVExportCreate**](docs/Api/KVApi.md#kvexportcreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/export | Start an export of the whole store to gzip JSON Lines files
+*KVApi* | [**kVExportResume**](docs/Api/KVApi.md#kvexportresume) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/export/resume | Queue a stalled export step again
+*KVApi* | [**kVExportShow**](docs/Api/KVApi.md#kvexportshow) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/export | Get the latest export and, when done, its download links
+*KVApi* | [**kVIndexesCount**](docs/Api/KVApi.md#kvindexescount) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/indexes/{index_name}/count | Count the keys that hold a value of a count index
+*KVApi* | [**kVIndexesCreate**](docs/Api/KVApi.md#kvindexescreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/indexes | Declare an index
+*KVApi* | [**kVIndexesDelete**](docs/Api/KVApi.md#kvindexesdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/indexes/{index_name} | Drop an index
+*KVApi* | [**kVIndexesList**](docs/Api/KVApi.md#kvindexeslist) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/indexes | List the declared indexes of a store
+*KVApi* | [**kVIndexesLookup**](docs/Api/KVApi.md#kvindexeslookup) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/indexes/{index_name}/lookup | Get the key that holds a value of a unique index
+*KVApi* | [**kVIndexesResume**](docs/Api/KVApi.md#kvindexesresume) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/indexes/{index_name}/resume | Queue a stalled index job step again
+*KVApi* | [**kVIndexesShow**](docs/Api/KVApi.md#kvindexesshow) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/indexes/{index_name} | Get one index with its state and job
+*KVApi* | [**kVItemsBatchGet**](docs/Api/KVApi.md#kvitemsbatchget) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/batch-get | Get up to 100 keys in one request
 *KVApi* | [**kVItemsCreate**](docs/Api/KVApi.md#kvitemscreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items | Add an item to a kv store
 *KVApi* | [**kVItemsDelete**](docs/Api/KVApi.md#kvitemsdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key} | Delete an item from a kv store
+*KVApi* | [**kVItemsIncrement**](docs/Api/KVApi.md#kvitemsincrement) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key}/increment | Atomically add to a numeric value
 *KVApi* | [**kVItemsList**](docs/Api/KVApi.md#kvitemslist) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items | List items in a kv store
+*KVApi* | [**kVItemsPatch**](docs/Api/KVApi.md#kvitemspatch) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key} | Update an item in a kv store (PATCH alias of PUT)
+*KVApi* | [**kVItemsPurge**](docs/Api/KVApi.md#kvitemspurge) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items | Delete items in bulk by prefix and/or age
 *KVApi* | [**kVItemsShow**](docs/Api/KVApi.md#kvitemsshow) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key} | Get an item from a kv store
+*KVApi* | [**kVItemsTransact**](docs/Api/KVApi.md#kvitemstransact) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/transact | Run 1 to 25 operations as one transaction
 *KVApi* | [**kVItemsUpdate**](docs/Api/KVApi.md#kvitemsupdate) | **PUT** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/items/{key} | Update an item in a kv store
+*KVApi* | [**kVKeysList**](docs/Api/KVApi.md#kvkeyslist) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/keys | List keys with a cursor: by collection, prefix, filter, index or ledger time window
+*KVApi* | [**kVLedgersAppend**](docs/Api/KVApi.md#kvledgersappend) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/append | Append an entry to a ledger
+*KVApi* | [**kVLedgersArchive**](docs/Api/KVApi.md#kvledgersarchive) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/ledgers/{ledger_name}/archive | Get download links for the ledger archive, digests and anchor files
+*KVApi* | [**kVLedgersCreate**](docs/Api/KVApi.md#kvledgerscreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/ledgers | Declare a ledger
+*KVApi* | [**kVLedgersDelete**](docs/Api/KVApi.md#kvledgersdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/ledgers/{ledger_name} | Drop a ledger
+*KVApi* | [**kVLedgersList**](docs/Api/KVApi.md#kvledgerslist) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/ledgers | List the ledgers of a store
+*KVApi* | [**kVLedgersProof**](docs/Api/KVApi.md#kvledgersproof) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/ledgers/{ledger_name}/proof | Get the inclusion proof of one ledger entry
+*KVApi* | [**kVLedgersPublicKey**](docs/Api/KVApi.md#kvledgerspublickey) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/ledgers/public-key | Get the public key that verifies ledger signatures
+*KVApi* | [**kVLedgersShow**](docs/Api/KVApi.md#kvledgersshow) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/ledgers/{ledger_name} | Get a ledger definition with its retention end and last verify
+*KVApi* | [**kVLedgersShred**](docs/Api/KVApi.md#kvledgersshred) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/ledgers/{ledger_name}/shred | Shred a data subject (cannot be undone)
+*KVApi* | [**kVLedgersShredsEntries**](docs/Api/KVApi.md#kvledgersshredsentries) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/ledgers/{ledger_name}/shreds/{shred_id}/entries | List the shred entries of an erasure record
+*KVApi* | [**kVLedgersShredsList**](docs/Api/KVApi.md#kvledgersshredslist) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/ledgers/{ledger_name}/shreds | List the erasure records of a ledger
+*KVApi* | [**kVLedgersShredsReceipt**](docs/Api/KVApi.md#kvledgersshredsreceipt) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/ledgers/{ledger_name}/shreds/{shred_id}/receipt | Get the signed receipt of a shred
+*KVApi* | [**kVLedgersStatus**](docs/Api/KVApi.md#kvledgersstatus) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/ledgers/{ledger_name}/status | Get the chains, archive lag, digest, anchor and verify state of a ledger
+*KVApi* | [**kVLedgersSubjectEntries**](docs/Api/KVApi.md#kvledgerssubjectentries) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/ledgers/{ledger_name}/subject-entries | List the ledger entries of one data subject
+*KVApi* | [**kVLedgersSubjectPreview**](docs/Api/KVApi.md#kvledgerssubjectpreview) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/ledgers/{ledger_name}/subject-preview | Preview a shred of a data subject
+*KVApi* | [**kVLedgersUpdate**](docs/Api/KVApi.md#kvledgersupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/ledgers/{ledger_name} | Raise a ledger
+*KVApi* | [**kVLedgersVerificationsReport**](docs/Api/KVApi.md#kvledgersverificationsreport) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/ledgers/{ledger_name}/verifications/{verification_id}/report | Get the signed report of one verification run
+*KVApi* | [**kVLedgersVerify**](docs/Api/KVApi.md#kvledgersverify) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/ledgers/{ledger_name}/verify | Verify a ledger against its archive and signed digests
 *KVApi* | [**kVLinkToProject**](docs/Api/KVApi.md#kvlinktoproject) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/link | Link a KV store to another project
 *KVApi* | [**kVList**](docs/Api/KVApi.md#kvlist) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv | List key-value stores
 *KVApi* | [**kVShow**](docs/Api/KVApi.md#kvshow) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id} | Get a kv store
 *KVApi* | [**kVUnlinkFromProject**](docs/Api/KVApi.md#kvunlinkfromproject) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/link | Unlink a KV store from this project
+*KVApi* | [**kVUpgradeCreate**](docs/Api/KVApi.md#kvupgradecreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/upgrade | Start, roll back, finalize or resume a format 1 to format 2 upgrade
+*KVApi* | [**kVUpgradeShow**](docs/Api/KVApi.md#kvupgradeshow) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/upgrade | Get the store format and the latest upgrade
+*KVApi* | [**kVUsageShow**](docs/Api/KVApi.md#kvusageshow) | **GET** /api/v2/organizations/{organization}/projects/{project}/kv/{store_id}/usage | Get 30-day usage and a cost estimate
 *OpenAICompatibilityApi* | [**oaiChatCompletions**](docs/Api/OpenAICompatibilityApi.md#oaichatcompletions) | **POST** /oai/v1/chat/completions | Create a chat completion (OpenAI-compatible)
 *OpenAICompatibilityApi* | [**oaiEmbeddings**](docs/Api/OpenAICompatibilityApi.md#oaiembeddings) | **POST** /oai/v1/embeddings | Create embeddings (OpenAI-compatible)
 *OpenAICompatibilityApi* | [**oaiGetModel**](docs/Api/OpenAICompatibilityApi.md#oaigetmodel) | **GET** /oai/v1/models/{model} | Retrieve a model (OpenAI-compatible)
 *OpenAICompatibilityApi* | [**oaiListModels**](docs/Api/OpenAICompatibilityApi.md#oailistmodels) | **GET** /oai/v1/models | List available models (OpenAI-compatible)
 *OrganizationsApi* | [**organizationsList**](docs/Api/OrganizationsApi.md#organizationslist) | **GET** /api/v2/organizations | Retrieve all organizations
 *OrganizationsApi* | [**organizationsRead**](docs/Api/OrganizationsApi.md#organizationsread) | **GET** /api/v2/organizations/{organization} | Get details of a single organization
+*ProjectsApi* | [**getProjectLogs**](docs/Api/ProjectsApi.md#getprojectlogs) | **GET** /api/v2/organizations/{organization}/projects/{project}/logs | Get CDN access logs for a project
 *ProjectsApi* | [**projectsCreate**](docs/Api/ProjectsApi.md#projectscreate) | **POST** /api/v2/organizations/{organization}/projects | Create a new project
 *ProjectsApi* | [**projectsDelete**](docs/Api/ProjectsApi.md#projectsdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project} | Delete a project
 *ProjectsApi* | [**projectsList**](docs/Api/ProjectsApi.md#projectslist) | **GET** /api/v2/organizations/{organization}/projects | Retrieve all projects for an organization
 *ProjectsApi* | [**projectsRead**](docs/Api/ProjectsApi.md#projectsread) | **GET** /api/v2/organizations/{organization}/projects/{project} | Get details of a single project
 *ProjectsApi* | [**projectsUpdate**](docs/Api/ProjectsApi.md#projectsupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project} | Update a project
 *PurgeApi* | [**purgeCreate**](docs/Api/PurgeApi.md#purgecreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/purge | Purge cache via URL or cache keys
+*ResourcesApi* | [**attachOrgResource**](docs/Api/ResourcesApi.md#attachorgresource) | **POST** /api/v3/organizations/{organisation}/resources/{resource}/attachments | Attach a resource to an application environment
+*ResourcesApi* | [**createOrgResource**](docs/Api/ResourcesApi.md#createorgresource) | **POST** /api/v3/organizations/{organisation}/resources | Create a shared resource
+*ResourcesApi* | [**deleteOrgResource**](docs/Api/ResourcesApi.md#deleteorgresource) | **DELETE** /api/v3/organizations/{organisation}/resources/{resource} | Delete a shared resource
+*ResourcesApi* | [**detachOrgResource**](docs/Api/ResourcesApi.md#detachorgresource) | **DELETE** /api/v3/organizations/{organisation}/resources/{resource}/attachments/{application}/{environment} | Detach a resource from an application environment
+*ResourcesApi* | [**getOrgResource**](docs/Api/ResourcesApi.md#getorgresource) | **GET** /api/v3/organizations/{organisation}/resources/{resource} | Get a shared resource and its attachments
+*ResourcesApi* | [**getOrgResourceCredentials**](docs/Api/ResourcesApi.md#getorgresourcecredentials) | **GET** /api/v3/organizations/{organisation}/resources/{resource}/credentials | Get a cache&#39;s administrative credential
+*ResourcesApi* | [**listOrgResources**](docs/Api/ResourcesApi.md#listorgresources) | **GET** /api/v3/organizations/{organisation}/resources | List an organisation&#39;s shared resources
+*ResourcesApi* | [**purgeOrgResource**](docs/Api/ResourcesApi.md#purgeorgresource) | **POST** /api/v3/organizations/{organisation}/resources/{resource}/purge | Purge keys from a cache
 *RestoreManagementApi* | [**getRestoreStatus**](docs/Api/RestoreManagementApi.md#getrestorestatus) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/restores/{restoreId} | Get the status of a restore operation
 *RestoreManagementApi* | [**restoreDatabase**](docs/Api/RestoreManagementApi.md#restoredatabase) | **POST** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/backups/{backupId}/restore-database | Restore a database backup to a target environment
 *RestoreManagementApi* | [**restoreFilesystem**](docs/Api/RestoreManagementApi.md#restorefilesystem) | **POST** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/backups/{backupId}/restore-filesystem | Restore a filesystem backup to a target environment
 *RulesApi* | [**rulesAuthCreate**](docs/Api/RulesApi.md#rulesauthcreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/rules/auth | Create an authentication rule
 *RulesApi* | [**rulesAuthDelete**](docs/Api/RulesApi.md#rulesauthdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/rules/auth/{rule} | Delete an authentication rule
+*RulesApi* | [**rulesAuthFunctionCreate**](docs/Api/RulesApi.md#rulesauthfunctioncreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/rules/auth-function | Create an auth function rule
+*RulesApi* | [**rulesAuthFunctionDelete**](docs/Api/RulesApi.md#rulesauthfunctiondelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/rules/auth-function/{rule} | Delete an auth function rule
+*RulesApi* | [**rulesAuthFunctionList**](docs/Api/RulesApi.md#rulesauthfunctionlist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/auth-function | List auth function rules
+*RulesApi* | [**rulesAuthFunctionRead**](docs/Api/RulesApi.md#rulesauthfunctionread) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/auth-function/{rule} | Get details of an auth function rule
+*RulesApi* | [**rulesAuthFunctionUpdate**](docs/Api/RulesApi.md#rulesauthfunctionupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/rules/auth-function/{rule} | Update an auth function rule
 *RulesApi* | [**rulesAuthList**](docs/Api/RulesApi.md#rulesauthlist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/auth | List authentication rules
 *RulesApi* | [**rulesAuthRead**](docs/Api/RulesApi.md#rulesauthread) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/auth/{rule} | Get details of an authentication rule
 *RulesApi* | [**rulesAuthUpdate**](docs/Api/RulesApi.md#rulesauthupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/rules/auth/{rule} | Update an authentication rule
@@ -289,6 +371,11 @@ Class | Method | HTTP request | Description
 *RulesApi* | [**rulesCustomResponseList**](docs/Api/RulesApi.md#rulescustomresponselist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/custom-response | List custom response rules
 *RulesApi* | [**rulesCustomResponseRead**](docs/Api/RulesApi.md#rulescustomresponseread) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/custom-response/{rule} | Get details of a custom response rule
 *RulesApi* | [**rulesCustomResponseUpdate**](docs/Api/RulesApi.md#rulescustomresponseupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/rules/custom-response/{rule} | Update a custom response rule
+*RulesApi* | [**rulesErrorPageCreate**](docs/Api/RulesApi.md#ruleserrorpagecreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/rules/error-page | Create a custom error page rule
+*RulesApi* | [**rulesErrorPageDelete**](docs/Api/RulesApi.md#ruleserrorpagedelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/rules/error-page/{rule} | Delete a custom error page rule
+*RulesApi* | [**rulesErrorPageList**](docs/Api/RulesApi.md#ruleserrorpagelist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/error-page | List custom error page rules
+*RulesApi* | [**rulesErrorPageRead**](docs/Api/RulesApi.md#ruleserrorpageread) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/error-page/{rule} | Get details of a custom error page rule
+*RulesApi* | [**rulesErrorPageUpdate**](docs/Api/RulesApi.md#ruleserrorpageupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/rules/error-page/{rule} | Update a custom error page rule
 *RulesApi* | [**rulesFunctionCreate**](docs/Api/RulesApi.md#rulesfunctioncreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/rules/function | Create an edge function rule
 *RulesApi* | [**rulesFunctionDelete**](docs/Api/RulesApi.md#rulesfunctiondelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/rules/function/{rule} | Delete an edge function rule
 *RulesApi* | [**rulesFunctionList**](docs/Api/RulesApi.md#rulesfunctionlist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/function | List edge function rules
@@ -341,12 +428,18 @@ Class | Method | HTTP request | Description
 - [AiSearchSearchRequest](docs/Model/AiSearchSearchRequest.md)
 - [AiSearchTriggerCrawlRequest](docs/Model/AiSearchTriggerCrawlRequest.md)
 - [AiSearchUpdateSettingsRequest](docs/Model/AiSearchUpdateSettingsRequest.md)
+- [AiSlackBotApiError](docs/Model/AiSlackBotApiError.md)
+- [AiSlackBotApiMessage](docs/Model/AiSlackBotApiMessage.md)
+- [AiSlackBotApiMessageAllOfAuthor](docs/Model/AiSlackBotApiMessageAllOfAuthor.md)
+- [AiSlackBotApiMessageAllOfFiles](docs/Model/AiSlackBotApiMessageAllOfFiles.md)
 - [Application](docs/Model/Application.md)
 - [ApplicationCache](docs/Model/ApplicationCache.md)
 - [ApplicationDatabase](docs/Model/ApplicationDatabase.md)
 - [ApplicationDeploymentInformationInner](docs/Model/ApplicationDeploymentInformationInner.md)
 - [ApplicationFilesystem](docs/Model/ApplicationFilesystem.md)
 - [ApplicationImageReference](docs/Model/ApplicationImageReference.md)
+- [ApplicationMetadataResponse](docs/Model/ApplicationMetadataResponse.md)
+- [AttachOrgResourceRequest](docs/Model/AttachOrgResourceRequest.md)
 - [BulkSetEnvironmentVariablesRequest](docs/Model/BulkSetEnvironmentVariablesRequest.md)
 - [BulkSetEnvironmentVariablesRequestEnvironmentInner](docs/Model/BulkSetEnvironmentVariablesRequestEnvironmentInner.md)
 - [ChatInference200Response](docs/Model/ChatInference200Response.md)
@@ -358,6 +451,7 @@ Class | Method | HTTP request | Description
 - [ChatInference200ResponseUsage](docs/Model/ChatInference200ResponseUsage.md)
 - [ChatInference202Response](docs/Model/ChatInference202Response.md)
 - [ChatInferenceRequest](docs/Model/ChatInferenceRequest.md)
+- [ChatInferenceRequestAutoExecute](docs/Model/ChatInferenceRequestAutoExecute.md)
 - [ChatInferenceRequestGuardrails](docs/Model/ChatInferenceRequestGuardrails.md)
 - [ChatInferenceRequestMessagesInner](docs/Model/ChatInferenceRequestMessagesInner.md)
 - [ChatInferenceRequestMessagesInnerContent](docs/Model/ChatInferenceRequestMessagesInnerContent.md)
@@ -422,6 +516,8 @@ Class | Method | HTTP request | Description
 - [CreateOrchestrationRequest](docs/Model/CreateOrchestrationRequest.md)
 - [CreateOrchestrationRequestInputSource](docs/Model/CreateOrchestrationRequestInputSource.md)
 - [CreateOrchestrationRequestStopCondition](docs/Model/CreateOrchestrationRequestStopCondition.md)
+- [CreateOrgResourceRequest](docs/Model/CreateOrgResourceRequest.md)
+- [CreateOrgResourceRequestConfig](docs/Model/CreateOrgResourceRequestConfig.md)
 - [CreateSkill201Response](docs/Model/CreateSkill201Response.md)
 - [CreateSkillRequest](docs/Model/CreateSkillRequest.md)
 - [CreateSlackBot201Response](docs/Model/CreateSlackBot201Response.md)
@@ -434,6 +530,8 @@ Class | Method | HTTP request | Description
 - [CreateVolumeRequest](docs/Model/CreateVolumeRequest.md)
 - [Cron](docs/Model/Cron.md)
 - [CronRun](docs/Model/CronRun.md)
+- [DNSCreateRecordRequest](docs/Model/DNSCreateRecordRequest.md)
+- [DecideToolProposalRequest](docs/Model/DecideToolProposalRequest.md)
 - [DeleteAIAgent200Response](docs/Model/DeleteAIAgent200Response.md)
 - [DeleteAISession200Response](docs/Model/DeleteAISession200Response.md)
 - [DeleteAgentOverlay200Response](docs/Model/DeleteAgentOverlay200Response.md)
@@ -470,7 +568,6 @@ Class | Method | HTTP request | Description
 - [GetAIOrchestrationStatus404Response](docs/Model/GetAIOrchestrationStatus404Response.md)
 - [GetAISession200Response](docs/Model/GetAISession200Response.md)
 - [GetAIToolExecutionStatus200Response](docs/Model/GetAIToolExecutionStatus200Response.md)
-- [GetAIToolExecutionStatus200ResponseResult](docs/Model/GetAIToolExecutionStatus200ResponseResult.md)
 - [GetAIToolExecutionStatus404Response](docs/Model/GetAIToolExecutionStatus404Response.md)
 - [GetAgentOverlay200Response](docs/Model/GetAgentOverlay200Response.md)
 - [GetAgentOverlay200ResponseBase](docs/Model/GetAgentOverlay200ResponseBase.md)
@@ -487,6 +584,7 @@ Class | Method | HTTP request | Description
 - [GetEcrLoginCredentials200Response](docs/Model/GetEcrLoginCredentials200Response.md)
 - [GetEnvironmentLogs200Response](docs/Model/GetEnvironmentLogs200Response.md)
 - [GetEnvironmentLogs200ResponseLogEventsInner](docs/Model/GetEnvironmentLogs200ResponseLogEventsInner.md)
+- [GetEnvironmentLogs200ResponsePagination](docs/Model/GetEnvironmentLogs200ResponsePagination.md)
 - [GetFile200Response](docs/Model/GetFile200Response.md)
 - [GetGovernanceConfig200Response](docs/Model/GetGovernanceConfig200Response.md)
 - [GetGovernanceConfig200ResponseSpendLimits](docs/Model/GetGovernanceConfig200ResponseSpendLimits.md)
@@ -504,26 +602,25 @@ Class | Method | HTTP request | Description
 - [GetMyUsage200ResponseQuota](docs/Model/GetMyUsage200ResponseQuota.md)
 - [GetMyUsage200ResponseQuotaDailyLimit](docs/Model/GetMyUsage200ResponseQuotaDailyLimit.md)
 - [GetMyUsage200ResponseQuotaMonthlyLimit](docs/Model/GetMyUsage200ResponseQuotaMonthlyLimit.md)
+- [GetOrgResourceCredentials200Response](docs/Model/GetOrgResourceCredentials200Response.md)
+- [GetProjectLogs200Response](docs/Model/GetProjectLogs200Response.md)
+- [GetProjectLogs200ResponseLogsInner](docs/Model/GetProjectLogs200ResponseLogsInner.md)
+- [GetProjectLogs400Response](docs/Model/GetProjectLogs400Response.md)
 - [GetRestoreStatus200Response](docs/Model/GetRestoreStatus200Response.md)
 - [GetScalingPolicyResponse](docs/Model/GetScalingPolicyResponse.md)
 - [GetSkill200Response](docs/Model/GetSkill200Response.md)
 - [GetSkill200ResponseSkill](docs/Model/GetSkill200ResponseSkill.md)
 - [GetSlackBot200Response](docs/Model/GetSlackBot200Response.md)
 - [GetSlackBot200ResponseBot](docs/Model/GetSlackBot200ResponseBot.md)
+- [GetSlackBotThread200Response](docs/Model/GetSlackBotThread200Response.md)
+- [GetSlackBotThread200ResponseCodeJob](docs/Model/GetSlackBotThread200ResponseCodeJob.md)
 - [GetSshAccessCredentials200Response](docs/Model/GetSshAccessCredentials200Response.md)
 - [GetSshAccessCredentials200ResponseCredentials](docs/Model/GetSshAccessCredentials200ResponseCredentials.md)
 - [GetTask200Response](docs/Model/GetTask200Response.md)
+- [GetToolProposal403Response](docs/Model/GetToolProposal403Response.md)
 - [GetVectorCollection200Response](docs/Model/GetVectorCollection200Response.md)
 - [GetVectorCollection200ResponseCollection](docs/Model/GetVectorCollection200ResponseCollection.md)
-- [ImageGeneration200Response](docs/Model/ImageGeneration200Response.md)
-- [ImageGenerationRequest](docs/Model/ImageGenerationRequest.md)
-- [ImageGenerationRequestBackgroundRemovalParams](docs/Model/ImageGenerationRequestBackgroundRemovalParams.md)
-- [ImageGenerationRequestColorGuidedGenerationParams](docs/Model/ImageGenerationRequestColorGuidedGenerationParams.md)
-- [ImageGenerationRequestImageGenerationConfig](docs/Model/ImageGenerationRequestImageGenerationConfig.md)
-- [ImageGenerationRequestImageVariationParams](docs/Model/ImageGenerationRequestImageVariationParams.md)
-- [ImageGenerationRequestInPaintingParams](docs/Model/ImageGenerationRequestInPaintingParams.md)
-- [ImageGenerationRequestOutPaintingParams](docs/Model/ImageGenerationRequestOutPaintingParams.md)
-- [ImageGenerationRequestTextToImageParams](docs/Model/ImageGenerationRequestTextToImageParams.md)
+- [IdleSleepResponse](docs/Model/IdleSleepResponse.md)
 - [ImportSkill201Response](docs/Model/ImportSkill201Response.md)
 - [ImportSkillCollection201Response](docs/Model/ImportSkillCollection201Response.md)
 - [ImportSkillCollectionRequest](docs/Model/ImportSkillCollectionRequest.md)
@@ -532,6 +629,8 @@ Class | Method | HTTP request | Description
 - [ImportSkillRequestSource](docs/Model/ImportSkillRequestSource.md)
 - [KVItemsCreate200Response](docs/Model/KVItemsCreate200Response.md)
 - [KVItemsDelete200Response](docs/Model/KVItemsDelete200Response.md)
+- [KVItemsPurge200Response](docs/Model/KVItemsPurge200Response.md)
+- [KVItemsPurge202Response](docs/Model/KVItemsPurge202Response.md)
 - [KVItemsShow200Response](docs/Model/KVItemsShow200Response.md)
 - [KVItemsShow200ResponseValue](docs/Model/KVItemsShow200ResponseValue.md)
 - [KVLinkToProject200Response](docs/Model/KVLinkToProject200Response.md)
@@ -549,6 +648,7 @@ Class | Method | HTTP request | Description
 - [ListAITools200ResponseToolsInner](docs/Model/ListAITools200ResponseToolsInner.md)
 - [ListAITools200ResponseToolsInnerToolSpec](docs/Model/ListAITools200ResponseToolsInnerToolSpec.md)
 - [ListAITools200ResponseToolsInnerToolSpecInputSchema](docs/Model/ListAITools200ResponseToolsInnerToolSpecInputSchema.md)
+- [ListApplications503Response](docs/Model/ListApplications503Response.md)
 - [ListBackups200Response](docs/Model/ListBackups200Response.md)
 - [ListBackups200ResponseBackupsInner](docs/Model/ListBackups200ResponseBackupsInner.md)
 - [ListBackups422Response](docs/Model/ListBackups422Response.md)
@@ -556,6 +656,8 @@ Class | Method | HTTP request | Description
 - [ListCustomTools200ResponseToolsInner](docs/Model/ListCustomTools200ResponseToolsInner.md)
 - [ListFiles200Response](docs/Model/ListFiles200Response.md)
 - [ListFiles200ResponseFilesInner](docs/Model/ListFiles200ResponseFilesInner.md)
+- [ListMcpServers200Response](docs/Model/ListMcpServers200Response.md)
+- [ListMcpServers200ResponseServersInner](docs/Model/ListMcpServers200ResponseServersInner.md)
 - [ListOrchestrationBatches200Response](docs/Model/ListOrchestrationBatches200Response.md)
 - [ListOrchestrationBatches200ResponseBatchesInner](docs/Model/ListOrchestrationBatches200ResponseBatchesInner.md)
 - [ListOrchestrations200Response](docs/Model/ListOrchestrations200Response.md)
@@ -563,8 +665,12 @@ Class | Method | HTTP request | Description
 - [ListSkillCollections200ResponseCollectionsInner](docs/Model/ListSkillCollections200ResponseCollectionsInner.md)
 - [ListSkills200Response](docs/Model/ListSkills200Response.md)
 - [ListSkills200ResponseSkillsInner](docs/Model/ListSkills200ResponseSkillsInner.md)
+- [ListSlackBotChannelMessages200Response](docs/Model/ListSlackBotChannelMessages200Response.md)
 - [ListSlackBots200Response](docs/Model/ListSlackBots200Response.md)
 - [ListSlackBots200ResponseBotsInner](docs/Model/ListSlackBots200ResponseBotsInner.md)
+- [ListSlackBotsApiEnabled200Response](docs/Model/ListSlackBotsApiEnabled200Response.md)
+- [ListSlackBotsApiEnabled200ResponseBotsInner](docs/Model/ListSlackBotsApiEnabled200ResponseBotsInner.md)
+- [ListSlackBotsApiEnabled200ResponseBotsInnerChannelsInner](docs/Model/ListSlackBotsApiEnabled200ResponseBotsInnerChannelsInner.md)
 - [ListTasks200Response](docs/Model/ListTasks200Response.md)
 - [ListTasks200ResponseTasksInner](docs/Model/ListTasks200ResponseTasksInner.md)
 - [ListVectorCollections200Response](docs/Model/ListVectorCollections200Response.md)
@@ -582,18 +688,26 @@ Class | Method | HTTP request | Description
 - [OaiGetModel200Response](docs/Model/OaiGetModel200Response.md)
 - [OaiListModels200Response](docs/Model/OaiListModels200Response.md)
 - [OaiListModels200ResponseDataInner](docs/Model/OaiListModels200ResponseDataInner.md)
+- [OrgResource](docs/Model/OrgResource.md)
 - [OrganizationsList200ResponseInner](docs/Model/OrganizationsList200ResponseInner.md)
 - [PatchEnvironmentCompose202Response](docs/Model/PatchEnvironmentCompose202Response.md)
 - [PatchEnvironmentCompose202ResponseSpotConfiguration](docs/Model/PatchEnvironmentCompose202ResponseSpotConfiguration.md)
 - [PatchEnvironmentCompose400Response](docs/Model/PatchEnvironmentCompose400Response.md)
 - [PatchEnvironmentComposeRequest](docs/Model/PatchEnvironmentComposeRequest.md)
 - [PatchEnvironmentComposeRequestSpotConfiguration](docs/Model/PatchEnvironmentComposeRequestSpotConfiguration.md)
+- [PostSlackBotMessage201Response](docs/Model/PostSlackBotMessage201Response.md)
+- [PostSlackBotMessageRequest](docs/Model/PostSlackBotMessageRequest.md)
+- [PurgeCreate200Response](docs/Model/PurgeCreate200Response.md)
 - [PurgeCreateRequest](docs/Model/PurgeCreateRequest.md)
+- [PurgeOrgResource200Response](docs/Model/PurgeOrgResource200Response.md)
+- [PurgeOrgResourceRequest](docs/Model/PurgeOrgResourceRequest.md)
+- [PutApplicationMetadata400Response](docs/Model/PutApplicationMetadata400Response.md)
 - [QueryVectorCollection200Response](docs/Model/QueryVectorCollection200Response.md)
 - [QueryVectorCollection200ResponsePagination](docs/Model/QueryVectorCollection200ResponsePagination.md)
 - [QueryVectorCollection200ResponseResultsInner](docs/Model/QueryVectorCollection200ResponseResultsInner.md)
 - [QueryVectorCollectionRequest](docs/Model/QueryVectorCollectionRequest.md)
 - [QueryVectorCollectionRequestFilter](docs/Model/QueryVectorCollectionRequestFilter.md)
+- [ResourceAttachment](docs/Model/ResourceAttachment.md)
 - [RestoreDatabase202Response](docs/Model/RestoreDatabase202Response.md)
 - [RestoreDatabaseRequest](docs/Model/RestoreDatabaseRequest.md)
 - [RestoreFilesystem202Response](docs/Model/RestoreFilesystem202Response.md)
@@ -603,6 +717,7 @@ Class | Method | HTTP request | Description
 - [SearchSlackWorkspaceChannels200ResponseResultsInner](docs/Model/SearchSlackWorkspaceChannels200ResponseResultsInner.md)
 - [SearchSlackWorkspaceUsers200Response](docs/Model/SearchSlackWorkspaceUsers200Response.md)
 - [SearchSlackWorkspaceUsers200ResponseResultsInner](docs/Model/SearchSlackWorkspaceUsers200ResponseResultsInner.md)
+- [SetIdleSleepRequest](docs/Model/SetIdleSleepRequest.md)
 - [SetScalingPolicyRequest](docs/Model/SetScalingPolicyRequest.md)
 - [SpotConfiguration](docs/Model/SpotConfiguration.md)
 - [SubmitToolCallback200Response](docs/Model/SubmitToolCallback200Response.md)
@@ -684,6 +799,7 @@ Class | Method | HTTP request | Description
 - [V2CrawlerAssets](docs/Model/V2CrawlerAssets.md)
 - [V2CrawlerAssetsNetworkIntercept](docs/Model/V2CrawlerAssetsNetworkIntercept.md)
 - [V2CrawlerAssetsParser](docs/Model/V2CrawlerAssetsParser.md)
+- [V2CrawlerBrowserConfig](docs/Model/V2CrawlerBrowserConfig.md)
 - [V2CrawlerRequest](docs/Model/V2CrawlerRequest.md)
 - [V2CrawlerRun](docs/Model/V2CrawlerRun.md)
 - [V2CrawlerSchedule](docs/Model/V2CrawlerSchedule.md)
@@ -695,6 +811,104 @@ Class | Method | HTTP request | Description
 - [V2DomainDnsValidationRecordsInner](docs/Model/V2DomainDnsValidationRecordsInner.md)
 - [V2DomainRequest](docs/Model/V2DomainRequest.md)
 - [V2Error](docs/Model/V2Error.md)
+- [V2KvArchiveList](docs/Model/V2KvArchiveList.md)
+- [V2KvArchiveManifest](docs/Model/V2KvArchiveManifest.md)
+- [V2KvArchiveManifestPagesInner](docs/Model/V2KvArchiveManifestPagesInner.md)
+- [V2KvArchivePurge](docs/Model/V2KvArchivePurge.md)
+- [V2KvArchivePurgeAnswer](docs/Model/V2KvArchivePurgeAnswer.md)
+- [V2KvArchivePurgeCounts](docs/Model/V2KvArchivePurgeCounts.md)
+- [V2KvArchivePurgeLastError](docs/Model/V2KvArchivePurgeLastError.md)
+- [V2KvArchivePurgeReceipt](docs/Model/V2KvArchivePurgeReceipt.md)
+- [V2KvArchivePurgeRequest](docs/Model/V2KvArchivePurgeRequest.md)
+- [V2KvArchiveStatus](docs/Model/V2KvArchiveStatus.md)
+- [V2KvBatchGetRequest](docs/Model/V2KvBatchGetRequest.md)
+- [V2KvBatchGetResponse](docs/Model/V2KvBatchGetResponse.md)
+- [V2KvCount](docs/Model/V2KvCount.md)
+- [V2KvEntry](docs/Model/V2KvEntry.md)
+- [V2KvEntryDeleteResponse](docs/Model/V2KvEntryDeleteResponse.md)
+- [V2KvEntryPutRequest](docs/Model/V2KvEntryPutRequest.md)
+- [V2KvEntryPutResponse](docs/Model/V2KvEntryPutResponse.md)
+- [V2KvError](docs/Model/V2KvError.md)
+- [V2KvErrorLedgersInner](docs/Model/V2KvErrorLedgersInner.md)
+- [V2KvExport](docs/Model/V2KvExport.md)
+- [V2KvExportDownload](docs/Model/V2KvExportDownload.md)
+- [V2KvExportResponse](docs/Model/V2KvExportResponse.md)
+- [V2KvExportSkipped](docs/Model/V2KvExportSkipped.md)
+- [V2KvIncrementRequest](docs/Model/V2KvIncrementRequest.md)
+- [V2KvIncrementResponse](docs/Model/V2KvIncrementResponse.md)
+- [V2KvIndex](docs/Model/V2KvIndex.md)
+- [V2KvIndexJob](docs/Model/V2KvIndexJob.md)
+- [V2KvIndexList](docs/Model/V2KvIndexList.md)
+- [V2KvIndexLookup](docs/Model/V2KvIndexLookup.md)
+- [V2KvIndexRequest](docs/Model/V2KvIndexRequest.md)
+- [V2KvKeysPage](docs/Model/V2KvKeysPage.md)
+- [V2KvLedger](docs/Model/V2KvLedger.md)
+- [V2KvLedgerAdminDeclareRequest](docs/Model/V2KvLedgerAdminDeclareRequest.md)
+- [V2KvLedgerAdminRaiseRequest](docs/Model/V2KvLedgerAdminRaiseRequest.md)
+- [V2KvLedgerAdminWriterPolicy](docs/Model/V2KvLedgerAdminWriterPolicy.md)
+- [V2KvLedgerAnchor](docs/Model/V2KvLedgerAnchor.md)
+- [V2KvLedgerAppendRequest](docs/Model/V2KvLedgerAppendRequest.md)
+- [V2KvLedgerArchive](docs/Model/V2KvLedgerArchive.md)
+- [V2KvLedgerArchiveDigest](docs/Model/V2KvLedgerArchiveDigest.md)
+- [V2KvLedgerArchiveFile](docs/Model/V2KvLedgerArchiveFile.md)
+- [V2KvLedgerArchiveObject](docs/Model/V2KvLedgerArchiveObject.md)
+- [V2KvLedgerDetail](docs/Model/V2KvLedgerDetail.md)
+- [V2KvLedgerErasureShredEntriesPage](docs/Model/V2KvLedgerErasureShredEntriesPage.md)
+- [V2KvLedgerErasureShredEntry](docs/Model/V2KvLedgerErasureShredEntry.md)
+- [V2KvLedgerErasureShredInProgress](docs/Model/V2KvLedgerErasureShredInProgress.md)
+- [V2KvLedgerErasureShredPage](docs/Model/V2KvLedgerErasureShredPage.md)
+- [V2KvLedgerErasureShredReceiptBody](docs/Model/V2KvLedgerErasureShredReceiptBody.md)
+- [V2KvLedgerErasureShredReceiptDocument](docs/Model/V2KvLedgerErasureShredReceiptDocument.md)
+- [V2KvLedgerErasureShredRecord](docs/Model/V2KvLedgerErasureShredRecord.md)
+- [V2KvLedgerErasureShredRequest](docs/Model/V2KvLedgerErasureShredRequest.md)
+- [V2KvLedgerErasureShredResult](docs/Model/V2KvLedgerErasureShredResult.md)
+- [V2KvLedgerErasureSignedShredReceipt](docs/Model/V2KvLedgerErasureSignedShredReceipt.md)
+- [V2KvLedgerErasureSubjectPreview](docs/Model/V2KvLedgerErasureSubjectPreview.md)
+- [V2KvLedgerErasureSubjectPreviewCollectionsInner](docs/Model/V2KvLedgerErasureSubjectPreviewCollectionsInner.md)
+- [V2KvLedgerErasureSubjectPreviewRequest](docs/Model/V2KvLedgerErasureSubjectPreviewRequest.md)
+- [V2KvLedgerFailure](docs/Model/V2KvLedgerFailure.md)
+- [V2KvLedgerInstance](docs/Model/V2KvLedgerInstance.md)
+- [V2KvLedgerLastVerify](docs/Model/V2KvLedgerLastVerify.md)
+- [V2KvLedgerLastVerifyScope](docs/Model/V2KvLedgerLastVerifyScope.md)
+- [V2KvLedgerList](docs/Model/V2KvLedgerList.md)
+- [V2KvLedgerListItem](docs/Model/V2KvLedgerListItem.md)
+- [V2KvLedgerMeta](docs/Model/V2KvLedgerMeta.md)
+- [V2KvLedgerProof](docs/Model/V2KvLedgerProof.md)
+- [V2KvLedgerProofAnchor](docs/Model/V2KvLedgerProofAnchor.md)
+- [V2KvLedgerProofEntry](docs/Model/V2KvLedgerProofEntry.md)
+- [V2KvLedgerProvenance](docs/Model/V2KvLedgerProvenance.md)
+- [V2KvLedgerPublicKey](docs/Model/V2KvLedgerPublicKey.md)
+- [V2KvLedgerPublicKeyKeysInner](docs/Model/V2KvLedgerPublicKeyKeysInner.md)
+- [V2KvLedgerReceipt](docs/Model/V2KvLedgerReceipt.md)
+- [V2KvLedgerStatus](docs/Model/V2KvLedgerStatus.md)
+- [V2KvLedgerStatusAnchor](docs/Model/V2KvLedgerStatusAnchor.md)
+- [V2KvLedgerSubjectEntries](docs/Model/V2KvLedgerSubjectEntries.md)
+- [V2KvLedgerSubjectEntriesRequest](docs/Model/V2KvLedgerSubjectEntriesRequest.md)
+- [V2KvLedgerSubjectId](docs/Model/V2KvLedgerSubjectId.md)
+- [V2KvLedgerSummary](docs/Model/V2KvLedgerSummary.md)
+- [V2KvLedgerVerificationReport](docs/Model/V2KvLedgerVerificationReport.md)
+- [V2KvLedgerVerificationReportReport](docs/Model/V2KvLedgerVerificationReportReport.md)
+- [V2KvLedgerVerifyRequest](docs/Model/V2KvLedgerVerifyRequest.md)
+- [V2KvLedgerVerifyRequestSince](docs/Model/V2KvLedgerVerifyRequestSince.md)
+- [V2KvLedgerVerifyRequestUntil](docs/Model/V2KvLedgerVerifyRequestUntil.md)
+- [V2KvLedgerVerifyResult](docs/Model/V2KvLedgerVerifyResult.md)
+- [V2KvLedgerVerifyShard](docs/Model/V2KvLedgerVerifyShard.md)
+- [V2KvPageEnd](docs/Model/V2KvPageEnd.md)
+- [V2KvTransactOperation](docs/Model/V2KvTransactOperation.md)
+- [V2KvTransactRequest](docs/Model/V2KvTransactRequest.md)
+- [V2KvTransactResponse](docs/Model/V2KvTransactResponse.md)
+- [V2KvUpgradeRequest](docs/Model/V2KvUpgradeRequest.md)
+- [V2KvUpgradeResponse](docs/Model/V2KvUpgradeResponse.md)
+- [V2KvUpgradeState](docs/Model/V2KvUpgradeState.md)
+- [V2KvUpgradeStatus](docs/Model/V2KvUpgradeStatus.md)
+- [V2KvUsage](docs/Model/V2KvUsage.md)
+- [V2KvUsageDailyInner](docs/Model/V2KvUsageDailyInner.md)
+- [V2KvUsageEstimate](docs/Model/V2KvUsageEstimate.md)
+- [V2KvUsageEstimatePrices](docs/Model/V2KvUsageEstimatePrices.md)
+- [V2KvUsagePeriod](docs/Model/V2KvUsagePeriod.md)
+- [V2KvUsageRetainedTable](docs/Model/V2KvUsageRetainedTable.md)
+- [V2KvUsageTable](docs/Model/V2KvUsageTable.md)
+- [V2KvUsageTotals](docs/Model/V2KvUsageTotals.md)
 - [V2MetricData](docs/Model/V2MetricData.md)
 - [V2MetricDataPoint](docs/Model/V2MetricDataPoint.md)
 - [V2MetricDataPointTimestamp](docs/Model/V2MetricDataPointTimestamp.md)
@@ -707,6 +921,9 @@ Class | Method | HTTP request | Description
 - [V2Rule](docs/Model/V2Rule.md)
 - [V2RuleAuth](docs/Model/V2RuleAuth.md)
 - [V2RuleAuthAction](docs/Model/V2RuleAuthAction.md)
+- [V2RuleAuthFunction](docs/Model/V2RuleAuthFunction.md)
+- [V2RuleAuthFunctionAction](docs/Model/V2RuleAuthFunctionAction.md)
+- [V2RuleAuthFunctionRequest](docs/Model/V2RuleAuthFunctionRequest.md)
 - [V2RuleAuthRequest](docs/Model/V2RuleAuthRequest.md)
 - [V2RuleBotChallenge](docs/Model/V2RuleBotChallenge.md)
 - [V2RuleBotChallengeAction](docs/Model/V2RuleBotChallengeAction.md)
@@ -717,6 +934,9 @@ Class | Method | HTTP request | Description
 - [V2RuleCustomResponse](docs/Model/V2RuleCustomResponse.md)
 - [V2RuleCustomResponseAction](docs/Model/V2RuleCustomResponseAction.md)
 - [V2RuleCustomResponseRequest](docs/Model/V2RuleCustomResponseRequest.md)
+- [V2RuleErrorPage](docs/Model/V2RuleErrorPage.md)
+- [V2RuleErrorPageAction](docs/Model/V2RuleErrorPageAction.md)
+- [V2RuleErrorPageRequest](docs/Model/V2RuleErrorPageRequest.md)
 - [V2RuleFunction](docs/Model/V2RuleFunction.md)
 - [V2RuleFunctionAction](docs/Model/V2RuleFunctionAction.md)
 - [V2RuleFunctionRequest](docs/Model/V2RuleFunctionRequest.md)
@@ -735,6 +955,9 @@ Class | Method | HTTP request | Description
 - [V2RuleServeStatic](docs/Model/V2RuleServeStatic.md)
 - [V2RuleServeStaticAction](docs/Model/V2RuleServeStaticAction.md)
 - [V2RuleServeStaticRequest](docs/Model/V2RuleServeStaticRequest.md)
+- [V2SearchConfig](docs/Model/V2SearchConfig.md)
+- [V2SearchExtractors](docs/Model/V2SearchExtractors.md)
+- [V2SearchIndexSettings](docs/Model/V2SearchIndexSettings.md)
 - [V2SecretStore](docs/Model/V2SecretStore.md)
 - [V2SecretStoreRequest](docs/Model/V2SecretStoreRequest.md)
 - [V2Store](docs/Model/V2Store.md)
@@ -777,7 +1000,7 @@ vendor/bin/phpunit
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `4.21.0`
-    - Package version: `4.21.0`
+- API version: `4.29.0`
+    - Package version: `4.29.0`
     - Generator version: `7.13.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

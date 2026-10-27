@@ -9,6 +9,7 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 | [**getEnvironment()**](EnvironmentsApi.md#getEnvironment) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment} | Get a single environment |
 | [**getEnvironmentLogs()**](EnvironmentsApi.md#getEnvironmentLogs) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/logs | Get the logs for an environment |
 | [**getEnvironmentMetrics()**](EnvironmentsApi.md#getEnvironmentMetrics) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/metrics | Get the metrics for an environment |
+| [**getEnvironmentSlowQueries()**](EnvironmentsApi.md#getEnvironmentSlowQueries) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/slow-queries | Get MySQL slow queries for an environment |
 | [**listEnvironments()**](EnvironmentsApi.md#listEnvironments) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments | Get all environments for an application |
 | [**listSyncOperations()**](EnvironmentsApi.md#listSyncOperations) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/sync/{type} | List the sync operations for an environment |
 | [**syncToEnvironment()**](EnvironmentsApi.md#syncToEnvironment) | **POST** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/sync/{type} | Perform a sync operation from a source environment to the current environment |
@@ -204,12 +205,12 @@ try {
 ## `getEnvironmentLogs()`
 
 ```php
-getEnvironmentLogs($organisation, $application, $environment, $start_time, $end_time, $container_name, $filter_pattern, $limit, $next_token): \QuantClient\Model\GetEnvironmentLogs200Response
+getEnvironmentLogs($organisation, $application, $environment, $start_time, $end_time, $container_name, $filter_pattern, $limit, $next_token, $order, $include_total): \QuantClient\Model\GetEnvironmentLogs200Response
 ```
 
 Get the logs for an environment
 
-Retrieves logs from CloudWatch for the specified environment with optional filtering by time range, container, and pattern matching. Supports pagination via nextToken.
+Retrieves platform logs for the specified environment with optional filtering by time range, container, and literal text. Newest-first by default; pass the nextToken from the previous response to fetch the next page.
 
 ### Example
 
@@ -234,12 +235,14 @@ $environment = test-env; // string | The environment ID
 $start_time = 'start_time_example'; // string | Start time for log retrieval (ISO 8601 format or Unix timestamp)
 $end_time = 'end_time_example'; // string | End time for log retrieval (ISO 8601 format or Unix timestamp)
 $container_name = 'container_name_example'; // string | Filter logs by specific container name
-$filter_pattern = 'filter_pattern_example'; // string | CloudWatch Logs filter pattern for searching log content
-$limit = 56; // int | Maximum number of log entries to return per page
-$next_token = 'next_token_example'; // string | Pagination token from previous response for retrieving next page of results
+$filter_pattern = 'filter_pattern_example'; // string | Literal, case-sensitive text to match anywhere in the log message
+$limit = 50; // int | Maximum number of log entries to return per page (default 50)
+$next_token = 'next_token_example'; // string | Opaque pagination token from the previous response. Pass back unchanged to fetch the next page.
+$order = 'desc'; // string | Sort order. desc returns newest first, asc returns oldest first.
+$include_total = false; // bool | When true, the response pagination object includes the total log count for the time range. Adds 1-2 seconds of latency.
 
 try {
-    $result = $apiInstance->getEnvironmentLogs($organisation, $application, $environment, $start_time, $end_time, $container_name, $filter_pattern, $limit, $next_token);
+    $result = $apiInstance->getEnvironmentLogs($organisation, $application, $environment, $start_time, $end_time, $container_name, $filter_pattern, $limit, $next_token, $order, $include_total);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentsApi->getEnvironmentLogs: ', $e->getMessage(), PHP_EOL;
@@ -256,9 +259,11 @@ try {
 | **start_time** | **string**| Start time for log retrieval (ISO 8601 format or Unix timestamp) | [optional] |
 | **end_time** | **string**| End time for log retrieval (ISO 8601 format or Unix timestamp) | [optional] |
 | **container_name** | **string**| Filter logs by specific container name | [optional] |
-| **filter_pattern** | **string**| CloudWatch Logs filter pattern for searching log content | [optional] |
-| **limit** | **int**| Maximum number of log entries to return per page | [optional] |
-| **next_token** | **string**| Pagination token from previous response for retrieving next page of results | [optional] |
+| **filter_pattern** | **string**| Literal, case-sensitive text to match anywhere in the log message | [optional] |
+| **limit** | **int**| Maximum number of log entries to return per page (default 50) | [optional] [default to 50] |
+| **next_token** | **string**| Opaque pagination token from the previous response. Pass back unchanged to fetch the next page. | [optional] |
+| **order** | **string**| Sort order. desc returns newest first, asc returns oldest first. | [optional] [default to &#39;desc&#39;] |
+| **include_total** | **bool**| When true, the response pagination object includes the total log count for the time range. Adds 1-2 seconds of latency. | [optional] [default to false] |
 
 ### Return type
 
@@ -285,7 +290,7 @@ getEnvironmentMetrics($organisation, $application, $environment, $start_time, $e
 
 Get the metrics for an environment
 
-Retrieves CloudWatch metrics for the specified environment with optional filtering by time range, container, and metric configuration.
+Retrieves platform metrics for the specified environment with optional filtering by time range, container, and metric configuration.
 
 ### Example
 
@@ -310,7 +315,7 @@ $environment = test-env; // string | The environment ID
 $start_time = 56; // int | Start time for metrics retrieval (Unix timestamp in milliseconds)
 $end_time = 56; // int | End time for metrics retrieval (Unix timestamp in milliseconds)
 $period = 56; // int | Period in seconds for metric aggregation (e.g., 60 for 1 minute, 300 for 5 minutes)
-$statistics = 'statistics_example'; // string | Comma-separated list of CloudWatch statistics (e.g., Average, Maximum, Minimum, Sum, SampleCount)
+$statistics = 'statistics_example'; // string | Comma-separated list of metric statistics (e.g., Average, Maximum, Minimum, Sum, SampleCount)
 $container_name = 'container_name_example'; // string | Filter metrics by specific container name
 
 try {
@@ -331,8 +336,80 @@ try {
 | **start_time** | **int**| Start time for metrics retrieval (Unix timestamp in milliseconds) | [optional] |
 | **end_time** | **int**| End time for metrics retrieval (Unix timestamp in milliseconds) | [optional] |
 | **period** | **int**| Period in seconds for metric aggregation (e.g., 60 for 1 minute, 300 for 5 minutes) | [optional] |
-| **statistics** | **string**| Comma-separated list of CloudWatch statistics (e.g., Average, Maximum, Minimum, Sum, SampleCount) | [optional] |
+| **statistics** | **string**| Comma-separated list of metric statistics (e.g., Average, Maximum, Minimum, Sum, SampleCount) | [optional] |
 | **container_name** | **string**| Filter metrics by specific container name | [optional] |
+
+### Return type
+
+**object**
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getEnvironmentSlowQueries()`
+
+```php
+getEnvironmentSlowQueries($organisation, $application, $environment, $start_time, $end_time, $view, $limit): object
+```
+
+Get MySQL slow queries for an environment
+
+Queries over 1 second from the environment's own database user. summary groups by query shape with literals replaced by ?. enabled=false means the slow query export is not turned on for this database.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\EnvironmentsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organisation = 'organisation_example'; // string
+$application = 'application_example'; // string
+$environment = 'environment_example'; // string
+$start_time = 'start_time_example'; // string | ISO 8601 or Unix epoch ms. Default: 24 hours before endTime.
+$end_time = 'end_time_example'; // string | ISO 8601 or Unix epoch ms. Default: now. Window max 30 days.
+$view = 'summary'; // string
+$limit = 50; // int | entries: 1-500; summary: 1-100 shapes
+
+try {
+    $result = $apiInstance->getEnvironmentSlowQueries($organisation, $application, $environment, $start_time, $end_time, $view, $limit);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EnvironmentsApi->getEnvironmentSlowQueries: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation** | **string**|  | |
+| **application** | **string**|  | |
+| **environment** | **string**|  | |
+| **start_time** | **string**| ISO 8601 or Unix epoch ms. Default: 24 hours before endTime. | [optional] |
+| **end_time** | **string**| ISO 8601 or Unix epoch ms. Default: now. Window max 30 days. | [optional] |
+| **view** | **string**|  | [optional] [default to &#39;summary&#39;] |
+| **limit** | **int**| entries: 1-500; summary: 1-100 shapes | [optional] [default to 50] |
 
 ### Return type
 
@@ -549,7 +626,7 @@ updateEnvironment($organisation, $application, $environment, $update_environment
 
 Update Environment Compose Definition
 
-Replaces the entire task definition for the environment based on the provided multi-container compose definition. This will create a new task definition revision and update the ECS service, triggering a redeployment. Optionally accepts minCapacity and maxCapacity at the root level for convenience.
+Replaces the entire task definition for the environment based on the provided multi-container compose definition. This will create a new task definition revision and update the container service, triggering a redeployment. Optionally accepts minCapacity and maxCapacity at the root level for convenience.
 
 ### Example
 

@@ -145,7 +145,7 @@ validateCompose($organisation, $validate_compose_request, $image_suffix): \Quant
 
 Validate a compose file
 
-Accepts a docker-compose.yml file content, translates it into the internal compose definition format, and validates it. Quant Cloud provides comprehensive support for standard Docker Compose features including commands, entrypoints, health checks, dependencies, volume mounts, resource limits, and more. For detailed documentation on supported features and examples, see: https://docs.quantcdn.io/introduction-to-quant-cloud/importing-docker-compose/. Supports image tag suffixing via the imageSuffix query parameter or by sending a JSON wrapper with yamlContent and imageSuffix fields. When provided, internal image tags are transformed to {containerName}-{suffix} format (e.g., 'nginx-feature-xyz').
+Accepts a docker-compose.yml file content, translates it into the internal compose definition format, and validates it. Quant Cloud provides comprehensive support for standard Docker Compose features including commands, entrypoints, health checks, dependencies, volume mounts, resource limits, and more. For detailed documentation on supported features and examples, see: https://docs.quantcdn.io/introduction-to-quant-cloud/importing-docker-compose/. Supports image tag suffixing via the imageSuffix query parameter or the imageSuffix field in the JSON body. When provided, internal image tags are transformed to {containerName}-{suffix} format (e.g., 'nginx-feature-xyz').
 
 ### Example
 
@@ -165,7 +165,7 @@ $apiInstance = new QuantClient\Api\ComposeApi(
     $config
 );
 $organisation = test-org; // string | The organisation ID
-$validate_compose_request = new \QuantClient\Model\ValidateComposeRequest(); // \QuantClient\Model\ValidateComposeRequest | The docker-compose.yml file content. Can be sent as raw YAML string or as a JSON wrapper containing both yamlContent (string) and imageSuffix (string) fields. Query parameter imageSuffix takes precedence if both are provided.
+$validate_compose_request = new \QuantClient\Model\ValidateComposeRequest(); // \QuantClient\Model\ValidateComposeRequest | A JSON object. Put the docker-compose.yml file content in the compose field (string). The optional imageSuffix field sets the image tag suffix. The imageSuffix query parameter takes precedence if both are provided.
 $image_suffix = pr-456; // string | Optional. Image tag suffix to apply during translation. Transforms internal image tags to consistent '{containerName}-{suffix}' format (e.g., 'nginx-pr-456'). External images are left unchanged. Useful for feature branch deployments.
 
 try {
@@ -181,7 +181,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **organisation** | **string**| The organisation ID | |
-| **validate_compose_request** | [**\QuantClient\Model\ValidateComposeRequest**](../Model/ValidateComposeRequest.md)| The docker-compose.yml file content. Can be sent as raw YAML string or as a JSON wrapper containing both yamlContent (string) and imageSuffix (string) fields. Query parameter imageSuffix takes precedence if both are provided. | |
+| **validate_compose_request** | [**\QuantClient\Model\ValidateComposeRequest**](../Model/ValidateComposeRequest.md)| A JSON object. Put the docker-compose.yml file content in the compose field (string). The optional imageSuffix field sets the image tag suffix. The imageSuffix query parameter takes precedence if both are provided. | |
 | **image_suffix** | **string**| Optional. Image tag suffix to apply during translation. Transforms internal image tags to consistent &#39;{containerName}-{suffix}&#39; format (e.g., &#39;nginx-pr-456&#39;). External images are left unchanged. Useful for feature branch deployments. | [optional] |
 
 ### Return type

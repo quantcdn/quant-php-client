@@ -15,7 +15,7 @@ getAIUsageStats($organisation, $month, $group_by, $include, $user_id, $token_id)
 
 Organisation AI usage breakdown (subscription page parity)
 
-AI usage from the subscription page's source (cloud-api monthly-usage). Parameterized by month, groupBy (model|user|token) and optional daily series. NOTE: as of API 4.19.0 this endpoint requires the update_subscription permission + subscription:read scope (previously use_ai_services + ai:use). For per-caller spend use /ai/usage/me.
+AI usage from the same source as the subscription page. Parameterized by month, groupBy (model|user|token) and optional daily series. NOTE: as of API 4.19.0 this endpoint requires the update_subscription permission + subscription:read scope (previously use_ai_services + ai:use). For per-caller spend use /ai/usage/me.
 
 ### Example
 
