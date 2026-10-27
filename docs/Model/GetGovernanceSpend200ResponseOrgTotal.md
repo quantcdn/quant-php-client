@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spend_cents** | **int** | Total org spend in US cents | [optional]
+**spend_cents** | **float** | Total org spend in US cents, exact to 6 decimal places | [optional]
 **request_count** | **int** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

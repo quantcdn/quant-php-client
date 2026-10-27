@@ -10,7 +10,7 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 ## `purgeCreate()`
 
 ```php
-purgeCreate($organization, $project, $purge_create_request): string
+purgeCreate($organization, $project, $purge_create_request): \QuantClient\Model\PurgeCreate200Response
 ```
 
 Purge cache via URL or cache keys
@@ -54,7 +54,7 @@ try {
 
 ### Return type
 
-**string**
+[**\QuantClient\Model\PurgeCreate200Response**](../Model/PurgeCreate200Response.md)
 
 ### Authorization
 

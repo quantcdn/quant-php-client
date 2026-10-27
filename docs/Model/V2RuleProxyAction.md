@@ -11,10 +11,10 @@ Name | Type | Description | Notes
 **disable_ssl_verify** | **bool** | Disable SSL verification | [optional] [default to false]
 **cache_lifetime** | **string** | Cache lifetime | [optional]
 **only_proxy_404** | **bool** | Only proxy 404 responses | [optional] [default to false]
-**inject_headers** | **array<string,string>** | Headers to inject | [optional]
+**inject_headers** | **array<string,string>** | Headers added to (or replacing headers on) the request sent to the origin. They are not added to the response sent to the visitor. | [optional]
 **proxy_strip_headers** | **string[]** | Headers to strip from response | [optional]
 **proxy_strip_request_headers** | **string[]** | Headers to strip from request | [optional]
-**origin_timeout** | **string** | Origin timeout | [optional]
+**origin_timeout** | **string** | Origin timeout in milliseconds. Defaults to 30000 when omitted on create. | [optional]
 **failover_mode** | **bool** | Enable failover mode | [optional] [default to false]
 **failover_origin_ttfb** | **string** | Failover TTFB threshold | [optional] [default to '2000']
 **failover_origin_status_codes** | **string[]** | Status codes for failover (default: 200,404,301,302,304) | [optional]
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **application_container** | **string** | Quant Cloud application container (required when application_proxy is true) | [optional]
 **application_port** | **int** | Quant Cloud application port (required when application_proxy is true) | [optional]
 **quant_cloud_selection** | [**\QuantClient\Model\V2RuleProxyActionQuantCloudSelection**](V2RuleProxyActionQuantCloudSelection.md) |  | [optional]
-**static_error_page** | **string** | Static error page content (HTML) to serve on origin errors | [optional]
-**static_error_page_status_codes** | **string[]** | Origin status codes that trigger static error page | [optional]
+**static_error_page** | **string** | On/off switch, not page content. Send a string: any non-empty string (for example the text true) turns it on; an empty string or null turns it off. Write the text true to enable and an empty string to disable; do not send the text false, because any non-empty string counts as on. A JSON boolean is rejected on write. A boolean stored by the dashboard reads back as the string true, or an empty string when off. When on, an origin response whose status is in static_error_page_status_codes is replaced by the project&#39;s published /_quant&lt;status&gt; page (for example /_quant503). | [optional]
+**static_error_page_status_codes** | **string[]** | Origin status codes that serve the published /_quant&lt;status&gt; page when static_error_page is on | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

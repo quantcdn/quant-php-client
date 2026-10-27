@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **request_id** | **string** |  | [optional]
 **execution_arn** | **string** |  | [optional]
 **status** | **string** |  | [optional]
-**aws_status** | **string** | Raw AWS Step Functions status | [optional]
+**aws_status** | **string** | Raw status reported by the underlying execution service | [optional]
 **callback_id** | **string** | Present when status is waiting_callback - use with /chat/callback | [optional]
 **pending_tools** | [**\QuantClient\Model\GetDurableExecutionStatus200ResponsePendingToolsInner[]**](GetDurableExecutionStatus200ResponsePendingToolsInner.md) | Present when status is waiting_callback - tools waiting for results | [optional]
 **result** | [**\QuantClient\Model\GetDurableExecutionStatus200ResponseResult**](GetDurableExecutionStatus200ResponseResult.md) |  | [optional]

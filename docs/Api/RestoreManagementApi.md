@@ -105,7 +105,7 @@ $apiInstance = new QuantClient\Api\RestoreManagementApi(
 $organisation = test-org; // string | The organisation ID
 $application = test-app; // string | The application ID
 $environment = staging; // string | The TARGET environment ID to restore INTO
-$backup_id = quant-gov-dashboard-staging-2025-09-19T21-50-27-145Z; // string | The backup ID to restore from
+$backup_id = backup-0001; // string | The backup ID to restore from
 $restore_database_request = new \QuantClient\Model\RestoreDatabaseRequest(); // \QuantClient\Model\RestoreDatabaseRequest
 
 try {
@@ -173,7 +173,7 @@ $apiInstance = new QuantClient\Api\RestoreManagementApi(
 $organisation = test-org; // string | The organisation ID
 $application = test-app; // string | The application ID
 $environment = staging; // string | The TARGET environment ID to restore INTO
-$backup_id = quant-gov-dashboard-staging-2025-09-19T21-50-27-145Z; // string | The backup ID to restore from
+$backup_id = backup-0001; // string | The backup ID to restore from
 $restore_filesystem_request = new \QuantClient\Model\RestoreFilesystemRequest(); // \QuantClient\Model\RestoreFilesystemRequest
 
 try {

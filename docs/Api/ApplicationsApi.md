@@ -7,8 +7,10 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 | [**createApplication()**](ApplicationsApi.md#createApplication) | **POST** /api/v3/organizations/{organisation}/applications | Create a new application |
 | [**deleteApplication()**](ApplicationsApi.md#deleteApplication) | **DELETE** /api/v3/organizations/{organisation}/applications/{application} | Delete an application |
 | [**getApplication()**](ApplicationsApi.md#getApplication) | **GET** /api/v3/organizations/{organisation}/applications/{application} | Get a single application |
-| [**getEcrLoginCredentials()**](ApplicationsApi.md#getEcrLoginCredentials) | **GET** /api/v3/organizations/{organisation}/applications/ecr-login | Get ECR login credentials |
+| [**getEcrLoginCredentials()**](ApplicationsApi.md#getEcrLoginCredentials) | **GET** /api/v3/organizations/{organisation}/applications/ecr-login | Get container registry login credentials |
 | [**listApplications()**](ApplicationsApi.md#listApplications) | **GET** /api/v3/organizations/{organisation}/applications | Get all applications for an organisation |
+| [**patchApplicationMetadata()**](ApplicationsApi.md#patchApplicationMetadata) | **PATCH** /api/v3/organizations/{organisation}/applications/{application}/metadata | Merge-patch application metadata |
+| [**putApplicationMetadata()**](ApplicationsApi.md#putApplicationMetadata) | **PUT** /api/v3/organizations/{organisation}/applications/{application}/metadata | Replace application metadata |
 
 
 ## `createApplication()`
@@ -196,7 +198,7 @@ try {
 getEcrLoginCredentials($organisation): \QuantClient\Model\GetEcrLoginCredentials200Response
 ```
 
-Get ECR login credentials
+Get container registry login credentials
 
 ### Example
 
@@ -251,7 +253,7 @@ try {
 ## `listApplications()`
 
 ```php
-listApplications($organisation): \QuantClient\Model\Application[]
+listApplications($organisation, $metadata): \QuantClient\Model\Application[]
 ```
 
 Get all applications for an organisation
@@ -274,9 +276,10 @@ $apiInstance = new QuantClient\Api\ApplicationsApi(
     $config
 );
 $organisation = 'organisation_example'; // string | The organisation ID
+$metadata = array('key' => 'metadata_example'); // array<string,string> | Filter by metadata, e.g. metadata[team]=web. Exact, case-sensitive match; multiple pairs are ANDed.
 
 try {
-    $result = $apiInstance->listApplications($organisation);
+    $result = $apiInstance->listApplications($organisation, $metadata);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ApplicationsApi->listApplications: ', $e->getMessage(), PHP_EOL;
@@ -288,6 +291,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **organisation** | **string**| The organisation ID | |
+| **metadata** | [**array<string,string>**](../Model/string.md)| Filter by metadata, e.g. metadata[team]&#x3D;web. Exact, case-sensitive match; multiple pairs are ANDed. | [optional] |
 
 ### Return type
 
@@ -300,6 +304,134 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `patchApplicationMetadata()`
+
+```php
+patchApplicationMetadata($organisation, $application, $request_body): \QuantClient\Model\ApplicationMetadataResponse
+```
+
+Merge-patch application metadata
+
+Sets the given keys and removes keys whose value is null. A request that breaks any rule is rejected whole.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\ApplicationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organisation = 'organisation_example'; // string
+$application = 'application_example'; // string
+$request_body = array('key' => 'request_body_example'); // array<string,string>
+
+try {
+    $result = $apiInstance->patchApplicationMetadata($organisation, $application, $request_body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ApplicationsApi->patchApplicationMetadata: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation** | **string**|  | |
+| **application** | **string**|  | |
+| **request_body** | [**array<string,string>**](../Model/string.md)|  | |
+
+### Return type
+
+[**\QuantClient\Model\ApplicationMetadataResponse**](../Model/ApplicationMetadataResponse.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `putApplicationMetadata()`
+
+```php
+putApplicationMetadata($organisation, $application, $request_body): \QuantClient\Model\ApplicationMetadataResponse
+```
+
+Replace application metadata
+
+Replaces the whole metadata set. An empty object removes all metadata.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\ApplicationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organisation = 'organisation_example'; // string
+$application = 'application_example'; // string
+$request_body = array('key' => 'request_body_example'); // array<string,string>
+
+try {
+    $result = $apiInstance->putApplicationMetadata($organisation, $application, $request_body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ApplicationsApi->putApplicationMetadata: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation** | **string**|  | |
+| **application** | **string**|  | |
+| **request_body** | [**array<string,string>**](../Model/string.md)|  | |
+
+### Return type
+
+[**\QuantClient\Model\ApplicationMetadataResponse**](../Model/ApplicationMetadataResponse.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **block_harvester** | **bool** | Block email harvesters | [optional] [default to false]
 **block_spam** | **bool** | Block spam sources | [optional] [default to false]
 **block_search_engine** | **bool** | Block search engines | [optional] [default to false]
-**httpbl_key** | **string** | HTTP:BL API key | [optional]
+**httpbl_key** | **string** | HTTP:BL API key. The deprecated write alias api_key is still accepted. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

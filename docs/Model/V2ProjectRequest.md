@@ -12,5 +12,7 @@ Name | Type | Description | Notes
 **basic_auth_username** | **string** | Basic auth username | [optional]
 **basic_auth_password** | **string** | Basic auth password | [optional]
 **basic_auth_preview_only** | **bool** | Apply basic auth to preview domain only | [optional] [default to false]
+**search_enabled** | **bool** | Enable the project&#39;s search index. Rejected when the organisation has no search subscription. | [optional]
+**search_config** | [**\QuantClient\Model\V2SearchConfig**](V2SearchConfig.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

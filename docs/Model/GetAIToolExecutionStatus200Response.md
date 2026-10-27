@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **execution_id** | **string** |  |
 **tool_name** | **string** |  |
 **status** | **string** | Execution status: pending, running, complete, or failed |
-**result** | [**\QuantClient\Model\GetAIToolExecutionStatus200ResponseResult**](GetAIToolExecutionStatus200ResponseResult.md) |  | [optional]
+**result** | **object** | Tool execution result (only present when status&#x3D;&#39;complete&#39;). Structure varies by tool type. | [optional]
 **error** | **string** | Error message (only present when status&#x3D;&#39;failed&#39;) | [optional]
 **created_at** | **int** | Unix timestamp when execution was created |
 **started_at** | **int** | Unix timestamp when execution started (if status &gt;&#x3D; &#39;running&#39;) | [optional]

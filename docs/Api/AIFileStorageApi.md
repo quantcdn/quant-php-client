@@ -7,7 +7,7 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 | [**deleteFile()**](AIFileStorageApi.md#deleteFile) | **DELETE** /api/v3/organizations/{organisation}/ai/files/{fileId} | Delete File |
 | [**getFile()**](AIFileStorageApi.md#getFile) | **GET** /api/v3/organizations/{organisation}/ai/files/{fileId} | Get File |
 | [**listFiles()**](AIFileStorageApi.md#listFiles) | **GET** /api/v3/organizations/{organisation}/ai/files | List Files |
-| [**uploadFile()**](AIFileStorageApi.md#uploadFile) | **POST** /api/v3/organizations/{organisation}/ai/files | Upload File to S3 |
+| [**uploadFile()**](AIFileStorageApi.md#uploadFile) | **POST** /api/v3/organizations/{organisation}/ai/files | Upload File to object storage |
 
 
 ## `deleteFile()`
@@ -18,7 +18,7 @@ deleteFile($organisation, $file_id): \QuantClient\Model\DeleteFile200Response
 
 Delete File
 
-Deletes a file from S3 storage.
+Deletes a file from object storage.
 
 ### Example
 
@@ -142,7 +142,7 @@ listFiles($organisation, $filter, $limit, $cursor): \QuantClient\Model\ListFiles
 
 List Files
 
-Lists files stored in S3 for this organization with optional metadata filtering and pagination.
+Lists files stored in object storage for this organization with optional metadata filtering and pagination.
 
 ### Example
 
@@ -206,9 +206,9 @@ try {
 uploadFile($organisation, $upload_file_request): \QuantClient\Model\UploadFile201Response
 ```
 
-Upload File to S3
+Upload File to object storage
 
-Uploads a file to S3 storage for later retrieval.      *      * **Two Upload Modes:**      *      * 1. **Direct Upload (≤7MB):** Send base64-encoded content in request body.      *      * 2. **Presigned URL Upload (any size):** Set `requestUploadUrl: true` to get a presigned S3 PUT URL, then upload directly to S3.      *      * **Supported Content Types:**      * - Images: image/png, image/jpeg, image/gif, image/webp, image/svg+xml      * - Documents: application/pdf, text/plain, text/markdown, text/html      * - Code: text/javascript, application/json, text/css, text/yaml      * - Archives: application/zip, application/gzip      * - Video: video/mp4, video/webm (use presigned URL for large files)      *      * **Metadata:**      * Attach any custom metadata for filtering. `artifactType` is auto-populated from contentType if not provided.
+Uploads a file to object storage for later retrieval.      *      * **Two Upload Modes:**      *      * 1. **Direct Upload (≤7MB):** Send base64-encoded content in request body.      *      * 2. **Presigned URL Upload (any size):** Set `requestUploadUrl: true` to get a presigned PUT URL, then upload directly to object storage.      *      * **Supported Content Types:**      * - Images: image/png, image/jpeg, image/gif, image/webp, image/svg+xml      * - Documents: application/pdf, text/plain, text/markdown, text/html      * - Code: text/javascript, application/json, text/css, text/yaml      * - Archives: application/zip, application/gzip      * - Video: video/mp4, video/webm (use presigned URL for large files)      *      * **Metadata:**      * Attach any custom metadata for filtering. `artifactType` is auto-populated from contentType if not provided.
 
 ### Example
 
