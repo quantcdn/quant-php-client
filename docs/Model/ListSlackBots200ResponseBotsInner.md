@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **guardrail_preset** | **string** |  | [optional]
 **filter_policies** | **string[]** |  | [optional]
 **long_context** | **bool** |  | [optional]
+**reasoning_effort** | **string** | Reasoning effort (Anthropic effort). Must be one of the levels the model lists in capabilities.effortLevels. Unset uses the caller or model default. | [optional]
 **session_ttl_days** | **int** |  | [optional]
 **keywords_enabled** | **bool** |  | [optional]
 **created_at** | **\DateTime** |  | [optional]

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **allowed_collections** | **string[]** |  | [optional]
 **assigned_skills** | **string[]** |  | [optional]
 **long_context** | **bool** | Whether 1M context window is enabled | [optional]
+**reasoning_effort** | **string** | Reasoning effort (Anthropic effort). Must be one of the levels the model lists in capabilities.effortLevels. Unset uses the caller or model default. | [optional]
 **guardrail_preset** | **string** | Guardrail preset name | [optional]
 **is_global** | **bool** | Whether this is a platform-managed global agent | [optional]
 **has_overlay** | **bool** | Whether the requesting org has a per-org overlay for this global agent | [optional]
