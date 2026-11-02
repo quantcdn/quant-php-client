@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **allowed_collections** | **string[]** |  | [optional]
 **assigned_skills** | **string[]** | Skill IDs to assign to this agent | [optional]
 **long_context** | **bool** | Enable 1M context window support | [optional]
+**reasoning_effort** | **string** | Reasoning effort (Anthropic effort). Must be one of the levels the model lists in capabilities.effortLevels. Unset uses the caller or model default. null clears it. | [optional]
 **guardrail_preset** | **string** | Guardrail preset name | [optional]
 **filter_policies** | **string[]** | Filter policy IDs to apply to this agent&#39;s inference requests | [optional]
 

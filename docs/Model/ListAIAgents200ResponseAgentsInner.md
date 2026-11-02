@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **allowed_tools** | **string[]** |  | [optional]
 **assigned_skills** | **string[]** |  | [optional]
 **long_context** | **bool** |  | [optional]
+**reasoning_effort** | **string** | Reasoning effort (Anthropic effort). Must be one of the levels the model lists in capabilities.effortLevels. Unset uses the caller or model default. | [optional]
 **guardrail_preset** | **string** |  | [optional]
 **is_global** | **bool** |  | [optional]
 **has_overlay** | **bool** |  | [optional]

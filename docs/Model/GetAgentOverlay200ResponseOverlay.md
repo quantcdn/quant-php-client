@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **system_prompt_append** | **string** |  | [optional]
 **allowed_collections** | **string[]** |  | [optional]
 **guardrail_preset** | **string** |  | [optional]
+**reasoning_effort** | **string** | Reasoning effort for this organisation. Overrides the global agent value. | [optional]
 **version** | **int** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

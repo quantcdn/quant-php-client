@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **guardrail_preset** | **string** | Guardrail preset name | [optional]
 **filter_policies** | **string[]** | Content filter policies | [optional]
 **long_context** | **bool** | Enable long context mode | [optional]
+**reasoning_effort** | **string** | Reasoning effort (Anthropic effort). Must be one of the levels the model lists in capabilities.effortLevels. Unset uses the caller or model default. | [optional]
 **session_ttl_days** | **int** | Session TTL in days | [optional]
 **allowed_channels** | **string[]** | Slack channel IDs the bot may respond in | [optional]
 **allowed_users** | **string[]** | Slack user IDs allowed to interact with the bot | [optional]

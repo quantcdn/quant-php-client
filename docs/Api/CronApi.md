@@ -337,7 +337,7 @@ try {
 ## `listCronJobs()`
 
 ```php
-listCronJobs($organisation, $application, $environment): \QuantClient\Model\Cron
+listCronJobs($organisation, $application, $environment): \QuantClient\Model\Cron[]
 ```
 
 Get all cron jobs for an environment
@@ -381,7 +381,7 @@ try {
 
 ### Return type
 
-[**\QuantClient\Model\Cron**](../Model/Cron.md)
+[**\QuantClient\Model\Cron[]**](../Model/Cron.md)
 
 ### Authorization
 
