@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **domain** | **string[]** | Exact hostnames the rule matches, or &#39;any&#39; (the default). Wildcards such as *.example.com are not supported. |
 **name** | **string** | Rule name | [optional]
 **uuid** | **string** | Rule UUID | [optional]
-**weight** | **int** | Rule order. Must be 0 or greater; lower weights are processed first. If omitted on create, the rule is placed last. | [optional]
+**weight** | **int** | Rule order. Must be 0 or greater; lower weights are processed first. If omitted on create, the rule is placed last. A reorder in the Quant dashboard changes this rule&#39;s weight; if &#x60;weight&#x60; is set in configuration, the next plan shows the difference and apply restores the configured order. | [optional]
 **disabled** | **bool** | Whether rule is disabled | [optional] [default to false]
 **url** | **string[]** | URL patterns |
 **country** | **string** | Country filter type (country_is, country_is_not, any) | [optional]

@@ -96,6 +96,13 @@ Class | Method | HTTP request | Description
 *AIAgentsApi* | [**listAIAgents**](docs/Api/AIAgentsApi.md#listaiagents) | **GET** /api/v3/organizations/{organisation}/ai/agents | List AI Agents
 *AIAgentsApi* | [**updateAIAgent**](docs/Api/AIAgentsApi.md#updateaiagent) | **PUT** /api/v3/organizations/{organisation}/ai/agents/{agentId} | Update Agent
 *AIAgentsApi* | [**upsertAgentOverlay**](docs/Api/AIAgentsApi.md#upsertagentoverlay) | **PUT** /api/v3/organizations/{organisation}/ai/agents/{agentId}/overlay | Upsert Agent Overlay
+*AIAuditApi* | [**aiAuditExport**](docs/Api/AIAuditApi.md#aiauditexport) | **GET** /api/v3/organizations/{organisation}/ai/audit/export | Export AI audit records as JSON Lines
+*AIAuditApi* | [**aiAuditLedgerEntries**](docs/Api/AIAuditApi.md#aiauditledgerentries) | **GET** /api/v3/organizations/{organisation}/ai/audit/ledger/entries | List AI governance ledger entries
+*AIAuditApi* | [**aiAuditLedgerProof**](docs/Api/AIAuditApi.md#aiauditledgerproof) | **GET** /api/v3/organizations/{organisation}/ai/audit/ledger/proof | Get the inclusion proof of a governance ledger entry
+*AIAuditApi* | [**aiAuditLedgerPublicKey**](docs/Api/AIAuditApi.md#aiauditledgerpublickey) | **GET** /api/v3/organizations/{organisation}/ai/audit/ledger/public-key | Get the governance ledger public key
+*AIAuditApi* | [**aiAuditLedgerStatus**](docs/Api/AIAuditApi.md#aiauditledgerstatus) | **GET** /api/v3/organizations/{organisation}/ai/audit/ledger | Get the AI governance ledger status
+*AIAuditApi* | [**aiAuditRecordGet**](docs/Api/AIAuditApi.md#aiauditrecordget) | **GET** /api/v3/organizations/{organisation}/ai/audit/record | Get one AI audit record
+*AIAuditApi* | [**aiAuditRecordsList**](docs/Api/AIAuditApi.md#aiauditrecordslist) | **GET** /api/v3/organizations/{organisation}/ai/audit/records | List AI audit records
 *AICustomToolsApi* | [**createCustomTool**](docs/Api/AICustomToolsApi.md#createcustomtool) | **POST** /api/v3/organizations/{organisation}/ai/custom-tools | Register Custom Edge Function Tool
 *AICustomToolsApi* | [**deleteCustomTool**](docs/Api/AICustomToolsApi.md#deletecustomtool) | **DELETE** /api/v3/organizations/{organisation}/ai/custom-tools/{toolName} | Delete Custom Tool
 *AICustomToolsApi* | [**getCustomTool**](docs/Api/AICustomToolsApi.md#getcustomtool) | **GET** /api/v3/organizations/{organisation}/ai/custom-tools/{toolName} | Get Custom Tool
@@ -164,13 +171,17 @@ Class | Method | HTTP request | Description
 *AISkillsApi* | [**syncSkill**](docs/Api/AISkillsApi.md#syncskill) | **POST** /api/v3/organizations/{organisation}/ai/skills/{skillId}/sync | Sync Skill from Source
 *AISkillsApi* | [**syncSkillCollection**](docs/Api/AISkillsApi.md#syncskillcollection) | **POST** /api/v3/organizations/{organisation}/ai/skills/collections/{namespace}/sync | Sync Skill Collection
 *AISkillsApi* | [**updateSkill**](docs/Api/AISkillsApi.md#updateskill) | **PUT** /api/v3/organizations/{organisation}/ai/skills/{skillId} | Update Skill
+*AISlackBotsApi* | [**cancelSlackInteraction**](docs/Api/AISlackBotsApi.md#cancelslackinteraction) | **POST** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/interactions/{interactionId}/cancel | Cancel an unanswered Slack interaction
 *AISlackBotsApi* | [**createSlackBot**](docs/Api/AISlackBotsApi.md#createslackbot) | **POST** /api/v3/organizations/{organisation}/ai/slack-bots | Create Slack Bot
+*AISlackBotsApi* | [**createSlackInteraction**](docs/Api/AISlackBotsApi.md#createslackinteraction) | **POST** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/interactions | Ask for a single Slack button response
 *AISlackBotsApi* | [**deleteSlackBot**](docs/Api/AISlackBotsApi.md#deleteslackbot) | **DELETE** /api/v3/organizations/{organisation}/ai/slack-bots/{botId} | Delete Slack Bot
 *AISlackBotsApi* | [**getSlackBot**](docs/Api/AISlackBotsApi.md#getslackbot) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/{botId} | Get Slack Bot
 *AISlackBotsApi* | [**getSlackBotThread**](docs/Api/AISlackBotsApi.md#getslackbotthread) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/threads/{channel}/{threadTs} | Read a thread
+*AISlackBotsApi* | [**getSlackInteraction**](docs/Api/AISlackBotsApi.md#getslackinteraction) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/interactions/{interactionId} | Read an external Slack interaction
 *AISlackBotsApi* | [**listSlackBotChannelMessages**](docs/Api/AISlackBotsApi.md#listslackbotchannelmessages) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/channels/{channel}/messages | Read recent channel messages
 *AISlackBotsApi* | [**listSlackBots**](docs/Api/AISlackBotsApi.md#listslackbots) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots | List Slack Bots
 *AISlackBotsApi* | [**listSlackBotsApiEnabled**](docs/Api/AISlackBotsApi.md#listslackbotsapienabled) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/api-enabled | List API-enabled Slack bots
+*AISlackBotsApi* | [**postSlackBotFile**](docs/Api/AISlackBotsApi.md#postslackbotfile) | **POST** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/files | Post an image as the bot
 *AISlackBotsApi* | [**postSlackBotMessage**](docs/Api/AISlackBotsApi.md#postslackbotmessage) | **POST** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/messages | Post a message as the bot
 *AISlackBotsApi* | [**searchSlackWorkspaceChannels**](docs/Api/AISlackBotsApi.md#searchslackworkspacechannels) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/workspace/channels | Search Slack Workspace Channels
 *AISlackBotsApi* | [**searchSlackWorkspaceUsers**](docs/Api/AISlackBotsApi.md#searchslackworkspaceusers) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/workspace/users | Search Slack Workspace Users
@@ -386,6 +397,7 @@ Class | Method | HTTP request | Description
 *RulesApi* | [**rulesHeadersList**](docs/Api/RulesApi.md#rulesheaderslist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/headers | List header rules
 *RulesApi* | [**rulesHeadersRead**](docs/Api/RulesApi.md#rulesheadersread) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/headers/{rule} | Get details of a header rule
 *RulesApi* | [**rulesHeadersUpdate**](docs/Api/RulesApi.md#rulesheadersupdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/rules/headers/{rule} | Update a header rule
+*RulesApi* | [**rulesIndexList**](docs/Api/RulesApi.md#rulesindexlist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules | List all rules in edge order
 *RulesApi* | [**rulesProxyCreate**](docs/Api/RulesApi.md#rulesproxycreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/rules/proxy | Create a proxy rule
 *RulesApi* | [**rulesProxyDelete**](docs/Api/RulesApi.md#rulesproxydelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/rules/proxy/{rule} | Delete a proxy rule
 *RulesApi* | [**rulesProxyList**](docs/Api/RulesApi.md#rulesproxylist) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/proxy | List proxy rules
@@ -405,6 +417,9 @@ Class | Method | HTTP request | Description
 *ScalingPolicyApi* | [**deleteScalingPolicy**](docs/Api/ScalingPolicyApi.md#deletescalingpolicy) | **DELETE** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/scaling-policies | Delete Scaling Policy
 *ScalingPolicyApi* | [**listScalingPolicies**](docs/Api/ScalingPolicyApi.md#listscalingpolicies) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/scaling-policies | List Scaling Policies
 *ScalingPolicyApi* | [**upsertScalingPolicy**](docs/Api/ScalingPolicyApi.md#upsertscalingpolicy) | **PUT** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/scaling-policies | Upsert Scaling Policy
+*SecretsApi* | [**deleteEnvironmentSecret**](docs/Api/SecretsApi.md#deleteenvironmentsecret) | **DELETE** /api/v3/organizations/{api_organisation}/applications/{api_application}/environments/{api_environment}/secrets/{api_secret} | Delete a secret
+*SecretsApi* | [**listEnvironmentSecrets**](docs/Api/SecretsApi.md#listenvironmentsecrets) | **GET** /api/v3/organizations/{api_organisation}/applications/{api_application}/environments/{api_environment}/secrets | List the secret names for an environment
+*SecretsApi* | [**updateEnvironmentSecret**](docs/Api/SecretsApi.md#updateenvironmentsecret) | **PUT** /api/v3/organizations/{api_organisation}/applications/{api_application}/environments/{api_environment}/secrets/{api_secret} | Create or replace a secret
 *SubscriptionApi* | [**getSubscriptionCloudUsage**](docs/Api/SubscriptionApi.md#getsubscriptioncloudusage) | **GET** /api/v3/organizations/{organisation}/subscription/cloud-usage | Cloud-app cost breakdown for the subscription page
 *TokensApi* | [**tokensCreate**](docs/Api/TokensApi.md#tokenscreate) | **POST** /api/v2/organizations/{organization}/tokens | Create a new API token scoped to this organization
 *TokensApi* | [**tokensDelete**](docs/Api/TokensApi.md#tokensdelete) | **DELETE** /api/v2/organizations/{organization}/tokens/{token_id} | Revoke an API token
@@ -420,6 +435,11 @@ Class | Method | HTTP request | Description
 
 ## Models
 
+- [AiAuditError](docs/Model/AiAuditError.md)
+- [AiAuditRecordGet200Response](docs/Model/AiAuditRecordGet200Response.md)
+- [AiAuditRecordRow](docs/Model/AiAuditRecordRow.md)
+- [AiAuditRecordSummary](docs/Model/AiAuditRecordSummary.md)
+- [AiAuditRecordsPage](docs/Model/AiAuditRecordsPage.md)
 - [AiSearchChatRequest](docs/Model/AiSearchChatRequest.md)
 - [AiSearchDeletePagesRequest](docs/Model/AiSearchDeletePagesRequest.md)
 - [AiSearchEnableRequest](docs/Model/AiSearchEnableRequest.md)
@@ -522,6 +542,8 @@ Class | Method | HTTP request | Description
 - [CreateSkillRequest](docs/Model/CreateSkillRequest.md)
 - [CreateSlackBot201Response](docs/Model/CreateSlackBot201Response.md)
 - [CreateSlackBotRequest](docs/Model/CreateSlackBotRequest.md)
+- [CreateSlackInteractionRequest](docs/Model/CreateSlackInteractionRequest.md)
+- [CreateSlackInteractionRequestActionsInner](docs/Model/CreateSlackInteractionRequestActionsInner.md)
 - [CreateTask201Response](docs/Model/CreateTask201Response.md)
 - [CreateTaskRequest](docs/Model/CreateTaskRequest.md)
 - [CreateVectorCollection201Response](docs/Model/CreateVectorCollection201Response.md)
@@ -529,6 +551,7 @@ Class | Method | HTTP request | Description
 - [CreateVectorCollectionRequest](docs/Model/CreateVectorCollectionRequest.md)
 - [CreateVolumeRequest](docs/Model/CreateVolumeRequest.md)
 - [Cron](docs/Model/Cron.md)
+- [CronLastRun](docs/Model/CronLastRun.md)
 - [CronRun](docs/Model/CronRun.md)
 - [DNSCreateRecordRequest](docs/Model/DNSCreateRecordRequest.md)
 - [DecideToolProposalRequest](docs/Model/DecideToolProposalRequest.md)
@@ -537,6 +560,7 @@ Class | Method | HTTP request | Description
 - [DeleteAgentOverlay200Response](docs/Model/DeleteAgentOverlay200Response.md)
 - [DeleteBackup200Response](docs/Model/DeleteBackup200Response.md)
 - [DeleteCustomTool200Response](docs/Model/DeleteCustomTool200Response.md)
+- [DeleteEnvironmentSecret200Response](docs/Model/DeleteEnvironmentSecret200Response.md)
 - [DeleteFile200Response](docs/Model/DeleteFile200Response.md)
 - [DeleteSkill200Response](docs/Model/DeleteSkill200Response.md)
 - [DeleteSkillCollection200Response](docs/Model/DeleteSkillCollection200Response.md)
@@ -695,8 +719,12 @@ Class | Method | HTTP request | Description
 - [PatchEnvironmentCompose400Response](docs/Model/PatchEnvironmentCompose400Response.md)
 - [PatchEnvironmentComposeRequest](docs/Model/PatchEnvironmentComposeRequest.md)
 - [PatchEnvironmentComposeRequestSpotConfiguration](docs/Model/PatchEnvironmentComposeRequestSpotConfiguration.md)
+- [PostSlackBotFile201Response](docs/Model/PostSlackBotFile201Response.md)
+- [PostSlackBotFileRequest](docs/Model/PostSlackBotFileRequest.md)
 - [PostSlackBotMessage201Response](docs/Model/PostSlackBotMessage201Response.md)
 - [PostSlackBotMessageRequest](docs/Model/PostSlackBotMessageRequest.md)
+- [ProjectsDelete409Response](docs/Model/ProjectsDelete409Response.md)
+- [ProjectsDelete503Response](docs/Model/ProjectsDelete503Response.md)
 - [PurgeCreate200Response](docs/Model/PurgeCreate200Response.md)
 - [PurgeCreateRequest](docs/Model/PurgeCreateRequest.md)
 - [PurgeOrgResource200Response](docs/Model/PurgeOrgResource200Response.md)
@@ -712,11 +740,15 @@ Class | Method | HTTP request | Description
 - [RestoreDatabaseRequest](docs/Model/RestoreDatabaseRequest.md)
 - [RestoreFilesystem202Response](docs/Model/RestoreFilesystem202Response.md)
 - [RestoreFilesystemRequest](docs/Model/RestoreFilesystemRequest.md)
+- [RulesIndexList200ResponseInner](docs/Model/RulesIndexList200ResponseInner.md)
 - [ScalingPolicyListResponse](docs/Model/ScalingPolicyListResponse.md)
 - [SearchSlackWorkspaceChannels200Response](docs/Model/SearchSlackWorkspaceChannels200Response.md)
 - [SearchSlackWorkspaceChannels200ResponseResultsInner](docs/Model/SearchSlackWorkspaceChannels200ResponseResultsInner.md)
 - [SearchSlackWorkspaceUsers200Response](docs/Model/SearchSlackWorkspaceUsers200Response.md)
 - [SearchSlackWorkspaceUsers200ResponseResultsInner](docs/Model/SearchSlackWorkspaceUsers200ResponseResultsInner.md)
+- [SecretError](docs/Model/SecretError.md)
+- [SecretKey](docs/Model/SecretKey.md)
+- [SecretWriteResult](docs/Model/SecretWriteResult.md)
 - [SetIdleSleepRequest](docs/Model/SetIdleSleepRequest.md)
 - [SetScalingPolicyRequest](docs/Model/SetScalingPolicyRequest.md)
 - [SpotConfiguration](docs/Model/SpotConfiguration.md)
@@ -737,6 +769,7 @@ Class | Method | HTTP request | Description
 - [UpdateAISessionRequestNewMessagesInner](docs/Model/UpdateAISessionRequestNewMessagesInner.md)
 - [UpdateCronJobRequest](docs/Model/UpdateCronJobRequest.md)
 - [UpdateEnvironmentRequest](docs/Model/UpdateEnvironmentRequest.md)
+- [UpdateEnvironmentSecretRequest](docs/Model/UpdateEnvironmentSecretRequest.md)
 - [UpdateEnvironmentStateRequest](docs/Model/UpdateEnvironmentStateRequest.md)
 - [UpdateEnvironmentVariableRequest](docs/Model/UpdateEnvironmentVariableRequest.md)
 - [UpdateFilterPolicyRequest](docs/Model/UpdateFilterPolicyRequest.md)
@@ -1000,7 +1033,7 @@ vendor/bin/phpunit
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `4.29.0`
-    - Package version: `4.29.0`
+- API version: `4.30.0`
+    - Package version: `4.30.0`
     - Generator version: `7.13.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

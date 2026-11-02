@@ -4,6 +4,7 @@
 README.md
 docs/Api/AIAgentsApi.md
 docs/Api/AIApi.md
+docs/Api/AIAuditApi.md
 docs/Api/AICustomToolsApi.md
 docs/Api/AIFileStorageApi.md
 docs/Api/AIFilterPoliciesApi.md
@@ -43,10 +44,16 @@ docs/Api/RestoreManagementApi.md
 docs/Api/RulesApi.md
 docs/Api/SSHAccessApi.md
 docs/Api/ScalingPolicyApi.md
+docs/Api/SecretsApi.md
 docs/Api/SubscriptionApi.md
 docs/Api/TokensApi.md
 docs/Api/VariablesApi.md
 docs/Api/VolumesApi.md
+docs/Model/AiAuditError.md
+docs/Model/AiAuditRecordGet200Response.md
+docs/Model/AiAuditRecordRow.md
+docs/Model/AiAuditRecordSummary.md
+docs/Model/AiAuditRecordsPage.md
 docs/Model/AiSearchChatRequest.md
 docs/Model/AiSearchDeletePagesRequest.md
 docs/Model/AiSearchEnableRequest.md
@@ -149,6 +156,8 @@ docs/Model/CreateSkill201Response.md
 docs/Model/CreateSkillRequest.md
 docs/Model/CreateSlackBot201Response.md
 docs/Model/CreateSlackBotRequest.md
+docs/Model/CreateSlackInteractionRequest.md
+docs/Model/CreateSlackInteractionRequestActionsInner.md
 docs/Model/CreateTask201Response.md
 docs/Model/CreateTaskRequest.md
 docs/Model/CreateVectorCollection201Response.md
@@ -156,6 +165,7 @@ docs/Model/CreateVectorCollection201ResponseCollection.md
 docs/Model/CreateVectorCollectionRequest.md
 docs/Model/CreateVolumeRequest.md
 docs/Model/Cron.md
+docs/Model/CronLastRun.md
 docs/Model/CronRun.md
 docs/Model/DNSCreateRecordRequest.md
 docs/Model/DecideToolProposalRequest.md
@@ -164,6 +174,7 @@ docs/Model/DeleteAISession200Response.md
 docs/Model/DeleteAgentOverlay200Response.md
 docs/Model/DeleteBackup200Response.md
 docs/Model/DeleteCustomTool200Response.md
+docs/Model/DeleteEnvironmentSecret200Response.md
 docs/Model/DeleteFile200Response.md
 docs/Model/DeleteSkill200Response.md
 docs/Model/DeleteSkillCollection200Response.md
@@ -322,8 +333,12 @@ docs/Model/PatchEnvironmentCompose202ResponseSpotConfiguration.md
 docs/Model/PatchEnvironmentCompose400Response.md
 docs/Model/PatchEnvironmentComposeRequest.md
 docs/Model/PatchEnvironmentComposeRequestSpotConfiguration.md
+docs/Model/PostSlackBotFile201Response.md
+docs/Model/PostSlackBotFileRequest.md
 docs/Model/PostSlackBotMessage201Response.md
 docs/Model/PostSlackBotMessageRequest.md
+docs/Model/ProjectsDelete409Response.md
+docs/Model/ProjectsDelete503Response.md
 docs/Model/PurgeCreate200Response.md
 docs/Model/PurgeCreateRequest.md
 docs/Model/PurgeOrgResource200Response.md
@@ -339,11 +354,15 @@ docs/Model/RestoreDatabase202Response.md
 docs/Model/RestoreDatabaseRequest.md
 docs/Model/RestoreFilesystem202Response.md
 docs/Model/RestoreFilesystemRequest.md
+docs/Model/RulesIndexList200ResponseInner.md
 docs/Model/ScalingPolicyListResponse.md
 docs/Model/SearchSlackWorkspaceChannels200Response.md
 docs/Model/SearchSlackWorkspaceChannels200ResponseResultsInner.md
 docs/Model/SearchSlackWorkspaceUsers200Response.md
 docs/Model/SearchSlackWorkspaceUsers200ResponseResultsInner.md
+docs/Model/SecretError.md
+docs/Model/SecretKey.md
+docs/Model/SecretWriteResult.md
 docs/Model/SetIdleSleepRequest.md
 docs/Model/SetScalingPolicyRequest.md
 docs/Model/SpotConfiguration.md
@@ -364,6 +383,7 @@ docs/Model/UpdateAISessionRequest.md
 docs/Model/UpdateAISessionRequestNewMessagesInner.md
 docs/Model/UpdateCronJobRequest.md
 docs/Model/UpdateEnvironmentRequest.md
+docs/Model/UpdateEnvironmentSecretRequest.md
 docs/Model/UpdateEnvironmentStateRequest.md
 docs/Model/UpdateEnvironmentVariableRequest.md
 docs/Model/UpdateFilterPolicyRequest.md
@@ -606,6 +626,7 @@ git_push.sh
 phpunit.xml.dist
 src/Api/AIAgentsApi.php
 src/Api/AIApi.php
+src/Api/AIAuditApi.php
 src/Api/AICustomToolsApi.php
 src/Api/AIFileStorageApi.php
 src/Api/AIFilterPoliciesApi.php
@@ -645,6 +666,7 @@ src/Api/RestoreManagementApi.php
 src/Api/RulesApi.php
 src/Api/SSHAccessApi.php
 src/Api/ScalingPolicyApi.php
+src/Api/SecretsApi.php
 src/Api/SubscriptionApi.php
 src/Api/TokensApi.php
 src/Api/VariablesApi.php
@@ -653,6 +675,11 @@ src/ApiException.php
 src/Configuration.php
 src/FormDataProcessor.php
 src/HeaderSelector.php
+src/Model/AiAuditError.php
+src/Model/AiAuditRecordGet200Response.php
+src/Model/AiAuditRecordRow.php
+src/Model/AiAuditRecordSummary.php
+src/Model/AiAuditRecordsPage.php
 src/Model/AiSearchChatRequest.php
 src/Model/AiSearchDeletePagesRequest.php
 src/Model/AiSearchEnableRequest.php
@@ -755,6 +782,8 @@ src/Model/CreateSkill201Response.php
 src/Model/CreateSkillRequest.php
 src/Model/CreateSlackBot201Response.php
 src/Model/CreateSlackBotRequest.php
+src/Model/CreateSlackInteractionRequest.php
+src/Model/CreateSlackInteractionRequestActionsInner.php
 src/Model/CreateTask201Response.php
 src/Model/CreateTaskRequest.php
 src/Model/CreateVectorCollection201Response.php
@@ -762,6 +791,7 @@ src/Model/CreateVectorCollection201ResponseCollection.php
 src/Model/CreateVectorCollectionRequest.php
 src/Model/CreateVolumeRequest.php
 src/Model/Cron.php
+src/Model/CronLastRun.php
 src/Model/CronRun.php
 src/Model/DNSCreateRecordRequest.php
 src/Model/DecideToolProposalRequest.php
@@ -770,6 +800,7 @@ src/Model/DeleteAISession200Response.php
 src/Model/DeleteAgentOverlay200Response.php
 src/Model/DeleteBackup200Response.php
 src/Model/DeleteCustomTool200Response.php
+src/Model/DeleteEnvironmentSecret200Response.php
 src/Model/DeleteFile200Response.php
 src/Model/DeleteSkill200Response.php
 src/Model/DeleteSkillCollection200Response.php
@@ -929,8 +960,12 @@ src/Model/PatchEnvironmentCompose202ResponseSpotConfiguration.php
 src/Model/PatchEnvironmentCompose400Response.php
 src/Model/PatchEnvironmentComposeRequest.php
 src/Model/PatchEnvironmentComposeRequestSpotConfiguration.php
+src/Model/PostSlackBotFile201Response.php
+src/Model/PostSlackBotFileRequest.php
 src/Model/PostSlackBotMessage201Response.php
 src/Model/PostSlackBotMessageRequest.php
+src/Model/ProjectsDelete409Response.php
+src/Model/ProjectsDelete503Response.php
 src/Model/PurgeCreate200Response.php
 src/Model/PurgeCreateRequest.php
 src/Model/PurgeOrgResource200Response.php
@@ -946,11 +981,15 @@ src/Model/RestoreDatabase202Response.php
 src/Model/RestoreDatabaseRequest.php
 src/Model/RestoreFilesystem202Response.php
 src/Model/RestoreFilesystemRequest.php
+src/Model/RulesIndexList200ResponseInner.php
 src/Model/ScalingPolicyListResponse.php
 src/Model/SearchSlackWorkspaceChannels200Response.php
 src/Model/SearchSlackWorkspaceChannels200ResponseResultsInner.php
 src/Model/SearchSlackWorkspaceUsers200Response.php
 src/Model/SearchSlackWorkspaceUsers200ResponseResultsInner.php
+src/Model/SecretError.php
+src/Model/SecretKey.php
+src/Model/SecretWriteResult.php
 src/Model/SetIdleSleepRequest.php
 src/Model/SetScalingPolicyRequest.php
 src/Model/SpotConfiguration.php
@@ -971,6 +1010,7 @@ src/Model/UpdateAISessionRequest.php
 src/Model/UpdateAISessionRequestNewMessagesInner.php
 src/Model/UpdateCronJobRequest.php
 src/Model/UpdateEnvironmentRequest.php
+src/Model/UpdateEnvironmentSecretRequest.php
 src/Model/UpdateEnvironmentStateRequest.php
 src/Model/UpdateEnvironmentVariableRequest.php
 src/Model/UpdateFilterPolicyRequest.php

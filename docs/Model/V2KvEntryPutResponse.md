@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **key** | **string** |  |
-**value** | **mixed** | The stored JSON value. | [optional]
+**value** | **mixed** | The stored JSON value. For a secret write (secret true) it reads \&quot;[ENCRYPTED]\&quot;: secret values are write-only through the API. | [optional]
 **status** | **string** |  |
 **message** | **string** |  |
 **created_at** | **\DateTime** |  | [optional]

@@ -4,18 +4,83 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**cancelSlackInteraction()**](AISlackBotsApi.md#cancelSlackInteraction) | **POST** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/interactions/{interactionId}/cancel | Cancel an unanswered Slack interaction |
 | [**createSlackBot()**](AISlackBotsApi.md#createSlackBot) | **POST** /api/v3/organizations/{organisation}/ai/slack-bots | Create Slack Bot |
+| [**createSlackInteraction()**](AISlackBotsApi.md#createSlackInteraction) | **POST** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/interactions | Ask for a single Slack button response |
 | [**deleteSlackBot()**](AISlackBotsApi.md#deleteSlackBot) | **DELETE** /api/v3/organizations/{organisation}/ai/slack-bots/{botId} | Delete Slack Bot |
 | [**getSlackBot()**](AISlackBotsApi.md#getSlackBot) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/{botId} | Get Slack Bot |
 | [**getSlackBotThread()**](AISlackBotsApi.md#getSlackBotThread) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/threads/{channel}/{threadTs} | Read a thread |
+| [**getSlackInteraction()**](AISlackBotsApi.md#getSlackInteraction) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/interactions/{interactionId} | Read an external Slack interaction |
 | [**listSlackBotChannelMessages()**](AISlackBotsApi.md#listSlackBotChannelMessages) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/channels/{channel}/messages | Read recent channel messages |
 | [**listSlackBots()**](AISlackBotsApi.md#listSlackBots) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots | List Slack Bots |
 | [**listSlackBotsApiEnabled()**](AISlackBotsApi.md#listSlackBotsApiEnabled) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/api-enabled | List API-enabled Slack bots |
+| [**postSlackBotFile()**](AISlackBotsApi.md#postSlackBotFile) | **POST** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/files | Post an image as the bot |
 | [**postSlackBotMessage()**](AISlackBotsApi.md#postSlackBotMessage) | **POST** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/messages | Post a message as the bot |
 | [**searchSlackWorkspaceChannels()**](AISlackBotsApi.md#searchSlackWorkspaceChannels) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/workspace/channels | Search Slack Workspace Channels |
 | [**searchSlackWorkspaceUsers()**](AISlackBotsApi.md#searchSlackWorkspaceUsers) | **GET** /api/v3/organizations/{organisation}/ai/slack-bots/{botId}/workspace/users | Search Slack Workspace Users |
 | [**updateSlackBot()**](AISlackBotsApi.md#updateSlackBot) | **PUT** /api/v3/organizations/{organisation}/ai/slack-bots/{botId} | Update Slack Bot |
 
+
+## `cancelSlackInteraction()`
+
+```php
+cancelSlackInteraction($organisation, $bot_id, $interaction_id)
+```
+
+Cancel an unanswered Slack interaction
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\AISlackBotsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organisation = 'organisation_example'; // string
+$bot_id = 'bot_id_example'; // string
+$interaction_id = 'interaction_id_example'; // string
+
+try {
+    $apiInstance->cancelSlackInteraction($organisation, $bot_id, $interaction_id);
+} catch (Exception $e) {
+    echo 'Exception when calling AISlackBotsApi->cancelSlackInteraction: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation** | **string**|  | |
+| **bot_id** | **string**|  | |
+| **interaction_id** | **string**|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `createSlackBot()`
 
@@ -74,6 +139,71 @@ try {
 
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `createSlackInteraction()`
+
+```php
+createSlackInteraction($organisation, $bot_id, $idempotency_key, $create_slack_interaction_request)
+```
+
+Ask for a single Slack button response
+
+External-agent interaction, not a platform tool approval. Requires explicit ai:slack, verified email and use_ai_services. The caller owns the meaning of the response. Feature must be enabled on this environment.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\AISlackBotsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organisation = 'organisation_example'; // string
+$bot_id = 'bot_id_example'; // string
+$idempotency_key = 'idempotency_key_example'; // string
+$create_slack_interaction_request = new \QuantClient\Model\CreateSlackInteractionRequest(); // \QuantClient\Model\CreateSlackInteractionRequest
+
+try {
+    $apiInstance->createSlackInteraction($organisation, $bot_id, $idempotency_key, $create_slack_interaction_request);
+} catch (Exception $e) {
+    echo 'Exception when calling AISlackBotsApi->createSlackInteraction: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation** | **string**|  | |
+| **bot_id** | **string**|  | |
+| **idempotency_key** | **string**|  | |
+| **create_slack_interaction_request** | [**\QuantClient\Model\CreateSlackInteractionRequest**](../Model/CreateSlackInteractionRequest.md)|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -275,6 +405,69 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getSlackInteraction()`
+
+```php
+getSlackInteraction($organisation, $bot_id, $interaction_id)
+```
+
+Read an external Slack interaction
+
+Owner-bound to the creating org, bot, user and token. Recorded responses identify Slack workspace/user and actionId. Silence, expiry and intermediate states do not mean approval.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\AISlackBotsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organisation = 'organisation_example'; // string
+$bot_id = 'bot_id_example'; // string
+$interaction_id = 'interaction_id_example'; // string
+
+try {
+    $apiInstance->getSlackInteraction($organisation, $bot_id, $interaction_id);
+} catch (Exception $e) {
+    echo 'Exception when calling AISlackBotsApi->getSlackInteraction: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation** | **string**|  | |
+| **bot_id** | **string**|  | |
+| **interaction_id** | **string**|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `listSlackBotChannelMessages()`
 
 ```php
@@ -459,6 +652,72 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `postSlackBotFile()`
+
+```php
+postSlackBotFile($organisation, $bot_id, $post_slack_bot_file_request, $idempotency_key): \QuantClient\Model\PostSlackBotFile201Response
+```
+
+Post an image as the bot
+
+The bot uploads one image in an allowed channel or thread, with an attribution line that shows your name. The type comes from the bytes: PNG, JPEG, GIF or WebP, at most 4 MiB decoded. Counts as one write. Needs the explicit `ai:slack` scope, `use_ai_services` and a verified email.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\AISlackBotsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organisation = 'organisation_example'; // string | The organisation machine name
+$bot_id = 'bot_id_example'; // string
+$post_slack_bot_file_request = new \QuantClient\Model\PostSlackBotFileRequest(); // \QuantClient\Model\PostSlackBotFileRequest
+$idempotency_key = 'idempotency_key_example'; // string | 8-128 visible ASCII characters. The same key and body within 10 minutes returns the first result and does not upload again.
+
+try {
+    $result = $apiInstance->postSlackBotFile($organisation, $bot_id, $post_slack_bot_file_request, $idempotency_key);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AISlackBotsApi->postSlackBotFile: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation** | **string**| The organisation machine name | |
+| **bot_id** | **string**|  | |
+| **post_slack_bot_file_request** | [**\QuantClient\Model\PostSlackBotFileRequest**](../Model/PostSlackBotFileRequest.md)|  | |
+| **idempotency_key** | **string**| 8-128 visible ASCII characters. The same key and body within 10 minutes returns the first result and does not upload again. | [optional] |
+
+### Return type
+
+[**\QuantClient\Model\PostSlackBotFile201Response**](../Model/PostSlackBotFile201Response.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
