@@ -1798,7 +1798,7 @@ class CronApi
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \QuantClient\Model\Cron
+     * @return \QuantClient\Model\Cron[]
      */
     public function listCronJobs($organisation, $application, $environment, string $contentType = self::contentTypes['listCronJobs'][0])
     {
@@ -1818,7 +1818,7 @@ class CronApi
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \QuantClient\Model\Cron, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \QuantClient\Model\Cron[], HTTP status code, HTTP response headers (array of strings)
      */
     public function listCronJobsWithHttpInfo($organisation, $application, $environment, string $contentType = self::contentTypes['listCronJobs'][0])
     {
@@ -1850,7 +1850,7 @@ class CronApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\QuantClient\Model\Cron',
+                        '\QuantClient\Model\Cron[]',
                         $request,
                         $response,
                     );
@@ -1872,7 +1872,7 @@ class CronApi
             }
 
             return $this->handleResponseWithDataType(
-                '\QuantClient\Model\Cron',
+                '\QuantClient\Model\Cron[]',
                 $request,
                 $response,
             );
@@ -1881,7 +1881,7 @@ class CronApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\QuantClient\Model\Cron',
+                        '\QuantClient\Model\Cron[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1931,7 +1931,7 @@ class CronApi
      */
     public function listCronJobsAsyncWithHttpInfo($organisation, $application, $environment, string $contentType = self::contentTypes['listCronJobs'][0])
     {
-        $returnType = '\QuantClient\Model\Cron';
+        $returnType = '\QuantClient\Model\Cron[]';
         $request = $this->listCronJobsRequest($organisation, $application, $environment, $contentType);
 
         return $this->client

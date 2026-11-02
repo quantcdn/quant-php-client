@@ -73,6 +73,7 @@ class GetSlackBot200ResponseBot implements ModelInterface, ArrayAccess, \JsonSer
         'guardrail_preset' => 'string',
         'filter_policies' => 'string[]',
         'long_context' => 'bool',
+        'reasoning_effort' => 'string',
         'session_ttl_days' => 'int',
         'allowed_channels' => 'string[]',
         'allowed_users' => 'string[]',
@@ -110,6 +111,7 @@ class GetSlackBot200ResponseBot implements ModelInterface, ArrayAccess, \JsonSer
         'guardrail_preset' => null,
         'filter_policies' => null,
         'long_context' => null,
+        'reasoning_effort' => null,
         'session_ttl_days' => null,
         'allowed_channels' => null,
         'allowed_users' => null,
@@ -145,6 +147,7 @@ class GetSlackBot200ResponseBot implements ModelInterface, ArrayAccess, \JsonSer
         'guardrail_preset' => false,
         'filter_policies' => false,
         'long_context' => false,
+        'reasoning_effort' => true,
         'session_ttl_days' => false,
         'allowed_channels' => false,
         'allowed_users' => false,
@@ -260,6 +263,7 @@ class GetSlackBot200ResponseBot implements ModelInterface, ArrayAccess, \JsonSer
         'guardrail_preset' => 'guardrailPreset',
         'filter_policies' => 'filterPolicies',
         'long_context' => 'longContext',
+        'reasoning_effort' => 'reasoningEffort',
         'session_ttl_days' => 'sessionTtlDays',
         'allowed_channels' => 'allowedChannels',
         'allowed_users' => 'allowedUsers',
@@ -295,6 +299,7 @@ class GetSlackBot200ResponseBot implements ModelInterface, ArrayAccess, \JsonSer
         'guardrail_preset' => 'setGuardrailPreset',
         'filter_policies' => 'setFilterPolicies',
         'long_context' => 'setLongContext',
+        'reasoning_effort' => 'setReasoningEffort',
         'session_ttl_days' => 'setSessionTtlDays',
         'allowed_channels' => 'setAllowedChannels',
         'allowed_users' => 'setAllowedUsers',
@@ -330,6 +335,7 @@ class GetSlackBot200ResponseBot implements ModelInterface, ArrayAccess, \JsonSer
         'guardrail_preset' => 'getGuardrailPreset',
         'filter_policies' => 'getFilterPolicies',
         'long_context' => 'getLongContext',
+        'reasoning_effort' => 'getReasoningEffort',
         'session_ttl_days' => 'getSessionTtlDays',
         'allowed_channels' => 'getAllowedChannels',
         'allowed_users' => 'getAllowedUsers',
@@ -388,6 +394,11 @@ class GetSlackBot200ResponseBot implements ModelInterface, ArrayAccess, \JsonSer
     public const SETUP_TYPE_BYO = 'byo';
     public const STATUS_ACTIVE = 'active';
     public const STATUS_INACTIVE = 'inactive';
+    public const REASONING_EFFORT_LOW = 'low';
+    public const REASONING_EFFORT_MEDIUM = 'medium';
+    public const REASONING_EFFORT_HIGH = 'high';
+    public const REASONING_EFFORT_XHIGH = 'xhigh';
+    public const REASONING_EFFORT_MAX = 'max';
 
     /**
      * Gets allowable values of the enum
@@ -412,6 +423,22 @@ class GetSlackBot200ResponseBot implements ModelInterface, ArrayAccess, \JsonSer
         return [
             self::STATUS_ACTIVE,
             self::STATUS_INACTIVE,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getReasoningEffortAllowableValues()
+    {
+        return [
+            self::REASONING_EFFORT_LOW,
+            self::REASONING_EFFORT_MEDIUM,
+            self::REASONING_EFFORT_HIGH,
+            self::REASONING_EFFORT_XHIGH,
+            self::REASONING_EFFORT_MAX,
         ];
     }
 
@@ -446,6 +473,7 @@ class GetSlackBot200ResponseBot implements ModelInterface, ArrayAccess, \JsonSer
         $this->setIfExists('guardrail_preset', $data ?? [], null);
         $this->setIfExists('filter_policies', $data ?? [], null);
         $this->setIfExists('long_context', $data ?? [], null);
+        $this->setIfExists('reasoning_effort', $data ?? [], null);
         $this->setIfExists('session_ttl_days', $data ?? [], null);
         $this->setIfExists('allowed_channels', $data ?? [], null);
         $this->setIfExists('allowed_users', $data ?? [], null);
@@ -500,6 +528,15 @@ class GetSlackBot200ResponseBot implements ModelInterface, ArrayAccess, \JsonSer
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'status', must be one of '%s'",
                 $this->container['status'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getReasoningEffortAllowableValues();
+        if (!is_null($this->container['reasoning_effort']) && !in_array($this->container['reasoning_effort'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'reasoning_effort', must be one of '%s'",
+                $this->container['reasoning_effort'],
                 implode("', '", $allowedValues)
             );
         }
@@ -967,6 +1004,50 @@ class GetSlackBot200ResponseBot implements ModelInterface, ArrayAccess, \JsonSer
             throw new \InvalidArgumentException('non-nullable long_context cannot be null');
         }
         $this->container['long_context'] = $long_context;
+
+        return $this;
+    }
+
+    /**
+     * Gets reasoning_effort
+     *
+     * @return string|null
+     */
+    public function getReasoningEffort()
+    {
+        return $this->container['reasoning_effort'];
+    }
+
+    /**
+     * Sets reasoning_effort
+     *
+     * @param string|null $reasoning_effort Reasoning effort (Anthropic effort). Must be one of the levels the model lists in capabilities.effortLevels. Unset uses the caller or model default.
+     *
+     * @return self
+     */
+    public function setReasoningEffort($reasoning_effort)
+    {
+        if (is_null($reasoning_effort)) {
+            array_push($this->openAPINullablesSetToNull, 'reasoning_effort');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('reasoning_effort', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getReasoningEffortAllowableValues();
+        if (!is_null($reasoning_effort) && !in_array($reasoning_effort, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'reasoning_effort', must be one of '%s'",
+                    $reasoning_effort,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['reasoning_effort'] = $reasoning_effort;
 
         return $this;
     }

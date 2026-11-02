@@ -67,6 +67,7 @@ class GetAgentOverlay200ResponseOverlay implements ModelInterface, ArrayAccess, 
         'system_prompt_append' => 'string',
         'allowed_collections' => 'string[]',
         'guardrail_preset' => 'string',
+        'reasoning_effort' => 'string',
         'version' => 'int'
     ];
 
@@ -88,6 +89,7 @@ class GetAgentOverlay200ResponseOverlay implements ModelInterface, ArrayAccess, 
         'system_prompt_append' => null,
         'allowed_collections' => null,
         'guardrail_preset' => null,
+        'reasoning_effort' => null,
         'version' => null
     ];
 
@@ -107,6 +109,7 @@ class GetAgentOverlay200ResponseOverlay implements ModelInterface, ArrayAccess, 
         'system_prompt_append' => false,
         'allowed_collections' => false,
         'guardrail_preset' => false,
+        'reasoning_effort' => true,
         'version' => false
     ];
 
@@ -206,6 +209,7 @@ class GetAgentOverlay200ResponseOverlay implements ModelInterface, ArrayAccess, 
         'system_prompt_append' => 'systemPromptAppend',
         'allowed_collections' => 'allowedCollections',
         'guardrail_preset' => 'guardrailPreset',
+        'reasoning_effort' => 'reasoningEffort',
         'version' => 'version'
     ];
 
@@ -225,6 +229,7 @@ class GetAgentOverlay200ResponseOverlay implements ModelInterface, ArrayAccess, 
         'system_prompt_append' => 'setSystemPromptAppend',
         'allowed_collections' => 'setAllowedCollections',
         'guardrail_preset' => 'setGuardrailPreset',
+        'reasoning_effort' => 'setReasoningEffort',
         'version' => 'setVersion'
     ];
 
@@ -244,6 +249,7 @@ class GetAgentOverlay200ResponseOverlay implements ModelInterface, ArrayAccess, 
         'system_prompt_append' => 'getSystemPromptAppend',
         'allowed_collections' => 'getAllowedCollections',
         'guardrail_preset' => 'getGuardrailPreset',
+        'reasoning_effort' => 'getReasoningEffort',
         'version' => 'getVersion'
     ];
 
@@ -288,6 +294,27 @@ class GetAgentOverlay200ResponseOverlay implements ModelInterface, ArrayAccess, 
         return self::$openAPIModelName;
     }
 
+    public const REASONING_EFFORT_LOW = 'low';
+    public const REASONING_EFFORT_MEDIUM = 'medium';
+    public const REASONING_EFFORT_HIGH = 'high';
+    public const REASONING_EFFORT_XHIGH = 'xhigh';
+    public const REASONING_EFFORT_MAX = 'max';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getReasoningEffortAllowableValues()
+    {
+        return [
+            self::REASONING_EFFORT_LOW,
+            self::REASONING_EFFORT_MEDIUM,
+            self::REASONING_EFFORT_HIGH,
+            self::REASONING_EFFORT_XHIGH,
+            self::REASONING_EFFORT_MAX,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -314,6 +341,7 @@ class GetAgentOverlay200ResponseOverlay implements ModelInterface, ArrayAccess, 
         $this->setIfExists('system_prompt_append', $data ?? [], null);
         $this->setIfExists('allowed_collections', $data ?? [], null);
         $this->setIfExists('guardrail_preset', $data ?? [], null);
+        $this->setIfExists('reasoning_effort', $data ?? [], null);
         $this->setIfExists('version', $data ?? [], null);
     }
 
@@ -343,6 +371,15 @@ class GetAgentOverlay200ResponseOverlay implements ModelInterface, ArrayAccess, 
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getReasoningEffortAllowableValues();
+        if (!is_null($this->container['reasoning_effort']) && !in_array($this->container['reasoning_effort'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'reasoning_effort', must be one of '%s'",
+                $this->container['reasoning_effort'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -625,6 +662,50 @@ class GetAgentOverlay200ResponseOverlay implements ModelInterface, ArrayAccess, 
             throw new \InvalidArgumentException('non-nullable guardrail_preset cannot be null');
         }
         $this->container['guardrail_preset'] = $guardrail_preset;
+
+        return $this;
+    }
+
+    /**
+     * Gets reasoning_effort
+     *
+     * @return string|null
+     */
+    public function getReasoningEffort()
+    {
+        return $this->container['reasoning_effort'];
+    }
+
+    /**
+     * Sets reasoning_effort
+     *
+     * @param string|null $reasoning_effort Reasoning effort for this organisation. Overrides the global agent value.
+     *
+     * @return self
+     */
+    public function setReasoningEffort($reasoning_effort)
+    {
+        if (is_null($reasoning_effort)) {
+            array_push($this->openAPINullablesSetToNull, 'reasoning_effort');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('reasoning_effort', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getReasoningEffortAllowableValues();
+        if (!is_null($reasoning_effort) && !in_array($reasoning_effort, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'reasoning_effort', must be one of '%s'",
+                    $reasoning_effort,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['reasoning_effort'] = $reasoning_effort;
 
         return $this;
     }

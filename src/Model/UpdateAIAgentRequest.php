@@ -68,6 +68,7 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'allowed_collections' => 'string[]',
         'assigned_skills' => 'string[]',
         'long_context' => 'bool',
+        'reasoning_effort' => 'string',
         'guardrail_preset' => 'string',
         'filter_policies' => 'string[]'
     ];
@@ -91,6 +92,7 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'allowed_collections' => null,
         'assigned_skills' => null,
         'long_context' => null,
+        'reasoning_effort' => null,
         'guardrail_preset' => null,
         'filter_policies' => null
     ];
@@ -112,6 +114,7 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'allowed_collections' => false,
         'assigned_skills' => false,
         'long_context' => false,
+        'reasoning_effort' => true,
         'guardrail_preset' => true,
         'filter_policies' => false
     ];
@@ -213,6 +216,7 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'allowed_collections' => 'allowedCollections',
         'assigned_skills' => 'assignedSkills',
         'long_context' => 'longContext',
+        'reasoning_effort' => 'reasoningEffort',
         'guardrail_preset' => 'guardrailPreset',
         'filter_policies' => 'filterPolicies'
     ];
@@ -234,6 +238,7 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'allowed_collections' => 'setAllowedCollections',
         'assigned_skills' => 'setAssignedSkills',
         'long_context' => 'setLongContext',
+        'reasoning_effort' => 'setReasoningEffort',
         'guardrail_preset' => 'setGuardrailPreset',
         'filter_policies' => 'setFilterPolicies'
     ];
@@ -255,6 +260,7 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'allowed_collections' => 'getAllowedCollections',
         'assigned_skills' => 'getAssignedSkills',
         'long_context' => 'getLongContext',
+        'reasoning_effort' => 'getReasoningEffort',
         'guardrail_preset' => 'getGuardrailPreset',
         'filter_policies' => 'getFilterPolicies'
     ];
@@ -300,9 +306,30 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         return self::$openAPIModelName;
     }
 
+    public const REASONING_EFFORT_LOW = 'low';
+    public const REASONING_EFFORT_MEDIUM = 'medium';
+    public const REASONING_EFFORT_HIGH = 'high';
+    public const REASONING_EFFORT_XHIGH = 'xhigh';
+    public const REASONING_EFFORT_MAX = 'max';
     public const GUARDRAIL_PRESET_OFFICIAL = 'official';
     public const GUARDRAIL_PRESET_OFFICIAL_SENSITIVE = 'official-sensitive';
     public const GUARDRAIL_PRESET__PROTECTED = 'protected';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getReasoningEffortAllowableValues()
+    {
+        return [
+            self::REASONING_EFFORT_LOW,
+            self::REASONING_EFFORT_MEDIUM,
+            self::REASONING_EFFORT_HIGH,
+            self::REASONING_EFFORT_XHIGH,
+            self::REASONING_EFFORT_MAX,
+        ];
+    }
 
     /**
      * Gets allowable values of the enum
@@ -344,6 +371,7 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('allowed_collections', $data ?? [], null);
         $this->setIfExists('assigned_skills', $data ?? [], null);
         $this->setIfExists('long_context', $data ?? [], null);
+        $this->setIfExists('reasoning_effort', $data ?? [], null);
         $this->setIfExists('guardrail_preset', $data ?? [], null);
         $this->setIfExists('filter_policies', $data ?? [], null);
     }
@@ -389,6 +417,15 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 
         if (!is_null($this->container['max_tokens']) && ($this->container['max_tokens'] < 1)) {
             $invalidProperties[] = "invalid value for 'max_tokens', must be bigger than or equal to 1.";
+        }
+
+        $allowedValues = $this->getReasoningEffortAllowableValues();
+        if (!is_null($this->container['reasoning_effort']) && !in_array($this->container['reasoning_effort'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'reasoning_effort', must be one of '%s'",
+                $this->container['reasoning_effort'],
+                implode("', '", $allowedValues)
+            );
         }
 
         $allowedValues = $this->getGuardrailPresetAllowableValues();
@@ -724,6 +761,50 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
             throw new \InvalidArgumentException('non-nullable long_context cannot be null');
         }
         $this->container['long_context'] = $long_context;
+
+        return $this;
+    }
+
+    /**
+     * Gets reasoning_effort
+     *
+     * @return string|null
+     */
+    public function getReasoningEffort()
+    {
+        return $this->container['reasoning_effort'];
+    }
+
+    /**
+     * Sets reasoning_effort
+     *
+     * @param string|null $reasoning_effort Reasoning effort (Anthropic effort). Must be one of the levels the model lists in capabilities.effortLevels. Unset uses the caller or model default. null clears it.
+     *
+     * @return self
+     */
+    public function setReasoningEffort($reasoning_effort)
+    {
+        if (is_null($reasoning_effort)) {
+            array_push($this->openAPINullablesSetToNull, 'reasoning_effort');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('reasoning_effort', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getReasoningEffortAllowableValues();
+        if (!is_null($reasoning_effort) && !in_array($reasoning_effort, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'reasoning_effort', must be one of '%s'",
+                    $reasoning_effort,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['reasoning_effort'] = $reasoning_effort;
 
         return $this;
     }

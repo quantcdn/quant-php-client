@@ -67,6 +67,7 @@ class UpsertAgentOverlayRequest implements ModelInterface, ArrayAccess, \JsonSer
         'system_prompt_append' => 'string',
         'allowed_collections' => 'string[]',
         'guardrail_preset' => 'string',
+        'reasoning_effort' => 'string',
         'version' => 'int'
     ];
 
@@ -88,6 +89,7 @@ class UpsertAgentOverlayRequest implements ModelInterface, ArrayAccess, \JsonSer
         'system_prompt_append' => null,
         'allowed_collections' => null,
         'guardrail_preset' => null,
+        'reasoning_effort' => null,
         'version' => null
     ];
 
@@ -107,6 +109,7 @@ class UpsertAgentOverlayRequest implements ModelInterface, ArrayAccess, \JsonSer
         'system_prompt_append' => false,
         'allowed_collections' => false,
         'guardrail_preset' => true,
+        'reasoning_effort' => true,
         'version' => false
     ];
 
@@ -206,6 +209,7 @@ class UpsertAgentOverlayRequest implements ModelInterface, ArrayAccess, \JsonSer
         'system_prompt_append' => 'systemPromptAppend',
         'allowed_collections' => 'allowedCollections',
         'guardrail_preset' => 'guardrailPreset',
+        'reasoning_effort' => 'reasoningEffort',
         'version' => 'version'
     ];
 
@@ -225,6 +229,7 @@ class UpsertAgentOverlayRequest implements ModelInterface, ArrayAccess, \JsonSer
         'system_prompt_append' => 'setSystemPromptAppend',
         'allowed_collections' => 'setAllowedCollections',
         'guardrail_preset' => 'setGuardrailPreset',
+        'reasoning_effort' => 'setReasoningEffort',
         'version' => 'setVersion'
     ];
 
@@ -244,6 +249,7 @@ class UpsertAgentOverlayRequest implements ModelInterface, ArrayAccess, \JsonSer
         'system_prompt_append' => 'getSystemPromptAppend',
         'allowed_collections' => 'getAllowedCollections',
         'guardrail_preset' => 'getGuardrailPreset',
+        'reasoning_effort' => 'getReasoningEffort',
         'version' => 'getVersion'
     ];
 
@@ -291,6 +297,11 @@ class UpsertAgentOverlayRequest implements ModelInterface, ArrayAccess, \JsonSer
     public const GUARDRAIL_PRESET_OFFICIAL = 'official';
     public const GUARDRAIL_PRESET_OFFICIAL_SENSITIVE = 'official-sensitive';
     public const GUARDRAIL_PRESET__PROTECTED = 'protected';
+    public const REASONING_EFFORT_LOW = 'low';
+    public const REASONING_EFFORT_MEDIUM = 'medium';
+    public const REASONING_EFFORT_HIGH = 'high';
+    public const REASONING_EFFORT_XHIGH = 'xhigh';
+    public const REASONING_EFFORT_MAX = 'max';
 
     /**
      * Gets allowable values of the enum
@@ -303,6 +314,22 @@ class UpsertAgentOverlayRequest implements ModelInterface, ArrayAccess, \JsonSer
             self::GUARDRAIL_PRESET_OFFICIAL,
             self::GUARDRAIL_PRESET_OFFICIAL_SENSITIVE,
             self::GUARDRAIL_PRESET__PROTECTED,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getReasoningEffortAllowableValues()
+    {
+        return [
+            self::REASONING_EFFORT_LOW,
+            self::REASONING_EFFORT_MEDIUM,
+            self::REASONING_EFFORT_HIGH,
+            self::REASONING_EFFORT_XHIGH,
+            self::REASONING_EFFORT_MAX,
         ];
     }
 
@@ -331,6 +358,7 @@ class UpsertAgentOverlayRequest implements ModelInterface, ArrayAccess, \JsonSer
         $this->setIfExists('system_prompt_append', $data ?? [], null);
         $this->setIfExists('allowed_collections', $data ?? [], null);
         $this->setIfExists('guardrail_preset', $data ?? [], null);
+        $this->setIfExists('reasoning_effort', $data ?? [], null);
         $this->setIfExists('version', $data ?? [], null);
     }
 
@@ -378,6 +406,15 @@ class UpsertAgentOverlayRequest implements ModelInterface, ArrayAccess, \JsonSer
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'guardrail_preset', must be one of '%s'",
                 $this->container['guardrail_preset'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getReasoningEffortAllowableValues();
+        if (!is_null($this->container['reasoning_effort']) && !in_array($this->container['reasoning_effort'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'reasoning_effort', must be one of '%s'",
+                $this->container['reasoning_effort'],
                 implode("', '", $allowedValues)
             );
         }
@@ -693,6 +730,50 @@ class UpsertAgentOverlayRequest implements ModelInterface, ArrayAccess, \JsonSer
             );
         }
         $this->container['guardrail_preset'] = $guardrail_preset;
+
+        return $this;
+    }
+
+    /**
+     * Gets reasoning_effort
+     *
+     * @return string|null
+     */
+    public function getReasoningEffort()
+    {
+        return $this->container['reasoning_effort'];
+    }
+
+    /**
+     * Sets reasoning_effort
+     *
+     * @param string|null $reasoning_effort Override the reasoning effort. Must be one of the levels the effective model lists in capabilities.effortLevels. Omit or null to use the global agent value.
+     *
+     * @return self
+     */
+    public function setReasoningEffort($reasoning_effort)
+    {
+        if (is_null($reasoning_effort)) {
+            array_push($this->openAPINullablesSetToNull, 'reasoning_effort');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('reasoning_effort', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getReasoningEffortAllowableValues();
+        if (!is_null($reasoning_effort) && !in_array($reasoning_effort, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'reasoning_effort', must be one of '%s'",
+                    $reasoning_effort,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['reasoning_effort'] = $reasoning_effort;
 
         return $this;
     }
