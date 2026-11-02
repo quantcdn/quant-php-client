@@ -826,6 +826,8 @@ aiSearchTopQueries($organisation, $project, $range, $limit)
 
 Get the most popular AI Search queries
 
+A site with queryTextRetention hash keeps no query text: its queries are grouped by a keyed hash and listed as query 'Hidden query #<8 hex>' with hashed=true and queryHash. A site with none adds no rows. hashedQueries counts the hashed rows.
+
 ### Example
 
 ```php

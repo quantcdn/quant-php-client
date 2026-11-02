@@ -6,8 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **phase** | **string** | The current upgrade phase. |
 **dry_run** | **bool** |  |
-**v1_table** | **string** |  |
-**v2_table** | **string** |  |
 **started_at** | **\DateTime** |  |
 **frozen_at** | **\DateTime** | When writes were last frozen. | [optional]
 **switched_at** | **\DateTime** |  | [optional]

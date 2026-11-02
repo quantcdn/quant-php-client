@@ -44,6 +44,7 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 | [**rulesHeadersList()**](RulesApi.md#rulesHeadersList) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/headers | List header rules |
 | [**rulesHeadersRead()**](RulesApi.md#rulesHeadersRead) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/headers/{rule} | Get details of a header rule |
 | [**rulesHeadersUpdate()**](RulesApi.md#rulesHeadersUpdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project}/rules/headers/{rule} | Update a header rule |
+| [**rulesIndexList()**](RulesApi.md#rulesIndexList) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules | List all rules in edge order |
 | [**rulesProxyCreate()**](RulesApi.md#rulesProxyCreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/rules/proxy | Create a proxy rule |
 | [**rulesProxyDelete()**](RulesApi.md#rulesProxyDelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project}/rules/proxy/{rule} | Delete a proxy rule |
 | [**rulesProxyList()**](RulesApi.md#rulesProxyList) | **GET** /api/v2/organizations/{organization}/projects/{project}/rules/proxy | List proxy rules |
@@ -2529,6 +2530,68 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `rulesIndexList()`
+
+```php
+rulesIndexList($organization, $project): \QuantClient\Model\RulesIndexList200ResponseInner[]
+```
+
+List all rules in edge order
+
+Returns every rule in the order the edge runs them. Each item has the fields of the per-type list for its rule type, plus `position` (0-based index in this order) and `managed` (true when a template deploy owns the rule in this project). For a trial organisation without a payment method, the list is partial: it leaves out functions, content filters and auth functions, as their per-type lists refuse that caller (the same gate, with the same superadmin masquerade bypass), so `position` values can have gaps. Do not treat a partial list as a full mirror of the edge rules. One malformed stored rule fails the whole request, so a client never receives an order with a silent hole.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\RulesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization = 'organization_example'; // string
+$project = 'project_example'; // string
+
+try {
+    $result = $apiInstance->rulesIndexList($organization, $project);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling RulesApi->rulesIndexList: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organization** | **string**|  | |
+| **project** | **string**|  | |
+
+### Return type
+
+[**\QuantClient\Model\RulesIndexList200ResponseInner[]**](../Model/RulesIndexList200ResponseInner.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

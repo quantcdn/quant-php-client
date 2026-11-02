@@ -20,7 +20,7 @@ getProjectLogs($organization, $project, $limit, $start_time, $end_time, $filter,
 
 Get CDN access logs for a project
 
-Retrieves CDN access log entries for a QuantGov Cloud project. Results are always scoped to the project; the optional filter can only narrow them. Entries are returned oldest first; pass nextToken from the previous response to fetch the next page. Logs are retained for 30 days.
+Retrieves CDN access log entries for a project. Results are always scoped to the project; the optional filter can only narrow them. Entries are returned oldest first; pass nextToken from the previous response to fetch the next page. Logs are retained for 30 days. For QuantCDN (Fastly) projects, entries are up to about 30 minutes behind, and a slow query can return an empty page with a nextToken: call again with it to collect the entries.
 
 ### Example
 
