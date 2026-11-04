@@ -4,6 +4,7 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**getProjectEdgeEvents()**](ProjectsApi.md#getProjectEdgeEvents) | **GET** /api/v2/organizations/{organization}/projects/{project}/edge-events | Get edge events for a project |
 | [**getProjectLogs()**](ProjectsApi.md#getProjectLogs) | **GET** /api/v2/organizations/{organization}/projects/{project}/logs | Get CDN access logs for a project |
 | [**projectsCreate()**](ProjectsApi.md#projectsCreate) | **POST** /api/v2/organizations/{organization}/projects | Create a new project |
 | [**projectsDelete()**](ProjectsApi.md#projectsDelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project} | Delete a project |
@@ -11,6 +12,84 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 | [**projectsRead()**](ProjectsApi.md#projectsRead) | **GET** /api/v2/organizations/{organization}/projects/{project} | Get details of a single project |
 | [**projectsUpdate()**](ProjectsApi.md#projectsUpdate) | **PATCH** /api/v2/organizations/{organization}/projects/{project} | Update a project |
 
+
+## `getProjectEdgeEvents()`
+
+```php
+getProjectEdgeEvents($organization, $project, $type, $function, $level, $search, $limit, $start_time, $end_time, $next_token): \QuantClient\Model\GetProjectEdgeEvents200Response
+```
+
+Get edge events for a project
+
+Output of the project's edge functions and content filters (console.* as type console, quantLog() as type function), WAF hits and static failover. Entries are returned oldest first, up to about 10 minutes behind, kept 31 days; pass nextToken from the previous response, with the same filters, to fetch the next page. A slow query can return an empty page with a nextToken. An edge function invocation keeps at most 100 console lines of up to 8 KB each.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\ProjectsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization = 'organization_example'; // string | The organization machine name
+$project = 'project_example'; // string | The project machine name
+$type = console,function; // string | Comma-separated event types: console, function, waf-hit, static-failover
+$function = 'function_example'; // string | Only events from this edge function (UUID)
+$level = 'level_example'; // string | Only console events at this level
+$search = 'search_example'; // string | Case-insensitive substring of the message
+$limit = 100; // int | Maximum number of events per page (default 100)
+$start_time = 'start_time_example'; // string | Start of the time range. ISO 8601 or Unix epoch milliseconds.
+$end_time = 'end_time_example'; // string | End of the time range. ISO 8601 or Unix epoch milliseconds.
+$next_token = 'next_token_example'; // string | Opaque pagination token from the previous response
+
+try {
+    $result = $apiInstance->getProjectEdgeEvents($organization, $project, $type, $function, $level, $search, $limit, $start_time, $end_time, $next_token);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProjectsApi->getProjectEdgeEvents: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organization** | **string**| The organization machine name | |
+| **project** | **string**| The project machine name | |
+| **type** | **string**| Comma-separated event types: console, function, waf-hit, static-failover | [optional] |
+| **function** | **string**| Only events from this edge function (UUID) | [optional] |
+| **level** | **string**| Only console events at this level | [optional] |
+| **search** | **string**| Case-insensitive substring of the message | [optional] |
+| **limit** | **int**| Maximum number of events per page (default 100) | [optional] [default to 100] |
+| **start_time** | **string**| Start of the time range. ISO 8601 or Unix epoch milliseconds. | [optional] |
+| **end_time** | **string**| End of the time range. ISO 8601 or Unix epoch milliseconds. | [optional] |
+| **next_token** | **string**| Opaque pagination token from the previous response | [optional] |
+
+### Return type
+
+[**\QuantClient\Model\GetProjectEdgeEvents200Response**](../Model/GetProjectEdgeEvents200Response.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `getProjectLogs()`
 
