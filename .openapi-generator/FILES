@@ -24,6 +24,7 @@ docs/Api/AIVectorDatabaseApi.md
 docs/Api/ApplicationsApi.md
 docs/Api/BackupManagementApi.md
 docs/Api/CDNMetricsApi.md
+docs/Api/CIValuesApi.md
 docs/Api/CommandsApi.md
 docs/Api/ComposeApi.md
 docs/Api/ContainersApi.md
@@ -113,6 +114,9 @@ docs/Model/ChatWithAIAgent200ResponseResponse.md
 docs/Model/ChatWithAIAgent200ResponseResponseUsage.md
 docs/Model/ChatWithAIAgent202Response.md
 docs/Model/ChatWithAIAgentRequest.md
+docs/Model/CiValue.md
+docs/Model/CiValueError.md
+docs/Model/CiValueWriteResult.md
 docs/Model/Command.md
 docs/Model/Compose.md
 docs/Model/Container.md
@@ -127,6 +131,7 @@ docs/Model/CrawlersRun200Response.md
 docs/Model/CrawlersRunRequest.md
 docs/Model/CreateAIAgent201Response.md
 docs/Model/CreateAIAgentRequest.md
+docs/Model/CreateAIAgentRequestMcpServersInner.md
 docs/Model/CreateAISession201Response.md
 docs/Model/CreateAISessionRequest.md
 docs/Model/CreateAISessionRequestInitialMessagesInner.md
@@ -210,6 +215,7 @@ docs/Model/GetAIToolExecutionStatus404Response.md
 docs/Model/GetAgentOverlay200Response.md
 docs/Model/GetAgentOverlay200ResponseBase.md
 docs/Model/GetAgentOverlay200ResponseOverlay.md
+docs/Model/GetAgentOverlay200ResponseOverlayMcpServersInner.md
 docs/Model/GetCustomTool200Response.md
 docs/Model/GetCustomTool200ResponseTool.md
 docs/Model/GetDependencyGraph200Response.md
@@ -241,6 +247,8 @@ docs/Model/GetMyUsage200ResponseQuota.md
 docs/Model/GetMyUsage200ResponseQuotaDailyLimit.md
 docs/Model/GetMyUsage200ResponseQuotaMonthlyLimit.md
 docs/Model/GetOrgResourceCredentials200Response.md
+docs/Model/GetProjectEdgeEvents200Response.md
+docs/Model/GetProjectEdgeEvents200ResponseEventsInner.md
 docs/Model/GetProjectLogs200Response.md
 docs/Model/GetProjectLogs200ResponseLogsInner.md
 docs/Model/GetProjectLogs400Response.md
@@ -275,6 +283,7 @@ docs/Model/KVLinkToProject200Response.md
 docs/Model/KVLinkToProjectRequest.md
 docs/Model/ListAIAgents200Response.md
 docs/Model/ListAIAgents200ResponseAgentsInner.md
+docs/Model/ListAIAgents200ResponseAgentsInnerMcpServersInner.md
 docs/Model/ListAIModels200Response.md
 docs/Model/ListAIModels200ResponseModelsInner.md
 docs/Model/ListAIModels200ResponseModelsInnerCapabilities.md
@@ -290,6 +299,7 @@ docs/Model/ListApplications503Response.md
 docs/Model/ListBackups200Response.md
 docs/Model/ListBackups200ResponseBackupsInner.md
 docs/Model/ListBackups422Response.md
+docs/Model/ListCiValues200Response.md
 docs/Model/ListCustomTools200Response.md
 docs/Model/ListCustomTools200ResponseToolsInner.md
 docs/Model/ListFiles200Response.md
@@ -344,6 +354,7 @@ docs/Model/PurgeCreateRequest.md
 docs/Model/PurgeOrgResource200Response.md
 docs/Model/PurgeOrgResourceRequest.md
 docs/Model/PutApplicationMetadata400Response.md
+docs/Model/PutCiValueRequest.md
 docs/Model/QueryVectorCollection200Response.md
 docs/Model/QueryVectorCollection200ResponsePagination.md
 docs/Model/QueryVectorCollection200ResponseResultsInner.md
@@ -646,6 +657,7 @@ src/Api/AIVectorDatabaseApi.php
 src/Api/ApplicationsApi.php
 src/Api/BackupManagementApi.php
 src/Api/CDNMetricsApi.php
+src/Api/CIValuesApi.php
 src/Api/CommandsApi.php
 src/Api/ComposeApi.php
 src/Api/ContainersApi.php
@@ -739,6 +751,9 @@ src/Model/ChatWithAIAgent200ResponseResponse.php
 src/Model/ChatWithAIAgent200ResponseResponseUsage.php
 src/Model/ChatWithAIAgent202Response.php
 src/Model/ChatWithAIAgentRequest.php
+src/Model/CiValue.php
+src/Model/CiValueError.php
+src/Model/CiValueWriteResult.php
 src/Model/Command.php
 src/Model/Compose.php
 src/Model/Container.php
@@ -753,6 +768,7 @@ src/Model/CrawlersRun200Response.php
 src/Model/CrawlersRunRequest.php
 src/Model/CreateAIAgent201Response.php
 src/Model/CreateAIAgentRequest.php
+src/Model/CreateAIAgentRequestMcpServersInner.php
 src/Model/CreateAISession201Response.php
 src/Model/CreateAISessionRequest.php
 src/Model/CreateAISessionRequestInitialMessagesInner.php
@@ -836,6 +852,7 @@ src/Model/GetAIToolExecutionStatus404Response.php
 src/Model/GetAgentOverlay200Response.php
 src/Model/GetAgentOverlay200ResponseBase.php
 src/Model/GetAgentOverlay200ResponseOverlay.php
+src/Model/GetAgentOverlay200ResponseOverlayMcpServersInner.php
 src/Model/GetCustomTool200Response.php
 src/Model/GetCustomTool200ResponseTool.php
 src/Model/GetDependencyGraph200Response.php
@@ -867,6 +884,8 @@ src/Model/GetMyUsage200ResponseQuota.php
 src/Model/GetMyUsage200ResponseQuotaDailyLimit.php
 src/Model/GetMyUsage200ResponseQuotaMonthlyLimit.php
 src/Model/GetOrgResourceCredentials200Response.php
+src/Model/GetProjectEdgeEvents200Response.php
+src/Model/GetProjectEdgeEvents200ResponseEventsInner.php
 src/Model/GetProjectLogs200Response.php
 src/Model/GetProjectLogs200ResponseLogsInner.php
 src/Model/GetProjectLogs400Response.php
@@ -901,6 +920,7 @@ src/Model/KVLinkToProject200Response.php
 src/Model/KVLinkToProjectRequest.php
 src/Model/ListAIAgents200Response.php
 src/Model/ListAIAgents200ResponseAgentsInner.php
+src/Model/ListAIAgents200ResponseAgentsInnerMcpServersInner.php
 src/Model/ListAIModels200Response.php
 src/Model/ListAIModels200ResponseModelsInner.php
 src/Model/ListAIModels200ResponseModelsInnerCapabilities.php
@@ -916,6 +936,7 @@ src/Model/ListApplications503Response.php
 src/Model/ListBackups200Response.php
 src/Model/ListBackups200ResponseBackupsInner.php
 src/Model/ListBackups422Response.php
+src/Model/ListCiValues200Response.php
 src/Model/ListCustomTools200Response.php
 src/Model/ListCustomTools200ResponseToolsInner.php
 src/Model/ListFiles200Response.php
@@ -971,6 +992,7 @@ src/Model/PurgeCreateRequest.php
 src/Model/PurgeOrgResource200Response.php
 src/Model/PurgeOrgResourceRequest.php
 src/Model/PutApplicationMetadata400Response.php
+src/Model/PutCiValueRequest.php
 src/Model/QueryVectorCollection200Response.php
 src/Model/QueryVectorCollection200ResponsePagination.php
 src/Model/QueryVectorCollection200ResponseResultsInner.php
