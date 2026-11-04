@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c18fce031d7b305c5eb20a91dcf6e45e",
+    "content-hash": "27018c73f5feca56ba8c93eeff993db8",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -550,7 +550,7 @@
         },
         {
             "name": "symfony/deprecation-contracts",
-            "version": "v3.7.1",
+            "version": "v3.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
@@ -597,7 +597,7 @@
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.7.1"
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.8.0"
             },
             "funding": [
                 {
@@ -618,7 +618,7 @@
                 }
             ],
             "time": "2026-06-05T06:23:12+00:00",
-            "published-time": "2026-06-27T21:46:34+00:00"
+            "published-time": "2026-11-04T08:53:06+00:00"
         },
         {
             "name": "symfony/polyfill-php80",
