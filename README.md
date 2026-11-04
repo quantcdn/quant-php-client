@@ -223,6 +223,9 @@ Class | Method | HTTP request | Description
 *CDNMetricsApi* | [**getDailyMetrics**](docs/Api/CDNMetricsApi.md#getdailymetrics) | **GET** /v2/organizations/{organization}/projects/{project}/metrics/daily | Get daily metrics
 *CDNMetricsApi* | [**getHourlyMetrics**](docs/Api/CDNMetricsApi.md#gethourlymetrics) | **GET** /v2/organizations/{organization}/projects/{project}/metrics/hourly | Get hourly metrics
 *CDNMetricsApi* | [**getMonthlyMetrics**](docs/Api/CDNMetricsApi.md#getmonthlymetrics) | **GET** /v2/organizations/{organization}/projects/{project}/metrics/monthly | Get monthly metrics
+*CIValuesApi* | [**deleteCiValue**](docs/Api/CIValuesApi.md#deletecivalue) | **DELETE** /api/v3/organizations/{organisation}/ci/values/{name} | Delete a CI secret or variable
+*CIValuesApi* | [**listCiValues**](docs/Api/CIValuesApi.md#listcivalues) | **GET** /api/v3/organizations/{organisation}/ci/values | List the CI secrets and variables
+*CIValuesApi* | [**putCiValue**](docs/Api/CIValuesApi.md#putcivalue) | **PUT** /api/v3/organizations/{organisation}/ci/values/{name} | Create or replace a CI secret or variable
 *CommandsApi* | [**createCommand**](docs/Api/CommandsApi.md#createcommand) | **POST** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/commands | Create a command for an environment
 *CommandsApi* | [**getCommand**](docs/Api/CommandsApi.md#getcommand) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/commands/{command} | Get a command
 *CommandsApi* | [**listCommands**](docs/Api/CommandsApi.md#listcommands) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/commands | Get all commands for an environment
@@ -339,6 +342,7 @@ Class | Method | HTTP request | Description
 *OpenAICompatibilityApi* | [**oaiListModels**](docs/Api/OpenAICompatibilityApi.md#oailistmodels) | **GET** /oai/v1/models | List available models (OpenAI-compatible)
 *OrganizationsApi* | [**organizationsList**](docs/Api/OrganizationsApi.md#organizationslist) | **GET** /api/v2/organizations | Retrieve all organizations
 *OrganizationsApi* | [**organizationsRead**](docs/Api/OrganizationsApi.md#organizationsread) | **GET** /api/v2/organizations/{organization} | Get details of a single organization
+*ProjectsApi* | [**getProjectEdgeEvents**](docs/Api/ProjectsApi.md#getprojectedgeevents) | **GET** /api/v2/organizations/{organization}/projects/{project}/edge-events | Get edge events for a project
 *ProjectsApi* | [**getProjectLogs**](docs/Api/ProjectsApi.md#getprojectlogs) | **GET** /api/v2/organizations/{organization}/projects/{project}/logs | Get CDN access logs for a project
 *ProjectsApi* | [**projectsCreate**](docs/Api/ProjectsApi.md#projectscreate) | **POST** /api/v2/organizations/{organization}/projects | Create a new project
 *ProjectsApi* | [**projectsDelete**](docs/Api/ProjectsApi.md#projectsdelete) | **DELETE** /api/v2/organizations/{organization}/projects/{project} | Delete a project
@@ -499,6 +503,9 @@ Class | Method | HTTP request | Description
 - [ChatWithAIAgent200ResponseResponseUsage](docs/Model/ChatWithAIAgent200ResponseResponseUsage.md)
 - [ChatWithAIAgent202Response](docs/Model/ChatWithAIAgent202Response.md)
 - [ChatWithAIAgentRequest](docs/Model/ChatWithAIAgentRequest.md)
+- [CiValue](docs/Model/CiValue.md)
+- [CiValueError](docs/Model/CiValueError.md)
+- [CiValueWriteResult](docs/Model/CiValueWriteResult.md)
 - [Command](docs/Model/Command.md)
 - [Compose](docs/Model/Compose.md)
 - [Container](docs/Model/Container.md)
@@ -513,6 +520,7 @@ Class | Method | HTTP request | Description
 - [CrawlersRunRequest](docs/Model/CrawlersRunRequest.md)
 - [CreateAIAgent201Response](docs/Model/CreateAIAgent201Response.md)
 - [CreateAIAgentRequest](docs/Model/CreateAIAgentRequest.md)
+- [CreateAIAgentRequestMcpServersInner](docs/Model/CreateAIAgentRequestMcpServersInner.md)
 - [CreateAISession201Response](docs/Model/CreateAISession201Response.md)
 - [CreateAISessionRequest](docs/Model/CreateAISessionRequest.md)
 - [CreateAISessionRequestInitialMessagesInner](docs/Model/CreateAISessionRequestInitialMessagesInner.md)
@@ -596,6 +604,7 @@ Class | Method | HTTP request | Description
 - [GetAgentOverlay200Response](docs/Model/GetAgentOverlay200Response.md)
 - [GetAgentOverlay200ResponseBase](docs/Model/GetAgentOverlay200ResponseBase.md)
 - [GetAgentOverlay200ResponseOverlay](docs/Model/GetAgentOverlay200ResponseOverlay.md)
+- [GetAgentOverlay200ResponseOverlayMcpServersInner](docs/Model/GetAgentOverlay200ResponseOverlayMcpServersInner.md)
 - [GetCustomTool200Response](docs/Model/GetCustomTool200Response.md)
 - [GetCustomTool200ResponseTool](docs/Model/GetCustomTool200ResponseTool.md)
 - [GetDependencyGraph200Response](docs/Model/GetDependencyGraph200Response.md)
@@ -627,6 +636,8 @@ Class | Method | HTTP request | Description
 - [GetMyUsage200ResponseQuotaDailyLimit](docs/Model/GetMyUsage200ResponseQuotaDailyLimit.md)
 - [GetMyUsage200ResponseQuotaMonthlyLimit](docs/Model/GetMyUsage200ResponseQuotaMonthlyLimit.md)
 - [GetOrgResourceCredentials200Response](docs/Model/GetOrgResourceCredentials200Response.md)
+- [GetProjectEdgeEvents200Response](docs/Model/GetProjectEdgeEvents200Response.md)
+- [GetProjectEdgeEvents200ResponseEventsInner](docs/Model/GetProjectEdgeEvents200ResponseEventsInner.md)
 - [GetProjectLogs200Response](docs/Model/GetProjectLogs200Response.md)
 - [GetProjectLogs200ResponseLogsInner](docs/Model/GetProjectLogs200ResponseLogsInner.md)
 - [GetProjectLogs400Response](docs/Model/GetProjectLogs400Response.md)
@@ -661,6 +672,7 @@ Class | Method | HTTP request | Description
 - [KVLinkToProjectRequest](docs/Model/KVLinkToProjectRequest.md)
 - [ListAIAgents200Response](docs/Model/ListAIAgents200Response.md)
 - [ListAIAgents200ResponseAgentsInner](docs/Model/ListAIAgents200ResponseAgentsInner.md)
+- [ListAIAgents200ResponseAgentsInnerMcpServersInner](docs/Model/ListAIAgents200ResponseAgentsInnerMcpServersInner.md)
 - [ListAIModels200Response](docs/Model/ListAIModels200Response.md)
 - [ListAIModels200ResponseModelsInner](docs/Model/ListAIModels200ResponseModelsInner.md)
 - [ListAIModels200ResponseModelsInnerCapabilities](docs/Model/ListAIModels200ResponseModelsInnerCapabilities.md)
@@ -676,6 +688,7 @@ Class | Method | HTTP request | Description
 - [ListBackups200Response](docs/Model/ListBackups200Response.md)
 - [ListBackups200ResponseBackupsInner](docs/Model/ListBackups200ResponseBackupsInner.md)
 - [ListBackups422Response](docs/Model/ListBackups422Response.md)
+- [ListCiValues200Response](docs/Model/ListCiValues200Response.md)
 - [ListCustomTools200Response](docs/Model/ListCustomTools200Response.md)
 - [ListCustomTools200ResponseToolsInner](docs/Model/ListCustomTools200ResponseToolsInner.md)
 - [ListFiles200Response](docs/Model/ListFiles200Response.md)
@@ -730,6 +743,7 @@ Class | Method | HTTP request | Description
 - [PurgeOrgResource200Response](docs/Model/PurgeOrgResource200Response.md)
 - [PurgeOrgResourceRequest](docs/Model/PurgeOrgResourceRequest.md)
 - [PutApplicationMetadata400Response](docs/Model/PutApplicationMetadata400Response.md)
+- [PutCiValueRequest](docs/Model/PutCiValueRequest.md)
 - [QueryVectorCollection200Response](docs/Model/QueryVectorCollection200Response.md)
 - [QueryVectorCollection200ResponsePagination](docs/Model/QueryVectorCollection200ResponsePagination.md)
 - [QueryVectorCollection200ResponseResultsInner](docs/Model/QueryVectorCollection200ResponseResultsInner.md)
@@ -1033,7 +1047,7 @@ vendor/bin/phpunit
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `4.31.0`
-    - Package version: `4.31.0`
+- API version: `4.33.0`
+    - Package version: `4.33.0`
     - Generator version: `7.13.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
