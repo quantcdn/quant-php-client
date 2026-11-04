@@ -70,6 +70,7 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'long_context' => 'bool',
         'reasoning_effort' => 'string',
         'guardrail_preset' => 'string',
+        'mcp_servers' => '\QuantClient\Model\CreateAIAgentRequestMcpServersInner[]',
         'filter_policies' => 'string[]'
     ];
 
@@ -94,6 +95,7 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'long_context' => null,
         'reasoning_effort' => null,
         'guardrail_preset' => null,
+        'mcp_servers' => null,
         'filter_policies' => null
     ];
 
@@ -116,6 +118,7 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'long_context' => false,
         'reasoning_effort' => true,
         'guardrail_preset' => true,
+        'mcp_servers' => false,
         'filter_policies' => false
     ];
 
@@ -218,6 +221,7 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'long_context' => 'longContext',
         'reasoning_effort' => 'reasoningEffort',
         'guardrail_preset' => 'guardrailPreset',
+        'mcp_servers' => 'mcpServers',
         'filter_policies' => 'filterPolicies'
     ];
 
@@ -240,6 +244,7 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'long_context' => 'setLongContext',
         'reasoning_effort' => 'setReasoningEffort',
         'guardrail_preset' => 'setGuardrailPreset',
+        'mcp_servers' => 'setMcpServers',
         'filter_policies' => 'setFilterPolicies'
     ];
 
@@ -262,6 +267,7 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'long_context' => 'getLongContext',
         'reasoning_effort' => 'getReasoningEffort',
         'guardrail_preset' => 'getGuardrailPreset',
+        'mcp_servers' => 'getMcpServers',
         'filter_policies' => 'getFilterPolicies'
     ];
 
@@ -373,6 +379,7 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('long_context', $data ?? [], null);
         $this->setIfExists('reasoning_effort', $data ?? [], null);
         $this->setIfExists('guardrail_preset', $data ?? [], null);
+        $this->setIfExists('mcp_servers', $data ?? [], null);
         $this->setIfExists('filter_policies', $data ?? [], null);
     }
 
@@ -849,6 +856,33 @@ class UpdateAIAgentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
             );
         }
         $this->container['guardrail_preset'] = $guardrail_preset;
+
+        return $this;
+    }
+
+    /**
+     * Gets mcp_servers
+     *
+     * @return \QuantClient\Model\CreateAIAgentRequestMcpServersInner[]|null
+     */
+    public function getMcpServers()
+    {
+        return $this->container['mcp_servers'];
+    }
+
+    /**
+     * Sets mcp_servers
+     *
+     * @param \QuantClient\Model\CreateAIAgentRequestMcpServersInner[]|null $mcp_servers Registered MCP servers to attach. The agent gets the tools of each server in dashboard chat and in QuantCode. On update, an empty array removes every attachment.
+     *
+     * @return self
+     */
+    public function setMcpServers($mcp_servers)
+    {
+        if (is_null($mcp_servers)) {
+            throw new \InvalidArgumentException('non-nullable mcp_servers cannot be null');
+        }
+        $this->container['mcp_servers'] = $mcp_servers;
 
         return $this;
     }

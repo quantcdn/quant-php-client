@@ -66,8 +66,11 @@ class GetAgentOverlay200ResponseOverlay implements ModelInterface, ArrayAccess, 
         'disabled_tools' => 'string[]',
         'system_prompt_append' => 'string',
         'allowed_collections' => 'string[]',
+        'mcp_servers' => '\QuantClient\Model\GetAgentOverlay200ResponseOverlayMcpServersInner[]',
         'guardrail_preset' => 'string',
         'reasoning_effort' => 'string',
+        'long_context' => 'bool',
+        'filter_policies' => 'string[]',
         'version' => 'int'
     ];
 
@@ -88,8 +91,11 @@ class GetAgentOverlay200ResponseOverlay implements ModelInterface, ArrayAccess, 
         'disabled_tools' => null,
         'system_prompt_append' => null,
         'allowed_collections' => null,
+        'mcp_servers' => null,
         'guardrail_preset' => null,
         'reasoning_effort' => null,
+        'long_context' => null,
+        'filter_policies' => null,
         'version' => null
     ];
 
@@ -108,8 +114,11 @@ class GetAgentOverlay200ResponseOverlay implements ModelInterface, ArrayAccess, 
         'disabled_tools' => false,
         'system_prompt_append' => false,
         'allowed_collections' => false,
+        'mcp_servers' => false,
         'guardrail_preset' => false,
         'reasoning_effort' => true,
+        'long_context' => false,
+        'filter_policies' => false,
         'version' => false
     ];
 
@@ -208,8 +217,11 @@ class GetAgentOverlay200ResponseOverlay implements ModelInterface, ArrayAccess, 
         'disabled_tools' => 'disabledTools',
         'system_prompt_append' => 'systemPromptAppend',
         'allowed_collections' => 'allowedCollections',
+        'mcp_servers' => 'mcpServers',
         'guardrail_preset' => 'guardrailPreset',
         'reasoning_effort' => 'reasoningEffort',
+        'long_context' => 'longContext',
+        'filter_policies' => 'filterPolicies',
         'version' => 'version'
     ];
 
@@ -228,8 +240,11 @@ class GetAgentOverlay200ResponseOverlay implements ModelInterface, ArrayAccess, 
         'disabled_tools' => 'setDisabledTools',
         'system_prompt_append' => 'setSystemPromptAppend',
         'allowed_collections' => 'setAllowedCollections',
+        'mcp_servers' => 'setMcpServers',
         'guardrail_preset' => 'setGuardrailPreset',
         'reasoning_effort' => 'setReasoningEffort',
+        'long_context' => 'setLongContext',
+        'filter_policies' => 'setFilterPolicies',
         'version' => 'setVersion'
     ];
 
@@ -248,8 +263,11 @@ class GetAgentOverlay200ResponseOverlay implements ModelInterface, ArrayAccess, 
         'disabled_tools' => 'getDisabledTools',
         'system_prompt_append' => 'getSystemPromptAppend',
         'allowed_collections' => 'getAllowedCollections',
+        'mcp_servers' => 'getMcpServers',
         'guardrail_preset' => 'getGuardrailPreset',
         'reasoning_effort' => 'getReasoningEffort',
+        'long_context' => 'getLongContext',
+        'filter_policies' => 'getFilterPolicies',
         'version' => 'getVersion'
     ];
 
@@ -340,8 +358,11 @@ class GetAgentOverlay200ResponseOverlay implements ModelInterface, ArrayAccess, 
         $this->setIfExists('disabled_tools', $data ?? [], null);
         $this->setIfExists('system_prompt_append', $data ?? [], null);
         $this->setIfExists('allowed_collections', $data ?? [], null);
+        $this->setIfExists('mcp_servers', $data ?? [], null);
         $this->setIfExists('guardrail_preset', $data ?? [], null);
         $this->setIfExists('reasoning_effort', $data ?? [], null);
+        $this->setIfExists('long_context', $data ?? [], null);
+        $this->setIfExists('filter_policies', $data ?? [], null);
         $this->setIfExists('version', $data ?? [], null);
     }
 
@@ -640,6 +661,33 @@ class GetAgentOverlay200ResponseOverlay implements ModelInterface, ArrayAccess, 
     }
 
     /**
+     * Gets mcp_servers
+     *
+     * @return \QuantClient\Model\GetAgentOverlay200ResponseOverlayMcpServersInner[]|null
+     */
+    public function getMcpServers()
+    {
+        return $this->container['mcp_servers'];
+    }
+
+    /**
+     * Sets mcp_servers
+     *
+     * @param \QuantClient\Model\GetAgentOverlay200ResponseOverlayMcpServersInner[]|null $mcp_servers mcp_servers
+     *
+     * @return self
+     */
+    public function setMcpServers($mcp_servers)
+    {
+        if (is_null($mcp_servers)) {
+            throw new \InvalidArgumentException('non-nullable mcp_servers cannot be null');
+        }
+        $this->container['mcp_servers'] = $mcp_servers;
+
+        return $this;
+    }
+
+    /**
      * Gets guardrail_preset
      *
      * @return string|null
@@ -706,6 +754,60 @@ class GetAgentOverlay200ResponseOverlay implements ModelInterface, ArrayAccess, 
             );
         }
         $this->container['reasoning_effort'] = $reasoning_effort;
+
+        return $this;
+    }
+
+    /**
+     * Gets long_context
+     *
+     * @return bool|null
+     */
+    public function getLongContext()
+    {
+        return $this->container['long_context'];
+    }
+
+    /**
+     * Sets long_context
+     *
+     * @param bool|null $long_context long_context
+     *
+     * @return self
+     */
+    public function setLongContext($long_context)
+    {
+        if (is_null($long_context)) {
+            throw new \InvalidArgumentException('non-nullable long_context cannot be null');
+        }
+        $this->container['long_context'] = $long_context;
+
+        return $this;
+    }
+
+    /**
+     * Gets filter_policies
+     *
+     * @return string[]|null
+     */
+    public function getFilterPolicies()
+    {
+        return $this->container['filter_policies'];
+    }
+
+    /**
+     * Sets filter_policies
+     *
+     * @param string[]|null $filter_policies filter_policies
+     *
+     * @return self
+     */
+    public function setFilterPolicies($filter_policies)
+    {
+        if (is_null($filter_policies)) {
+            throw new \InvalidArgumentException('non-nullable filter_policies cannot be null');
+        }
+        $this->container['filter_policies'] = $filter_policies;
 
         return $this;
     }
