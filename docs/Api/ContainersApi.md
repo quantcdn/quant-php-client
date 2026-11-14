@@ -72,10 +72,12 @@ void (empty response body)
 ## `updateContainer()`
 
 ```php
-updateContainer($organisation, $application, $environment, $container, $container2)
+updateContainer($organisation, $application, $environment, $container, $container2): \QuantClient\Model\Container
 ```
 
 Update a container in an environment
+
+Updates one container in the environment's compose definition and redeploys the environment. The fields in the request body replace the same fields of the container. Fields that the request body omits keep their current values. Other containers and the task-level settings do not change. To clear a field, send it as null. The container name in the body must match the name in the path: a container cannot be renamed. Container updates to one environment run one at a time. A compose change made at the same moment through another endpoint can still overwrite this update.
 
 ### Example
 
@@ -97,11 +99,12 @@ $apiInstance = new QuantClient\Api\ContainersApi(
 $organisation = test-org; // string | The organisation ID
 $application = test-app; // string | The application ID
 $environment = test-env; // string | The environment ID
-$container = test-container; // string | The container ID
+$container = app; // string | The container name
 $container2 = new \QuantClient\Model\Container(); // \QuantClient\Model\Container
 
 try {
-    $apiInstance->updateContainer($organisation, $application, $environment, $container, $container2);
+    $result = $apiInstance->updateContainer($organisation, $application, $environment, $container, $container2);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContainersApi->updateContainer: ', $e->getMessage(), PHP_EOL;
 }
@@ -114,12 +117,12 @@ try {
 | **organisation** | **string**| The organisation ID | |
 | **application** | **string**| The application ID | |
 | **environment** | **string**| The environment ID | |
-| **container** | **string**| The container ID | |
+| **container** | **string**| The container name | |
 | **container2** | [**\QuantClient\Model\Container**](../Model/Container.md)|  | |
 
 ### Return type
 
-void (empty response body)
+[**\QuantClient\Model\Container**](../Model/Container.md)
 
 ### Authorization
 
@@ -128,7 +131,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
