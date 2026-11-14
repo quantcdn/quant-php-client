@@ -413,6 +413,7 @@ docs/Model/UpdateAutoMode400Response.md
 docs/Model/UpdateAutoMode409Response.md
 docs/Model/UpdateContainer400Response.md
 docs/Model/UpdateCronJobRequest.md
+docs/Model/UpdateEnvironmentRequest.md
 docs/Model/UpdateEnvironmentSecretRequest.md
 docs/Model/UpdateEnvironmentStateRequest.md
 docs/Model/UpdateEnvironmentVariableRequest.md
@@ -1070,6 +1071,7 @@ src/Model/UpdateAutoMode400Response.php
 src/Model/UpdateAutoMode409Response.php
 src/Model/UpdateContainer400Response.php
 src/Model/UpdateCronJobRequest.php
+src/Model/UpdateEnvironmentRequest.php
 src/Model/UpdateEnvironmentSecretRequest.php
 src/Model/UpdateEnvironmentStateRequest.php
 src/Model/UpdateEnvironmentVariableRequest.php
