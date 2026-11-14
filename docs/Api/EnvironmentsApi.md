@@ -13,6 +13,7 @@ All URIs are relative to https://dashboard.quantcdn.io, except if the operation 
 | [**listEnvironments()**](EnvironmentsApi.md#listEnvironments) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments | Get all environments for an application |
 | [**listSyncOperations()**](EnvironmentsApi.md#listSyncOperations) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/sync/{type} | List the sync operations for an environment |
 | [**syncToEnvironment()**](EnvironmentsApi.md#syncToEnvironment) | **POST** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/sync/{type} | Perform a sync operation from a source environment to the current environment |
+| [**updateEnvironment()**](EnvironmentsApi.md#updateEnvironment) | **PUT** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment} | Update Environment Compose Definition |
 | [**updateEnvironmentState()**](EnvironmentsApi.md#updateEnvironmentState) | **PUT** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/state | Update the state of an environment |
 
 
@@ -603,6 +604,71 @@ try {
 ### Return type
 
 [**\QuantClient\Model\SyncOperation**](../Model/SyncOperation.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateEnvironment()`
+
+```php
+updateEnvironment($organisation, $application, $environment, $update_environment_request)
+```
+
+Update Environment Compose Definition
+
+Replaces the entire task definition for the environment based on the provided multi-container compose definition. This will create a new task definition revision and update the container service, triggering a redeployment. Optionally accepts minCapacity and maxCapacity at the root level for convenience.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: BearerAuth
+$config = QuantClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new QuantClient\Api\EnvironmentsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organisation = 'organisation_example'; // string | The organisation ID
+$application = 'application_example'; // string | The application ID
+$environment = 'environment_example'; // string | The environment ID
+$update_environment_request = new \QuantClient\Model\UpdateEnvironmentRequest(); // \QuantClient\Model\UpdateEnvironmentRequest
+
+try {
+    $apiInstance->updateEnvironment($organisation, $application, $environment, $update_environment_request);
+} catch (Exception $e) {
+    echo 'Exception when calling EnvironmentsApi->updateEnvironment: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation** | **string**| The organisation ID | |
+| **application** | **string**| The application ID | |
+| **environment** | **string**| The environment ID | |
+| **update_environment_request** | [**\QuantClient\Model\UpdateEnvironmentRequest**](../Model/UpdateEnvironmentRequest.md)|  | |
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
