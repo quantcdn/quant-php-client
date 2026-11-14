@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **origin_timeout** | **string** | Origin timeout in milliseconds. Defaults to 30000 when omitted on create. | [optional]
 **failover_mode** | **bool** | Enable failover mode | [optional] [default to false]
 **failover_origin_ttfb** | **string** | Failover TTFB threshold | [optional] [default to '2000']
-**failover_origin_status_codes** | **string[]** | Status codes for failover (default: 200,404,301,302,304) | [optional]
+**failover_origin_status_codes** | **string[]** | Origin statuses that do not trigger failover. Any other origin status switches the rule to the static copy. With failover_mode true, a list left out gets the default 200, 301, 302, 304, 404, and an empty list is refused with 422 (it would fail over on every response). A PATCH replaces the list. | [optional]
 **failover_lifetime** | **string** | Failover cache lifetime | [optional] [default to '300']
 **notify** | **string** | Notification type (none, slack) | [optional] [default to 'none']
 **notify_config** | [**\QuantClient\Model\V2RuleProxyActionNotifyConfig**](V2RuleProxyActionNotifyConfig.md) |  | [optional]
