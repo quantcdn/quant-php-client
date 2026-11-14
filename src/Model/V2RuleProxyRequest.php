@@ -1871,7 +1871,7 @@ class V2RuleProxyRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets failover_origin_status_codes
      *
-     * @param string[]|null $failover_origin_status_codes Origin status codes that trigger failover
+     * @param string[]|null $failover_origin_status_codes Origin statuses that do not trigger failover. Any other origin status switches the rule to the static copy. With failover_mode true, a list left out gets the default 200, 301, 302, 304, 404, and an empty list is refused with 422. A PATCH replaces the list.
      *
      * @return self
      */

@@ -5,6 +5,7 @@ README.md
 docs/Api/AIAgentsApi.md
 docs/Api/AIApi.md
 docs/Api/AIAuditApi.md
+docs/Api/AIAutoModeApi.md
 docs/Api/AICustomToolsApi.md
 docs/Api/AIFileStorageApi.md
 docs/Api/AIFilterPoliciesApi.md
@@ -21,6 +22,7 @@ docs/Api/AIToolApprovalApi.md
 docs/Api/AIToolsApi.md
 docs/Api/AIUsageApi.md
 docs/Api/AIVectorDatabaseApi.md
+docs/Api/AlertChannelsApi.md
 docs/Api/ApplicationsApi.md
 docs/Api/BackupManagementApi.md
 docs/Api/CDNMetricsApi.md
@@ -50,6 +52,14 @@ docs/Api/SubscriptionApi.md
 docs/Api/TokensApi.md
 docs/Api/VariablesApi.md
 docs/Api/VolumesApi.md
+docs/Model/AIAutoModeConfig.md
+docs/Model/AIAutoModeConfigGroup.md
+docs/Model/AIAutoModeConfigGroupRoles.md
+docs/Model/AIAutoModeEligibility.md
+docs/Model/AIAutoModeEligibilityRoles.md
+docs/Model/AIAutoModeInput.md
+docs/Model/AIAutoModeInputGroup.md
+docs/Model/AIModelEligibility.md
 docs/Model/AiAuditError.md
 docs/Model/AiAuditRecordGet200Response.md
 docs/Model/AiAuditRecordRow.md
@@ -67,6 +77,9 @@ docs/Model/AiSlackBotApiError.md
 docs/Model/AiSlackBotApiMessage.md
 docs/Model/AiSlackBotApiMessageAllOfAuthor.md
 docs/Model/AiSlackBotApiMessageAllOfFiles.md
+docs/Model/AlertChannelError.md
+docs/Model/AlertChannelList.md
+docs/Model/AlertChannelSummary.md
 docs/Model/Application.md
 docs/Model/ApplicationCache.md
 docs/Model/ApplicationDatabase.md
@@ -177,6 +190,7 @@ docs/Model/DecideToolProposalRequest.md
 docs/Model/DeleteAIAgent200Response.md
 docs/Model/DeleteAISession200Response.md
 docs/Model/DeleteAgentOverlay200Response.md
+docs/Model/DeleteAutoMode200Response.md
 docs/Model/DeleteBackup200Response.md
 docs/Model/DeleteCustomTool200Response.md
 docs/Model/DeleteEnvironmentSecret200Response.md
@@ -216,6 +230,7 @@ docs/Model/GetAgentOverlay200Response.md
 docs/Model/GetAgentOverlay200ResponseBase.md
 docs/Model/GetAgentOverlay200ResponseOverlay.md
 docs/Model/GetAgentOverlay200ResponseOverlayMcpServersInner.md
+docs/Model/GetAutoMode200Response.md
 docs/Model/GetCustomTool200Response.md
 docs/Model/GetCustomTool200ResponseTool.md
 docs/Model/GetDependencyGraph200Response.md
@@ -366,6 +381,7 @@ docs/Model/RestoreDatabaseRequest.md
 docs/Model/RestoreFilesystem202Response.md
 docs/Model/RestoreFilesystemRequest.md
 docs/Model/RulesIndexList200ResponseInner.md
+docs/Model/RulesIndexList200ResponseInnerDeployment.md
 docs/Model/ScalingPolicyListResponse.md
 docs/Model/SearchSlackWorkspaceChannels200Response.md
 docs/Model/SearchSlackWorkspaceChannels200ResponseResultsInner.md
@@ -392,8 +408,11 @@ docs/Model/UpdateAIAgentRequest.md
 docs/Model/UpdateAISession200Response.md
 docs/Model/UpdateAISessionRequest.md
 docs/Model/UpdateAISessionRequestNewMessagesInner.md
+docs/Model/UpdateAutoMode200Response.md
+docs/Model/UpdateAutoMode400Response.md
+docs/Model/UpdateAutoMode409Response.md
+docs/Model/UpdateContainer400Response.md
 docs/Model/UpdateCronJobRequest.md
-docs/Model/UpdateEnvironmentRequest.md
 docs/Model/UpdateEnvironmentSecretRequest.md
 docs/Model/UpdateEnvironmentStateRequest.md
 docs/Model/UpdateEnvironmentVariableRequest.md
@@ -638,6 +657,7 @@ phpunit.xml.dist
 src/Api/AIAgentsApi.php
 src/Api/AIApi.php
 src/Api/AIAuditApi.php
+src/Api/AIAutoModeApi.php
 src/Api/AICustomToolsApi.php
 src/Api/AIFileStorageApi.php
 src/Api/AIFilterPoliciesApi.php
@@ -654,6 +674,7 @@ src/Api/AIToolApprovalApi.php
 src/Api/AIToolsApi.php
 src/Api/AIUsageApi.php
 src/Api/AIVectorDatabaseApi.php
+src/Api/AlertChannelsApi.php
 src/Api/ApplicationsApi.php
 src/Api/BackupManagementApi.php
 src/Api/CDNMetricsApi.php
@@ -687,6 +708,14 @@ src/ApiException.php
 src/Configuration.php
 src/FormDataProcessor.php
 src/HeaderSelector.php
+src/Model/AIAutoModeConfig.php
+src/Model/AIAutoModeConfigGroup.php
+src/Model/AIAutoModeConfigGroupRoles.php
+src/Model/AIAutoModeEligibility.php
+src/Model/AIAutoModeEligibilityRoles.php
+src/Model/AIAutoModeInput.php
+src/Model/AIAutoModeInputGroup.php
+src/Model/AIModelEligibility.php
 src/Model/AiAuditError.php
 src/Model/AiAuditRecordGet200Response.php
 src/Model/AiAuditRecordRow.php
@@ -704,6 +733,9 @@ src/Model/AiSlackBotApiError.php
 src/Model/AiSlackBotApiMessage.php
 src/Model/AiSlackBotApiMessageAllOfAuthor.php
 src/Model/AiSlackBotApiMessageAllOfFiles.php
+src/Model/AlertChannelError.php
+src/Model/AlertChannelList.php
+src/Model/AlertChannelSummary.php
 src/Model/Application.php
 src/Model/ApplicationCache.php
 src/Model/ApplicationDatabase.php
@@ -814,6 +846,7 @@ src/Model/DecideToolProposalRequest.php
 src/Model/DeleteAIAgent200Response.php
 src/Model/DeleteAISession200Response.php
 src/Model/DeleteAgentOverlay200Response.php
+src/Model/DeleteAutoMode200Response.php
 src/Model/DeleteBackup200Response.php
 src/Model/DeleteCustomTool200Response.php
 src/Model/DeleteEnvironmentSecret200Response.php
@@ -853,6 +886,7 @@ src/Model/GetAgentOverlay200Response.php
 src/Model/GetAgentOverlay200ResponseBase.php
 src/Model/GetAgentOverlay200ResponseOverlay.php
 src/Model/GetAgentOverlay200ResponseOverlayMcpServersInner.php
+src/Model/GetAutoMode200Response.php
 src/Model/GetCustomTool200Response.php
 src/Model/GetCustomTool200ResponseTool.php
 src/Model/GetDependencyGraph200Response.php
@@ -1004,6 +1038,7 @@ src/Model/RestoreDatabaseRequest.php
 src/Model/RestoreFilesystem202Response.php
 src/Model/RestoreFilesystemRequest.php
 src/Model/RulesIndexList200ResponseInner.php
+src/Model/RulesIndexList200ResponseInnerDeployment.php
 src/Model/ScalingPolicyListResponse.php
 src/Model/SearchSlackWorkspaceChannels200Response.php
 src/Model/SearchSlackWorkspaceChannels200ResponseResultsInner.php
@@ -1030,8 +1065,11 @@ src/Model/UpdateAIAgentRequest.php
 src/Model/UpdateAISession200Response.php
 src/Model/UpdateAISessionRequest.php
 src/Model/UpdateAISessionRequestNewMessagesInner.php
+src/Model/UpdateAutoMode200Response.php
+src/Model/UpdateAutoMode400Response.php
+src/Model/UpdateAutoMode409Response.php
+src/Model/UpdateContainer400Response.php
 src/Model/UpdateCronJobRequest.php
-src/Model/UpdateEnvironmentRequest.php
 src/Model/UpdateEnvironmentSecretRequest.php
 src/Model/UpdateEnvironmentStateRequest.php
 src/Model/UpdateEnvironmentVariableRequest.php

@@ -58,7 +58,8 @@ class RulesIndexList200ResponseInner implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'position' => 'int',
-        'managed' => 'bool'
+        'managed' => 'bool',
+        'deployment' => '\QuantClient\Model\RulesIndexList200ResponseInnerDeployment'
     ];
 
     /**
@@ -70,7 +71,8 @@ class RulesIndexList200ResponseInner implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPIFormats = [
         'position' => null,
-        'managed' => null
+        'managed' => null,
+        'deployment' => null
     ];
 
     /**
@@ -80,7 +82,8 @@ class RulesIndexList200ResponseInner implements ModelInterface, ArrayAccess, \Js
       */
     protected static array $openAPINullables = [
         'position' => false,
-        'managed' => false
+        'managed' => false,
+        'deployment' => false
     ];
 
     /**
@@ -170,7 +173,8 @@ class RulesIndexList200ResponseInner implements ModelInterface, ArrayAccess, \Js
      */
     protected static $attributeMap = [
         'position' => 'position',
-        'managed' => 'managed'
+        'managed' => 'managed',
+        'deployment' => 'deployment'
     ];
 
     /**
@@ -180,7 +184,8 @@ class RulesIndexList200ResponseInner implements ModelInterface, ArrayAccess, \Js
      */
     protected static $setters = [
         'position' => 'setPosition',
-        'managed' => 'setManaged'
+        'managed' => 'setManaged',
+        'deployment' => 'setDeployment'
     ];
 
     /**
@@ -190,7 +195,8 @@ class RulesIndexList200ResponseInner implements ModelInterface, ArrayAccess, \Js
      */
     protected static $getters = [
         'position' => 'getPosition',
-        'managed' => 'getManaged'
+        'managed' => 'getManaged',
+        'deployment' => 'getDeployment'
     ];
 
     /**
@@ -252,6 +258,7 @@ class RulesIndexList200ResponseInner implements ModelInterface, ArrayAccess, \Js
     {
         $this->setIfExists('position', $data ?? [], null);
         $this->setIfExists('managed', $data ?? [], null);
+        $this->setIfExists('deployment', $data ?? [], null);
     }
 
     /**
@@ -355,6 +362,33 @@ class RulesIndexList200ResponseInner implements ModelInterface, ArrayAccess, \Js
             throw new \InvalidArgumentException('non-nullable managed cannot be null');
         }
         $this->container['managed'] = $managed;
+
+        return $this;
+    }
+
+    /**
+     * Gets deployment
+     *
+     * @return \QuantClient\Model\RulesIndexList200ResponseInnerDeployment|null
+     */
+    public function getDeployment()
+    {
+        return $this->container['deployment'];
+    }
+
+    /**
+     * Sets deployment
+     *
+     * @param \QuantClient\Model\RulesIndexList200ResponseInnerDeployment|null $deployment deployment
+     *
+     * @return self
+     */
+    public function setDeployment($deployment)
+    {
+        if (is_null($deployment)) {
+            throw new \InvalidArgumentException('non-nullable deployment cannot be null');
+        }
+        $this->container['deployment'] = $deployment;
 
         return $this;
     }

@@ -398,17 +398,18 @@ class ContainersApi
      * @param  string $organisation The organisation ID (required)
      * @param  string $application The application ID (required)
      * @param  string $environment The environment ID (required)
-     * @param  string $container The container ID (required)
+     * @param  string $container The container name (required)
      * @param  \QuantClient\Model\Container $container2 container2 (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateContainer'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \QuantClient\Model\Container|\QuantClient\Model\UpdateContainer400Response|\QuantClient\Model\UpdateContainer400Response|\QuantClient\Model\UpdateContainer400Response|\QuantClient\Model\UpdateContainer400Response
      */
     public function updateContainer($organisation, $application, $environment, $container, $container2, string $contentType = self::contentTypes['updateContainer'][0])
     {
-        $this->updateContainerWithHttpInfo($organisation, $application, $environment, $container, $container2, $contentType);
+        list($response) = $this->updateContainerWithHttpInfo($organisation, $application, $environment, $container, $container2, $contentType);
+        return $response;
     }
 
     /**
@@ -419,13 +420,13 @@ class ContainersApi
      * @param  string $organisation The organisation ID (required)
      * @param  string $application The application ID (required)
      * @param  string $environment The environment ID (required)
-     * @param  string $container The container ID (required)
+     * @param  string $container The container name (required)
      * @param  \QuantClient\Model\Container $container2 (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateContainer'] to see the possible values for this operation
      *
      * @throws \QuantClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \QuantClient\Model\Container|\QuantClient\Model\UpdateContainer400Response|\QuantClient\Model\UpdateContainer400Response|\QuantClient\Model\UpdateContainer400Response|\QuantClient\Model\UpdateContainer400Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateContainerWithHttpInfo($organisation, $application, $environment, $container, $container2, string $contentType = self::contentTypes['updateContainer'][0])
     {
@@ -454,9 +455,101 @@ class ContainersApi
             $statusCode = $response->getStatusCode();
 
 
-            return [null, $statusCode, $response->getHeaders()];
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\QuantClient\Model\Container',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\QuantClient\Model\UpdateContainer400Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\QuantClient\Model\UpdateContainer400Response',
+                        $request,
+                        $response,
+                    );
+                case 409:
+                    return $this->handleResponseWithDataType(
+                        '\QuantClient\Model\UpdateContainer400Response',
+                        $request,
+                        $response,
+                    );
+                case 502:
+                    return $this->handleResponseWithDataType(
+                        '\QuantClient\Model\UpdateContainer400Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\QuantClient\Model\Container',
+                $request,
+                $response,
+            );
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\QuantClient\Model\Container',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\QuantClient\Model\UpdateContainer400Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\QuantClient\Model\UpdateContainer400Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\QuantClient\Model\UpdateContainer400Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 502:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\QuantClient\Model\UpdateContainer400Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
             }
         
 
@@ -472,7 +565,7 @@ class ContainersApi
      * @param  string $organisation The organisation ID (required)
      * @param  string $application The application ID (required)
      * @param  string $environment The environment ID (required)
-     * @param  string $container The container ID (required)
+     * @param  string $container The container name (required)
      * @param  \QuantClient\Model\Container $container2 (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateContainer'] to see the possible values for this operation
      *
@@ -497,7 +590,7 @@ class ContainersApi
      * @param  string $organisation The organisation ID (required)
      * @param  string $application The application ID (required)
      * @param  string $environment The environment ID (required)
-     * @param  string $container The container ID (required)
+     * @param  string $container The container name (required)
      * @param  \QuantClient\Model\Container $container2 (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateContainer'] to see the possible values for this operation
      *
@@ -506,14 +599,27 @@ class ContainersApi
      */
     public function updateContainerAsyncWithHttpInfo($organisation, $application, $environment, $container, $container2, string $contentType = self::contentTypes['updateContainer'][0])
     {
-        $returnType = '';
+        $returnType = '\QuantClient\Model\Container';
         $request = $this->updateContainerRequest($organisation, $application, $environment, $container, $container2, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -538,7 +644,7 @@ class ContainersApi
      * @param  string $organisation The organisation ID (required)
      * @param  string $application The application ID (required)
      * @param  string $environment The environment ID (required)
-     * @param  string $container The container ID (required)
+     * @param  string $container The container name (required)
      * @param  \QuantClient\Model\Container $container2 (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateContainer'] to see the possible values for this operation
      *
@@ -575,7 +681,10 @@ class ContainersApi
                 'Missing the required parameter $container when calling updateContainer'
             );
         }
-
+        if (!preg_match("/^[a-zA-Z0-9_-]+$/", $container)) {
+            throw new \InvalidArgumentException("invalid value for \"container\" when calling ContainersApi.updateContainer, must conform to the pattern /^[a-zA-Z0-9_-]+$/.");
+        }
+        
         // verify the required parameter 'container2' is set
         if ($container2 === null || (is_array($container2) && count($container2) === 0)) {
             throw new \InvalidArgumentException(
@@ -628,7 +737,7 @@ class ContainersApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            [],
+            ['application/json', ],
             $contentType,
             $multipart
         );

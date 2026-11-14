@@ -1,6 +1,6 @@
 <?php
 /**
- * UpdateEnvironmentRequest
+ * AIAutoModeEligibility
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \QuantClient\ObjectSerializer;
 
 /**
- * UpdateEnvironmentRequest Class Doc Comment
+ * AIAutoModeEligibility Class Doc Comment
  *
  * @category Class
  * @package  QuantClient
@@ -40,7 +40,7 @@ use \QuantClient\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class UpdateEnvironmentRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class AIAutoModeEligibility implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class UpdateEnvironmentRequest implements ModelInterface, ArrayAccess, \JsonSeri
       *
       * @var string
       */
-    protected static $openAPIModelName = 'updateEnvironment_request';
+    protected static $openAPIModelName = 'AIAutoModeEligibility';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,9 @@ class UpdateEnvironmentRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'compose_definition' => '\QuantClient\Model\Compose',
-        'min_capacity' => 'int',
-        'max_capacity' => 'int'
+        'orchestrator' => '\QuantClient\Model\AIModelEligibility',
+        'roles' => '\QuantClient\Model\AIAutoModeEligibilityRoles',
+        'usable' => 'bool'
     ];
 
     /**
@@ -70,9 +70,9 @@ class UpdateEnvironmentRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'compose_definition' => null,
-        'min_capacity' => null,
-        'max_capacity' => null
+        'orchestrator' => null,
+        'roles' => null,
+        'usable' => null
     ];
 
     /**
@@ -81,9 +81,9 @@ class UpdateEnvironmentRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'compose_definition' => false,
-        'min_capacity' => true,
-        'max_capacity' => true
+        'orchestrator' => true,
+        'roles' => false,
+        'usable' => false
     ];
 
     /**
@@ -172,9 +172,9 @@ class UpdateEnvironmentRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'compose_definition' => 'composeDefinition',
-        'min_capacity' => 'minCapacity',
-        'max_capacity' => 'maxCapacity'
+        'orchestrator' => 'orchestrator',
+        'roles' => 'roles',
+        'usable' => 'usable'
     ];
 
     /**
@@ -183,9 +183,9 @@ class UpdateEnvironmentRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'compose_definition' => 'setComposeDefinition',
-        'min_capacity' => 'setMinCapacity',
-        'max_capacity' => 'setMaxCapacity'
+        'orchestrator' => 'setOrchestrator',
+        'roles' => 'setRoles',
+        'usable' => 'setUsable'
     ];
 
     /**
@@ -194,9 +194,9 @@ class UpdateEnvironmentRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'compose_definition' => 'getComposeDefinition',
-        'min_capacity' => 'getMinCapacity',
-        'max_capacity' => 'getMaxCapacity'
+        'orchestrator' => 'getOrchestrator',
+        'roles' => 'getRoles',
+        'usable' => 'getUsable'
     ];
 
     /**
@@ -256,9 +256,9 @@ class UpdateEnvironmentRequest implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('compose_definition', $data ?? [], null);
-        $this->setIfExists('min_capacity', $data ?? [], null);
-        $this->setIfExists('max_capacity', $data ?? [], null);
+        $this->setIfExists('orchestrator', $data ?? [], null);
+        $this->setIfExists('roles', $data ?? [], null);
+        $this->setIfExists('usable', $data ?? [], null);
     }
 
     /**
@@ -288,17 +288,15 @@ class UpdateEnvironmentRequest implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['compose_definition'] === null) {
-            $invalidProperties[] = "'compose_definition' can't be null";
+        if ($this->container['orchestrator'] === null) {
+            $invalidProperties[] = "'orchestrator' can't be null";
         }
-        if (!is_null($this->container['min_capacity']) && ($this->container['min_capacity'] < 0)) {
-            $invalidProperties[] = "invalid value for 'min_capacity', must be bigger than or equal to 0.";
+        if ($this->container['roles'] === null) {
+            $invalidProperties[] = "'roles' can't be null";
         }
-
-        if (!is_null($this->container['max_capacity']) && ($this->container['max_capacity'] < 1)) {
-            $invalidProperties[] = "invalid value for 'max_capacity', must be bigger than or equal to 1.";
+        if ($this->container['usable'] === null) {
+            $invalidProperties[] = "'usable' can't be null";
         }
-
         return $invalidProperties;
     }
 
@@ -315,106 +313,89 @@ class UpdateEnvironmentRequest implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets compose_definition
+     * Gets orchestrator
      *
-     * @return \QuantClient\Model\Compose
+     * @return \QuantClient\Model\AIModelEligibility
      */
-    public function getComposeDefinition()
+    public function getOrchestrator()
     {
-        return $this->container['compose_definition'];
+        return $this->container['orchestrator'];
     }
 
     /**
-     * Sets compose_definition
+     * Sets orchestrator
      *
-     * @param \QuantClient\Model\Compose $compose_definition compose_definition
+     * @param \QuantClient\Model\AIModelEligibility $orchestrator orchestrator
      *
      * @return self
      */
-    public function setComposeDefinition($compose_definition)
+    public function setOrchestrator($orchestrator)
     {
-        if (is_null($compose_definition)) {
-            throw new \InvalidArgumentException('non-nullable compose_definition cannot be null');
-        }
-        $this->container['compose_definition'] = $compose_definition;
-
-        return $this;
-    }
-
-    /**
-     * Gets min_capacity
-     *
-     * @return int|null
-     */
-    public function getMinCapacity()
-    {
-        return $this->container['min_capacity'];
-    }
-
-    /**
-     * Sets min_capacity
-     *
-     * @param int|null $min_capacity Optional. Minimum number of tasks for auto-scaling. If provided at root level, will be merged into composeDefinition.
-     *
-     * @return self
-     */
-    public function setMinCapacity($min_capacity)
-    {
-        if (is_null($min_capacity)) {
-            array_push($this->openAPINullablesSetToNull, 'min_capacity');
+        if (is_null($orchestrator)) {
+            array_push($this->openAPINullablesSetToNull, 'orchestrator');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('min_capacity', $nullablesSetToNull);
+            $index = array_search('orchestrator', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-        if (!is_null($min_capacity) && ($min_capacity < 0)) {
-            throw new \InvalidArgumentException('invalid value for $min_capacity when calling UpdateEnvironmentRequest., must be bigger than or equal to 0.');
-        }
-
-        $this->container['min_capacity'] = $min_capacity;
+        $this->container['orchestrator'] = $orchestrator;
 
         return $this;
     }
 
     /**
-     * Gets max_capacity
+     * Gets roles
      *
-     * @return int|null
+     * @return \QuantClient\Model\AIAutoModeEligibilityRoles
      */
-    public function getMaxCapacity()
+    public function getRoles()
     {
-        return $this->container['max_capacity'];
+        return $this->container['roles'];
     }
 
     /**
-     * Sets max_capacity
+     * Sets roles
      *
-     * @param int|null $max_capacity Optional. Maximum number of tasks for auto-scaling. If provided at root level, will be merged into composeDefinition.
+     * @param \QuantClient\Model\AIAutoModeEligibilityRoles $roles roles
      *
      * @return self
      */
-    public function setMaxCapacity($max_capacity)
+    public function setRoles($roles)
     {
-        if (is_null($max_capacity)) {
-            array_push($this->openAPINullablesSetToNull, 'max_capacity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('max_capacity', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($roles)) {
+            throw new \InvalidArgumentException('non-nullable roles cannot be null');
         }
+        $this->container['roles'] = $roles;
 
-        if (!is_null($max_capacity) && ($max_capacity < 1)) {
-            throw new \InvalidArgumentException('invalid value for $max_capacity when calling UpdateEnvironmentRequest., must be bigger than or equal to 1.');
+        return $this;
+    }
+
+    /**
+     * Gets usable
+     *
+     * @return bool
+     */
+    public function getUsable()
+    {
+        return $this->container['usable'];
+    }
+
+    /**
+     * Sets usable
+     *
+     * @param bool $usable usable
+     *
+     * @return self
+     */
+    public function setUsable($usable)
+    {
+        if (is_null($usable)) {
+            throw new \InvalidArgumentException('non-nullable usable cannot be null');
         }
-
-        $this->container['max_capacity'] = $max_capacity;
+        $this->container['usable'] = $usable;
 
         return $this;
     }
