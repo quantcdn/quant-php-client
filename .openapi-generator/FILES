@@ -137,6 +137,7 @@ docs/Model/ContainerDependsOnInner.md
 docs/Model/ContainerEnvironmentInner.md
 docs/Model/ContainerHealthCheck.md
 docs/Model/ContainerImageReference.md
+docs/Model/ContainerLoadBalancerHealthCheck.md
 docs/Model/ContainerMountPointsInner.md
 docs/Model/ContainerOriginProtectionConfig.md
 docs/Model/ContainerSecretsInner.md
@@ -794,6 +795,7 @@ src/Model/ContainerDependsOnInner.php
 src/Model/ContainerEnvironmentInner.php
 src/Model/ContainerHealthCheck.php
 src/Model/ContainerImageReference.php
+src/Model/ContainerLoadBalancerHealthCheck.php
 src/Model/ContainerMountPointsInner.php
 src/Model/ContainerOriginProtectionConfig.php
 src/Model/ContainerSecretsInner.php
