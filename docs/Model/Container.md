@@ -23,5 +23,6 @@ Name | Type | Description | Notes
 **user** | **string** |  | [optional]
 **origin_protection** | **bool** | Enable origin protection for all exposed ports on this container. Use originProtectionConfig for advanced options like IP allow lists. | [optional] [default to false]
 **origin_protection_config** | [**\QuantClient\Model\ContainerOriginProtectionConfig**](ContainerOriginProtectionConfig.md) |  | [optional]
+**load_balancer_health_check** | [**\QuantClient\Model\ContainerLoadBalancerHealthCheck**](ContainerLoadBalancerHealthCheck.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
