@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **failover_origin_ttfb** | **string** | Failover TTFB threshold in milliseconds | [optional] [default to '2000']
 **failover_origin_status_codes** | **string[]** | Origin statuses that do not trigger failover. Any other origin status switches the rule to the static copy. With failover_mode true, a list left out gets the default 200, 301, 302, 304, 404, and an empty list is refused with 422. A PATCH replaces the list. | [optional]
 **failover_lifetime** | **string** | Failover cache lifetime in seconds | [optional] [default to '300']
+**failover_threshold** | **int** | Failures (a status outside failover_origin_status_codes, a connection error or no first byte inside failover_origin_ttfb) within 10 seconds before failover starts. Null or 0 uses the default (3). | [optional]
 **proxy_alert_enabled** | **bool** | Proxy alert enabled | [optional] [default to false]
 **waf_enabled** | **bool** | WAF enabled | [optional] [default to false]
 **waf_config** | [**\QuantClient\Model\WafConfig**](WafConfig.md) |  | [optional]
