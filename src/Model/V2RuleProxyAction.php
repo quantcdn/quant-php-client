@@ -72,6 +72,7 @@ class V2RuleProxyAction implements ModelInterface, ArrayAccess, \JsonSerializabl
         'failover_origin_ttfb' => 'string',
         'failover_origin_status_codes' => 'string[]',
         'failover_lifetime' => 'string',
+        'failover_threshold' => 'int',
         'notify' => 'string',
         'notify_config' => '\QuantClient\Model\V2RuleProxyActionNotifyConfig',
         'waf_enabled' => 'bool',
@@ -111,6 +112,7 @@ class V2RuleProxyAction implements ModelInterface, ArrayAccess, \JsonSerializabl
         'failover_origin_ttfb' => null,
         'failover_origin_status_codes' => null,
         'failover_lifetime' => null,
+        'failover_threshold' => null,
         'notify' => null,
         'notify_config' => null,
         'waf_enabled' => null,
@@ -148,6 +150,7 @@ class V2RuleProxyAction implements ModelInterface, ArrayAccess, \JsonSerializabl
         'failover_origin_ttfb' => false,
         'failover_origin_status_codes' => false,
         'failover_lifetime' => false,
+        'failover_threshold' => true,
         'notify' => false,
         'notify_config' => true,
         'waf_enabled' => false,
@@ -265,6 +268,7 @@ class V2RuleProxyAction implements ModelInterface, ArrayAccess, \JsonSerializabl
         'failover_origin_ttfb' => 'failover_origin_ttfb',
         'failover_origin_status_codes' => 'failover_origin_status_codes',
         'failover_lifetime' => 'failover_lifetime',
+        'failover_threshold' => 'failover_threshold',
         'notify' => 'notify',
         'notify_config' => 'notify_config',
         'waf_enabled' => 'waf_enabled',
@@ -302,6 +306,7 @@ class V2RuleProxyAction implements ModelInterface, ArrayAccess, \JsonSerializabl
         'failover_origin_ttfb' => 'setFailoverOriginTtfb',
         'failover_origin_status_codes' => 'setFailoverOriginStatusCodes',
         'failover_lifetime' => 'setFailoverLifetime',
+        'failover_threshold' => 'setFailoverThreshold',
         'notify' => 'setNotify',
         'notify_config' => 'setNotifyConfig',
         'waf_enabled' => 'setWafEnabled',
@@ -339,6 +344,7 @@ class V2RuleProxyAction implements ModelInterface, ArrayAccess, \JsonSerializabl
         'failover_origin_ttfb' => 'getFailoverOriginTtfb',
         'failover_origin_status_codes' => 'getFailoverOriginStatusCodes',
         'failover_lifetime' => 'getFailoverLifetime',
+        'failover_threshold' => 'getFailoverThreshold',
         'notify' => 'getNotify',
         'notify_config' => 'getNotifyConfig',
         'waf_enabled' => 'getWafEnabled',
@@ -442,6 +448,7 @@ class V2RuleProxyAction implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('failover_origin_ttfb', $data ?? [], '2000');
         $this->setIfExists('failover_origin_status_codes', $data ?? [], null);
         $this->setIfExists('failover_lifetime', $data ?? [], '300');
+        $this->setIfExists('failover_threshold', $data ?? [], null);
         $this->setIfExists('notify', $data ?? [], 'none');
         $this->setIfExists('notify_config', $data ?? [], null);
         $this->setIfExists('waf_enabled', $data ?? [], false);
@@ -488,6 +495,14 @@ class V2RuleProxyAction implements ModelInterface, ArrayAccess, \JsonSerializabl
         if ($this->container['to'] === null) {
             $invalidProperties[] = "'to' can't be null";
         }
+        if (!is_null($this->container['failover_threshold']) && ($this->container['failover_threshold'] > 100)) {
+            $invalidProperties[] = "invalid value for 'failover_threshold', must be smaller than or equal to 100.";
+        }
+
+        if (!is_null($this->container['failover_threshold']) && ($this->container['failover_threshold'] < 1)) {
+            $invalidProperties[] = "invalid value for 'failover_threshold', must be bigger than or equal to 1.";
+        }
+
         $allowedValues = $this->getNotifyAllowableValues();
         if (!is_null($this->container['notify']) && !in_array($this->container['notify'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -927,6 +942,48 @@ class V2RuleProxyAction implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable failover_lifetime cannot be null');
         }
         $this->container['failover_lifetime'] = $failover_lifetime;
+
+        return $this;
+    }
+
+    /**
+     * Gets failover_threshold
+     *
+     * @return int|null
+     */
+    public function getFailoverThreshold()
+    {
+        return $this->container['failover_threshold'];
+    }
+
+    /**
+     * Sets failover_threshold
+     *
+     * @param int|null $failover_threshold Failures (a status outside failover_origin_status_codes, a connection error or no first byte inside failover_origin_ttfb) within 10 seconds before failover starts. Null or 0 uses the default (3).
+     *
+     * @return self
+     */
+    public function setFailoverThreshold($failover_threshold)
+    {
+        if (is_null($failover_threshold)) {
+            array_push($this->openAPINullablesSetToNull, 'failover_threshold');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('failover_threshold', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($failover_threshold) && ($failover_threshold > 100)) {
+            throw new \InvalidArgumentException('invalid value for $failover_threshold when calling V2RuleProxyAction., must be smaller than or equal to 100.');
+        }
+        if (!is_null($failover_threshold) && ($failover_threshold < 1)) {
+            throw new \InvalidArgumentException('invalid value for $failover_threshold when calling V2RuleProxyAction., must be bigger than or equal to 1.');
+        }
+
+        $this->container['failover_threshold'] = $failover_threshold;
 
         return $this;
     }
