@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **traffic_source** | **string** | Traffic source condition type (traffic_source_is, traffic_source_is_not, any) | [optional]
 **traffic_source_is** | **string[]** | Traffic sources to match (cloud, vpn, tor-exit, abuser, crawler) | [optional]
 **traffic_source_is_not** | **string[]** | Traffic sources to exclude (cloud, vpn, tor-exit, abuser, crawler) | [optional]
+**schedule** | [**\QuantClient\Model\V2RuleSchedule**](V2RuleSchedule.md) |  | [optional]
 **country** | **string** | Country code | [optional]
 **country_is** | **string[]** | Allowed countries | [optional]
 **country_is_not** | **string[]** | Excluded countries | [optional]

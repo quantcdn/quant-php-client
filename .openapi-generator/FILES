@@ -127,6 +127,15 @@ docs/Model/ChatWithAIAgent200ResponseResponse.md
 docs/Model/ChatWithAIAgent200ResponseResponseUsage.md
 docs/Model/ChatWithAIAgent202Response.md
 docs/Model/ChatWithAIAgentRequest.md
+docs/Model/CiCacheDeleteRequest.md
+docs/Model/CiCacheDeleteResult.md
+docs/Model/CiCacheEntry.md
+docs/Model/CiCacheList.md
+docs/Model/CiCacheStats.md
+docs/Model/CiRunnerPoolConfig.md
+docs/Model/CiRunnerPoolConfigAlertsInner.md
+docs/Model/CiRunnerPoolConfigBusinessHoursWarm.md
+docs/Model/CiRunnerPoolConfigConnection.md
 docs/Model/CiValue.md
 docs/Model/CiValueError.md
 docs/Model/CiValueWriteResult.md
@@ -370,6 +379,8 @@ docs/Model/PurgeCreateRequest.md
 docs/Model/PurgeOrgResource200Response.md
 docs/Model/PurgeOrgResourceRequest.md
 docs/Model/PutApplicationMetadata400Response.md
+docs/Model/PutCiValue502Response.md
+docs/Model/PutCiValue503Response.md
 docs/Model/PutCiValueRequest.md
 docs/Model/QueryVectorCollection200Response.md
 docs/Model/QueryVectorCollection200ResponsePagination.md
@@ -412,7 +423,6 @@ docs/Model/UpdateAISessionRequestNewMessagesInner.md
 docs/Model/UpdateAutoMode200Response.md
 docs/Model/UpdateAutoMode400Response.md
 docs/Model/UpdateAutoMode409Response.md
-docs/Model/UpdateContainer400Response.md
 docs/Model/UpdateCronJobRequest.md
 docs/Model/UpdateEnvironmentRequest.md
 docs/Model/UpdateEnvironmentSecretRequest.md
@@ -631,6 +641,9 @@ docs/Model/V2RuleRedirect.md
 docs/Model/V2RuleRedirectAction.md
 docs/Model/V2RuleRedirectRequest.md
 docs/Model/V2RuleRequest.md
+docs/Model/V2RuleSchedule.md
+docs/Model/V2RuleScheduleOnceInner.md
+docs/Model/V2RuleScheduleWeeklyInner.md
 docs/Model/V2RuleServeStatic.md
 docs/Model/V2RuleServeStaticAction.md
 docs/Model/V2RuleServeStaticRequest.md
@@ -785,6 +798,15 @@ src/Model/ChatWithAIAgent200ResponseResponse.php
 src/Model/ChatWithAIAgent200ResponseResponseUsage.php
 src/Model/ChatWithAIAgent202Response.php
 src/Model/ChatWithAIAgentRequest.php
+src/Model/CiCacheDeleteRequest.php
+src/Model/CiCacheDeleteResult.php
+src/Model/CiCacheEntry.php
+src/Model/CiCacheList.php
+src/Model/CiCacheStats.php
+src/Model/CiRunnerPoolConfig.php
+src/Model/CiRunnerPoolConfigAlertsInner.php
+src/Model/CiRunnerPoolConfigBusinessHoursWarm.php
+src/Model/CiRunnerPoolConfigConnection.php
 src/Model/CiValue.php
 src/Model/CiValueError.php
 src/Model/CiValueWriteResult.php
@@ -1029,6 +1051,8 @@ src/Model/PurgeCreateRequest.php
 src/Model/PurgeOrgResource200Response.php
 src/Model/PurgeOrgResourceRequest.php
 src/Model/PutApplicationMetadata400Response.php
+src/Model/PutCiValue502Response.php
+src/Model/PutCiValue503Response.php
 src/Model/PutCiValueRequest.php
 src/Model/QueryVectorCollection200Response.php
 src/Model/QueryVectorCollection200ResponsePagination.php
@@ -1071,7 +1095,6 @@ src/Model/UpdateAISessionRequestNewMessagesInner.php
 src/Model/UpdateAutoMode200Response.php
 src/Model/UpdateAutoMode400Response.php
 src/Model/UpdateAutoMode409Response.php
-src/Model/UpdateContainer400Response.php
 src/Model/UpdateCronJobRequest.php
 src/Model/UpdateEnvironmentRequest.php
 src/Model/UpdateEnvironmentSecretRequest.php
@@ -1290,6 +1313,9 @@ src/Model/V2RuleRedirect.php
 src/Model/V2RuleRedirectAction.php
 src/Model/V2RuleRedirectRequest.php
 src/Model/V2RuleRequest.php
+src/Model/V2RuleSchedule.php
+src/Model/V2RuleScheduleOnceInner.php
+src/Model/V2RuleScheduleWeeklyInner.php
 src/Model/V2RuleServeStatic.php
 src/Model/V2RuleServeStaticAction.php
 src/Model/V2RuleServeStaticRequest.php
