@@ -356,10 +356,13 @@ Class | Method | HTTP request | Description
 *PurgeApi* | [**purgeCreate**](docs/Api/PurgeApi.md#purgecreate) | **POST** /api/v2/organizations/{organization}/projects/{project}/purge | Purge cache via URL or cache keys
 *ResourcesApi* | [**attachOrgResource**](docs/Api/ResourcesApi.md#attachorgresource) | **POST** /api/v3/organizations/{organisation}/resources/{resource}/attachments | Attach a resource to an application environment
 *ResourcesApi* | [**createOrgResource**](docs/Api/ResourcesApi.md#createorgresource) | **POST** /api/v3/organizations/{organisation}/resources | Create a shared resource
+*ResourcesApi* | [**deleteCiRunnerPoolCache**](docs/Api/ResourcesApi.md#deletecirunnerpoolcache) | **DELETE** /api/v3/organizations/{organisation}/resources/{resource}/cache | Delete build cache entries of a CI runner pool
 *ResourcesApi* | [**deleteOrgResource**](docs/Api/ResourcesApi.md#deleteorgresource) | **DELETE** /api/v3/organizations/{organisation}/resources/{resource} | Delete a shared resource
 *ResourcesApi* | [**detachOrgResource**](docs/Api/ResourcesApi.md#detachorgresource) | **DELETE** /api/v3/organizations/{organisation}/resources/{resource}/attachments/{application}/{environment} | Detach a resource from an application environment
+*ResourcesApi* | [**getCiRunnerPoolCacheStats**](docs/Api/ResourcesApi.md#getcirunnerpoolcachestats) | **GET** /api/v3/organizations/{organisation}/resources/{resource}/cache/stats | Get build cache statistics of a CI runner pool
 *ResourcesApi* | [**getOrgResource**](docs/Api/ResourcesApi.md#getorgresource) | **GET** /api/v3/organizations/{organisation}/resources/{resource} | Get a shared resource and its attachments
 *ResourcesApi* | [**getOrgResourceCredentials**](docs/Api/ResourcesApi.md#getorgresourcecredentials) | **GET** /api/v3/organizations/{organisation}/resources/{resource}/credentials | Get a cache&#39;s administrative credential
+*ResourcesApi* | [**listCiRunnerPoolCache**](docs/Api/ResourcesApi.md#listcirunnerpoolcache) | **GET** /api/v3/organizations/{organisation}/resources/{resource}/cache | List the build cache entries of a CI runner pool
 *ResourcesApi* | [**listOrgResources**](docs/Api/ResourcesApi.md#listorgresources) | **GET** /api/v3/organizations/{organisation}/resources | List an organisation&#39;s shared resources
 *ResourcesApi* | [**purgeOrgResource**](docs/Api/ResourcesApi.md#purgeorgresource) | **POST** /api/v3/organizations/{organisation}/resources/{resource}/purge | Purge keys from a cache
 *RestoreManagementApi* | [**getRestoreStatus**](docs/Api/RestoreManagementApi.md#getrestorestatus) | **GET** /api/v3/organizations/{organisation}/applications/{application}/environments/{environment}/restores/{restoreId} | Get the status of a restore operation
@@ -518,6 +521,15 @@ Class | Method | HTTP request | Description
 - [ChatWithAIAgent200ResponseResponseUsage](docs/Model/ChatWithAIAgent200ResponseResponseUsage.md)
 - [ChatWithAIAgent202Response](docs/Model/ChatWithAIAgent202Response.md)
 - [ChatWithAIAgentRequest](docs/Model/ChatWithAIAgentRequest.md)
+- [CiCacheDeleteRequest](docs/Model/CiCacheDeleteRequest.md)
+- [CiCacheDeleteResult](docs/Model/CiCacheDeleteResult.md)
+- [CiCacheEntry](docs/Model/CiCacheEntry.md)
+- [CiCacheList](docs/Model/CiCacheList.md)
+- [CiCacheStats](docs/Model/CiCacheStats.md)
+- [CiRunnerPoolConfig](docs/Model/CiRunnerPoolConfig.md)
+- [CiRunnerPoolConfigAlertsInner](docs/Model/CiRunnerPoolConfigAlertsInner.md)
+- [CiRunnerPoolConfigBusinessHoursWarm](docs/Model/CiRunnerPoolConfigBusinessHoursWarm.md)
+- [CiRunnerPoolConfigConnection](docs/Model/CiRunnerPoolConfigConnection.md)
 - [CiValue](docs/Model/CiValue.md)
 - [CiValueError](docs/Model/CiValueError.md)
 - [CiValueWriteResult](docs/Model/CiValueWriteResult.md)
@@ -761,6 +773,8 @@ Class | Method | HTTP request | Description
 - [PurgeOrgResource200Response](docs/Model/PurgeOrgResource200Response.md)
 - [PurgeOrgResourceRequest](docs/Model/PurgeOrgResourceRequest.md)
 - [PutApplicationMetadata400Response](docs/Model/PutApplicationMetadata400Response.md)
+- [PutCiValue502Response](docs/Model/PutCiValue502Response.md)
+- [PutCiValue503Response](docs/Model/PutCiValue503Response.md)
 - [PutCiValueRequest](docs/Model/PutCiValueRequest.md)
 - [QueryVectorCollection200Response](docs/Model/QueryVectorCollection200Response.md)
 - [QueryVectorCollection200ResponsePagination](docs/Model/QueryVectorCollection200ResponsePagination.md)
@@ -803,7 +817,6 @@ Class | Method | HTTP request | Description
 - [UpdateAutoMode200Response](docs/Model/UpdateAutoMode200Response.md)
 - [UpdateAutoMode400Response](docs/Model/UpdateAutoMode400Response.md)
 - [UpdateAutoMode409Response](docs/Model/UpdateAutoMode409Response.md)
-- [UpdateContainer400Response](docs/Model/UpdateContainer400Response.md)
 - [UpdateCronJobRequest](docs/Model/UpdateCronJobRequest.md)
 - [UpdateEnvironmentRequest](docs/Model/UpdateEnvironmentRequest.md)
 - [UpdateEnvironmentSecretRequest](docs/Model/UpdateEnvironmentSecretRequest.md)
@@ -1022,6 +1035,9 @@ Class | Method | HTTP request | Description
 - [V2RuleRedirectAction](docs/Model/V2RuleRedirectAction.md)
 - [V2RuleRedirectRequest](docs/Model/V2RuleRedirectRequest.md)
 - [V2RuleRequest](docs/Model/V2RuleRequest.md)
+- [V2RuleSchedule](docs/Model/V2RuleSchedule.md)
+- [V2RuleScheduleOnceInner](docs/Model/V2RuleScheduleOnceInner.md)
+- [V2RuleScheduleWeeklyInner](docs/Model/V2RuleScheduleWeeklyInner.md)
 - [V2RuleServeStatic](docs/Model/V2RuleServeStatic.md)
 - [V2RuleServeStaticAction](docs/Model/V2RuleServeStaticAction.md)
 - [V2RuleServeStaticRequest](docs/Model/V2RuleServeStaticRequest.md)
@@ -1070,7 +1086,7 @@ vendor/bin/phpunit
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `4.36.0`
-    - Package version: `4.36.0`
+- API version: `4.38.0`
+    - Package version: `4.38.0`
     - Generator version: `7.13.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

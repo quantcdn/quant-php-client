@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **traffic_source** | **string** | Traffic source filter type (traffic_source_is, traffic_source_is_not, any). Invalid values return 422. | [optional]
 **traffic_source_is** | **string[]** | Traffic sources to match. A PATCH replaces the list. | [optional]
 **traffic_source_is_not** | **string[]** | Traffic sources to exclude. A PATCH replaces the list. | [optional]
+**schedule** | [**\QuantClient\Model\V2RuleSchedule**](V2RuleSchedule.md) |  | [optional]
 **cookie_name** | **string** | Write name of only_with_cookie: the rule applies only when this cookie is present. Empty string clears it. | [optional]
 **redirect_to** | **string** | Redirect destination URL |
 **redirect_code** | **string** | HTTP status code for the redirect: 301, 302, 303, 307 or 308. Defaults to 301 when omitted on create. | [optional] [default to '301']
